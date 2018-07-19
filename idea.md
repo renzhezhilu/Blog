@@ -31,3 +31,9 @@ logo动画，全屏蓝色bg1，bg1以圆形快速缩小，页面变成白色bg2�
 图片被剪切到英文字母里，hover时平滑变成成矩形，还原图片
 #### <font size=4 color=#D2691E>列表:</font>
 
+<font face="黑体">我是黑体字</font>
+<font face="微软雅黑">我是微软雅黑</font>
+<font face="STCAIYUN">我是华文彩云</font>
+<font color=#0099ff size=7 face="黑体">color=#0099ff size=72 face="黑体"</font>
+<font color=#00ffff size=72>color=#00ffff</font>
+<font color=gray size=72>color=gray</font>
