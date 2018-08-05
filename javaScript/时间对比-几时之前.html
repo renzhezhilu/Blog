@@ -6,16 +6,44 @@
 </head>
 <body>
 <style type="text/css">
-	input,button {  height: 50px; line-height: 50px; font-size: 40px; }
+	input,button {  height: 50px; line-height: 50px; font-size: 30px; }
 	div { font-size: 100px; line-height: 120px; }
 </style>
 <input id="time_input" type="text" value="2018,8,6,0:47:15"></input>
-<button type="button" onclick="time(document.getElementById('time_input').value)">确定</button>
+<button type="button" onclick="fortime()">确定</button>
+<button type="button" onclick="agoOneS()">60s以内每秒显示</button>
 <br>结果：
 <div id="divbox">--</div>
 <script type="text/javascript">
-function time (agetime) {
+//测试用_赋值时间到一秒之前
+function agoOneS (){
+	var nowtime = new Date()
+	document.getElementById('time_input').value= timeFormat(nowtime);
+	fortime();
+}
 
+//测试用_转换时间格式 毫秒数->y,m,d,h:m:s
+function timeFormat (getTime){
+	var newTime = getTime.getFullYear()+","+(getTime.getMonth()+1)+","+getTime.getDate()+","+getTime.getHours()+":"+getTime.getMinutes()+":"+(getTime.getSeconds()-1);//1秒前
+	return newTime;
+}
+
+//测试用_输出结果
+function divbox(con){ 
+	document.getElementById('divbox').innerHTML=con
+}
+
+//时差60秒以内则每秒更新
+function fortime(){
+	var sNum = time(document.getElementById('time_input').value);
+	if (sNum<60 && sNum>=1) {
+		var t =setTimeout("fortime()",500);
+	}
+	else{ clearTimeout(t)}
+}
+
+//时间对比
+function time (agetime) {
 	var agetime_s = Date.parse(agetime);//发布时间毫秒数
 	var nowtime = new Date();
 	var nowtime_s = nowtime.getTime();//现在时间毫秒数
@@ -26,9 +54,9 @@ function time (agetime) {
 	var h = (smtime/1000/60/60);
 	var min = (smtime/1000/60);
 	var s = (smtime/1000);
-	//1年以上，下同
+	//1年以上显示年数，下同
 	if (y>=1) {divbox(y.toFixed(0) +"年前");}
-	//1年之内，下同
+	//1年之内显示下一级时间单位，下同
 	else{
 		if (m<12 && m>=1) {divbox(m.toFixed(0) +"月前");}
 		else{
@@ -38,7 +66,7 @@ function time (agetime) {
 				else{
 					if (min<60 && min>=1) {divbox(min.toFixed(0) +"分钟前");}
 					else{
-						if (s<60 && s>=1) {divbox(s.toFixed(0)+"秒前");}
+						if (s<60 && s>=1) {divbox(s.toFixed(0)+"秒前"); return s;}
 						else{alert("时间是未来的")}
 					}
 				}	
@@ -46,12 +74,6 @@ function time (agetime) {
 		}
 	}
 }
-
-
-function divbox(con){ //2018,8,6,0:41:15
-	document.getElementById('divbox').innerHTML=con
-}
-	//alert( smtime/1000/60/60/24/30/12 )
 
 </script>
 </body>
