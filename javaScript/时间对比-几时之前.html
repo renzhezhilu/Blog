@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<input id="time_input" type="text" value="2018,8,5,23:59:15"></input>
+<button type="button" onclick="time()">确定</button>
+<script type="text/javascript">
+function time () {
+	var time_input = document.getElementById("time_input").value;
+	var agetime_s = Date.parse(time_input);
+
+	var nowtime = new Date();
+	var nowtime_s = nowtime.getTime();
+	var smtime = nowtime_s-agetime_s;
+
+	var year = (smtime/1000/60/60/24/30/12);
+	var mou = (smtime/1000/60/60/24/30);
+	var dayyy =(smtime/1000/60/60/24);
+	var hou = (smtime/1000/60/60);
+	var min = (smtime/1000/60);
+	var sss = (smtime/1000);
+	if (year>=1) {alert(year.toFixed(0) +"年前");}
+	else{
+		if (mou<12 && mou>=1) {alert(mou.toFixed(0) +"月前");}
+		else{
+			if (dayyy<31 && dayyy>=1) {alert(dayyy.toFixed(0) +"日前");}	
+			else{
+				if (hou<24 && hou>=1) {alert(hou.toFixed(0) +"小时前");}
+				else{
+					if (min<60 && min>=1) {alert(min.toFixed(0) +"分钟前");}
+					else{
+						if (sss<60 && sss>=1) {alert(sss.toFixed(0) +"秒前");}
+						else{alert("时间是未来的")}
+					}
+				}	
+			}
+		}
+	}
+
+}
+
+	//alert( smtime/1000/60/60/24/30/12 )
+
+</script>
+</body>
+</html>
