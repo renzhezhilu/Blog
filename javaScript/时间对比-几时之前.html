@@ -7,44 +7,50 @@
 <body>
 <style type="text/css">
 	input,button {  height: 50px; line-height: 50px; font-size: 40px; }
+	div { font-size: 100px; line-height: 120px; }
 </style>
-<input id="time_input" type="text" value="2018,8,5,23:59:15"></input>
-<button type="button" onclick="time()">确定</button>
+<input id="time_input" type="text" value="2018,8,6,0:47:15"></input>
+<button type="button" onclick="time(document.getElementById('time_input').value)">确定</button>
+<br>结果：
+<div id="divbox">--</div>
 <script type="text/javascript">
-function time () {
-	var time_input = document.getElementById("time_input").value;
-	var agetime_s = Date.parse(time_input);
+function time (agetime) {
 
+	var agetime_s = Date.parse(agetime);//发布时间毫秒数
 	var nowtime = new Date();
-	var nowtime_s = nowtime.getTime();
-	var smtime = nowtime_s-agetime_s;
-
-	var year = (smtime/1000/60/60/24/30/12);
-	var mou = (smtime/1000/60/60/24/30);
-	var dayyy =(smtime/1000/60/60/24);
-	var hou = (smtime/1000/60/60);
+	var nowtime_s = nowtime.getTime();//现在时间毫秒数
+	var smtime = nowtime_s-agetime_s;//时间差
+	var y = (smtime/1000/60/60/24/30/12);
+	var m = (smtime/1000/60/60/24/30);
+	var d =(smtime/1000/60/60/24);
+	var h = (smtime/1000/60/60);
 	var min = (smtime/1000/60);
-	var sss = (smtime/1000);
-	if (year>=1) {alert(year.toFixed(0) +"年前");}
+	var s = (smtime/1000);
+	//1年以上，下同
+	if (y>=1) {divbox(y.toFixed(0) +"年前");}
+	//1年之内，下同
 	else{
-		if (mou<12 && mou>=1) {alert(mou.toFixed(0) +"月前");}
+		if (m<12 && m>=1) {divbox(m.toFixed(0) +"月前");}
 		else{
-			if (dayyy<31 && dayyy>=1) {alert(dayyy.toFixed(0) +"日前");}	
+			if (d<31 && d>=1) {divbox(d.toFixed(0) +"天前");}	
 			else{
-				if (hou<24 && hou>=1) {alert(hou.toFixed(0) +"小时前");}
+				if (h<24 && h>=1) {divbox(h.toFixed(0) +"小时前");}
 				else{
-					if (min<60 && min>=1) {alert(min.toFixed(0) +"分钟前");}
+					if (min<60 && min>=1) {divbox(min.toFixed(0) +"分钟前");}
 					else{
-						if (sss<60 && sss>=1) {alert(sss.toFixed(0) +"秒前");}
+						if (s<60 && s>=1) {divbox(s.toFixed(0)+"秒前");}
 						else{alert("时间是未来的")}
 					}
 				}	
 			}
 		}
 	}
-
 }
 
+
+function divbox(con){ //2018,8,6,0:41:15
+	document.getElementById('divbox').innerHTML=con
+}
 	//alert( smtime/1000/60/60/24/30/12 )
 
 </script>
