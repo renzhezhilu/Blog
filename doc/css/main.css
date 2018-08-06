@@ -1,0 +1,59 @@
+/* 格式化 */
+html,body{margin:0;padding:0;font-size:12px;color:#a7a7a7; font-weight: 400;}
+h1,h2,h3,h4,h5,h6,span,p,ul,li,table,tr,td,input,a,dl,dt,dd{font-family: 'Lato', sans-serif;margin:0;padding:0;text-decoration:none;list-style:none; /* text-shadow: rgba(0,0,0,0.08) 0px 1px 2px;*/}
+img{vertical-align:top;border:none}
+body { background-color: #fff;  color: #000; font-size: 16px;}
+a {  color: #000; cursor: pointer;}
+a:hover { font-weight: bold; color: #ffd513; }
+*,*:before,*:after{transition:0s ease;}/*所以变化动画过度
+/*通用*/
+.left{float:left}
+.right{float:right}
+.clear{height:0;line-height:0;font-size:0;clear:both}
+.left_text { text-align: left; }
+.center_text { text-align: center; }
+.right_text { text-align: right; }
+.margin_auto { margin:0 auto; }
+
+
+body{background-color: #292488;}
+.conten_con { width: 94%; padding: 10px 2% 20px 2%; margin: 10px auto 50px auto; background-color: #fff; border-radius: 30px;
+ }
+.conten_con div { border-radius: 16px; }
+.conten_con a { color: #6632f5; font-weight: 900; font-size: 14px; text-decoration:underline}
+.conten_con .good_txt {color: #3aaf88; font-weight: 900; font-size: 12px;}
+.conten_con {}
+
+table.gridtable{width: 420px; font-size:12px;line-height:12px;color:#333;border-collapse:collapse;border-color:#fbfbfb;border-width:1px; display: block;  margin: 10px 3px 0 3px; }
+table.gridtable th{background-color:#fff;border:#fff; border-bottom:1px solid #eee;border-style:solid;border-width:1px;padding:4px; text-align: left; color: #999;}
+table.gridtable th h2 {color: #000; font-size: 22px; line-height: 22px; }
+table.gridtable th h3 {color: #000; font-size: 16px; line-height: 18px; }
+table.gridtable td{border-color:#fff;border-style:solid;border-width:1px;padding:4px;}
+table.gridtable tr {background-color:#fff;}
+table.gridtable tr:hover,table.gridtable tr:hover:nth-child(odd) td  { background-color: #d8d7ec; }
+table.gridtable tr:nth-child(odd) td {background-color:#f9f9f9;}
+table.gridtable tr td:nth-child(1) {color:#3e5e77; font-weight: 900; font-size: 14px;}
+
+.topnav { position: fixed; left: 0; bottom: 0; width: 100%; z-index: 1000;  line-height: 22px; font-size: 12px; background-color: rgba(0,0,0,0.9);  }
+.topnav a { padding: 0 10px;color: #fff; }
+
+.codediv {   padding: 10px; margin: 30px auto;}
+.codediv .codebox_div { width: 30%;   margin:  8px 1.1%; }
+.codediv .codebox_div .codebox {      }
+.codediv .codebox_div .codebox .stx-wrap { }
+
+.codediv {}
+
+
+@media screen and (max-width: 768px) {
+	table.gridtable{width: 40%; margin: 10px 1% 0 1%; }	
+	.codediv .codebox_div { width: 45%;   margin:  8px 1.1%; }
+}
+@media screen and (max-width: 560px) {
+	table.gridtable{width: 90%; margin: 10px 1% 0 1%; }	
+	.codediv .codebox_div { width: 92%;   margin:  8px 1.1%; }
+}
+
+
+
+
