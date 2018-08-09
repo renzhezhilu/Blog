@@ -1,0 +1,4483 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>前端面试常考问题整理，按模块知识点分类</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.font.im/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="body_on" onload="loadOk()">
+<div class="loadbox">
+<div class="rzzl_loading12"></div>
+<div class="rzzl_loading03"><span></span></div>
+<style>
+	.rzzl_loading03 { position:absolute; left: 50%; top: 50%; margin: -15px 0 0 -15px;  width:30px; height: 30px; animation: rzzl_loading03 1.8s infinite ease; background-color: #0366d6; border-radius: 100px;}
+	@keyframes rzzl_loading03{
+	0% {transform: scale(1) translate(0,0) skew(0deg); }
+	50% {transform: scale(1.6) translate(-2%,-2%) skew(0deg); }
+	100% {transform: scale(1) translate(0,0) skew(0deg); }
+	}
+</style>
+
+
+
+
+
+</div>
+<style type="text/css">
+	.loadbox {position: fixed; right: 0; top: 0; width: 100%; height: 100%; background-color: #fff; z-index: 1000; }
+	.loadbox_end { opacity: 0; right: -130%; }
+</style>
+<div class="big_conbox">
+	<h1>JavaScript的组成<small>由以下三部分组成</small></h1>
+	<div class="conbox">
+		<h2 id="h01_01">ECMAScript（核心）<small>European Computer Manufacturers Association</small></h2>
+		<table>
+			<tr><td><a href="">JavaScript</a><span>JavaScript</span></td><td ></td></tr>
+			<tr><td><a href="">Script</a><span>脚本</span></td><td ></td></tr>
+			<tr><td><a href=""><small><small>European Computer Manufacturers Association</small></small></a><span></span></td><td ></td></tr>
+			<tr><td><a href="">ECMAScript 6</a><span>即ECMAScript 2015</span></td><td ></td></tr>
+			<tr><td><a href="">var</a><span>定义变量</span></td><td ></td></tr>
+			<tr><td><a href="">variable</a><span>变量</span></td><td ></td></tr>
+			<tr><td><a href="">Comment</a><span>注释</span></td><td ></td></tr>
+			<tr><td><a href="">Windows Scripting Host</a><span>脚本宿主</span></td><td ></td></tr>
+			<tr><td><a href="">version</a><span>版本</span></td><td ></td></tr>
+			<tr><td><a href="">Camel</a><span>骆驼</span></td><td ></td></tr>
+		
+		</table><table>
+			<tr><td><a href="">Array</a><span>数组</span></td><td ></td></tr>
+			<tr><td><a href="">Boolean</a><span>布尔型</span></td><td ></td></tr>
+			<tr><td><a href="">Floating</a><span>浮点型（数字）</span></td><td ></td></tr>
+			<tr><td><a href="">Function</a><span>函数</span></td><td ></td></tr>
+			<tr><td><a href="">Integer</a><span>整型（数字）</span></td><td ></td></tr>
+			<tr><td><a href="">Object</a><span>对象</span></td><td ></td></tr>
+			<tr><td><a href="">Regular expression</a><span>RegExp正则表达式</span></td><td ></td></tr>
+			<tr><td><a href="">String</a><span>字符串</span></td><td ></td></tr>
+			<tr><td><a href="">Variant</a><span>变型（可以是任何类型）</span></td><td ></td></tr>
+			<tr><td><a href="">Expression</a><span> 关键字（不能用作变量名或函数名）</span></td><td ></td></tr>
+
+		</table><table>
+			<tr><td><a href="">Keyword</a><span>关键字（不能用作变量名或函数名）</span></td><td ></td></tr>
+			<tr><td><a href="">break</a><span>打破(跳出循环)</span></td><td ></td></tr>
+			<tr><td><a href="">continue</a><span>继续(跳过循环中的一个迭代)</span></td><td ></td></tr>
+			<tr><td><a href="">switch</a><span>开关</span></td><td ></td></tr>
+			<tr><td><a href="">case</a><span>例子</span></td><td ></td></tr>
+			<tr><td><a href="">default</a><span>默认（不存在时执行）</span></td><td ></td></tr>
+			<tr><td><a href="">try</a><span>测试(需检测的代码块)-JavaScript 错误</span></td><td ></td></tr>
+			<tr><td><a href="">catch</a><span>捕捉(处理错误) -JavaScript 错误</span></td><td ></td></tr>
+			<tr><td><a href="">throw</a><span>抛出(创建自定义错误) -JavaScript 错误</span></td><td ></td></tr>
+			<tr><td><a href="">finally</a><span>最后（结果如何都会执行）</span></td><td ></td></tr>
+			
+		</table><table>
+			<tr><td><a href="">while</a><span>条件（真时循环执行）</span></td><td ></td></tr>
+			<tr><td><a href="">do</a><span>做（先干一次再说）</span></td><td ></td></tr>
+			<tr><td><a href="">if</a><span>如果</span></td><td ></td></tr>
+			<tr><td><a href="">else</a><span>其他</span></td><td ></td></tr>
+			<tr><td><a href="">finally</a><span>最后</span></td><td ></td></tr>
+			<tr><td><a href="">false</a><span>假</span></td><td ></td></tr>
+			<tr><td><a href="">for</a><span>在…时</span></td><td ></td></tr>
+			<tr><td><a href="">in</a><span>在...里</span></td><td ></td></tr>
+			<tr><td><a href="">function</a><span>函数（可重复使用的代码块）</span></td><td ></td></tr>
+			<tr><td><a href="">instanceof</a><span>的例子（测试对象在原型链是否存在构造函数）</span></td><td ></td></tr>
+		</table>
+		<table>
+			<tr><td><a href="">new</a><span>新的（创建定义的对象类型）</span></td><td ></td></tr>
+			<tr><td><a href="">return</a><span>返回</span></td><td ></td></tr>
+			<tr><td><a href="">this</a><span>我本人(调用函数的那个对象)</span></td><td ></td></tr>
+			<tr><td><a href="">typeof</a><span>类型(获取数据类型)</span></td><td ></td></tr>
+			<tr><td><a href="">void</a><span>无效(void(0)异步用的多)</span></td><td ></td></tr>
+			<tr><td><a href="">with</a><span>具有(设置在对象中的作用域,避免使用)</span></td><td ></td></tr>
+			<tr><td><a href="">Error</a><span>错误</span></td><td ></td></tr>
+			<tr><td><a href="">delete</a><span>删除（删除对象的属性）</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+		</table>
+		<!-- 未完待续  http://www.w3school.com.cn/js/pro_js_value.asp -->
+		<!-- <table>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+		</table> -->
+	</div>
+	<div style="clear: both;"></div>
+
+	<div class="conbox">
+		<h2 id="h01_02">DOM（文档对象模型） <small>规定了访问HTML和XML的接口</small></h2>
+		<table>
+			<tr><td><a href="">Document</a><span>文档</span></td><td ></td></tr>
+			<tr><td><a href="">Object</a><span>对象</span></td><td ></td></tr>
+			<tr><td><a href="">Model</a><span>模型</span></td><td ></td></tr>
+			<tr><td><a href="">Parse</a><span>解析</span></td><td ></td></tr>
+			<tr><td><a href="">tree</a><span>树</span></td><td ></td></tr>
+			<tr><td><a href="">Node</a><span>节点</span></td><td ></td></tr>
+			<tr><td><a href="">node Name</a><span>标记名</span></td><td ></td></tr>
+			<tr><td><a href="">node Type</a><span>结点类型</span></td><td ></td></tr>
+			<tr><td><a href="">data</a><span>结点内容</span></td><td ></td></tr>
+			<tr><td><a href="">parent Node</a><span>父结点对象集合</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">first Child</a><span>子结点对象集合</span></td><td ></td></tr>
+			<tr><td><a href="">last Child</a><span>子结点对象集合</span></td><td ></td></tr>
+			<tr><td><a href="">previous Sibling</a><span>兄弟结点对象集合</span></td><td ></td></tr>
+			<tr><td><a href="">next Sibling</a><span>兄弟结点对象集合</span></td><td ></td></tr>
+			<tr><td><a href="">Category</a><span>类别</span></td><td ></td></tr>
+			<tr><td><a href="">WordNum</a><span>非链接文字数</span></td><td ></td></tr>
+			<tr><td><a href="">LinkNum</a><span>超链接数</span></td><td ></td></tr>
+			<tr><td><a href="">Atti bution</a><span>属性集</span></td><td ></td></tr>
+			<tr><td><a href="">Influence</a><span>影响度因子</span></td><td ></td></tr>
+			<tr><td><a href="">title</a><span>标题</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">text</a><span>文本</span></td><td ></td></tr>
+			<tr><td><a href="">test</a><span>测试</span></td><td ></td></tr>
+			<tr><td><a href="">meta</a><span>元</span></td><td ></td></tr>
+			<tr><td><a href="">table</a><span>表格</span></td><td ></td></tr>
+			<tr><td><a href="">strong</a><span>强壮的</span></td><td ></td></tr>
+			<tr><td><a href="">heading</a><span>标题、题目h1-h6</span></td><td ></td></tr>
+			<tr><td><a href="">bold</a><span>粗体</span></td><td ></td></tr>
+			<tr><td><a href="">images</a><span>图片</span></td><td ></td></tr>
+			<tr><td><a href="">picture</a><span>图画</span></td><td ></td></tr>
+			<tr><td><a href="">photo</a><span>照片</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">Content</a><span>内容</span></td><td ></td></tr>
+			<tr><td><a href="">vision</a><span>视觉</span></td><td ></td></tr>
+			<tr><td><a href="">block</a><span>块</span></td><td ></td></tr>
+			<tr><td><a href="">Other</a><span>其他</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+		</table>
+		
+	</div>
+	<div style="clear: both;"></div>
+
+	<div class="conbox">
+		<h2 id="h01_03">BOM（浏览器对象模型） <small>提供了浏览器窗口之间进行交互的对象和方法</small></h2>
+		<table>
+			<tr><td><a href="">Browser</a><span>浏览器</span></td><td ></td></tr>
+			<tr><td><a href="">Window</a><span>窗口</span></td><td ></td></tr>
+			<tr><td><a href="">frame</a><span>框架</span></td><td ></td></tr>
+			<tr><td><a href="">frames[]</a><span>(窗口中框架集合)</span></td><td ></td></tr>
+			<tr><td><a href="">closed</a><span>关闭(窗口是否已被关闭)</span></td><td ></td></tr>
+			<tr><td><a href="">defaultStatus</a><span>默认状态(状态栏默认文本)</span></td><td ></td></tr>
+			<tr><td><a href="">outerheight</a><span>外高</span></td><td ></td></tr>
+			<tr><td><a href="">outerwidth</a><span>外宽</span></td><td ></td></tr>
+			<tr><td><a href="">innerheight</a><span>内高</span></td><td ></td></tr>
+			<tr><td><a href="">innerwidth</a><span>内宽</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">document</a><span>文档</span></td><td ></td></tr>
+			<tr><td><a href="">length</a><span>长度(框架数量)</span></td><td ></td></tr>	
+			<tr><td><a href="">name</a><span>名称(窗口名称)</span></td><td ></td></tr>
+			<tr><td><a href="">opener</a><span>开瓶器?(窗口的引用)</span></td><td ></td></tr>
+			<tr><td><a href="">pageXOffset</a><span>页面X坐标偏移</span></td><td ></td></tr>
+			<tr><td><a href="">pageYOffset</a><span>页面坐标偏移</span></td><td ></td></tr>
+			<tr><td><a href="">parent</a><span>起源(父窗口)</span></td><td ></td></tr>
+			<tr><td><a href="">Screen</a><span>屏幕</span></td><td ></td></tr>
+			<tr><td><a href="">top</a><span>顶部(最顶层窗口)</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>()</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">alert()</a><span>(警告框)</span></td><td ></td></tr>
+			<tr><td><a href="">blur()</a><span>模糊(键盘焦点从顶层窗口移开)</span></td><td ></td></tr>
+			<tr><td><a href="">focus()</a><span>(给予窗口键盘焦点)</span></td><td ></td></tr>
+			<tr><td><a href="">open()</a><span>打开(打开窗口)</span></td><td ></td></tr>
+			<tr><td><a href="">print()</a><span>打印(打印当前窗口内容)</span></td><td ></td></tr>
+			<tr><td><a href="">close()</a><span>关闭(关闭窗口)</span></td><td ></td></tr>
+			<tr><td><a href="">confirm()</a><span>确认(带确定取消的对话框)</span></td><td ></td></tr>
+			<tr><td><a href="">createPopup()</a><span>创建弹出窗口(创建pop-up窗口)</span></td><td ></td></tr>
+			<tr><td><a href="">moveBy()</a><span>移动到(移动指定到像素)</span></td><td ></td></tr>
+			<tr><td><a href="">moveTo()</a><span>搬去(左上角移动指定坐标)</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">prompt()</a><span>提示(有输入框的对话框)</span></td><td ></td></tr>
+			<tr><td><a href="">resizeBy()</a><span>调整大小</span></td><td ></td></tr>
+			<tr><td><a href="">resizeTo()</a><span>调整大小(调整宽度和高度)</span></td><td ></td></tr>
+			<tr><td><a href="">scrollBy()</a><span>滚动到(按像素滚动内容)</span></td><td ></td></tr>
+			<tr><td><a href="">scrollTo()</a><span>滚动至(按坐标滚动内容)</span></td><td ></td></tr>
+			<tr><td><a href="">setInterval()</a><span>设置间隔()</span></td><td ></td></tr>
+			<tr><td><a href="">setTimeout()</a><span>设置间隔(循环执行)</span></td><td ></td></tr>
+			<tr><td><a href="">clearInterval()</a><span>清除间隔(取消setInterval())</span></td><td ></td></tr>
+			<tr><td><a href="">clearTimeout()</a><span>清除超时(取消setTimeout())</span></td><td ></td></tr>
+		</table>
+		
+	</div>
+	<div style="clear: both;"></div>
+	
+	
+	
+
+</div>
+
+
+
+
+
+<div class="big_conbox">
+	<h1 id="h02_01">JS的基本数据类型和引用数据类型 <small></small></h1>
+	<div class="conbox">
+		<h2>  <small> </small></h2>
+		<table class="conbox_table">
+			<table>
+			<tr><td><a href="">Basic</a><span>基本</span></td><td ></td></tr>
+			<tr><td><a href="">Reference</a><span>引用</span></td><td ></td></tr>
+			<tr><td><a href="">Data</a><span>数据</span></td><td ></td></tr>
+			<tr><td><a href="">Type</a><span>类型</span></td><td ></td></tr>
+			<tr><td><a href="">undefined</a><span>未定义</span></td><td ></td></tr>
+			<tr><td><ol><li>在使用var声明变量，但未对其加以初始化时，这个变量的类型就是undefined，且其默认初始化值为undefined。</li><li>对未声明与初始化的变量，直接使用，那么这个变量的类型也是undefined，但是没有默认初始化值。</li></ol></td><td ></td></tr>
+			<!-- 作者：Miss____Du链接：https://www.jianshu.com/p/4841fcc6b4e7來源：简书 -->
+			<tr><td><a href="">null</a><span>空值</span></td><td ></td></tr>
+			<tr><td>
+				<ol>
+					<li>null类型的默认值是null，从逻辑角度讲，是表示一个空对象指针。</li>
+					<li>js高级程序上有讲到，undefined类型是派生自null的，不严格的说二者都是指没有明确赋值的类型，但是细分之后，undefined类型，被用来形容未经初始化的变量，null类型被用来形容空对象指针。</li>
+					<li>所以，如果定义的变量准备在将来用于保存对象（即复杂的数据类型object），那么就该将该变量初始化为null。</li>
+					<li>区分，当一个变量声明后，未初始化，则该值为undefined，如果这个值是为了保存对象，则修改其默认初始化的值，改为null。 所以当检测其类型时，会显示类型为object。</li>
+					<li>*所以有时候，当问到js基本数据类型时，会忽略null。</li>
+				</ol>
+			</td><td ></td></tr>
+		
+
+			<tr><td><a href="">boolean</a><span>布尔</span></td><td ></td></tr>
+
+			<tr><td>
+				<ol>
+
+
+
+
+
+					<li>即布尔类型，该类型有两个值：true false</li>
+					<li>Bloolean()函数，可以将其他类型的值转换为布尔类型。</li>
+					<li>转换规则
+						<img src="data:image/png;base64,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">
+					</li>
+					<li>规则
+这些转换规则对理解流程控制语句，如（if）语句自动执行相应的转换非常重要。</li>
+				</ol>
+			</td><td></td></tr>
+
+
+			<tr><td><a href="">number</a><span>数</span></td><td ></td></tr>
+
+			<tr><td>
+				<ol>
+					<li>该类型的表示方法有两种形式，第一种是整数，第二种为浮点数。</li>
+					<li>整数 可以通过十进制，八进制，十六进制的字面值来表示</li>
+					<li>浮点数
+						<ol>
+							<li>1、该数值中必须包含一个小数点，且小数点后必须有一位数字，如果小数点后只有零，则该小数会被转化为整数。</li>
+							<li>2、浮点数所占据的内存空间是整数的两倍。</li>
+							<li></li>
+							<li>3、对极大极小的浮点数采用e表示法。</li>
+						</ol>
+					</li>
+					
+					<li>NaN
+						<ol>
+							<li>1、即非数值，是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数，未返回数值的情况。比如任何数值除以0，本是不符合规范的，js里，这样的操作返回NaN（但是实际上，只有0除以0时返回NaN，其他则无穷值）。</li>
+							<li>2、NaN有两个不同寻常的特点：任何涉及NaN的操作都会返回NaN，NaN值与任何值都不相等，包括本身。</li>
+							<li>3、isNaN()函数，这个函数可以判断，传递的参数是否“不是数值”这里涉及数值转换的问题，例如“10”这个字符串就可以转换为10，但是“blue”这个字符串则无法转换为数字，所以isNaN("blue")==true</li>
+						</ol>
+					</li>
+					<li>数值转换
+						<ol>
+							<li>1、有三个函数可以把非数值转换为数值：Number()，parseInt()，parseFloat()。第一个可以用于任何数据类型，后两个，则专门用于把字符串转化为数值。</li>
+							<li>2、这三个函数对于同样的输入有不同的效果。</li>
+							<li>3、数值转换（另写一篇文章）</li>
+						</ol>
+					</li>
+					<li></li>
+					<li></li>
+				</ol>
+			</td><td></td></tr>
+			<tr><td><a href="">string</a><span>串</span></td><td ></td></tr>
+
+			<tr>
+				<td>
+					<ol>
+						<li>字符串类型是最熟悉不过的啦，至于用单引号，还是双引号，在js中还是没有差别的。记得成对出现。
+var firstName='zakas';</li>
+						<li>字符串中一些特殊的字面量，即转义序列。类似于c语言学过的那些、</li>
+						<li>toString()函数，每个值都有，但是null与undefined没有。一般情况下使用这个函数时，没有必要传递参数，但是调用数值的 toString()方法时，可以传递基数，默认传递的是10，代表十进制。</li>
+						<li>String()函数可以将任何类型的值转换为字符串，包括null转换为'null'、undefined转换为'undefined'。</li>
+					</ol>
+				</td>
+				<td></td>
+			</tr>
+			<tr><td><a href="">symbol</a><span>符号</span></td><td ></td></tr>
+			
+		</table><table>
+			<tr><td><a href="">object</a><span>对象</span></td><td ></td></tr>
+			<tr>
+				<td>
+					<ol>
+						<li>该类型实例化的对象，是一组数据和功能（函数）的集合。</li>
+						<li>实例化对象的过程有两种，一种是通过new操作符，一种是通过对象字面量表示法。</li>
+						<li>object类型是最基本的类型，我们可以在其基础上继承出更多的类型，像我们知道的Array()、Date()、还有有意思的function()类型，都是从object继承的，而且这些类型都在程序员使用前被默认设置了属性和方法，供程序员调用。</li>
+						<li>而以上类型又有一个笼统的称呼为引用类型。为什么是引用类型呢？var obj=new Object();</li>
+						<li>在学习C的时候，知道“ int a; int &ra=a;”，所以ra是a的引用，ra的类型为引用类型，系统并不为引用类型分配内存空间。
+但是，js所指的引用类型，在《js高级程序设计》这本书里，也确实是这样的概念，obj只是引用类型，是堆内存中一个对象的别称，本身并不占用内存。
+</li>
+						<li>但是这本书里，也说对引用类型的访问是按照引用访问，但是当
+var obj2=obj;
+这样将obj的值复给obj2时，会将堆内存中object的地址赋给obj2，这句话，又貌似是在说，在声明一个引用类型时，是会将实例化对象地址存到栈内存中，然后通过地址访问堆内存。</li>
+						<li>还有一个难点，也是我在学习引用类型的时候困惑的地方，C的时候，引用是可以做参数传递的，而且，引用不能被赋值，即不能改变引用的值。但是js中，函数的参数都是值传递的，而对于js内的引用类型，其值，也就默认为栈内存中的地址。
+						现在，对于创建对象的内存图，我查了广大网友的资料，大家默认图2,希望有对js引用类型理解更清晰的朋友，可以告诉我一下。谢谢啦！
+						</li>
+						<li><img width=360 src="data:image/png;base64,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" alt=""></li>
+						
+					</ol>
+				</td>
+				<td></td>
+			</tr>
+			<tr><td><a href="">array</a><span>数组</span></td><td ></td></tr>
+			<tr><td><a href="">function</a><span>函数</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+		</table>
+		</table>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+<div class="big_conbox">
+	<h1 id="h02_01">xxxxxxx <small></small></h1>
+	<div class="conbox">
+		<h2>xxxxxx <small>oooo</small></h2>
+		<table class="conbox_table">
+			<table>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+		</table><table>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+			<tr><td><a href="">xxxx</a><span>哈哈哈</span></td><td ></td></tr>
+		</table>
+		</table>
+	</div>
+	<div style="clear: both;"></div>
+</div>
+
+<div class="listbox listbox_on" itemprop="text">
+	<div class="listbox_in">
+		<h3>
+			<a href="https://github.com/poetries/FE-Interview-Questions/blob/master/JavaScript.md">
+				前端面试常考问题整理，按模块知识点分类➜
+			</a>
+		</h3>
+		<hr>
+		<p>
+			<strong>
+				<a href="#h01_01">
+					JavaScript的组成
+				</a>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				JavaScript由以下三部分组成：
+				<ul>
+					<li>
+						<a href="#h01_01">
+							ECMAScript（核心）：JavaScript语言基础
+						</a>
+					</li>
+					<li>
+						<a href="#h01_02">
+							DOM（文档对象模型）：规定了访问HTML和XML的接口
+						</a>
+					</li>
+					<li>
+						<a href="#h01_03">
+							BOM（浏览器对象模型）：提供了浏览器窗口之间进行交互的对象和方法
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				<a href="#h02_01">
+					JS的基本数据类型和引用数据类型
+				</a>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				基本数据类型：undefined、null、boolean、number、string、symbol
+			</li>
+			<li>
+				引用数据类型：object、array、function
+			</li>
+		</ul>
+		<p>
+			<strong>
+				<a href="#h03_01">
+					检测浏览器版本版本有哪些方式？
+				</a>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				根据navigator.userAgent
+				<li>
+					根据window对象的成员
+		</ul>
+		<p>
+			<strong>
+				<a href="#h04_01">
+					介绍JS有哪些内置对象？
+				</a>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				数据封装类对象：Object、Array、Boolean、Number、String
+			</li>
+			<li>
+				其他对象：Function、Arguments、Math、Date、RegExp、Error
+			</li>
+			<li>
+				ES6新增对象：Symbol、Map、Set、Promises、Proxy、Reflect
+			</li>
+		</ul>
+		<p>
+			<strong>
+				<a href="#h05_01">
+					说几条写JavaScript的基本规范？
+				</a>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				代码缩进，建议使用“四个空格”缩进
+			</li>
+			<li>
+				代码段使用花括号{}包裹
+			</li>
+			<li>
+				语句结束使用分号;
+			</li>
+			<li>
+				变量和函数在使用前进行声明
+			</li>
+			<li>
+				以大写字母开头命名构造函数，全大写命名常量
+			</li>
+			<li>
+				规范定义JSON对象，补全双引号
+			</li>
+			<li>
+				用{}和[]声明对象和数组
+			</li>
+		</ul>
+		<p>
+			<strong>
+				<a href="#h06_01">
+				如何编写高性能的JavaScript？
+				</a>
+			</strong>
+		</p>
+		<ul>
+			<li>
+				遵循严格模式："use strict";
+			</li>
+			<li>
+				将js脚本放在页面底部，加快渲染页面
+			</li>
+			<li>
+				将js脚本将脚本成组打包，减少请求
+			</li>
+			<li>
+				使用非阻塞方式下载js脚本
+			</li>
+			<li>
+				尽量使用局部变量来保存全局变量
+			</li>
+			<li>
+				尽量减少使用闭包
+			</li>
+			<li>
+				使用window对象属性方法时，省略window
+			</li>
+			<li>
+				尽量减少对象成员嵌套
+			</li>
+			<li>
+				缓存DOM节点的访问
+			</li>
+			<li>
+				通过避免使用eval()和Function()构造器
+			</li>
+			<li>
+				给setTimeout()和setInterval()传递函数而不是字符串作为参数
+			</li>
+			<li>
+				尽量使用直接量创建对象和数组
+			</li>
+			<li>
+				最小化重绘(repaint)和回流(reflow)
+			</li>
+		</ul>
+		<p>
+			<strong>
+				描述浏览器的渲染过程，DOM树和渲染树的区别？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					浏览器的渲染过程：
+				</p>
+				<ul>
+					<li>
+						解析HTML构建DOM(DOM树)，并行请求css/image/js
+					</li>
+					<li>
+						CSS文件下载完成，开始构建CSSOM(CSS树)
+					</li>
+					<li>
+						CSSOM构建结束后，和DOM一起生成Render Tree(渲染树)
+					</li>
+					<li>
+						布局(Layout)：计算出每个节点在屏幕中的位置
+					</li>
+					<li>
+						显示(Painting)：通过显卡把页面画到屏幕上
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					DOM树和渲染树的区别：
+				</p>
+				<ul>
+					<li>
+						DOM树与HTML标签一一对应，包括head和隐藏元素
+					</li>
+					<li>
+						渲染树不包括head和隐藏元素，大段文本的每一个行都是独立节点，每一个节点都有对应的css属性
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				重绘和回流（重排）的区别和关系？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				重绘：当渲染树中的元素外观（如：颜色）发生改变，不影响布局时，产生重绘
+			</li>
+			<li>
+				回流：当渲染树中的元素的布局（如：尺寸、位置、隐藏/状态状态）发生改变时，产生重绘回流
+			</li>
+			<li>
+				注意：JS获取Layout属性值（如：offsetLeft、scrollTop、getComputedStyle等）也会引起回流。因为浏览器需要通过回流计算最新值
+			</li>
+			<li>
+				回流必将引起重绘，而重绘不一定会引起回流
+			</li>
+		</ul>
+		<p>
+			<strong>
+				如何最小化重绘(repaint)和回流(reflow)？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				需要要对元素进行复杂的操作时，可以先隐藏(display:"none")，操作完成后再显示
+			</li>
+			<li>
+				需要创建多个DOM节点时，使用DocumentFragment创建完后一次性的加入document
+			</li>
+			<li>
+				缓存Layout属性值，如：var left=elem.offsetLeft;这样，多次使用left只产生一次回流
+			</li>
+			<li>
+				尽量避免用table布局（table元素一旦触发回流就会导致table里所有的其它元素回流）
+			</li>
+			<li>
+				避免使用css表达式(expression)，因为每次调用都会重新计算值（包括加载页面）
+			</li>
+			<li>
+				尽量使用css属性简写，如：用border代替border-width,border-style,border-color
+			</li>
+			<li>
+				批量修改元素样式：elem.className和elem.style.cssText代替elem.style.xxx
+			</li>
+		</ul>
+		<p>
+			<strong>
+				script的位置是否会影响首屏显示时间？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				在解析HTML生成DOM过程中，js文件的下载是并行的，不需要DOM处理到script节点。因此，script的位置不影响首屏显示的开始时间。
+			</li>
+			<li>
+				浏览器解析HTML是自上而下的线性过程，script作为HTML的一部分同样遵循这个原则
+			</li>
+			<li>
+				因此，script会延迟DomContentLoad，只显示其上部分首屏内容，从而影响首屏显示的完成时间
+			</li>
+		</ul>
+		<p>
+			<strong>
+				解释JavaScript中的作用域与变量声明提升？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					JavaScript作用域：
+				</p>
+				<ul>
+					<li>
+						在Java、C等语言中，作用域为for语句、if语句或{}内的一块区域，称为作用域；
+					</li>
+					<li>
+						而在JavaScript中，作用域为function(){}内的区域，称为函数作用域。
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					JavaScript变量声明提升：
+				</p>
+				<ul>
+					<li>
+						在JavaScript中，函数声明与变量声明经常被JavaScript引擎隐式地提升到当前作用域的顶部。
+					</li>
+					<li>
+						声明语句中的赋值部分并不会被提升，只有名称被提升
+					</li>
+					<li>
+						函数声明的优先级高于变量，如果变量名跟函数名相同且未赋值，则函数声明会覆盖变量声明
+					</li>
+					<li>
+						如果函数有多个同名参数，那么最后一个参数（即使没有定义）会覆盖前面的同名参数
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				介绍JavaScript的原型，原型链？有什么特点？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					原型：
+				</p>
+				<ul>
+					<li>
+						JavaScript的所有对象中都包含了一个[
+						<strong>
+							proto
+						</strong>
+						]内部属性，这个属性所对应的就是该对象的原型
+					</li>
+					<li>
+						JavaScript的函数对象，除了原型[
+						<strong>
+							proto
+						</strong>
+						]之外，还预置了prototype属性
+					</li>
+					<li>
+						当函数对象作为构造函数创建实例时，该prototype属性值将被作为实例对象的原型[
+						<strong>
+							proto
+						</strong>
+						]。
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					原型链：
+				</p>
+				<ul>
+					<li>
+						当一个对象调用的属性/方法自身不存在时，就会去自己[
+						<strong>
+							proto
+						</strong>
+						]关联的前辈prototype对象上去找
+					</li>
+					<li>
+						如果没找到，就会去该prototype原型[
+						<strong>
+							proto
+						</strong>
+						]关联的前辈prototype去找。依次类推，直到找到属性/方法或undefined为止。从而形成了所谓的“原型链”
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					原型特点：
+				</p>
+				<ul>
+					<li>
+						JavaScript对象是通过引用来传递的，当修改原型时，与之相关的对象也会继承这一改变
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				JavaScript有几种类型的值？，你能画一下他们的内存图吗
+			</strong>
+		</p>
+		<ul>
+			<li>
+				原始数据类型（Undefined，Null，Boolean，Number、String）--栈
+			</li>
+			<li>
+				引用数据类型（对象、数组和函数）--堆
+			</li>
+			<li>
+				两种类型的区别是：存储位置不同：
+			</li>
+			<li>
+				原始数据类型是直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据；
+			</li>
+			<li>
+				引用数据类型存储在堆(heap)中的对象，占据空间大、大小不固定，如果存储在栈中，将会影响程序运行的性能；
+			</li>
+			<li>
+				引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。
+			</li>
+			<li>
+				当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。
+			</li>
+		</ul>
+		<p>
+			<strong>
+				JavaScript如何实现一个类，怎么实例化这个类？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				构造函数法（this+prototype）--用new关键字生成实例对象
+				<ul>
+					<li>
+						缺点：用到了this和prototype，编写复杂，可读性差
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					function
+				</span>
+				<span class="pl-en">
+					Mobile
+				</span>
+				(
+				<span class="pl-smi">
+					name
+				</span>
+				,
+				<span class="pl-smi">
+					price
+				</span>
+				){
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					name
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				name;
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-smi">
+					price
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				price}
+				<span class="pl-smi">
+					Mobile
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				.
+				<span class="pl-en">
+					sell
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					function
+				</span>
+				(){
+				<span class="pl-en">
+					alert
+				</span>
+				(
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					name
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						"
+					</span>
+					，售价 $
+					<span class="pl-pds">
+						"
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-smi">
+					price
+				</span>
+				)}
+				<span class="pl-k">
+					var
+				</span>
+				iPhone7
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					new
+				</span>
+				<span class="pl-en">
+					Mobile
+				</span>
+				(
+				<span class="pl-s">
+					<span class="pl-pds">
+						"
+					</span>
+					iPhone7
+					<span class="pl-pds">
+						"
+					</span>
+				</span>
+				,
+				<span class="pl-c1">
+					1000
+				</span>
+				);
+				<span class="pl-smi">
+					iPhone7
+				</span>
+				.
+				<span class="pl-en">
+					sell
+				</span>
+				();
+			</pre>
+		</div>
+		<ul>
+			<li>
+				Object.create法--用Object.create()生成实例对象
+			</li>
+			<li>
+				缺点：不能实现私有属性和私有方法，实例对象之间也不能共享数据
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					var
+				</span>
+				Person
+				<span class="pl-k">
+					=
+				</span>
+				{firstname
+				<span class="pl-k">
+					:
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						"
+					</span>
+					Mark
+					<span class="pl-pds">
+						"
+					</span>
+				</span>
+				,lastname
+				<span class="pl-k">
+					:
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						"
+					</span>
+					Yun
+					<span class="pl-pds">
+						"
+					</span>
+				</span>
+				,age
+				<span class="pl-k">
+					:
+				</span>
+				<span class="pl-c1">
+					25
+				</span>
+				,
+				<span class="pl-en">
+					introduce
+				</span>
+				<span class="pl-k">
+					:
+				</span>
+				<span class="pl-k">
+					function
+				</span>
+				(){
+				<span class="pl-en">
+					alert
+				</span>
+				(
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					I am
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-smi">
+					Person
+				</span>
+				.
+				<span class="pl-smi">
+					firstname
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-smi">
+					Person
+				</span>
+				.
+				<span class="pl-smi">
+					lastname
+				</span>
+				)}};
+				<span class="pl-k">
+					var
+				</span>
+				person
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-c1">
+					Object
+				</span>
+				.
+				<span class="pl-en">
+					create
+				</span>
+				(Person);
+				<span class="pl-smi">
+					person
+				</span>
+				.
+				<span class="pl-en">
+					introduce
+				</span>
+				();
+				<span class="pl-c">
+					<span class="pl-c">
+						<span class="pl-k">
+							if
+						</span>
+						(
+						<span class="pl-k">
+							!
+						</span>
+						<span class="pl-c1">
+							Object
+						</span>
+						.
+						<span class="pl-smi">
+							create
+						</span>
+						){
+						<span class="pl-c1">
+							Object
+						</span>
+						.
+						<span class="pl-en">
+							create
+						</span>
+						<span class="pl-k">
+							=
+						</span>
+						<span class="pl-k">
+							function
+						</span>
+						(
+						<span class="pl-smi">
+							o
+						</span>
+						){
+						<span class="pl-k">
+							function
+						</span>
+						<span class="pl-en">
+							F
+						</span>
+						(){}
+						<span class="pl-c1">
+							F
+						</span>
+						.
+						<span class="pl-c1">
+							prototype
+						</span>
+						<span class="pl-k">
+							=
+						</span>
+						o;
+						<span class="pl-k">
+							return
+						</span>
+						<span class="pl-k">
+							new
+						</span>
+						<span class="pl-en">
+							F
+						</span>
+						()}}
+			</pre>
+		</div>
+		<ul>
+			<li>
+				极简主义法（消除this和prototype）--调用createNew()得到实例对象
+				<ul>
+					<li>
+						优点：容易理解，结构清晰优雅，符合传统的"面向对象编程"的构造
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					var
+				</span>
+				Cat
+				<span class="pl-k">
+					=
+				</span>
+				{age
+				<span class="pl-k">
+					:
+				</span>
+				<span class="pl-c1">
+					3
+				</span>
+				,
+				<span class="pl-c">
+					<span class="pl-c">
+						<span class="pl-en">
+							createNew
+						</span>
+						<span class="pl-k">
+							:
+						</span>
+						<span class="pl-k">
+							function
+						</span>
+						(){
+						<span class="pl-k">
+							var
+						</span>
+						cat
+						<span class="pl-k">
+							=
+						</span>
+						{};
+						<span class="pl-c">
+							<span class="pl-c">
+								<span class="pl-smi">
+									cat
+								</span>
+								.
+								<span class="pl-c1">
+									name
+								</span>
+								<span class="pl-k">
+									=
+								</span>
+								<span class="pl-s">
+									<span class="pl-pds">
+										"
+									</span>
+									小咪
+									<span class="pl-pds">
+										"
+									</span>
+								</span>
+								;
+								<span class="pl-k">
+									var
+								</span>
+								sound
+								<span class="pl-k">
+									=
+								</span>
+								<span class="pl-s">
+									<span class="pl-pds">
+										"
+									</span>
+									喵喵喵
+									<span class="pl-pds">
+										"
+									</span>
+								</span>
+								;
+								<span class="pl-c">
+									<span class="pl-c">
+										<span class="pl-smi">
+											cat
+										</span>
+										.
+										<span class="pl-en">
+											makeSound
+										</span>
+										<span class="pl-k">
+											=
+										</span>
+										<span class="pl-k">
+											function
+										</span>
+										(){
+										<span class="pl-en">
+											alert
+										</span>
+										(sound);
+										<span class="pl-c">
+											<span class="pl-c">
+												};
+												<span class="pl-smi">
+													cat
+												</span>
+												.
+												<span class="pl-en">
+													changeAge
+												</span>
+												<span class="pl-k">
+													=
+												</span>
+												<span class="pl-k">
+													function
+												</span>
+												(
+												<span class="pl-smi">
+													num
+												</span>
+												){
+												<span class="pl-smi">
+													Cat
+												</span>
+												.
+												<span class="pl-smi">
+													age
+												</span>
+												<span class="pl-k">
+													=
+												</span>
+												num;
+												<span class="pl-c">
+													<span class="pl-c">
+														};
+														<span class="pl-k">
+															return
+														</span>
+														cat;
+														<span class="pl-c">
+															<span class="pl-c">
+																}};
+																<span class="pl-k">
+																	var
+																</span>
+																cat
+																<span class="pl-k">
+																	=
+																</span>
+																<span class="pl-smi">
+																	Cat
+																</span>
+																.
+																<span class="pl-en">
+																	createNew
+																</span>
+																();
+																<span class="pl-smi">
+																	cat
+																</span>
+																.
+																<span class="pl-en">
+																	makeSound
+																</span>
+																();
+			</pre>
+		</div>
+		<ul>
+			<li>
+				ES6语法糖class--用new关键字生成实例对象
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					class
+				</span>
+				<span class="pl-en">
+					Point
+				</span>
+				{
+				<span class="pl-en">
+					constructor
+				</span>
+				(
+				<span class="pl-smi">
+					x
+				</span>
+				,
+				<span class="pl-smi">
+					y
+				</span>
+				){
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					x
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				x;
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					y
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				y}
+				<span class="pl-en">
+					toString
+				</span>
+				(){
+				<span class="pl-k">
+					return
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					(
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					x
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					,
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					y
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					)
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				}}
+				<span class="pl-k">
+					var
+				</span>
+				point
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					new
+				</span>
+				<span class="pl-en">
+					Point
+				</span>
+				(
+				<span class="pl-c1">
+					2
+				</span>
+				,
+				<span class="pl-c1">
+					3
+				</span>
+				);
+			</pre>
+		</div>
+		<p>
+			<strong>
+				Javascript如何实现继承？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				构造函数绑定：使用call或apply方法，将父对象的构造函数绑定在子对象上
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					function
+				</span>
+				<span class="pl-en">
+					Cat
+				</span>
+				(
+				<span class="pl-smi">
+					name
+				</span>
+				,
+				<span class="pl-smi">
+					color
+				</span>
+				){
+				<span class="pl-smi">
+					Animal
+				</span>
+				.
+				<span class="pl-c1">
+					apply
+				</span>
+				(
+				<span class="pl-c1">
+					this
+				</span>
+				,
+				<span class="pl-c1">
+					arguments
+				</span>
+				);
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					name
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				name;
+				<span class="pl-c1">
+					this
+				</span>
+				.
+				<span class="pl-c1">
+					color
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				color}
+			</pre>
+		</div>
+		<ul>
+			<li>
+				实例继承：将子对象的prototype指向父对象的一个实例
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-smi">
+					Cat
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					new
+				</span>
+				<span class="pl-en">
+					Animal
+				</span>
+				();
+				<span class="pl-smi">
+					Cat
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				.
+				<span class="pl-c1">
+					constructor
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				Cat;
+			</pre>
+		</div>
+		<ul>
+			<li>
+				拷贝继承：如果把父对象的所有属性和方法，拷贝进子对象
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					function
+				</span>
+				<span class="pl-en">
+					extend
+				</span>
+				(
+				<span class="pl-smi">
+					Child
+				</span>
+				,
+				<span class="pl-smi">
+					Parent
+				</span>
+				){
+				<span class="pl-k">
+					var
+				</span>
+				p
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-smi">
+					Parent
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				;
+				<span class="pl-k">
+					var
+				</span>
+				c
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-smi">
+					Child
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				;
+				<span class="pl-k">
+					for
+				</span>
+				(
+				<span class="pl-k">
+					var
+				</span>
+				i
+				<span class="pl-k">
+					in
+				</span>
+				p){c[i]
+				<span class="pl-k">
+					=
+				</span>
+				p[i]}
+				<span class="pl-smi">
+					c
+				</span>
+				.
+				<span class="pl-smi">
+					uber
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				p}
+			</pre>
+		</div>
+		<ul>
+			<li>
+				原型继承：将子对象的prototype指向父对象的prototype
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					function
+				</span>
+				<span class="pl-en">
+					extend
+				</span>
+				(
+				<span class="pl-smi">
+					Child
+				</span>
+				,
+				<span class="pl-smi">
+					Parent
+				</span>
+				){
+				<span class="pl-k">
+					var
+				</span>
+				<span class="pl-en">
+					F
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					function
+				</span>
+				(){};
+				<span class="pl-c1">
+					F
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-smi">
+					Parent
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				;
+				<span class="pl-smi">
+					Child
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					new
+				</span>
+				<span class="pl-en">
+					F
+				</span>
+				();
+				<span class="pl-smi">
+					Child
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				.
+				<span class="pl-c1">
+					constructor
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				Child;
+				<span class="pl-smi">
+					Child
+				</span>
+				.
+				<span class="pl-smi">
+					uber
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-smi">
+					Parent
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				}
+			</pre>
+		</div>
+		<ul>
+			<li>
+				ES6语法糖extends：class ColorPoint extends Point{}
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					class
+				</span>
+				<span class="pl-en">
+					ColorPoint
+				</span>
+				<span class="pl-k">
+					extends
+				</span>
+				<span class="pl-e">
+					Point
+				</span>
+				{
+				<span class="pl-en">
+					constructor
+				</span>
+				(
+				<span class="pl-smi">
+					x
+				</span>
+				,
+				<span class="pl-smi">
+					y
+				</span>
+				,
+				<span class="pl-smi">
+					color
+				</span>
+				){
+				<span class="pl-c1">
+					super
+				</span>
+				(x,y);
+				<span class="pl-c">
+					<span class="pl-c">
+						<span class="pl-c1">
+							this
+						</span>
+						.
+						<span class="pl-c1">
+							color
+						</span>
+						<span class="pl-k">
+							=
+						</span>
+						color}
+						<span class="pl-en">
+							toString
+						</span>
+						(){
+						<span class="pl-k">
+							return
+						</span>
+						<span class="pl-c1">
+							this
+						</span>
+						.
+						<span class="pl-c1">
+							color
+						</span>
+						<span class="pl-k">
+							+
+						</span>
+						<span class="pl-s">
+							<span class="pl-pds">
+								'
+							</span>
+							<span class="pl-pds">
+								'
+							</span>
+						</span>
+						<span class="pl-k">
+							+
+						</span>
+						<span class="pl-c1">
+							super
+						</span>
+						.
+						<span class="pl-c1">
+							toString
+						</span>
+						();
+						<span class="pl-c">
+							<span class="pl-c">
+								}}
+			</pre>
+		</div>
+		<p>
+			<strong>
+				Javascript作用链域?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节
+			</li>
+			<li>
+				如果当前作用域没有找到属性或方法，会向上层作用域查找，直至全局函数，这种形式就是作用域链
+			</li>
+		</ul>
+		<p>
+			<strong>
+				谈谈this对象的理解
+			</strong>
+		</p>
+		<ul>
+			<li>
+				this总是指向函数的直接调用者
+			</li>
+			<li>
+				如果有new关键字，this指向new出来的实例对象
+			</li>
+			<li>
+				在事件中，this指向触发这个事件的对象
+			</li>
+			<li>
+				IE下attachEvent中的this总是指向全局对象Window
+			</li>
+		</ul>
+		<p>
+			<strong>
+				eval是做什么的？
+			</strong>
+		</p>
+		<p>
+			<strong>
+				eval的功能是把对应的字符串解析成JS代码并运行
+			</strong>
+		</p>
+		<ul>
+			<li>
+				应该避免使用eval，不安全，非常耗性能（先解析成js语句，再执行）
+			</li>
+			<li>
+				由JSON字符串转换为JSON对象的时候可以用eval('('+str+')');
+			</li>
+		</ul>
+		<p>
+			<strong>
+				什么是Window对象?什么是Document对象?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				Window对象表示当前浏览器的窗口，是JavaScript的顶级对象。
+			</li>
+			<li>
+				我们创建的所有对象、函数、变量都是Window对象的成员。
+			</li>
+			<li>
+				Window对象的方法和属性是在全局范围内有效的。
+			</li>
+			<li>
+				Document对象是HTML文档的根节点与所有其他节点（元素节点，文本节点，属性节点,注释节点）
+			</li>
+			<li>
+				Document对象使我们可以通过脚本对HTML页面中的所有元素进行访问
+			</li>
+			<li>
+				Document对象是Window对象的一部分，可通过window.document属性对其进行访问
+			</li>
+		</ul>
+		<p>
+			<strong>
+				介绍DOM的发展
+			</strong>
+		</p>
+		<ul>
+			<li>
+				DOM：文档对象模型（Document Object Model），定义了访问HTML和XML文档的标准，与编程语言及平台无关
+			</li>
+			<li>
+				DOM0：提供了查询和操作Web文档的内容API。未形成标准，实现混乱。如：document.forms['login']
+			</li>
+			<li>
+				DOM1：W3C提出标准化的DOM，简化了对文档中任意部分的访问和操作。如：JavaScript中的Document对象
+			</li>
+			<li>
+				DOM2：原来DOM基础上扩充了鼠标事件等细分模块，增加了对CSS的支持。如：getComputedStyle(elem,pseudo)
+			</li>
+			<li>
+				DOM3：增加了XPath模块和加载与保存（Load and Save）模块。如：XPathEvaluator
+			</li>
+		</ul>
+		<p>
+			<strong>
+				介绍DOM0，DOM2，DOM3事件处理方式区别
+			</strong>
+		</p>
+		<ul>
+			<li>
+				DOM0级事件处理方式：
+				<ul>
+					<li>
+						<code>
+							btn.onclick=func;
+						</code>
+					</li>
+					<li>
+						<code>
+							btn.onclick=null;
+						</code>
+					</li>
+				</ul>
+			</li>
+			<li>
+				DOM2级事件处理方式：
+				<ul>
+					<li>
+						<code>
+							btn.addEventListener('click',func,false);
+						</code>
+					</li>
+					<li>
+						<code>
+							btn.removeEventListener('click',func,false);
+						</code>
+					</li>
+					<li>
+						<code>
+							btn.attachEvent("onclick",func);
+						</code>
+					</li>
+					<li>
+						<code>
+							btn.detachEvent("onclick",func);
+						</code>
+					</li>
+				</ul>
+			</li>
+			<li>
+				DOM3级事件处理方式：
+				<ul>
+					<li>
+						<code>
+							eventUtil.addListener(input,"textInput",func);
+						</code>
+					</li>
+					<li>
+						<code>
+							eventUtil
+						</code>
+						是自定义对象，
+						<code>
+							textInput
+						</code>
+						是DOM3级事件
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				事件的三个阶段
+			</strong>
+		</p>
+		<ul>
+			<li>
+				捕获、目标、冒泡
+			</li>
+		</ul>
+		<p>
+			<strong>
+				介绍事件“捕获”和“冒泡”执行顺序和事件的执行次数？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				按照W3C标准的事件：首是进入捕获阶段，直到达到目标元素，再进入冒泡阶段
+			</li>
+			<li>
+				事件执行次数（DOM2-addEventListener）：元素上绑定事件的个数
+				<ul>
+					<li>
+						注意1：前提是事件被确实触发
+					</li>
+					<li>
+						注意2：事件绑定几次就算几个事件，即使类型和功能完全一样也不会“覆盖”
+					</li>
+				</ul>
+			</li>
+			<li>
+				事件执行顺序：判断的关键是否目标元素
+				<ul>
+					<li>
+						非目标元素：根据W3C的标准执行：捕获-&gt;目标元素-&gt;冒泡（不依据事件绑定顺序）
+					</li>
+					<li>
+						目标元素：依据事件绑定顺序：先绑定的事件先执行（不依据捕获冒泡标准）
+					</li>
+					<li>
+						最终顺序：父元素捕获-&gt;目标元素事件1-&gt;目标元素事件2-&gt;子元素捕获-&gt;子元素冒泡-&gt;父元素冒泡
+					</li>
+					<li>
+						注意：子元素事件执行前提事件确实“落”到子元素布局区域上，而不是简单的具有嵌套关系
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				在一个DOM上同时绑定两个点击事件：一个用捕获，一个用冒泡。事件会执行几次，先执行冒泡还是捕获？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				该DOM上的事件如果被触发，会执行两次（执行次数等于绑定次数）
+			</li>
+			<li>
+				如果该DOM是目标元素，则按事件绑定顺序执行，不区分冒泡/捕获
+			</li>
+			<li>
+				如果该DOM是处于事件流中的非目标元素，则先执行捕获，后执行冒泡
+			</li>
+		</ul>
+		<p>
+			<strong>
+				事件的代理/委托
+			</strong>
+		</p>
+		<ul>
+			<li>
+				事件委托是指将事件绑定目标元素的到父元素上，利用冒泡机制触发该事件
+				<ul>
+					<li>
+						优点：
+						<ul>
+							<li>
+								可以减少事件注册，节省大量内存占用
+							</li>
+							<li>
+								可以将事件应用于动态添加的子元素上
+							</li>
+						</ul>
+					</li>
+					<li>
+						缺点：使用不当会造成事件在不应该触发时触发
+					</li>
+					<li>
+						示例：
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<pre>
+			<code>
+				ulEl.addEventListener('click',function(e){var target=event.target||event.srcElement;if(!!target&amp;&amp;target.nodeName.toUpperCase()==="LI"){console.log(target.innerHTML)}},false);
+			</code>
+		</pre>
+		<p>
+			<strong>
+				IE与火狐的事件机制有什么区别？如何阻止冒泡？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				IE只事件冒泡，不支持事件捕获；火狐同时支持件冒泡和事件捕获
+			</li>
+		</ul>
+		<p>
+			<strong>
+				IE的事件处理和W3C的事件处理有哪些区别？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					绑定事件
+				</p>
+				<ul>
+					<li>
+						W3C:targetEl.addEventListener('click',handler,false);
+					</li>
+					<li>
+						IE:targetEl.attachEvent('onclick',handler);
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					删除事件
+				</p>
+				<ul>
+					<li>
+						W3C:targetEl.removeEventListener('click',handler,false);
+					</li>
+					<li>
+						IE:targetEl.detachEvent(event,handler);
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					事件对象
+				</p>
+				<ul>
+					<li>
+						W3C:var e=arguments.callee.caller.arguments[0]
+					</li>
+					<li>
+						IE:window.event
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					事件目标
+				</p>
+				<ul>
+					<li>
+						W3C:e.target
+					</li>
+					<li>
+						IE:window.event.srcElement
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					阻止事件默认行为
+				</p>
+				<ul>
+					<li>
+						W3C:e.preventDefault()
+					</li>
+					<li>
+						IE:window.event.returnValue=false
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					阻止事件传播
+				</p>
+				<ul>
+					<li>
+						W3C:e.stopPropagation()
+					</li>
+					<li>
+						IE:window.event.cancelBubble=true
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				W3C事件的target与currentTarget的区别？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				target只会出现在事件流的目标阶段
+			</li>
+			<li>
+				currentTarget可能出现在事件流的任何阶段
+			</li>
+			<li>
+				当事件流处在目标阶段时，二者的指向相同
+			</li>
+			<li>
+				当事件流处于捕获或冒泡阶段时：currentTarget指向当前事件活动的对象(一般为父级)
+			</li>
+		</ul>
+		<p>
+			<strong>
+				如何派发事件(dispatchEvent)？（如何进行事件广播？）
+			</strong>
+		</p>
+		<ul>
+			<li>
+				W3C:使用dispatchEvent方法
+			</li>
+			<li>
+				IE:使用fireEvent方法
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					var
+				</span>
+				<span class="pl-en">
+					fireEvent
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					function
+				</span>
+				(
+				<span class="pl-smi">
+					element
+				</span>
+				,
+				<span class="pl-c1">
+					event
+				</span>
+				){
+				<span class="pl-k">
+					if
+				</span>
+				(
+				<span class="pl-c1">
+					document
+				</span>
+				.
+				<span class="pl-smi">
+					createEventObject
+				</span>
+				){
+				<span class="pl-k">
+					var
+				</span>
+				mockEvent
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-c1">
+					document
+				</span>
+				.
+				<span class="pl-c1">
+					createEventObject
+				</span>
+				();
+				<span class="pl-k">
+					return
+				</span>
+				<span class="pl-smi">
+					element
+				</span>
+				.
+				<span class="pl-en">
+					fireEvent
+				</span>
+				(
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					on
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				<span class="pl-c1">
+					event
+				</span>
+				,mockEvent)}
+				<span class="pl-k">
+					else
+				</span>
+				{
+				<span class="pl-k">
+					var
+				</span>
+				mockEvent
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-c1">
+					document
+				</span>
+				.
+				<span class="pl-c1">
+					createEvent
+				</span>
+				(
+				<span class="pl-s">
+					<span class="pl-pds">
+						'
+					</span>
+					HTMLEvents
+					<span class="pl-pds">
+						'
+					</span>
+				</span>
+				);
+				<span class="pl-smi">
+					mockEvent
+				</span>
+				.
+				<span class="pl-c1">
+					initEvent
+				</span>
+				(
+				<span class="pl-c1">
+					event
+				</span>
+				,
+				<span class="pl-c1">
+					true
+				</span>
+				,
+				<span class="pl-c1">
+					true
+				</span>
+				);
+				<span class="pl-k">
+					return
+				</span>
+				<span class="pl-k">
+					!
+				</span>
+				<span class="pl-smi">
+					element
+				</span>
+				.
+				<span class="pl-c1">
+					dispatchEvent
+				</span>
+				(mockEvent)}}
+			</pre>
+		</div>
+		<p>
+			<strong>
+				什么是函数节流？介绍一下应用场景和原理？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					函数节流(throttle)是指阻止一个函数在很短时间间隔内连续调用。只有当上一次函数执行后达到规定的时间间隔，才能进行下一次调用。但要保证一个累计最小调用间隔（否则拖拽类的节流都将无连续效果）
+				</p>
+			</li>
+			<li>
+				<p>
+					函数节流用于onresize,onscroll等短时间内会多次触发的事件
+				</p>
+			</li>
+			<li>
+				<p>
+					函数节流的原理：使用定时器做时间节流。当触发一个事件时，先用setTimout让这个事件延迟一小段时间再执行。如果在这个时间间隔内又触发了事件，就clearTimeout原来的定时器，再setTimeout一个新的定时器重复以上流程。
+				</p>
+			</li>
+			<li>
+				<p>
+					函数节流简单实现：
+				</p>
+			</li>
+		</ul>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					function
+				</span>
+				<span class="pl-en">
+					throttle
+				</span>
+				(
+				<span class="pl-smi">
+					method
+				</span>
+				,
+				<span class="pl-smi">
+					context
+				</span>
+				){
+				<span class="pl-c1">
+					clearTimeout
+				</span>
+				(
+				<span class="pl-smi">
+					methor
+				</span>
+				.
+				<span class="pl-smi">
+					tId
+				</span>
+				);
+				<span class="pl-smi">
+					method
+				</span>
+				.
+				<span class="pl-smi">
+					tId
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-c1">
+					setTimeout
+				</span>
+				(
+				<span class="pl-k">
+					function
+				</span>
+				(){
+				<span class="pl-smi">
+					method
+				</span>
+				.
+				<span class="pl-c1">
+					call
+				</span>
+				(context)}，
+				<span class="pl-c1">
+					100
+				</span>
+				);
+				<span class="pl-c">
+					<span class="pl-c">
+						}
+						<span class="pl-c">
+							<span class="pl-c">
+								<span class="pl-c1">
+									window
+								</span>
+								.
+								<span class="pl-en">
+									onresize
+								</span>
+								<span class="pl-k">
+									=
+								</span>
+								<span class="pl-k">
+									function
+								</span>
+								(){
+								<span class="pl-en">
+									throttle
+								</span>
+								(myFunc,
+								<span class="pl-c1">
+									window
+								</span>
+								)}
+			</pre>
+		</div>
+		<p>
+			<strong>
+				区分什么是“客户区坐标”、“页面坐标”、“屏幕坐标”？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				客户区坐标：鼠标指针在可视区中的水平坐标(clientX)和垂直坐标(clientY)
+			</li>
+			<li>
+				页面坐标：鼠标指针在页面布局中的水平坐标(pageX)和垂直坐标(pageY)
+			</li>
+			<li>
+				屏幕坐标：设备物理屏幕的水平坐标(screenX)和垂直坐标(screenY)
+			</li>
+		</ul>
+		<p>
+			<strong>
+				如何获得一个DOM元素的绝对位置？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				elem.offsetLeft：返回元素相对于其定位父级左侧的距离
+			</li>
+			<li>
+				elem.offsetTop：返回元素相对于其定位父级顶部的距离
+			</li>
+			<li>
+				elem.getBoundingClientRect()：返回一个DOMRect对象，包含一组描述边框的只读属性，单位像素
+			</li>
+		</ul>
+		<p>
+			<strong>
+				分析['1','2','3'].map(parseInt)答案是多少？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				答案:[1,NaN,NaN]
+			</li>
+		</ul>
+		<ul>
+			<li>
+				parseInt(string,radix)第2个参数radix表示进制。省略radix或radix=0，则数字将以十进制解析
+			</li>
+			<li>
+				map每次为parseInt传3个参数(elem,index,array)，其中index为数组索引
+			</li>
+			<li>
+				因此，map遍历["1","2","3"]，相应parseInt接收参数如下
+			</li>
+		</ul>
+		<pre>
+			<code>
+				parseInt('1',0);parseInt('2',1);parseInt('3',2);
+			</code>
+		</pre>
+		<ul>
+			<li>
+				所以，parseInt参数radix不合法，导致返回值为NaN
+			</li>
+		</ul>
+		<p>
+			<strong>
+				new操作符具体干了什么？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				创建实例对象，this变量引用该对象，同时还继承了构造函数的原型
+			</li>
+			<li>
+				属性和方法被加入到this引用的对象中
+			</li>
+			<li>
+				新创建的对象由this所引用，并且最后隐式的返回this
+			</li>
+		</ul>
+		<p>
+			<strong>
+				用原生JavaScript的实现过什么功能吗？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				封装选择器、调用第三方API、设置和获取样式
+			</li>
+		</ul>
+		<p>
+			<strong>
+				解释一下这段代码的意思吗？
+			</strong>
+		</p>
+		<div class="highlight highlight-source-js">
+			<pre>
+				[].
+				<span class="pl-smi">
+					forEach
+				</span>
+				.
+				<span class="pl-c1">
+					call
+				</span>
+				(
+				<span class="pl-en">
+					$$
+				</span>
+				(
+				<span class="pl-s">
+					<span class="pl-pds">
+						"
+					</span>
+					*
+					<span class="pl-pds">
+						"
+					</span>
+				</span>
+				),
+				<span class="pl-k">
+					function
+				</span>
+				(
+				<span class="pl-smi">
+					el
+				</span>
+				){
+				<span class="pl-smi">
+					el
+				</span>
+				.
+				<span class="pl-c1">
+					style
+				</span>
+				.
+				<span class="pl-smi">
+					outline
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-s">
+					<span class="pl-pds">
+						"
+					</span>
+					1px solid #
+					<span class="pl-pds">
+						"
+					</span>
+				</span>
+				<span class="pl-k">
+					+
+				</span>
+				(
+				<span class="pl-k">
+					~~
+				</span>
+				(
+				<span class="pl-c1">
+					Math
+				</span>
+				.
+				<span class="pl-c1">
+					random
+				</span>
+				()
+				<span class="pl-k">
+					*
+				</span>
+				(
+				<span class="pl-c1">
+					1
+				</span>
+				<span class="pl-k">
+					&lt;&lt;
+				</span>
+				<span class="pl-c1">
+					24
+				</span>
+				))).
+				<span class="pl-c1">
+					toString
+				</span>
+				(
+				<span class="pl-c1">
+					16
+				</span>
+				)})
+			</pre>
+		</div>
+		<ul>
+			<li>
+				解释：获取页面所有的元素，遍历这些元素，为它们添加1像素随机颜色的轮廓(outline)
+			</li>
+			<li>
+				<ol>
+					<li>
+						<code>
+							$$(sel)
+						</code>
+				</ol>
+				</li>
+				<li>
+					<ol start="2">
+						<li>
+							<code>
+								[].forEach.call(NodeLists)
+							</code>
+					</ol>
+					</li>
+					<li>
+						<ol start="3">
+							<li>
+								<code>
+									el.style.outline="1px solid #333"
+								</code>
+						</ol>
+						</li>
+						<li>
+							<ol start="4">
+								<li>
+									<code>
+										(1&lt;&lt;24)
+									</code>
+							</ol>
+							</li>
+							<li>
+								<ol start="5">
+									<li>
+										<code>
+											Math.random()*(1&lt;&lt;24)
+										</code>
+								</ol>
+								</li>
+								<li>
+									<ol start="6">
+										<li>
+											<code>
+												~~Math.random()*(1&lt;&lt;24)
+											</code>
+									</ol>
+									</li>
+									<li>
+										<ol start="7">
+											<li>
+												<code>
+													(~~(Math.random()*(1&lt;&lt;24))).toString(16)
+												</code>
+										</ol>
+										</li>
+		</ul>
+		<p>
+			**JavaScript实现异步编程的方法？**
+		</p>
+		<ul>
+			<li>
+				回调函数
+			</li>
+			<li>
+				事件监听
+			</li>
+			<li>
+				发布/订阅
+			</li>
+			<li>
+				Promises对象
+			</li>
+			<li>
+				Async函数[ES7]
+			</li>
+		</ul>
+		<p>
+			<strong>
+				web开发中会话跟踪的方法有哪些
+			</strong>
+		</p>
+		<ul>
+			<li>
+				cookie
+			</li>
+			<li>
+				session
+			</li>
+			<li>
+				url重写
+			</li>
+			<li>
+				隐藏input
+			</li>
+			<li>
+				ip地址
+			</li>
+		</ul>
+		<p>
+			<strong>
+				介绍js的基本数据类型
+			</strong>
+		</p>
+		<ul>
+			<li>
+				Undefined、Null、Boolean、Number、String
+			</li>
+		</ul>
+		<p>
+			<strong>
+				介绍js有哪些内置对象？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				Object是JavaScript中所有对象的父对象
+			</li>
+			<li>
+				数据封装类对象：Object、Array、Boolean、Number和String
+			</li>
+			<li>
+				其他对象：Function、Arguments、Math、Date、RegExp、Error
+			</li>
+		</ul>
+		<p>
+			<strong>
+				说几条写JavaScript的基本规范？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				不要在同一行声明多个变量
+			</li>
+			<li>
+				请使用===/!==来比较true/false或者数值
+			</li>
+			<li>
+				使用对象字面量替代new Array这种形式
+			</li>
+			<li>
+				不要使用全局函数
+			</li>
+			<li>
+				Switch语句必须带有default分支
+			</li>
+			<li>
+				函数不应该有时候有返回值，有时候没有返回值
+			</li>
+			<li>
+				If语句必须使用大括号
+			</li>
+			<li>
+				for-in循环中的变量应该使用var关键字明确限定作用域，从而避免作用域污
+			</li>
+		</ul>
+		<p>
+			<strong>
+				JavaScript原型，原型链?有什么特点？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					每个对象都会在其内部初始化一个属性，就是prototype(原型)，当我们访问一个对象的属性时
+				</p>
+			</li>
+			<li>
+				<p>
+					如果这个对象内部不存在这个属性，那么他就会去prototype里找这个属性，这个prototype又会有自己的prototype，于是就这样一直找下去，也就是我们平时所说的原型链的概念
+				</p>
+			</li>
+			<li>
+				<p>
+					关系：
+					<code>
+						instance.constructor.prototype=instance.__proto__
+					</code>
+				</p>
+			</li>
+			<li>
+				<p>
+					特点：
+				</p>
+				<ul>
+					<li>
+						JavaScript对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性，如果没有的
+				</p>
+			</li>
+			<li>
+				<p>
+					就会查找他的Prototype对象是否有这个属性，如此递推下去，一直检索到Object内建对象
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				JavaScript有几种类型的值？，你能画一下他们的内存图吗？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					栈：原始数据类型（Undefined，Null，Boolean，Number、String）
+				</p>
+			</li>
+			<li>
+				<p>
+					堆：引用数据类型（对象、数组和函数）
+				</p>
+			</li>
+			<li>
+				<p>
+					两种类型的区别是：存储位置不同；
+				</p>
+			</li>
+			<li>
+				<p>
+					原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；
+				</p>
+			</li>
+			<li>
+				<p>
+					引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其
+				</p>
+			</li>
+			<li>
+				<p>
+					在栈中的地址，取得地址后从堆中获得实体
+				</p>
+			</li>
+		</ul>
+		<p>
+			<a target="_blank" href="https://camo.githubusercontent.com/d1947e624a0444d1032a85800013df487adc5550/687474703a2f2f7777772e77337363686f6f6c2e636f6d2e636e2f692f63745f6a735f76616c75652e676966">
+				<img src="https://camo.githubusercontent.com/d1947e624a0444d1032a85800013df487adc5550/687474703a2f2f7777772e77337363686f6f6c2e636f6d2e636e2f692f63745f6a735f76616c75652e676966"
+				alt="" style="max-width:100%;">
+			</a>
+		</p>
+		<p>
+			<strong>
+				Javascript如何实现继承？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					构造继承
+				</p>
+			</li>
+			<li>
+				<p>
+					原型继承
+				</p>
+			</li>
+			<li>
+				<p>
+					实例继承
+				</p>
+			</li>
+			<li>
+				<p>
+					拷贝继承
+				</p>
+			</li>
+			<li>
+				<p>
+					原型prototype机制或apply和call方法去实现较简单，建议使用构造函数与原型混合方式
+				</p>
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function Parent(){this.name='wang'}function Child(){this.age=28}Child.prototype=new
+				Parent();var demo=new Child();alert(demo.age);alert(demo.name)}
+			</code>
+		</pre>
+		<p>
+			<strong>
+				javascript创建对象的几种方式？
+			</strong>
+		</p>
+		<blockquote>
+			<p>
+				javascript创建对象简单的说,无非就是使用内置对象或各种自定义对象，当然还可以用JSON；但写法有很多种，也能混合使用
+			</p>
+		</blockquote>
+		<ul>
+			<li>
+				对象字面量的方式
+			</li>
+		</ul>
+		<pre>
+			<code>
+				person={firstname:"Mark",lastname:"Yun",age:25,eyecolor:"black"};
+			</code>
+		</pre>
+		<ul>
+			<li>
+				用function来模拟无参的构造函数
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function Person(){}var person=new Person();person.name="Mark";person.age="25";person.work=function(){alert(person.name+"
+				hello...")}person.work();
+			</code>
+		</pre>
+		<ul>
+			<li>
+				用function来模拟参构造函数来实现（用this关键字定义构造的上下文属性）
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function Pet(name,age,hobby){this.name=name;this.age=age;this.hobby=hobby;this.eat=function(){alert("我叫"+this.name+",我喜欢"+this.hobby+",是个程序员")}}var
+				maidou=new Pet("麦兜",25,"coding");maidou.eat();
+			</code>
+		</pre>
+		<ul>
+			<li>
+				用工厂方式来创建（内置对象）
+			</li>
+		</ul>
+		<pre>
+			<code>
+				var wcDog=new Object();wcDog.name="旺财";wcDog.age=3;wcDog.work=function(){alert("我是"+wcDog.name+",汪汪汪......")}wcDog.work();
+			</code>
+		</pre>
+		<ul>
+			<li>
+				用原型方式来创建
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function Dog(){}Dog.prototype.name="旺财";Dog.prototype.eat=function(){alert(this.name+"是个吃货")}var
+				wangcai=new Dog();wangcai.eat();
+			</code>
+		</pre>
+		<ul>
+			<li>
+				用混合方式来创建
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function Car(name,price){this.name=name;this.price=price}Car.prototype.sell=function(){alert("我是"+this.name+"，我现在卖"+this.price+"万元")}var
+				camry=new Car("凯美瑞",27);camry.sell();
+			</code>
+		</pre>
+		<p>
+			<strong>
+				Javascript作用链域?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节
+			</li>
+			<li>
+				当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找
+			</li>
+			<li>
+				直至全局函数，这种组织形式就是作用域链
+			</li>
+		</ul>
+		<p>
+			<strong>
+				谈谈This对象的理解
+			</strong>
+		</p>
+		<ul>
+			<li>
+				this总是指向函数的直接调用者（而非间接调用者）
+			</li>
+			<li>
+				如果有new关键字，this指向new出来的那个对象
+			</li>
+			<li>
+				在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window
+			</li>
+		</ul>
+		<p>
+			<strong>
+				eval是做什么的？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				它的功能是把对应的字符串解析成JS代码并运行
+			</li>
+			<li>
+				应该避免使用eval，不安全，非常耗性能（2次，一次解析成js语句，一次执行）
+			</li>
+			<li>
+				由JSON字符串转换为JSON对象的时候可以用eval，var obj=eval('('+str+')')
+			</li>
+		</ul>
+		<p>
+			<strong>
+				null，undefined的区别？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					undefined表示不存在这个值。
+				</p>
+			</li>
+			<li>
+				<p>
+					undefined:是一个表示"无"的原始值或者说表示"缺少值"，就是此处应该有一个值，但是还没有定义。当尝试读取时会返回undefined
+				</p>
+			</li>
+			<li>
+				<p>
+					例如变量被声明了，但没有赋值时，就等于undefined
+				</p>
+			</li>
+			<li>
+				<p>
+					null表示一个对象被定义了，值为“空值”
+				</p>
+			</li>
+			<li>
+				<p>
+					null:是一个对象(空对象,没有任何属性和方法)
+				</p>
+			</li>
+			<li>
+				<p>
+					例如作为函数的参数，表示该函数的参数不是对象；
+				</p>
+			</li>
+			<li>
+				<p>
+					在验证null时，一定要使用===，因为==无法分别null和undefined
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				写一个通用的事件侦听器函数
+			</strong>
+		</p>
+		<pre>
+			<code>
+				markyun.Event={readyEvent:function(fn){if(fn==null){fn=document}var oldonload=window.onload;if(typeof
+				window.onload!='function'){window.onload=fn}else{window.onload=function(){oldonload();fn()}}},addEvent:function(element,type,handler){if(element.addEventListener){element.addEventListener(type,handler,false)}else
+				if(element.attachEvent){element.attachEvent('on'+type,function(){handler.call(element)})}else{element['on'+type]=handler}},removeEvent:function(element,type,handler){if(element.removeEventListener){element.removeEventListener(type,handler,false)}else
+				if(element.datachEvent){element.detachEvent('on'+type,handler)}else{element['on'+type]=null}},stopPropagation:function(ev){if(ev.stopPropagation){ev.stopPropagation()}else{ev.cancelBubble=true}},preventDefault:function(event){if(event.preventDefault){event.preventDefault()}else{event.returnValue=false}},getTarget:function(event){return
+				event.target||event.srcElement},getEvent:function(e){var ev=e||window.event;if(!ev){var
+				c=this.getEvent.caller;while(c){ev=c.arguments[0];if(ev&amp;&amp;Event==ev.constructor){break}c=c.caller}}return
+				ev}};
+			</code>
+		</pre>
+		<p>
+			<strong>
+				["1","2","3"].map(parseInt)答案是多少？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				[1,NaN,NaN]因为parseInt需要两个参数(val,radix)，其中radix表示解析时用的基数。
+			</li>
+			<li>
+				map传了3个(element,index,array)，对应的radix不合法导致解析失败。
+			</li>
+		</ul>
+		<p>
+			<strong>
+				事件是？IE与火狐的事件机制有什么区别？如何阻止冒泡？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				我们在网页中的某个操作（有的操作对应多个事件）。例如：当我们点击一个按钮就会产生一个事件。是可以被JavaScript侦测到的行为
+			</li>
+			<li>
+				事件处理机制：IE是事件冒泡、Firefox同时支持两种事件模型，也就是：捕获型事件和冒泡型事件
+			</li>
+			<li>
+				ev.stopPropagation();（旧ie的方法ev.cancelBubble=true;）
+			</li>
+		</ul>
+		<p>
+			<strong>
+				什么是闭包（closure），为什么要用它？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突破作用链域
+				</p>
+			</li>
+			<li>
+				<p>
+					闭包的特性：
+				</p>
+				<ul>
+					<li>
+						函数内再嵌套函数
+					</li>
+					<li>
+						内部函数可以引用外层的参数和变量
+					</li>
+					<li>
+						参数和变量不会被垃圾回收机制回收
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				javascript代码中的"use strict";是什么意思?使用它区别是什么？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				use strict是一种ECMAscript 5添加的（严格）运行模式,这种模式使得Javascript在更严格的条件下运行,使JS编码更加规范化的模式,消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为
+			</li>
+		</ul>
+		<p>
+			<strong>
+				如何判断一个对象是否属于某个类？
+			</strong>
+		</p>
+		<pre>
+			<code>
+				if(a instanceof Person){alert('yes')}
+			</code>
+		</pre>
+		<p>
+			<strong>
+				new操作符具体干了什么呢?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				创建一个空对象，并且this变量引用该对象，同时还继承了该函数的原型
+			</li>
+			<li>
+				属性和方法被加入到this引用的对象中
+			</li>
+			<li>
+				新创建的对象由this所引用，并且最后隐式的返回this
+			</li>
+		</ul>
+		<pre>
+			<code>
+				var obj={};obj.__proto__=Base.prototype;Base.call(obj);
+			</code>
+		</pre>
+		<p>
+			<strong>
+				js延迟加载的方式有哪些？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				defer和async、动态创建DOM方式（用得最多）、按需异步载入js
+			</li>
+		</ul>
+		<p>
+			<strong>
+				Ajax是什么?如何创建一个Ajax？
+			</strong>
+		</p>
+		<blockquote>
+			<p>
+				ajax的全称：Asynchronous Javascript And XML
+			</p>
+		</blockquote>
+		<ul>
+			<li>
+				<p>
+					异步传输+js+xml
+				</p>
+			</li>
+			<li>
+				<p>
+					所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验
+				</p>
+			</li>
+			<li>
+				<p>
+					创建XMLHttpRequest对象,也就是创建一个异步调用对象
+				</p>
+			</li>
+			<li>
+				<p>
+					建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息
+				</p>
+			</li>
+			<li>
+				<p>
+					设置响应HTTP请求状态变化的函数
+				</p>
+			</li>
+			<li>
+				<p>
+					发送HTTP请求
+				</p>
+			</li>
+			<li>
+				<p>
+					获取异步调用返回的数据
+				</p>
+			</li>
+			<li>
+				<p>
+					用JavaScript和DOM实现局部刷新
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				同步和异步的区别?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				同步：浏览器访问服务器请求，用户看得到页面刷新，重新发请求,等请求完，页面刷新，新内容出现，用户看到新内容,进行下一步操作
+			</li>
+			<li>
+				异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容
+			</li>
+		</ul>
+		<p>
+			<strong>
+				异步加载JS的方式有哪些？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				defer，只支持IE
+			</li>
+			<li>
+				async：
+			</li>
+			<li>
+				创建script，插入到DOM中，加载完毕后callBack
+			</li>
+		</ul>
+		<p>
+			<strong>
+				documen.write和innerHTML的区别
+			</strong>
+		</p>
+		<ul>
+			<li>
+				document.write只能重绘整个页面
+			</li>
+			<li>
+				innerHTML可以重绘页面的一部分
+			</li>
+		</ul>
+		<p>
+			<strong>
+				DOM操作——怎样添加、移除、移动、复制、创建和查找节点?
+			</strong>
+		</p>
+		<ul>
+			<li>
+				（1）创建新节点
+				<ul>
+					<li>
+						createDocumentFragment()
+						<li>
+							createElement()
+							<li>
+								createTextNode()
+				</ul>
+				</li>
+				<li>
+					（2）添加、移除、替换、插入
+					<ul>
+						<li>
+							appendChild()
+						</li>
+						<li>
+							removeChild()
+						</li>
+						<li>
+							replaceChild()
+						</li>
+						<li>
+							insertBefore()
+					</ul>
+					</li>
+					<li>
+						（3）查找
+						<ul>
+							<li>
+								getElementsByTagName()
+								<li>
+									getElementsByName()
+									<li>
+										getElementById()
+						</ul>
+						</li>
+		</ul>
+		<p>
+			<strong>
+				那些操作会造成内存泄漏？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				内存泄漏指任何对象在您不再拥有或需要它之后仍然存在
+			</li>
+			<li>
+				垃圾回收器定期扫描对象，并计算引用了每个对象的其他对象的数量。如果一个对象的引用数量为0（没有其他对象引用过该对象），或对该对象的惟一引用是循环的，那么该对象的内存即可回收
+			</li>
+			<li>
+				setTimeout的第一个参数使用字符串而非函数的话，会引发内存泄漏
+			</li>
+			<li>
+				闭包、控制台日志、循环（在两个对象彼此引用且彼此保留时，就会产生一个循环）
+			</li>
+		</ul>
+		<p>
+			<strong>
+				渐进增强和优雅降级
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
+				</p>
+			</li>
+			<li>
+				<p>
+					优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				Javascript垃圾回收方法
+			</strong>
+		</p>
+		<ul>
+			<li>
+				标记清除（mark and sweep）
+			</li>
+		</ul>
+		<blockquote>
+			<ul>
+				<li>
+					这是JavaScript最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将其标记为“进入环境”，当变量离开环境的时候（函数执行结束）将其标记为“离开环境”
+				</li>
+				<li>
+					垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，然后去掉环境中的变量以及被环境中变量所引用的变量（闭包），在这些完成之后仍存在标记的就是要删除的变量了
+				</li>
+			</ul>
+		</blockquote>
+		<p>
+			<strong>
+				引用计数(reference counting)
+			</strong>
+		</p>
+		<blockquote>
+			<p>
+				在低版本IE中经常会出现内存泄露，很多时候就是因为其采用引用计数方式进行垃圾回收。引用计数的策略是跟踪记录每个值被使用的次数，当声明了一个变量并将一个引用类型赋值给该变量的时候这个值的引用次数就加1，如果该变量的值变成了另外一个，则这个值得引用次数减1，当这个值的引用次数变为0的时候，说明没有变量在使用，这个值没法被访问了，因此可以将其占用的空间回收，这样垃圾回收器会在运行的时候清理掉引用次数为0的值占用的空间
+			</p>
+		</blockquote>
+		<p>
+			<strong>
+				js继承方式及其优缺点
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					原型链继承的缺点
+				</p>
+				<ul>
+					<li>
+						一是字面量重写原型会中断关系，使用引用类型的原型，并且子类型还无法给超类型传递参数。
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					借用构造函数（类式继承）
+				</p>
+				<ul>
+					<li>
+						借用构造函数虽然解决了刚才两种问题，但没有原型，则复用无从谈起。所以我们需要原型链+借用构造函数的模式，这种模式称为组合继承
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					组合式继承
+				</p>
+				<ul>
+					<li>
+						组合式继承是比较常用的一种继承方法，其背后的思路是使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数复用，又保证每个实例都有它自己的属性。
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				defer和async
+			</strong>
+		</p>
+		<ul>
+			<li>
+				defer并行加载js文件，会按照页面上script标签的顺序执行async并行加载js文件，下载完成立即执行，不会按照页面上script标签的顺序执行
+			</li>
+		</ul>
+		<p>
+			<strong>
+				用过哪些设计模式？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				工厂模式：
+				<ul>
+					<li>
+						主要好处就是可以消除对象间的耦合，通过使用工程方法而不是new关键字。将所有实例化的代码集中在一个位置防止代码重复
+					</li>
+					<li>
+						工厂模式解决了重复实例化的问题，但还有一个问题,那就是识别问题，因为根本无法搞清楚他们到底是哪个对象的实例
+					</li>
+					<li>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function createObject(name,age,profession){obj.name=name;obj.age=age;obj.profession=profession;obj.move=function(){return
+				this.name+' at '+this.age+' engaged in '+this.profession};return obj}var
+				test1=createObject('trigkit4',22,'programmer');
+			</code>
+		</pre>
+		<ul>
+			<li>
+				<p>
+					构造函数模式
+				</p>
+				<ul>
+					<li>
+						使用构造函数的方法，即解决了重复实例化的问题，又解决了对象识别的问题，该模式与工厂模式的不同之处在于
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					构造函数方法没有显示的创建对象(new Object());
+				</p>
+			</li>
+			<li>
+				<p>
+					直接将属性和方法赋值给this对象;
+				</p>
+			</li>
+			<li>
+				<p>
+					没有renturn语句
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				说说你对闭包的理解
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					使用闭包主要是为了设计私有的方法和变量。闭包的优点是可以避免全局变量的污染，缺点是闭包会常驻内存，会增大内存使用量，使用不当很容易造成内存泄露。在js中，函数即闭包，只有函数才会产生作用域的概念
+				</p>
+			</li>
+			<li>
+				<p>
+					闭包有三个特性：
+				</p>
+				<ul>
+					<li>
+						<p>
+							1.函数嵌套函数
+						</p>
+					</li>
+					<li>
+						<p>
+							2.函数内部可以引用外部的参数和变量
+						</p>
+					</li>
+					<li>
+						<p>
+							3.参数和变量不会被垃圾回收机制回收
+						</p>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				请解释一下JavaScript的同源策略
+			</strong>
+		</p>
+		<ul>
+			<li>
+				概念:同源策略是客户端脚本（尤其是Javascript）的重要的安全度量标准。它最早出自Netscape Navigator2.0，其目的是防止某个文档或脚本从多个不同源装载。这里的同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议
+			</li>
+			<li>
+				指一段脚本只能读取来自同一来源的窗口和文档的属性
+			</li>
+		</ul>
+		<p>
+			<strong>
+				为什么要有同源限制？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				我们举例说明：比如一个黑客程序，他利用Iframe把真正的银行登录页面嵌到他的页面上，当你使用真实的用户名，密码登录时，他的页面就可以通过Javascript读取到你的表单中input中的内容，这样用户名，密码就轻松到手了。
+			</li>
+			<li>
+				缺点
+				<ul>
+					<li>
+						现在网站的JS都会进行压缩，一些文件用了严格模式，而另一些没有。这时这些本来是严格模式的文件，被merge后，这个串就到了文件的中间，不仅没有指示严格模式，反而在压缩后浪费了字节
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制
+			</strong>
+		</p>
+		<pre>
+			<code>
+				Object.prototype.clone=function(){var o=this.constructor===Array?[]:{};for(var
+				e in this){o[e]=typeof this[e]==="object"?this[e].clone():this[e]}return
+				o}
+			</code>
+		</pre>
+		<p>
+			<strong>
+				说说严格模式的限制
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					严格模式主要有以下限制：
+				</p>
+			</li>
+			<li>
+				<p>
+					变量必须声明后再使用
+				</p>
+			</li>
+			<li>
+				<p>
+					函数的参数不能有同名属性，否则报错
+				</p>
+			</li>
+			<li>
+				<p>
+					不能使用with语句
+				</p>
+			</li>
+			<li>
+				<p>
+					不能对只读属性赋值，否则报错
+				</p>
+			</li>
+			<li>
+				<p>
+					不能使用前缀0表示八进制数，否则报错
+				</p>
+			</li>
+			<li>
+				<p>
+					不能删除不可删除的属性，否则报错
+				</p>
+			</li>
+			<li>
+				<p>
+					不能删除变量delete prop，会报错，只能删除属性delete global[prop]
+				</p>
+			</li>
+			<li>
+				<p>
+					eval不会在它的外层作用域引入变量
+				</p>
+			</li>
+			<li>
+				<p>
+					eval和arguments不能被重新赋值
+				</p>
+			</li>
+			<li>
+				<p>
+					arguments不会自动反映函数参数的变化
+				</p>
+			</li>
+			<li>
+				<p>
+					不能使用arguments.callee
+				</p>
+			</li>
+			<li>
+				<p>
+					不能使用arguments.caller
+				</p>
+			</li>
+			<li>
+				<p>
+					禁止this指向全局对象
+				</p>
+			</li>
+			<li>
+				<p>
+					不能使用fn.caller和fn.arguments获取函数调用的堆栈
+				</p>
+			</li>
+			<li>
+				<p>
+					增加了保留字（比如protected、static和interface）
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				如何删除一个cookie
+			</strong>
+		</p>
+		<ul>
+			<li>
+				将时间设为当前时间往前一点
+			</li>
+		</ul>
+		<pre>
+			<code>
+				var date=new Date();date.setDate(date.getDate()-1);
+			</code>
+		</pre>
+		<p>
+			setDate()方法用于设置一个月的某一天
+		</p>
+		<ul>
+			<li>
+				expires的设置
+			</li>
+		</ul>
+		<pre>
+			<code>
+				document.cookie='user='+encodeURIComponent('name')+';expires = '+new Date(0)
+			</code>
+		</pre>
+		<p>
+			<strong>
+				编写一个方法求一个字符串的字节长度
+			</strong>
+		</p>
+		<ul>
+			<li>
+				假设：一个英文字符占用一个字节，一个中文字符占用两个字节
+			</li>
+		</ul>
+		<pre>
+			<code>
+				function GetBytes(str){var len=str.length;var bytes=len;for(var i=0;i&lt;len;i++){if(str.charCodeAt(i)&gt;255)bytes++}return
+				bytes}alert(GetBytes("你好,as"));
+			</code>
+		</pre>
+		<p>
+			<strong>
+				请解释什么是事件代理
+			</strong>
+		</p>
+		<ul>
+			<li>
+				事件代理（Event Delegation），又称之为事件委托。是JavaScript中常用绑定事件的常用技巧。顾名思义，“事件代理”即是把原本需要绑定的事件委托给父元素，让父元素担当事件监听的职务。事件代理的原理是DOM元素的事件冒泡。使用事件代理的好处是可以提高性能
+			</li>
+		</ul>
+		<p>
+			<strong>
+				attribute和property的区别是什么？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					attribute是dom元素在文档中作为html标签拥有的属性；
+				</p>
+			</li>
+			<li>
+				<p>
+					property就是dom元素在js中作为对象拥有的属性。
+				</p>
+			</li>
+			<li>
+				<p>
+					对于html的标准属性来说，attribute和property是同步的，是会自动更新的
+				</p>
+			</li>
+			<li>
+				<p>
+					但是对于自定义的属性来说，他们是不同步的
+				</p>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				页面编码和被请求的资源编码如果不一致如何处理？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				后端响应头设置charset
+			</li>
+			<li>
+				前端页面
+				<code>
+					&lt;meta&gt;
+				</code>
+				设置charset
+			</li>
+		</ul>
+		<p>
+			<strong>
+				把
+				<code>
+					&lt;script&gt;
+				</code>
+				放在
+				<code>
+					&lt;/body&gt;
+				</code>
+				之前和之后有什么区别？浏览器会如何解析它们？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				按照HTML标准，在
+				<code>
+					&lt;/body&gt;
+				</code>
+				结束后出现
+				<code>
+					&lt;script&gt;
+				</code>
+				或任何元素的开始标签，都是解析错误
+			</li>
+			<li>
+				虽然不符合HTML标准，但浏览器会自动容错，使实际效果与写在
+				<code>
+					&lt;/body&gt;
+				</code>
+				之前没有区别
+			</li>
+			<li>
+				浏览器的容错机制会忽略&lt;script&gt;之前的
+				<code>
+					&lt;/body&gt;
+				</code>
+				，视作
+				<code>
+					&lt;script&gt;
+				</code>
+				仍在body体内。省略
+				<code>
+					&lt;/body&gt;
+				</code>
+				和
+				<code>
+					&lt;/html&gt;
+				</code>
+				闭合标签符合HTML标准，服务器可以利用这一标准尽可能少输出内容
+			</li>
+		</ul>
+		<p>
+			<strong>
+				延迟加载JS的方式有哪些？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				设置
+				<code>
+					&lt;script&gt;
+				</code>
+				属性defer="defer"（脚本将在页面完成解析时执行）
+			</li>
+			<li>
+				动态创建script DOM：document.createElement('script');
+			</li>
+			<li>
+				XmlHttpRequest脚本注入
+			</li>
+			<li>
+				延迟加载工具LazyLoad
+			</li>
+		</ul>
+		<p>
+			<strong>
+				异步加载JS的方式有哪些？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				设置
+				<code>
+					&lt;script&gt;
+				</code>
+				属性async="async"（一旦脚本可用，则会异步执行）
+			</li>
+			<li>
+				动态创建script DOM：document.createElement('script');
+			</li>
+			<li>
+				XmlHttpRequest脚本注入
+			</li>
+			<li>
+				异步加载库LABjs
+			</li>
+			<li>
+				模块加载器Sea.js
+			</li>
+		</ul>
+		<p>
+			<strong>
+				JavaScript中，调用函数有哪几种方式？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				方法调用模式Foo.foo(arg1,arg2);
+			</li>
+			<li>
+				函数调用模式foo(arg1,arg2);
+			</li>
+			<li>
+				构造器调用模式(new Foo())(arg1,arg2);
+			</li>
+			<li>
+				call/applay调用模式Foo.foo.call(that,arg1,arg2);
+			</li>
+			<li>
+				bind调用模式Foo.foo.bind(that)(arg1,arg2)();
+			</li>
+		</ul>
+		<p>
+			<strong>
+				简单实现Function.bind函数？
+			</strong>
+		</p>
+		<div class="highlight highlight-source-js">
+			<pre>
+				<span class="pl-k">
+					if
+				</span>
+				(
+				<span class="pl-k">
+					!
+				</span>
+				<span class="pl-c1">
+					Function
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				.
+				<span class="pl-smi">
+					bind
+				</span>
+				){
+				<span class="pl-c1">
+					Function
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				.
+				<span class="pl-en">
+					bind
+				</span>
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-k">
+					function
+				</span>
+				(
+				<span class="pl-smi">
+					that
+				</span>
+				){
+				<span class="pl-k">
+					var
+				</span>
+				func
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-c1">
+					this
+				</span>
+				,args
+				<span class="pl-k">
+					=
+				</span>
+				<span class="pl-c1">
+					arguments
+				</span>
+				;
+				<span class="pl-k">
+					return
+				</span>
+				<span class="pl-k">
+					function
+				</span>
+				(){
+				<span class="pl-k">
+					return
+				</span>
+				<span class="pl-smi">
+					func
+				</span>
+				.
+				<span class="pl-c1">
+					apply
+				</span>
+				(that,
+				<span class="pl-c1">
+					Array
+				</span>
+				.
+				<span class="pl-c1">
+					prototype
+				</span>
+				.
+				<span class="pl-smi">
+					slice
+				</span>
+				.
+				<span class="pl-c1">
+					call
+				</span>
+				(args,
+				<span class="pl-c1">
+					1
+				</span>
+				))}}}
+				<span class="pl-c">
+					<span class="pl-c">
+						<span class="pl-smi">
+							func
+						</span>
+						.
+						<span class="pl-en">
+							bind
+						</span>
+						(that,arg1,arg2)();
+						<span class="pl-c">
+							<span class="pl-c">
+								<span class="pl-smi">
+									func
+								</span>
+								.
+								<span class="pl-en">
+									bind
+								</span>
+								(that)(arg1,arg2);
+			</pre>
+		</div>
+		<p>
+			**列举一下JavaScript数组和对象有哪些原生方法？**
+		</p>
+		<ul>
+			<li>
+				<p>
+					数组：
+				</p>
+				<ul>
+					<li>
+						arr.concat(arr1,arr2,arrn);
+					</li>
+					<li>
+						arr.join(",");
+					</li>
+					<li>
+						arr.sort(func);
+					</li>
+					<li>
+						arr.pop();
+					</li>
+					<li>
+						arr.push(e1,e2,en);
+					</li>
+					<li>
+						arr.shift();
+					</li>
+					<li>
+						unshift(e1,e2,en);
+					</li>
+					<li>
+						arr.reverse();
+					</li>
+					<li>
+						arr.slice(start,end);
+					</li>
+					<li>
+						arr.splice(index,count,e1,e2,en);
+					</li>
+					<li>
+						arr.indexOf(el);
+					</li>
+					<li>
+						arr.includes(el);
+				</ul>
+				</li>
+				<li>
+					<p>
+						对象：
+					</p>
+					<ul>
+						<li>
+							object.hasOwnProperty(prop);
+						</li>
+						<li>
+							object.propertyIsEnumerable(prop);
+						</li>
+						<li>
+							object.valueOf();
+						</li>
+						<li>
+							object.toString();
+						</li>
+						<li>
+							object.toLocaleString();
+						</li>
+						<li>
+							Class.prototype.isPropertyOf(object);
+						</li>
+					</ul>
+				</li>
+		</ul>
+		<p>
+			<strong>
+				Array.splice()与Array.splice()的区别？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					slice--“读取”数组指定的元素，不会对原数组进行修改
+				</p>
+				<ul>
+					<li>
+						语法：arr.slice(start,end)
+					</li>
+					<li>
+						start指定选取开始位置（含）
+					</li>
+					<li>
+						end指定选取结束位置（不含）
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					splice
+				</p>
+				<ul>
+					<li>
+						“操作”数组指定的元素，会修改原数组，返回被删除的元素
+					</li>
+					<li>
+						语法：arr.splice(index,count,[insert Elements])
+					</li>
+					<li>
+						index是操作的起始位置
+					</li>
+					<li>
+						count=0插入元素，count&gt;0删除元素
+					</li>
+					<li>
+						[insert Elements]向数组新插入的元素
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			<strong>
+				JavaScript对象生命周期的理解？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				当创建一个对象时，JavaScript会自动为该对象分配适当的内存
+			</li>
+			<li>
+				垃圾回收器定期扫描对象，并计算引用了该对象的其他对象的数量
+			</li>
+			<li>
+				如果被引用数量为0，或惟一引用是循环的，那么该对象的内存即可回收
+			</li>
+		</ul>
+		<p>
+			<strong>
+				哪些操作会造成内存泄漏？
+			</strong>
+		</p>
+		<ul>
+			<li>
+				<p>
+					JavaScript内存泄露指对象在不需要使用它时仍然存在，导致占用的内存不能使用或回收
+				</p>
+			</li>
+			<li>
+				<p>
+					未使用var声明的全局变量
+				</p>
+			</li>
+			<li>
+				<p>
+					闭包函数(Closures)
+				</p>
+			</li>
+			<li>
+				<p>
+					循环引用(两个对象相互引用)
+				</p>
+			</li>
+			<li>
+				<p>
+					控制台日志(console.log)
+				</p>
+			</li>
+			<li>
+				<p>
+					移除存在绑定事件的DOM元素(IE)
+				</p>
+			</li>
+		</ul>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+</div>
+
+<div class="listbox_but listbox_but_on" onclick="listbox_but()">
+	<p>◀</p>
+</div>	
+<style type="text/css">
+	/* 格式化 */
+	html,body,h1,h2,h3,h4,h5,h6,span,p,ul,li,table,tr,td,input,a,dl,dt,dd{margin:0;padding:0; border: none; list-style:none;}
+	img{vertical-align:top;border:none}
+	body { background-color: #f6f8fa;  color: #000; font-size: 16px; /*margin: 0 620px 0 0;*/}
+	a,a *,a:before,a:after,*,*:before,*:after {transition:0.3s ease}
+	a {color: #0366d6; text-decoration: none;}
+	a:hover {color: #0366d6; opacity: 0.8; text-decoration: underline;}
+	/* 格式化 end*/
+</style>
+<style type="text/css">
+	/*目录*/
+	.listbox { position: fixed; right: -100%; top: 0; width: 600px; height: 100%; background-color: #f6f8fa; border-left: 1px solid #c6cbd1;   font-size: 14px; overflow: auto; }
+	.listbox .listbox_in {padding: 20px 0 0 30px; overflow: hidden; width: 530px;}
+	.listbox ul { font-size: 18px; line-height: 22px; }
+	.listbox p,.listbox a p  { padding-top: 12px; line-height: 25px; color:#0366d6; }
+	.listbox li p{ color: #000; }
+	.listbox ul li { font-size: 14px; margin-left: 20px; list-style: decimal; }
+	.listbox li li { margin-left: 20px; list-style: circle;}
+	.listbox li li a { color: #000;}
+	.listbox li.on a { color:#0366d6; opacity: 1;  }
+	.listbox h3 {font-size: 16px;}
+	.listbox pre { background-color: #fff; padding:10px; }
+	/*目录按钮*/
+	.listbox_but {position: fixed; right: 0; bottom: 0; width: 50px; height: 50px; font-size: 30px; line-height: 50px; text-align: center; background-color: #f6f8fa; border: 1px solid #dfe2e5;}
+	.listbox_but {}
+	.listbox_but {}
+	.listbox_but {}
+	/*展开*/
+	.listbox_on {right: 0;}
+	.listbox_but_on p{ transform: scale(1) translate(0,0) skew(0) rotate(180deg);}
+	.body_on { margin: 0 580px 0 0; }
+
+</style>
+
+<style type="text/css">
+
+	.big_conbox { margin:10px 10px 10px 10px; padding: 10px; border: 1px solid #dfe2e5; background-color: #fff;  }
+	.big_conbox h1 { font-size: 30px; line-height: 50px;  margin: 10px; border-bottom: 2px solid #dfe2e5;}
+	.big_conbox h1 small { font-size: 20px; opacity: 0.5; padding: 0 0 0 10px; }
+	.conbox h2 {font-size: 20px; line-height: 36px; padding: 6px 0 0 0; text-indent: 15px;}
+	.conbox h2 small { font-size: 14px; opacity: 0.3 }
+	.conbox_table { display:; }
+	table {display: block;  max-width: 500px; overflow: auto; border-spacing: 0; border-collapse: collapse; font-size: 14px; text-align: left; float: left; padding: 5px;}
+	tr {background-color: #fff; border-top: 1px solid #c6cbd1;}
+	tr ol li {  list-style:disc;padding-top: 5px; line-height: 22px; }
+	tr ol li li { list-style:circle; opacity: 0.8   }
+	tr:nth-child(2n),tr:hover {background-color: #f6f8fa;}
+	th,td {padding: 6px 13px; border: 1px solid #dfe2e5;}
+
+	td:nth-of-type(2) {width: 20px; position:relative; overflow: hidden; cursor: pointer;}
+	td:nth-of-type(2):before { position: absolute; width: 36%; height: 100%; background:url(data:image/png;base64,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) center center no-repeat; background-size: 100%; content: ''; left: 15px; top: 0; opacity: 0.3; }
+	td:nth-of-type(2) p {position: absolute; width: 0%; height: 6%; content: ''; left: 0; bottom: 0; opacity: 0.3;  background-color:#0366d6;}
+	td:nth-of-type(2) .p_on {animation: p_on 1s infinite ease; height: 100%;}
+	@keyframes p_on{
+		0% {height: 100%;width: 50%; left: -50%;}
+		45% {width: 200%; left: 100%;}
+		100% {width: 10%; left: -50%;}
+		}
+	td:nth-of-type(2):hover:before{ opacity: 0.9; }
+	table a { font-size:16px; color: #0366d6; padding: 0 10px 0 0; }
+	.big_conbox h1 ,.big_conbox h2,table a,table h2{font-family: 'Cantata One', serif;}
+	table span {opacity: 0.6;} 
+	/*移动端适配*/
+	@media (max-width: 500px) {
+		.big_conbox { margin:0; padding: 10px; border: 1px solid #dfe2e5; background-color: #fff;  }
+		.big_conbox h1 { font-size: 30px; line-height: 50px;  margin: 10px; border-bottom: 2px solid #dfe2e5;}
+		.big_conbox h1 small { display: none; font-size: 20px; opacity: 0.5; padding: 0 0 6px 0; }
+		.conbox h2 {font-size: 20px; line-height: 26px; padding: 6px 0 0 0; text-indent: 15px;}
+		.conbox h2 small { display: block;font-size: 14px; opacity: 0.3 }
+		td:nth-of-type(1) {width: 83%; position:relative; overflow: hidden; cursor: pointer;}
+		td:nth-of-type(2) {width: 40px; position:relative; overflow: hidden; cursor: pointer;}
+		td:nth-of-type(2):before {left: 18px;}
+
+		.listbox { position: fixed; right: 0; top: 0; width: 100%; height: 100%; background-color: #f6f8fa; border-left: 1px solid #c6cbd1;  padding:0; font-size: 14px; overflow: auto; }
+		.listbox .listbox_in {padding: 20px 0 0 0; overflow: hidden; width: 90%; margin: 0 auto;}
+		.listbox_on {right: -100%;}
+		.body_on { margin: 0 0 0 0; }
+	}
+</style>
+
+
+<script type="text/javascript">
+
+	
+
+// //////分割表格
+// var conbox_num = document.getElementsByClassName("conbox");
+// //alert(conbox_num.length);
+// for (let op = 0; op < conbox_num.length; op++) {
+// 	//let conbox = document.getElementsByClassName("conbox");
+// 	let conbox_table = conbox.getElementsByTagName("table")[0];
+// 	let conbox_table_tr = conbox_table.getElementsByTagName("tr");
+// 	let conbox_table_tr_l=conbox_table_tr.length;
+// 	let table_row =10; //分割基数
+// 	let table_num = (conbox_table_tr_l/table_row+1).toFixed(0); //分割次数
+// 	if (conbox_table_tr_l>table_row) {
+// 		for (let bb = 1; bb < table_num; bb++) {
+// 			//创建表格
+// 			let addtable = document.createElement("table");
+// 			conbox_num[0].appendChild(addtable);		
+// 			////填充数据		
+// 		}	
+// 		// for (let i = 0; i < table_num; i++) {
+// 		// 	let conbox_new_table = conbox.getElementsByTagName("table");
+			
+// 		// 	for (let k = 0; k < table_row; k++) {
+// 		// 		conbox_new_table[i].appendChild(conbox_table_tr[0]);
+// 		// 	}
+// 		// }
+// // 		for (let bb = 1; bb < table_num; bb++) {
+// // 			let addtable = document.createElement("table");
+// // 			conbox.appendChild(addtable);
+// // 			let conbox_new_table = conbox.getElementsByTagName("table");
+// // 			for (let i = 0; i < table_row-1; i++) {
+// // 				let addtr = document.createElement("tr");
+// // 				conbox_new_table[bb].appendChild(addtr);			
+// // 			}		
+// // 		}
+// // let conbox_new_table = conbox.getElementsByTagName("table");
+// // 		for (let i = 0; i < table_row; i++) {
+// // 				let sderr =conbox_new_table[0].getElementsByTagName("tr")[i].innerHTML;
+// // 				conbox_new_table[1].getElementsByTagName("tr")[i].innerHTML = sderr;				
+// // 			}
+// 		//alert (conbox_table_trhtml2);
+// 		//conbox_new_table[1].innerHTML=conbox_table_trhtml2;
+// 	}
+
+// }
+
+
+
+//翻译语音API
+function mp3 (con){
+	//百度-女-美国
+	var mp3src01_01 = "http://fanyi.baidu.com/gettts?lan=en&text="+con+"&spd=3&source=web"; 
+	//百度-男-英国
+	var mp3src01_02 = "http://fanyi.baidu.com/gettts?lan=uk&text="+con+"&spd=3&source=web";
+
+	//有道-男-美国
+	var mp3src02_01 ="http://dict.youdao.com/dictvoice?audio="+con+"&type=2";
+	//有道-女-英国
+	var mp3src02_02 ="http://dict.youdao.com/dictvoice?audio="+con+"&type=1";
+
+	//腾讯-女-中文
+	var mp3src03_01 ="https://fanyi.qq.com/api/tts?platform=PC_Website&lang=zh&text="+con+"&guid=629630fe-f563-487d-aeb1-a7a36a018c58";
+	//腾讯-女-英文
+	var mp3src03_02 ="https://fanyi.qq.com/api/tts?platform=PC_Website&lang=en&text="+con+".&guid=629630fe-f563-487d-aeb1-a7a36a018c58";
+
+	//微软-中文
+	var mp3src04_01 ="https://cn.bing.com/tspeak?&format=audio%2Fmp3&language=zh-CN&IG=B484A40B740C4625A4673D6D9A278890&IID=translator.5036.4&options=female&text="+con+"";
+	//微软-英文
+	var mp3src04_02 ="https://cn.bing.com/tspeak?&format=audio%2Fmp3&language=en-AU&IG=B484A40B740C4625A4673D6D9A278890&IID=translator.5036.7&options=female&text="+con+"";
+
+	let random_mp3 = (Math.random()*7).toFixed(0);
+
+	switch(random_mp3-0){
+		case 0:
+			return mp3src01_01;
+			break;
+		case 1:
+			return mp3src01_02;
+			break;
+		case 2:
+			return mp3src02_01;
+			break;
+		case 3:
+			return mp3src02_02;
+			break;
+		case 4:
+			return mp3src03_01;
+			break;
+		case 5:
+			return mp3src03_02;
+			break;
+		case 6:
+			return mp3src04_01;
+			break;
+		case 7:
+			return mp3src04_02;
+			break;
+	}
+}
+
+
+//目录收展
+
+function listbox_but (){
+	var body_on =document.getElementsByTagName("body")[0];
+	var listbox_c =document.getElementsByClassName("listbox")[0];
+	var listbox_but_c =document.getElementsByClassName("listbox_but")[0];
+this.className="listbox_but,listbox_but_on"; 
+	body_on.classList.toggle("body_on"); 
+	listbox_c.classList.toggle("listbox_on");
+	listbox_but_c.classList.toggle("listbox_but_on");  	
+}
+
+
+
+
+//阻止冒泡
+function stopBubble(e)
+	{
+	    if (e && e.stopPropagation)e.stopPropagation()
+	    else window.event.cancelBubble=true
+	}
+
+
+</script>
+<script type="text/javascript">
+window.onload = function(){
+	//////自动加语音
+	var td1 =document.querySelectorAll("td:nth-of-type(1)");
+	var td2 =document.querySelectorAll("td:nth-of-type(2)");
+	for (let i = 0; i < td2.length; i++) {
+		//按需加载
+		td2[i].onmouseover = function(){
+			//避免重复加载
+			if (!td2[i].innerHTML) {
+				//加载音频dom
+				let iidd = "audio_"+i;
+				let iidddiv =iidd+i;
+				//过滤后的单词字母  (mp3(td1[i].getElementsByTagName("a")[0].innerText.match(/\w/g) ))
+				//过滤后的完整单词
+				let danci = mp3(td1[i].getElementsByTagName("a")[0].innerText.replace(/\(\)/g,"") );
+				let audio_dom = "<div id='"+iidddiv+"'>"+"<audio id='" + iidd + "' src='"+danci+"' preload='none'></audio></div><p></p>"; //找名词并生成音频地址
+				td2[i].innerHTML=audio_dom;
+				var audio_id =document.getElementById(iidd);
+				audio_id.preload="metadata";//加载音频
+				//添加点击事件
+				let audio_mark = 0;//播发次数
+				td2[i].onclick = function(e){
+					let audio_time = audio_id.duration; //音频时长
+					td2[i].getElementsByTagName("p")[0].style.width = "100%";
+					td2[i].getElementsByTagName("p")[0].style.transition = audio_time + "s linear"; //添加时长动画效果
+					//第二次放慢
+					audio_mark ++;
+					audio_id.playbackRate=1;
+					if (audio_mark%2==0) {audio_id.playbackRate=0.6;}//放慢播放速度
+					audio_id.play();//播放
+					//if (!audio_id.ended) {alert(audio_id.ended);}
+					//stopBubble(e);
+				}
+				//双击循环播放
+				td2[i].ondblclick = function(){
+					audio_id.playbackRate=1;
+					if (audio_id.loop) {audio_id.loop = false;td2[i].getElementsByTagName("p")[0].className = "";}
+					else {audio_id.loop = true;td2[i].getElementsByTagName("p")[0].className = "p_on";}
+					audio_id.play();//播放
+				}
+			
+			}
+			else {
+				//动画回撤
+				// td2[i].getElementsByTagName("p")[0].style.width = "00%";
+				// td2[i].getElementsByTagName("p")[0].style.transition = "0.1s linear"; 
+			}
+		}
+	}
+
+
+
+	document.getElementsByClassName("loadbox")[0].classList.add("loadbox_end");
+
+}
+</script>
+</body>
+</html>
