@@ -6,4 +6,4 @@
 
 4.页面构成： index.js、index.wxml、index.wxss、index.json
 
-https://pic4.zhimg.com/80/v2-4c2e3fef0dbea6aed7a77667c39dab79_hd.jpg
+[tab]:https://pic4.zhimg.com/80/v2-4c2e3fef0dbea6aed7a77667c39dab79_hd.jpg
