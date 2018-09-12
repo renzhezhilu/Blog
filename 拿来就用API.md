@@ -80,3 +80,16 @@ https://wq.jd.com/commodity/comment/getcommentlist?sorttype=5&sceneval=2&sku=547
 https://apicdn.icons8.com/api/iconsets/v2/icon?id=435,437,5376,843,73,9659,355,123,381,2952,132,364,3096,343,77,2806,9671,3447,104,1669,2816,63,3701,398,23,532,366,529,34,4717,46&format=json&variants=disabled&info=disabled&language=en-US
 https://api.icons8.cn/api/iconsets/v2/icon?id=435,437,5376,843,73,9659,355,123,381,2952,132,364,3096,343,77,2806,9671,3447,104,1669,2816,63,3701,398,23,532,366,529,34,4717,46&format=json&variants=disabled&info=disabled&language=zh-CN
 https://apicdn.icons8.com/api/iconsets/v4/icon?id=95992&info=false&language=zh-CN
+
+### 视频
+###### 爱奇艺
+http://pub.m.iqiyi.com/jp/h5/recommend/videos/?area=h_swan&size=30&type=video&tvid=1324591800&referenceId=1324591800&albumId=1324591800&cookieId=0&channelId=13&filterStatus=1&trimUser=false&qyid=1yu6c5fhfs4463fn7ci5qcq0&ppuid=2354013938&uid=1yu6c5fhfs4463fn7ci5qcq0&_=1536787495873&callback=Zepto1536787493188
+http://pub.m.iqiyi.com/jp/h5/recommend/videos/?area=h_swan&size=30&type=video
+http://api-top.iqiyi.com/index/top?utype=h5_play&cid=29&dim=hour&len=4&area=m_iqiyi
+
+###### bilibili
+https://api.bilibili.com/x/web-interface/ranking?rid=0&day=3&jsonp=jsonp
+https://api.bilibili.com/x/web-interface/dynamic/region?rid=1&jsonp=jsonp&_sw-precache=juoihjoi
+
+### IP 用户位置
+https://api.bilibili.com/x/web-interface/zone?jsonp=jsonp
