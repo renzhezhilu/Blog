@@ -25,43 +25,43 @@ var toFixed_ok =function(value,num){
   let jg = Math.round(value*int_num2)/int_num2
   if (typeof jg === 'number' && jg%1 === 0) return jg+"."+int_num
   else return jg+""
-  
 }
 
-var toFixed_best =function(value,num){
+var toFixedBest =function(value,num,keep_zero,rounding){
+  //设置默认值
+  if(!value || !num) return console.log("缺少数值！！！\n toFixedBest函数参数：\nvalue(必选),\n num(必选),\n keep_zero(默认flash,是否保留小数点后的0),\n rounding(默认true,四舍五入)")
+  if (!keep_zero) keep_zero=false
+  if (!rounding) rounding=true
   let t ={
     value:value, //需处理的值 ,keep_zero,keep_zero,rounding
     num:num, //精确到
-    keep_zero:true, //是否保留小数点后的0 -> 87.00、13.000
-    rounding:true, //四舍五入
-    value_num:"",
-    value_num2:"",
-    value_num3:"",
-    value_num_dot:"",
-    result:0,
-    i:0,
-    y:0
+    keep_zero:keep_zero, //是否保留小数点后的0 -> 87.00、13.000
+    rounding:rounding, //四舍五入
+    value_num:"",value_num2:"",value_num3:"", value_num_dot:"",result:0,i:0,y:0
   }
-  t.value-0
+  if (isNaN(+t.value)) return console.log("非有效值-"+t.value)
+  t.value=t.value-0
   for(t.i =0;t.i<t.num;t.i++){
     t.value_num=t.value_num+"0"
   }
-  t.value_num2="1"+t.value_num
+  t.value_num2=+("1"+t.value_num)
   t.value_num_dot="."+ t.value_num
-  t.result = Math.round(t.value*t.value_num2)/t.value_num2 //(1.23*100)/100
-  if(keep_zero){
-    t.result+""
+  //四舍五入
+  if(t.rounding) t.result = Math.round(t.value*t.value_num2)/t.value_num2 
+  else t.result = parseInt(t.value*t.value_num2)/t.value_num2
+  //小数点后的0
+  if(t.keep_zero){
+    t.result=t.result+""
     if (t.result.indexOf(".")=== -1){
       return t.result+t.value_num_dot
     }
     else {
-      for(t.y=0;t.y<(t.num - (t.result.length - t.result.indexOf(".")));t.y++){
+      for(t.y=-1;t.y<(t.num - (t.result.length - t.result.indexOf(".")));t.y++){
         t.value_num3=t.value_num3+"0"
       }
       return t.result+t.value_num3
     }
   }
   else return t.result+""
-  
 }
 
