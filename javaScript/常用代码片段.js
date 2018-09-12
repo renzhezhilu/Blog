@@ -28,17 +28,19 @@ var toFixed_ok =function(value,num){
   
 }
 
-var toFixed_best =function(value,num){
+var toFixed_best =function(value,num,keep_zero,rounding){
   let t ={
-    value:1.335, //需处理的值 ,keep_zero,keep_zero,rounding
-    num:2, //精确到
+    value:value, //需处理的值 ,keep_zero,keep_zero,rounding
+    num:num, //精确到
     keep_zero:true, //是否保留小数点后的0 -> 87.00、13.000
     rounding:true, //四舍五入
     value_num:"",
     value_num2:"",
+    value_num3:"",
     value_num_dot:"",
     result:0,
-    i:0
+    i:0,
+    y:0
   }
   t.value-0
   for(t.i =0;t.i<t.num;t.i++){
@@ -47,7 +49,22 @@ var toFixed_best =function(value,num){
   t.value_num2="1"+t.value_num
   t.value_num_dot="."+ t.value_num
   t.result = Math.round(t.value*t.value_num2)/t.value_num2 //(1.23*100)/100
-  if (typeof t.result === 'number' && t.result%1 === 0) return t.result+t.value_num_dot
+  if(keep_zero){
+    t.result+""
+    if (t.result.indexOf(".")=== -1){
+      return t.result+t.value_num_dot
+    }
+    else {
+      for(t.y=0;t.y<(t.num - (t.result.length - t.result.indexOf(".")));t.y++){
+        t.value_num3=t.value_num3+"0"
+      }
+      return t.result+t.value_num3
+    }
+    if (typeof t.result === 'number' && t.result%1 === 0) 
+    if (typeof t.result === 'number' && t.result%1 === 0) return t.result+t.value_num_dot
+    
+  }
+  
   else return t.result+""
   
 }
