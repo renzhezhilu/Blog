@@ -14,22 +14,22 @@ parseFloat("4.3fd034") //4.3
 //截取小数点后N位,!!!!!!!!有精度问题!!!!!!
 1.5994.toFixed(2) //1.60  正确
 1.335.toFixed(2) //1.33  错误
-//解决精度问题
-var toFixed_ok =function(value,num){
-  value-0
-  let int_num ="";
-  for(let i =0;i<num;i++){
-    int_num=int_num+"0"
-  }
-  let int_num2="1"+int_num;
-  let jg = Math.round(value*int_num2)/int_num2
-  if (typeof jg === 'number' && jg%1 === 0) return jg+"."+int_num
-  else return jg+""
-}
 
+// var toFixed_ok =function(value,num){
+//   value-0
+//   let int_num ="";
+//   for(let i =0;i<num;i++){
+//     int_num=int_num+"0"
+//   }
+//   let int_num2="1"+int_num;
+//   let jg = Math.round(value*int_num2)/int_num2
+//   if (typeof jg === 'number' && jg%1 === 0) return jg+"."+int_num
+//   else return jg+""
+// }
+//解决精度问题
 var toFixedBest =function(value,num,keep_zero,rounding){
   //设置默认值
-  if(!value || !num) return console.log("缺少数值！！！\n toFixedBest函数参数：\nvalue(必选),\n num(必选),\n keep_zero(默认flash,是否保留小数点后的0),\n rounding(默认true,四舍五入)")
+  if(!value || !num) return console.log(" 缺少数值！！！\n toFixedBest函数参数：\nvalue(必选),\n num(必选),\n keep_zero(默认flash,是否保留小数点后的0),\n rounding(默认true,四舍五入)")
   if (!keep_zero) keep_zero=false
   if (!rounding) rounding=true
   let t ={
@@ -63,5 +63,12 @@ var toFixedBest =function(value,num,keep_zero,rounding){
     }
   }
   else return t.result+""
+}
+
+//数字保持同样的长度  10232.23->10232.2   2.34332132 -> 2.34332
+var numSameLength = function (value,num,keep_zero,rounding){
+  value=value+""
+  let value_l = num - value.indexOf(".")
+  return toFixedBest(value,value_l,keep_zero,rounding)
 }
 
