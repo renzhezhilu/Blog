@@ -23,8 +23,29 @@ var toFixed_ok =function(value,num){
   }
   let int_num2="1"+int_num;
   let jg = Math.round(value*int_num2)/int_num2
-  if (typeof jg === 'number' && jg%1 === 0) return +((jg+"")+int_num)
-  else return jg
+  if (typeof jg === 'number' && jg%1 === 0) return jg+"."+int_num
+  else return jg+""
+  
+}
+
+var toFixed_best =function(value,num,keep_zero,keep_zero,rounding){
+  let t ={
+    value:value-0, //需处理的值
+    num:2, //精确到
+    keep_zero:true, //是否保留小数点后的0 -> 87.00、13.000
+    rounding:true, //四舍五入
+    value_num:"",
+    value_num2:"",
+    i:0
+  }
+  t.value-0
+  for(t.i =0;t.i<t.value_num;t.i++){
+    t.value_num=t.value_num+"0"
+  }
+  t.value_num2="1"+int_num;
+  let jg = Math.round(value*int_num2)/int_num2
+  if (typeof jg === 'number' && jg%1 === 0) return jg+"."+int_num
+  else return jg+""
   
 }
 
