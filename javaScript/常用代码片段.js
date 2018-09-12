@@ -46,7 +46,7 @@ var toFixed_best =function(value,num){
   }
   t.value_num2="1"+t.value_num
   t.value_num_dot="."+ t.value_num
-  t.result = Math.round(value*t.value_num2)/t.value_num2 //(1.23*100)/100
+  t.result = Math.round(t.value*t.value_num2)/t.value_num2 //(1.23*100)/100
   if (typeof t.result === 'number' && t.result%1 === 0) return t.result+t.value_num_dot
   else return t.result+""
   
