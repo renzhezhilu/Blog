@@ -28,7 +28,7 @@ var toFixed_ok =function(value,num){
   
 }
 
-var toFixed_best =function(value,num,keep_zero,rounding){
+var toFixed_best =function(value,num){
   let t ={
     value:value, //需处理的值 ,keep_zero,keep_zero,rounding
     num:num, //精确到
@@ -60,11 +60,7 @@ var toFixed_best =function(value,num,keep_zero,rounding){
       }
       return t.result+t.value_num3
     }
-    if (typeof t.result === 'number' && t.result%1 === 0) 
-    if (typeof t.result === 'number' && t.result%1 === 0) return t.result+t.value_num_dot
-    
   }
-  
   else return t.result+""
   
 }
