@@ -57,6 +57,25 @@ https://m.baidu.com/sf/vsearch/image/search/wisejsonala?tn=wisejsonala&ie=utf8&c
 https://m.baidu.com/sf/vsearch/image/search/wisejsonala?tn=wisejsonala&ie=utf8&cur=result&fromsf=1&word=%E5%A4%A9%E7%A9%BA&pn=0&rn=30&gsm=1e&z=3&width=0&height=0&simibdtype=0&fromfilter=1
 https://m.baidu.com/sf/vsearch/image/wise/piccorrelate?fromsf=1&word=%E5%A4%A9%E7%A9%BA&cs=820856136%2C2100710011&os=192205059%2C236244713&is=0%2C0&bdtype=0&screenHeight=1334&screenWidth=750&queryImageUrl=https%3A%2F%2Fss1.bdstatic.com%2F70cFvXSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D820856136%2C2100710011%26fm%3D26%26gp%3D0.jpg&pictureoffset=4&spn=0&origintype=undefined&aiInfoType=0
 
+### 商品
+###### 游客随机推荐
+https://api.m.jd.com/api?functionId=uniformRecommend&client=m&appid=m_index&Area=1_72_4139&pin=&body={"source":9,"page":2,"needRecomTips":1,"pageSize":22}
+###### 单品信息
+
+
+https://m.360buyimg.com/mobilecms/s750x750_jfs/t24571/38/653433402/213398/8fd9a549/5b3c378bNcf72fdcc.jpg!q80.dpg.webp
+###### 类型选择
+https://yx.3.cn/service/info.action?ids=29922101672,5479867,1230025,30544525102,20820857683,30901970580,31649960891&callback=cb2b80fbeadafc069f2eca03f65046dc99&g_ty=ls&g_tk=5381
+###### 视频 
+https://wq.jd.com/commodity/extension/getplayurl?callback=videoUrlCBA&type=1&vid=6641897&sceneval=2
+###### 店铺信息
+https://wq.jd.com/mshop/BatchGetShopInfoByVenderId?callback=getVenderInfoCBA&venderIds=142607&t=0.02295104768684819
+https://wq.jd.com/mshop/BatchGetShopInfoByVenderId?callback=getVenderInfoCBA&venderIds=1000008667&t=0.36397990319232343
+https://shop.m.jd.com/?shopId=1000008667&skuId=1230025&categoryId=15901_15903_15917
+https://wqcoss.jd.com/mcoss/reclike/getrecinfo?recpos=6159&pc=30&sku=5479867&c1=15901&c2=15903&c3=15917&callback=cb902007A&t=0.20221420483480346
+###### 评论
+https://wq.jd.com/questionanswer/GetSkuQuestionListWeChat?callback=askAnswerCBA&productId=5479867&t=0.16416927637572387
+https://wq.jd.com/commodity/comment/getcommentlist?sorttype=5&sceneval=2&sku=5479867&page=1&pagesize=10&score=0&callback=skuJDEvalA&t=0.899028125593794
 ### 图标
 https://apicdn.icons8.com/api/iconsets/v2/icon?id=435,437,5376,843,73,9659,355,123,381,2952,132,364,3096,343,77,2806,9671,3447,104,1669,2816,63,3701,398,23,532,366,529,34,4717,46&format=json&variants=disabled&info=disabled&language=en-US
 https://api.icons8.cn/api/iconsets/v2/icon?id=435,437,5376,843,73,9659,355,123,381,2952,132,364,3096,343,77,2806,9671,3447,104,1669,2816,63,3701,398,23,532,366,529,34,4717,46&format=json&variants=disabled&info=disabled&language=zh-CN
