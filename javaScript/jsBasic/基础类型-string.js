@@ -35,3 +35,45 @@ Boolean(yyu) //true
 "Popin".search(/i/) //3
 "Popin&Locking".search(/in/g) //3
 "Popin&Locking".search(/l/i) //6
+
+//返回指定开始位置（包括开始位置，若为负数则从末尾处开始计算起始位置，即-1表示倒数第一个）
+//到指定结束位置（不包括结束位置，若未指定此参数，则包括从指定的开始位置开始到字符串结尾的所有字符）的字符串
+"She is Good Dancer".slice(0,3) //"She"
+"She is Good Dancer".slice(-6,-1) //"Dance"
+
+//substr(index,length)：提取从指定index（索引，必需，若为负数则从末尾处开始计算起始位置，即-1表示倒数第一个）
+//开始的length（长度，可选，若未指定此参数，则包括从指定的index开始到字符串结尾的所有字符）个字符
+"She is Good Dancer".substr(4,3) //"is "
+"She is Good Dancer".substr(-6,6) //"Dancer"
+
+//提取指定开始位置（包括开始位置）到结束位置（不包括结束位置，可选，若未指定此参数，
+//则包括从指定的开始位置开始到字符串结尾的所有字符）的字符
+//与 slice() 和 substr() 方法不同的是，substring() 不接受负的参数
+"She is Good Dancer".substring(0,3) //"She"
+"She is Good Dancer".substring(-1,7) //负数变成0 "She is "
+"She is Good Dancer".substring(-19,7) //"She is "
+
+//将字符串分割为子字符串数组（第二个参数可指定返回的数组的最大长度，可选）
+"do not want to work".split(" ") //返回数组 ["do", "not", "want", "to", "work"]
+
+//将字符串转换为小写
+"Yo~ Bro Wath is up".toLowerCase() //"yo~ bro wath is up"
+//转换为大写
+"Yo~ Bro Wath is up".toUpperCase() //"YO~ BRO WATH IS UP"
+
+//返回字符串
+[1,2,3].toString() //"1,2,3"
+"do not want to work".split(" ").toString() //"do,not,want,to,work"
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//搜索字符并添加标记
+var searchStr = function(content,regexp){
+  value=value.toString()
+  var patt1=new RegExp(value);
+  content.replace(regexp,"#"+)
+  
+}
+
+//学习：https://www.cnblogs.com/guoyeqiang/p/8178336.html
+
