@@ -34,3 +34,17 @@ vue init webpack
 ```javascript
 npm run dev
 ```
+##### 04.建立打包项目
+> 项目下生成dist目录，即上线版本
+```javascript
+npm run build
+```
+##### 了解目录
+--------- | --------|
+build  | 打包配置 |
+config  | node环境配置 |
+dist  | 打包好的文件 |
+node_modules  | node依赖 |
+src  | 开发目录 |
+static  | 静态资源 |
+test  | 测试 |
