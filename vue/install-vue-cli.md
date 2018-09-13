@@ -13,11 +13,11 @@ vue -h //帮助
 vue list //官方模板
 ```
 ##### 02.安装vue-cli模版
->>> cd 到项目目录 如：cd /Users/mac/Desktop/vue
+> cd 到项目目录 如：cd /Users/mac/Desktop/vue
 ```javascript
 vue init webpack
 ```
-### 单行文本
+
     Project name cli  //项目名称
     ? Project description A Vue.js project  //项目描述
     ? Author //作者
@@ -28,11 +28,9 @@ vue init webpack
     ? Pick a test runner jest //选择一个测试运行笑话
     ? Setup e2e tests with Nightwatch? Yes //使用Nightwatch设置e2e测试
     ? Should we run `npm install` for you after the project has been created? (recommended) npm //项目创建后，我们应该为您运行`npm install`吗？
-   
+
+##### 03.启动服务器
+> cd项目目录
 ```javascript
-
-```
-
-```javascript
-
+npm run dev
 ```
