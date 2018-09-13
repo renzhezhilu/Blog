@@ -40,7 +40,7 @@ npm run dev
 npm run build
 ```
 ##### 了解目录
-表头1  | 表头2|
+vue-cli webpack目录  | 说明|
 --------- | --------|
 build  | 打包配置 |
 config  | node环境配置 |
