@@ -96,3 +96,45 @@ var comparedStr = function(con1,con2,wordnum){
   }
   con1.substr(0,wordnum)
 }
+
+
+var comparedStr = function(con1,con2,wordnum){
+  if(!wordnum) wordnum=2
+  let s = {
+    con1:con1,
+    con2:con2,
+    regexp:new RegExp(),
+    wordnum:wordnum, //词汇对比
+    conlong:"",
+    conshort:"",
+    constay:"",
+    conarray:[],
+    jg_proportion:0,
+    jg:0
+    
+  }
+  //用短的去对比长的
+  if(s.con1.length>=s.con1.length) {s.conlong=con1; s.conshort=s.con2}
+  else {s.conlong=s.con2; s.conshort=s.con1}
+
+  s.jg_proportion = s.wordnum / s.conshort.length //每段得分占比
+     
+  for(let i=0;i<s.conshort.length;i+=s.wordnum){
+    let confrag = s.conshort.substr(i,s.wordnum)
+    confrag
+    var patt1 = new RegExp("W3School");
+    s.regexp=new RegExp("confrag","g");
+    
+    var result = s.regexp.test(s.conlong);
+    if(result) s.jg+=s.jg_proportion
+  }
+  return s.jg
+}
+
+
+
+
+
+
+
+
