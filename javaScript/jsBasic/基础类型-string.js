@@ -85,14 +85,23 @@ searchStr(nn,"天","g")
 //学习：https://www.cnblogs.com/guoyeqiang/p/8178336.html
 
 //////////////////////////////////////////////////////////////////////////////////////////
-
+/*
+思路：
+01.判断两个string的长度，用短的去对比长的
+02.将短string截取设置好的长度的词段去text()长的string
+03.如果flash就继续搜索下个词段，如果true，将得分累加到结果
+04.输出单次结果，得到（例：长度是2的词段的搜索结果）
+05.继续长度是3、4、5、6、7...的词段的计算，取平均值
+06.得出最后结果
+*/
 //对比两个字符串的相似性
 var comparedStr = function(con1,con2,wordnum){
-  if(!con1 || !con2) return "缺少字符串-function(con1*,con2*,wordnum)"
+  //if(!con1 || !con2) return "缺少字符串-function(con1*,con2*,wordnum词的长度)"
+  //if(con1.length<100 || con2.length<100) return "字符串长度小于100"
   if(!wordnum) wordnum=2
   let s = {
-    con1:con1,
-    con2:con2,
+    con1:con1, //第一个字符串
+    con2:con2, //第二个字符串
     regexp:new RegExp(),
     wordnum:wordnum, //词汇对比
     conlong:"",
@@ -106,6 +115,7 @@ var comparedStr = function(con1,con2,wordnum){
   if(s.con1.length>=s.con2.length) {s.conlong=s.con1; s.conshort=s.con2}
   else {s.conlong=s.con2; s.conshort=s.con1}
   s.jg_proportion = s.wordnum / s.conshort.length //每段得分占比
+  //把每词依次搜索
   for(let i=0;i<s.conshort.length;i+=s.wordnum){
     let confrag = s.conshort.substr(i,s.wordnum)
     s.regexp=new RegExp(confrag,"g");
@@ -115,9 +125,12 @@ var comparedStr = function(con1,con2,wordnum){
   return s.jg*100
 }
 //多次搜索取平均值
-var comparedStrOk = function(con1,con2){
-    let numoftime_sm=2
-    let numoftime_big=5
+var comparedStrOk = function(con1,con2,numoftime_sm,numoftime_big){
+    if(!con1 || !con2) return "缺少字符串-function(con1*,con2*,numoftime_sm词的最小长度,numoftime_big词的最大长度)"
+    if(con1.length<100 || con2.length<100) return "字符串长度不能小于100!!!"
+    //设置默认值
+    if(!numoftime_sm) numoftime_sm=2
+    if(!numoftime_big) numoftime_big=8
     let jg=0;
     for(let i=numoftime_sm;i<numoftime_big;i++){
       jg+=comparedStr(con1,con2,i)
