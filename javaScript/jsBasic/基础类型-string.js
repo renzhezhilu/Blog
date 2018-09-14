@@ -68,10 +68,15 @@ Boolean(yyu) //true
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //搜索字符返回结果数量并添加标记
-var searchStr = function(content,value,gi){
+//content字符串,value搜索词,gi修饰符,which需要的结果
+var searchStr = function(content,value,gi,which){
+  if(!gi) gi="g"
   let reg = new RegExp(value,gi)
   let jg = content.match(reg)
-  return "结果"+jg.length+"个\n"+content.replace(reg,"#"+value+"#")
+  if(!jg) return "没有符合的结果！"
+  if(which=="num") return jg.length
+  if(which=="con") return content.replace(reg,"#"+value+"#")
+  else return "结果"+jg.length+"个\n"+content.replace(reg,"#"+value+"#")
 }
 var nn ="今天天气真好啊啊啊啊啊哦哦哦哦"
 searchStr(nn,"天","g")
@@ -79,3 +84,15 @@ searchStr(nn,"天","g")
 // 今#天##天#气真好啊啊啊啊啊哦哦哦哦"
 //学习：https://www.cnblogs.com/guoyeqiang/p/8178336.html
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
+//对比两个字符串的相似性
+var comparedStr = function(con1,con2,wordnum){
+  if(!wordnum) wordnum=5
+  con1.lenght
+  let searchnumtime = parseInt(con1.lenght/wordnum)
+  for(let i=0;i<searchnumtime;i++){
+    con1.substr(0,wordnum)
+  }
+  con1.substr(0,wordnum)
+}
