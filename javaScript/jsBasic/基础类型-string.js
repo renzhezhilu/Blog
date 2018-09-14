@@ -67,13 +67,15 @@ Boolean(yyu) //true
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-//搜索字符并添加标记
-var searchStr = function(content,regexp){
-  value=value.toString()
-  var patt1=new RegExp(value);
-  content.replace(regexp,"#"+)
-  
+//搜索字符返回结果数量并添加标记
+var searchStr = function(content,value,gi){
+  let reg = new RegExp(value,gi)
+  let jg = content.match(reg)
+  return "结果"+jg.length+"个\n"+content.replace(reg,"#"+value+"#")
 }
-
+var nn ="今天天气真好啊啊啊啊啊哦哦哦哦"
+searchStr(nn,"天","g")
+// "结果2个
+// 今#天##天#气真好啊啊啊啊啊哦哦哦哦"
 //学习：https://www.cnblogs.com/guoyeqiang/p/8178336.html
 
