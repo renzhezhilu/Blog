@@ -62,12 +62,15 @@ var lz =[1,2,3,4,5,6]
 lz.splice(1,4,"2到5") //(4) [2, 3, 4, 5]
 lz // [1, "2到5", 6]
 
+//复制一个数组
+var lz =[1,2,3,4,5,6]
+var lz2 = lz.slice() //(6) [1, 2, 3, 4, 5, 6]
 
-//对半分隔
+//分隔数组
 var lz =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 //按每份数量
-var separationArrayData = function (array,data){
-  var array2=array;
+var separationArrayData = function (arraydata,data){
+  var array=arraydata.slice();
   var jg =[] //结果
   //份数
   if(!(array.length%data)) var page =array.length/data
@@ -88,7 +91,8 @@ separationArrayData(lz,10)
 
 //按份数
 var lz =[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-var separationArrayNum = function (array,num){
+var separationArrayNum = function (arraydata,num){
+  var array=arraydata.slice();
   var jg =[] //结果
   //每份长度
   if(!(array.length%num)) var num_len = array.length/num
