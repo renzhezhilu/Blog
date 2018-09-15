@@ -46,8 +46,7 @@ var lz =["a","b","c","d"]
 lz.splice(0,1) //["a"] 删除第一个值，从索引0开始删除1个
 lz.splice(lz.length-1,1) //["d"] 删除最后一个值
 lz.splice(0,lz.length-0) //清空 (3) ["b", "c", "d"]
-
-//通过索引增加,从index开始,返回[] ???蛤
+//通过索引增加,从index开始,返回[] ???蛤 因为只返回删除的值啊，所以是空
 var lz =["a","b","c"]
 lz.splice(0,0,"new01","new02") //头部新增
 lz //(5) ["new01", "new02", "a", "b", "c"]
@@ -58,11 +57,27 @@ lz //(5) ["a", "b", "new03", "new04", "c"]
 lz.splice(lz.length,0,"new05","new06") //末尾新增
 lz //(5) ["a", "b", "new03", "new04", "c"]
 lz //(7) ["a", "b", "new03", "new04", "c", "new05", "new06"]
-
 //替换，先删后增
 var lz =[1,2,3,4,5,6]
-lz.splice(1,4,"2到5")
-// [1, "2到5", 6]
+lz.splice(1,4,"2到5") //(4) [2, 3, 4, 5]
+lz // [1, "2到5", 6]
+//对半分隔
+var lz =[1,2,3,4,5,6]
+var separationArrAy = function (array,num){
+  var jg =[] //结果
+  //每份长度
+  if(lz.length%num) var num_len = lz.length/num
+  else var num_len = parseInt(lz.length/num+1)
+  for(var i=0;i<num;i++){
+    let sldata = lz.splice(i*num_len,num_len)
+    jg.splice(jg.length,0,sldata)
+  }
+  return jg
+}
+
+
+
+
 
 
 
