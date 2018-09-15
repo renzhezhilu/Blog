@@ -93,3 +93,21 @@ https://api.bilibili.com/x/web-interface/dynamic/region?rid=1&jsonp=jsonp&_sw-pr
 
 ### IP 用户位置
 https://api.bilibili.com/x/web-interface/zone?jsonp=jsonp
+
+
+### 天气
+http://wis.qq.com/weather/common?source=pc&weather_type=observe|forecast_1h|forecast_24h|index|alarm|limit|tips|rise&province=广东省&city=梅州市&county=
+http://wis.qq.com/weather/common?source=pc&weather_type=air|rise&province=广东省&city=东莞市
+```
+    //var HOST = "wisdev.cpcwe.com";
+
+    // observe         实况
+    // forecast_1h     预报
+    // forecast_24h    预报
+    // air             空气质量
+    // index           指数
+    // alarm           天气预警
+    // limit           尾号限行
+    // var TYPES = ["observe", "forecast_1h", "forecast_24h", "air", "index", "alarm", "limit"];
+
+```
