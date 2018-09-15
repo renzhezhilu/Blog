@@ -64,12 +64,14 @@ lz // [1, "2到5", 6]
 //对半分隔
 var lz =[1,2,3,4,5,6]
 var separationArrAy = function (array,num){
+  var array2=array;
   var jg =[] //结果
   //每份长度
-  if(lz.length%num) var num_len = lz.length/num
-  else var num_len = parseInt(lz.length/num+1)
+  if(!(array.length%num)) var num_len = array.length/num
+  else var num_len = parseInt(array.length/num+1)
   for(var i=0;i<num;i++){
-    let sldata = lz.splice(i*num_len,num_len)
+    var sldata = array.splice(i*num_len,num_len)
+    array=array2
     jg.splice(jg.length,0,sldata)
   }
   return jg
