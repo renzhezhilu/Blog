@@ -82,10 +82,19 @@ d.split("").reverse().join("") //"~looC sI paR"
 //数组的元素进行排序
 //没参数时，将按照字符编码的顺序进行排序,结果就是乱七八糟，所以一定要加参数
 arrayObject.sort(sortby)
+//数字排序
+var arrnum = [10,3,4,5,11,1,100,203,300,1002,99,11,12,14,20,21,22,50,55,59,60,"2223",123,"002","999"]
+arrnum.sort((a,b)=>a-b) //正序
+arrnum.sort(function(a,b){return b-a}) //倒序
+//语言排序 localeCompare本地比较
+var arren =["bann","array","fuck","click","Auu","Mm","Ba"]
+arren.sort(function(a,b){return a.localeCompare(b)}) //正序 大写优先
+arren.sort(function(a,b){return b.localeCompare(a)}) //倒序
 
-
-
-
+//中文排序 按拼音 牛逼啊 声调也能排
+var arrcn =["必须","啊","大爷","鼻子","比较","吃货","逼"]
+arrcn.sort(function(a,b){return a.localeCompare(b)}) 
+arrcn //["啊", "逼", "鼻子", "比较", "必须", "吃货", "大爷"]
 
 //⚠️ 这些方法会改变原来的数组，而不会创建新的数组
 var change = [1,2,3]
