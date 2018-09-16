@@ -81,12 +81,17 @@ d.split("").reverse().join("") //"~looC sI paR"
 
 //数组的元素进行排序
 //没参数时，将按照字符编码的顺序进行排序,结果就是乱七八糟，所以一定要加参数
+//如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，
+//然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
+    // 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+    // 若 a 等于 b，则返回 0。
+    // 若 a 大于 b，则返回一个大于 0 的值。
 arrayObject.sort(sortby)
 //数字排序
 var arrnum = [10,3,4,5,11,1,100,203,300,1002,99,11,12,14,20,21,22,50,55,59,60,"2223",123,"002","999"]
 arrnum.sort((a,b)=>a-b) //正序
 arrnum.sort(function(a,b){return b-a}) //倒序
-//语言排序 localeCompare本地比较
+//语言排序 localeCompare本地比较 对非 ASCII 字符排序
 var arren =["bann","array","fuck","click","Auu","Mm","Ba"]
 arren.sort(function(a,b){return a.localeCompare(b)}) //正序 大写优先
 arren.sort(function(a,b){return b.localeCompare(a)}) //倒序
