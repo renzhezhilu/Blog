@@ -55,6 +55,7 @@ Boolean(yyu) //true
 
 //将字符串分割为子字符串数组（第二个参数可指定返回的数组的最大长度，可选）
 "do not want to work".split(" ") //返回数组 ["do", "not", "want", "to", "work"]
+"do not want to work".split(" ",3)  // ["do", "not", "want"]
 
 //将字符串转换为小写
 "Yo~ Bro Wath is up".toLowerCase() //"yo~ bro wath is up"
@@ -64,6 +65,10 @@ Boolean(yyu) //true
 //返回字符串
 [1,2,3].toString() //"1,2,3"
 "do not want to work".split(" ").toString() //"do,not,want,to,work"
+
+//反转字符串
+"whta the f*ck!".split("").reverse().join("") //"!kc*f eht athw"
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
