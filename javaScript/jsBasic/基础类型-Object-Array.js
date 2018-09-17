@@ -21,6 +21,10 @@ rap[rap.length-1] //最后一个 "..."
 rap.forEach(function ( item,index,array){
   console.log(item,index,array)
 })
+//参数：索引 in Array
+for(x in rap){
+  console.log(rap[x])
+}
 //添加元素到末尾，返回length
 rap.push("eminem") //4
 rap //(4) ["mchotdong", "B.I.G", "...", "eminem"]
@@ -65,14 +69,18 @@ lz // [1, "2到5", 6]
 //复制一个数组
 var lz =[1,2,3,4,5,6]
 var lz2 = lz.slice() //(6) [1, 2, 3, 4, 5, 6]
+lz.splice(1,3) // [2, 3, 4]
 
 //合并数组
 var a=[1,2,3];b=[4,5,6];c=[7,8]
 a.concat(b,c) //(8) [1, 2, 3, 4, 5, 6, 7, 8]
 a.concat(["a","b"]) //相当于在末尾新增 [1, 2, 3, "a", "b"]
+["a","b"].concat(a) //相当于头部新增 ["a", "b", 1, 2, 3]
 
 //所有元素放入一个字符串
 a.join("--") //"1--2--3"
+a.join("") //"123" 
+a.join() //"1,2,3" //相当于数组转字符串
 //颠倒数组中元素的顺序
 a.reverse()
 //衍生 反转字符串
