@@ -15,18 +15,20 @@ typeof (undefined) //"undefined"
 //对Array、Object、null无法识别，另外NaN也需要判断
 function typeOfData (data) {
   if(typeof(data)==="number" && !isNaN(data)){return "number"}
-  else {}
-  if(typeof(data)==="string"){return "string"}
-  if(typeof(data)==="boolean"){return "boolean"}
-  if(typeof(data)==="function"){return "function"}
-  if(typeof(data)==="undefined"){return "undefined"}
-  if(isNaN(data)&&typeof(data)!=="object"){return "NaN"}
-  if(data===null){return "null"}[]
-  if(typeof(data)==="object"){return "object"}
+
+  else if(typeof(data)==="string"){return "string"}
+  else if(typeof(data)==="boolean"){return "boolean"}
+  else if(typeof(data)==="function"){return "function"}
+  else if(typeof(data)==="undefined"){return "undefined"}
+  else if(isNaN(data)&&typeof(data)!=="object"){return "NaN"}
+  else if(data===null){return "null"}
+ 
   
   //数组才有sort方法
-  if(typeof(data.sort)==="function"){return "array"}
-  //
-  if(typeof(data.sort)==="function"){return "array"}
+  else if(typeof(data.sort)==="function"){return "array"}
+  //日期才有getTime()
+  else if(typeof(data.getTime)==="function"){return "data"}
+  else if(typeof(data)==="object"){return "object"}
+  else {return "判断不出是什么类型！"}
   
 }
