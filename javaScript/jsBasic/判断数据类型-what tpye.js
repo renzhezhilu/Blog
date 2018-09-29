@@ -22,7 +22,8 @@ function typeOfData (data) {
   else if(isNaN(data)&&typeof(data)!=="object"){return "NaN"}
   else if(data===null){return "null"}
   //数组才有sort方法
-  else if(typeof(data.sort)==="function"){return "array"}
+  //else if(typeof(data.sort)==="function"){return "array"}
+  else if(Array.isArray(data)){return "array"}
   //日期才有getTime()
   else if(typeof(data.getTime)==="function"){return "Data"}
   //正则表达式才有test()
