@@ -31,3 +31,21 @@ function typeOfData (data) {
   else if(typeof(data)==="object"){return "object"}
   else {return "这是什么鬼类型？"}
 }
+
+
+... instanceof Arrar|Object|Function|RegExp|Date|//只能用来判断对象的类型
+(function(){}) instanceof String //false
+(function(){}) instanceof Object //true
+(function(){}) instanceof Function //true
+new Date() instanceof Date //true
+[] instanceof Array //true
+//注意！！存在重叠类型
+new Number(123) instanceof Number //true  是不是只能判断数字对象类型？？？ //数字类型和数字对象类型
+new Number(123) instanceof Object //true
+Number(123) instanceof Object //false
+123 instanceof Object //false
+
+ //不能用于判断原始数据类型的数据
+3 instanceof Number // false
+'3' instanceof String // false
+true instanceof Boolean // false
