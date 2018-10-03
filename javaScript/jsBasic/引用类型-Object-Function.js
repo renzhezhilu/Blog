@@ -59,7 +59,7 @@ fff.f1 // undefined
 fff().f1() //3
 
 //函数封装
-var 
+http://www.cnblogs.com/kuailingmin/p/3838322.html
 
 
 
