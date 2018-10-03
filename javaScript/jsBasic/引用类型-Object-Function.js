@@ -18,6 +18,11 @@ fun2() //fun2函数表达式
 -function(){/* code */}();
 +function(){/* code */}();
 
+//自执行函数
+function auto (){ auto()} //注意⚠️死循环
+
+
+
 //匿名函数
 function () {}
 
