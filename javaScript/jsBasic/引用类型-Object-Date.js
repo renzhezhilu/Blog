@@ -68,7 +68,9 @@ function monthHowDay (datestring) {
 }
 monthHowDay("2018/10") //10月有31天  31
 
+
 //获取一年中的第几天-howmanyday、第几周-howmanyweek、剩余天数-endofyear、当月剩余天数-endofmonth、总天数-daynum
+//⚠️依赖monthHowDay（）
 function howManyDayInYear (datestring,par){
 	var date = new Date(datestring)
 	var month = date.getMonth()
