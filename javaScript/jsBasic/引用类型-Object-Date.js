@@ -54,4 +54,33 @@ var d=new Date()
 var weekday=["Sunday周日","Monday周一","Tuesday周二","Wednesday周三","Thursday周四","Friday周五","Saturday周六"]
 weekday[d.getDay()]
 
-//http://www.w3school.com.cn/jsref/jsref_obj_date.asp
+//获取月份的天数
+function monthHowDay (datestring) {
+	var date = new Date(datestring)
+	var month = date.getMonth()
+	for (var i = 1; i < 33; i++) {
+		date.setDate(i)
+		if (date.getMonth()!==month) {
+			console.log (  (month+1)+"月有"+(i-1)+"天"  )
+	    return i-1
+		}
+	}
+}
+monthHowDay("2018/10") //10月有31天  31
+
+//获取一年有几天 ？？优化：就是瑞年+1天其他都是365？？
+function howManyDayInYear (datestring){
+	var date = new Date(datestring)
+	var daynum =0
+	for (var i = 0; i < 12; i++) {
+		daynum = daynum + monthHowDay(date.setMonth(i))
+	}
+	console.log (  date.getFullYear()+"年有"+daynum+"天"  )
+	return daynum
+}
+howManyDayInYear("2018") //2018年有365天 365
+
+
+
+
+
