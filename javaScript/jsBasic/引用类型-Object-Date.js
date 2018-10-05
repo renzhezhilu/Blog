@@ -71,6 +71,7 @@ monthHowDay("2018/10") //10月有31天  31
 
 //获取一年中的第几天-howmanyday、第几周-howmanyweek、剩余天数-endofyear、当月剩余天数-endofmonth、总天数-daynum
 //⚠️依赖monthHowDay（）
+
 function howManyDayInYear (datestring,par){
 	var date = new Date(datestring)
 	var month = date.getMonth()
@@ -88,11 +89,11 @@ function howManyDayInYear (datestring,par){
 	endofyear = endday + endofmonth //今年剩余天数
 
 	console.log ( 
-		"今年的总天数："+daynum + 
 		"今天是今年的第几天:" + howmanyday + 
 		"今天是今年的第几周:" + Math.ceil((howmanyday/7)) + 
 		"今年剩余天数:" + endofyear +
-		"当月剩余天数:" + endofmonth 
+		"当月剩余天数:" + endofmonth +
+		"今年的总天数："+daynum 
 	 )
 	if (par==="howmanyday") { return howmanyday }
 	else if (par==="howmanyweek") { return Math.ceil((howmanyday/7)) }
@@ -101,7 +102,6 @@ function howManyDayInYear (datestring,par){
 	else { return daynum }
 	
 }
-
 
 
 
