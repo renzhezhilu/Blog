@@ -39,3 +39,81 @@ str.search(/m/gi) // -1
 !!~(str.search(/m/gi)) //false
 !!~(str.search(/k/gi)) // true
 
+//匹配规则 
+
+//点字符"."
+//表示除回车（r）、换行(n) 、行分隔符（u2028）和段分隔符（u2029）以外的所有字符
+//一个点一个字符
+"fu*k funk far fook".match(/f..k/g) //(3表示["fu*k", "funk", "fook"]
+"fu*k funk far fook".match(/f.k/g) // null
+//如果不确定中间多少字符或者很多怎么办，可以用.* 或见[^]
+"fu*k funk far fook".match(/f.*k/g) //["fu*k funk far fook"]
+
+//位置字符  "$"、"^"  (shift+6)
+//^ 字符串的开始位置
+//$ 字符串的结束位置
+/^abc/.test("abc def") //true
+/^abc/.test("0 abc def") //false
+"wath is the def".search(/def$/) // 12
+
+//选择符 "|" 或的意思
+/123|a/.test("123456") //true
+/321|abc/.test("123456") //false
+
+//转义符 "\"
+//特殊含义的元字符需要先转义,有12个字符需要转义：^  .  |  [  $  (  )  *  +  ?  {  。
+/1+1/.test("1+1+2") //false
+/1\+1/.test("1+1+2") //true
+//RegExp方法生成，需要两个\\
+(new RegExp('1\+1')).test('1+1') //false
+(new RegExp('1\\+1')).test('1+1') //true
+
+////字符类
+//只要匹配其中一个a或b或c就可以
+/[操干逼屎]/.test("麻痹今天差点踩到狗屎了") //true
+/[操干逼屎]/.test("今天操作可以啊") //true
+
+//脱字符 "^"
+//如果方括号内的第一个字符是[^xyz]表示除了x、y、z之外都可以匹配：
+/[^abc]/.test('hello world') // true
+/[^abc]/.test('bbc') // false
+//[^]，就表示匹配一切字符，其中包括换行符。相比之下，点号作为元字符（.）是不包括换行符的。
+var s = 'Please yes\nmake my day!';
+s.match(/yes.*day/) // null
+s.match(/yes[^]*day/) // [ 'yes\nmake my day']
+
+//连字符 "-"
+//对于连续序列的字符，连字符（-）用来提供简写形式
+//[abc]可以写成[a-c] [0-9] [a-z] [A-Z] 
+/a-z/.test('b') // false
+/[a-z]/.test('b') // true 
+[0-9.,]
+[0-9a-fA-F]
+[a-zA-Z0-9-]
+[1-31] //表示1到3不是1到31
+"24".match(/[1-31]/) //["2", index: 0, input: "24", groups: undefined]
+
+////预定义模式 
+
+// d 匹配0-9之间的任一数字，相当于[0-9]。
+// D 匹配所有0-9以外的字符，相当于[^0-9]。
+// w 匹配任意的字母、数字和下划线，相当于[A-Za-z0-9_]。
+// W 除所有字母、数字和下划线以外的字符，相当于[^A-Za-z0-9_]。
+// s 匹配空格（包括换行符、制表符、空格符等），相等于[ \t\r\n\v\f]。
+// S 匹配非空格的字符，相当于[^ \t\r\n\v\f]。
+// b 匹配词的边界。
+// B 匹配非词边界，即在词的内部。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
