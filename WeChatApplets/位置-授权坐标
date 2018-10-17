@@ -1,0 +1,65 @@
+//授权坐标应用实例
+const app = getApp()
+Page({
+    data: {
+        ldata: false
+    },
+    onLoad: function () {
+        // 获取位置
+        var that = this;
+        wx.getLocation({
+            type: 'gcj02',
+            success: function (res) {
+                var latitude = res.latitude
+                var longitude = res.longitude
+                that.setData({
+                    ldata: true,
+                    latitude: latitude,
+                    longitude: longitude
+                })
+            },
+            fail: function (res) {
+                console.log('拒绝授权')
+                that.setData({
+                    ldata: false
+                })
+            }
+        })
+    },
+    btnTap(e) {
+        wx.openLocation({
+            latitude: this.data.latitude,
+            longitude: this.data.longitude,
+            scale: 28
+        })
+    },
+    handler: function (e) {
+        var that = this;
+        if (!e.detail.authSetting['scope.userLocation']) {
+            that.setData({
+                ldata: false
+            })
+        } else {
+            that.setData({
+                ldata: true,
+            })
+            wx.getLocation({
+                type: 'gcj02',
+                success: function (res) {
+                    var latitude = res.latitude
+                    var longitude = res.longitude
+
+                    that.setData({
+                        latitude: latitude,
+                        longitude: longitude
+                    })
+                    wx.openLocation({
+                        latitude: latitude,
+                        longitude: longitude,
+                        scale: 28
+                    })
+                }
+            })
+        }
+    }
+})
