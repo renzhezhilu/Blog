@@ -2,94 +2,144 @@ var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 var qqmapsdk;
 Page({
 
-        onLoad: function () {
-                // 实例化API核心类
-                qqmapsdk = new QQMapWX({
-                    //https://lbs.qq.com申请并绑定小程序id
-                    key: 'ZMUBZ-FJWKJ-xxx-FITHU-xxx-xx'
-                });
-        },
-        onShow: function () {
-            // 搜索附近
-            qqmapsdk.search({
-                    keyword: '酒店',
-                    success: function (res) {
-                            console.log(res);
-                    },
-                    fail: function (res) {
-                            console.log(res);
-                    },
-                complete: function (res) {
-                        console.log(res);
-                }
-            });
-            //坐标转位置名称
-            qqmapsdk.reverseGeocoder({
-                location: {
-                    latitude: 39.984060,
-                    longitude: 116.307520
-                },
-                success: function (res) {
-                    console.log(res);
-                },
-                fail: function (res) {
-                    console.log(res);
-                },
-                complete: function (res) {
-                    console.log(res);
-                }
-            });
-            //位置转坐标
-            qqmapsdk.geocoder({
-                address: '北京市海淀区彩和坊路海淀西大街74号',
-                success: function (res) {
-                    console.log(res);
-                },
-                fail: function (res) {
-                    console.log(res);
-                },
-                complete: function (res) {
-                    console.log(res);
-                }
-            });
-            //城市列表
-            qqmapsdk.getCityList({
-                success: function (res) {
-                    console.log(res);
-                },
-                fail: function (res) {
-                    console.log(res);
-                },
-                complete: function (res) {
-                    console.log(res);
-                }
-            });
-            // 获取城市区县
-            qqmapsdk.getDistrictByCityId({
-                id: '110000', // 对应城市ID
-                success: function (res) {
-                    console.log(res);
-                },
-                fail: function (res) {
-                    console.log(res);
-                },
-                complete: function (res) {
-                    console.log(res);
-                }
-            });
-            // 关键词提示
-            demo.getSuggestion({
-                keyword: '技术',
-                success: function (res) {
-                    console.log(res);
-                },
-                fail: function (res) {
-                    console.log(res);
-                },
-                complete: function (res) {
-                    console.log(res);
-                }
-            });
+    onLoad: function () {
+            // 实例化API核心类
+            qqmapsdk = new QQMapWX({
+                //https://lbs.qq.com申请并绑定小程序id
+                key: 'ZMUBZ-FJWKJ-xxx-FITHU-xxx-xx'
+            });
+    },
+    onShow: function () {
+        // 搜索附近
+        qqmapsdk.search({
+                keyword: '酒店',
+                success: function (res) {
+                        console.log(res);
+                },
+                fail: function (res) {
+                        console.log(res);
+                },
+            complete: function (res) {
+                    console.log(res);
+            }
+        });
+        //坐标转位置名称
+        qqmapsdk.reverseGeocoder({
+            location: {
+                latitude: 39.984060,
+                longitude: 116.307520
+            },
+            success: function (res) {
+                console.log(res);
+            },
+            fail: function (res) {
+                console.log(res);
+            },
+            complete: function (res) {
+                console.log(res);
+            }
+        });
+        //位置转坐标
+        qqmapsdk.geocoder({
+            address: '北京市海淀区彩和坊路海淀西大街74号',
+            success: function (res) {
+                console.log(res);
+            },
+            fail: function (res) {
+                console.log(res);
+            },
+            complete: function (res) {
+                console.log(res);
+            }
+        });
+        //城市列表
+        qqmapsdk.getCityList({
+            success: function (res) {
+                console.log(res);
+            },
+            fail: function (res) {
+                console.log(res);
+            },
+            complete: function (res) {
+                console.log(res);
+            }
+        });
+        // 获取城市区县
+        qqmapsdk.getDistrictByCityId({
+            id: '110000', // 对应城市ID
+            success: function (res) {
+                console.log(res);
+            },
+            fail: function (res) {
+                console.log(res);
+            },
+            complete: function (res) {
+                console.log(res);
+            }
+        });
+        // 关键词提示
+        demo.getSuggestion({
+            keyword: '技术',
+            success: function (res) {
+                console.log(res);
+            },
+            fail: function (res) {
+                console.log(res);
+            },
+            complete: function (res) {
+                console.log(res);
+            }
+        });
 
-        }
-    })
+    }
+})
+
+// /////////搜索详细实例
+// <!--绑定点击事件-->
+// <button bindtap="nearby_search">搜索周边KFC</button>
+// <!--地图容器-->
+// <map id="myMap"
+//    markers="{{markers}}"
+//    style="width:100%;height:300px;"
+//    longitude="116.313972"
+//    latitude="39.980014" scale='16'>
+// </map>
+
+// // 引入SDK核心类
+// var QQMapWX = require('xxx/qqmap-wx.js');
+// // 实例化API核心类
+// var qqmapsdk = new QQMapWX({
+//   key: '开发密钥（key）' // 必填
+// });
+// // 事件触发，调用接口
+// nearby_search:function(){
+//    var _this = this;
+//    // 调用接口
+//    qqmapsdk.search({
+//       keyword: 'kfc',  //搜索关键词
+//       location: '39.980014,116.313972',  //设置周边搜索中心点
+//       success: function (res) { //搜索成功后的回调
+//         var mks = []
+//         for (var i = 0; i < res.data.length; i++) {
+//           mks.push({ // 获取返回结果，放到mks数组中
+//             title: res.data[i].title,
+//             id: res.data[i].id,
+//             latitude: res.data[i].location.lat,
+//             longitude: res.data[i].location.lng,
+//             iconPath: "/resources/my_marker.png", //图标路径
+//             width: 20,
+//             height: 20
+//           })
+//         }
+//         _this.setData({ //设置markers属性，将搜索结果显示在地图中
+//           markers: mks
+//         })
+//       },
+//       fail: function (res) {
+//         console.log(res);
+//       },
+//       complete: function (res){
+//         console.log(res);
+//       }
+//   });
+// }
