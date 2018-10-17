@@ -1,0 +1,95 @@
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
+var qqmapsdk;
+Page({
+
+        onLoad: function () {
+                // 实例化API核心类
+                qqmapsdk = new QQMapWX({
+                    //https://lbs.qq.com申请并绑定小程序id
+                    key: 'ZMUBZ-FJWKJ-xxx-FITHU-xxx-xx'
+                });
+        },
+        onShow: function () {
+            // 搜索附近
+            qqmapsdk.search({
+                    keyword: '酒店',
+                    success: function (res) {
+                            console.log(res);
+                    },
+                    fail: function (res) {
+                            console.log(res);
+                    },
+                complete: function (res) {
+                        console.log(res);
+                }
+            });
+            //坐标转位置名称
+            qqmapsdk.reverseGeocoder({
+                location: {
+                    latitude: 39.984060,
+                    longitude: 116.307520
+                },
+                success: function (res) {
+                    console.log(res);
+                },
+                fail: function (res) {
+                    console.log(res);
+                },
+                complete: function (res) {
+                    console.log(res);
+                }
+            });
+            //位置转坐标
+            qqmapsdk.geocoder({
+                address: '北京市海淀区彩和坊路海淀西大街74号',
+                success: function (res) {
+                    console.log(res);
+                },
+                fail: function (res) {
+                    console.log(res);
+                },
+                complete: function (res) {
+                    console.log(res);
+                }
+            });
+            //城市列表
+            qqmapsdk.getCityList({
+                success: function (res) {
+                    console.log(res);
+                },
+                fail: function (res) {
+                    console.log(res);
+                },
+                complete: function (res) {
+                    console.log(res);
+                }
+            });
+            // 获取城市区县
+            qqmapsdk.getDistrictByCityId({
+                id: '110000', // 对应城市ID
+                success: function (res) {
+                    console.log(res);
+                },
+                fail: function (res) {
+                    console.log(res);
+                },
+                complete: function (res) {
+                    console.log(res);
+                }
+            });
+            // 关键词提示
+            demo.getSuggestion({
+                keyword: '技术',
+                success: function (res) {
+                    console.log(res);
+                },
+                fail: function (res) {
+                    console.log(res);
+                },
+                complete: function (res) {
+                    console.log(res);
+                }
+            });
+
+        }
+    })
