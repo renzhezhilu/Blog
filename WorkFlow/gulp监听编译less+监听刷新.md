@@ -88,3 +88,5 @@ browser-sync start --server --files "**/**.*"
 #### 07.试试用pc和手机访问同一个页面然后进行一些点击滑动之类的操作
 
 
+[browser-sync自动刷新，释放你的F5](http://caibaojian.com/browser-sync.html)
+[gulp教程之gulp-less](http://www.cnblogs.com/chris-oil/p/5387904.html)
