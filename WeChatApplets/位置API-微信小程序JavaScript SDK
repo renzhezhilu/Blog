@@ -77,6 +77,25 @@ Page({
                 console.log(res);
             }
         });
+        // 距离判断
+        demo.calculateDistance({
+            to:[{
+                latitude: 39.984060,
+                longitude: 116.307520
+            }, {
+                latitude: 39.984572,
+                longitude: 116.306339
+            }],
+            success: function(res) {
+                console.log(res);
+            },
+            fail: function(res) {
+                console.log(res);
+            },
+            complete: function(res) {
+                console.log(res);
+            }
+        });
         // 关键词提示
         demo.getSuggestion({
             keyword: '技术',
