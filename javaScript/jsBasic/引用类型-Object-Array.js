@@ -38,6 +38,13 @@ rap //(4) ["2PAC", "mchotdong", "B.I.G", "..."]
 rap.shift() //"2PAC"
 rap //(3) ["mchotdong", "B.I.G", "..."]
 
+//数组的length属性可以改变,返回的类型和push()和pop()相反！
+//末尾新增
+rap[rap.length]="MC" //"MC"
+//末尾删除
+rap.length-=1 //4
+
+
 //找出某个元素在数组中的索引，并返回，找不到则返回-1
 rap.indexOf("...") //2
 rap.indexOf("who") //-1
