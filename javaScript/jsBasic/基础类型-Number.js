@@ -72,3 +72,20 @@ var numSameLength = function (value,num,keep_zero,rounding){
   return toFixedBest(value,value_l,keep_zero,rounding)
 }
 
+//数值的次方   //沙雕，有Math.pow(num,power)还自己写
+function PowerOfNum (num,power){
+  var i=0,j=1
+  while(i<power){
+  j=j*num  
+  i++
+  }
+  return j
+}
+PowerOfNum(2,3) //8
+Math.pow(2,3) //8 真香
+
+
+
+
+
+var numSameLength = function (value,num,keep_zero,rounding){的次方
