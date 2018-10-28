@@ -48,12 +48,15 @@ d.getMilliseconds() // 666
 new Date().getTimezoneOffset()/60 //-480/60=-8
 
 
-
-
 //获取日期是星期几
-var d=new Date()
-var weekday=["Sunday周日","Monday周一","Tuesday周二","Wednesday周三","Thursday周四","Friday周五","Saturday周六"]
-weekday[d.getDay()]
+function getDayOfWeek (date){
+	date=new Date(date)
+	var weekday=["Sunday周日","Monday周一","Tuesday周二","Wednesday周三","Thursday周四","Friday周五","Saturday周六"]
+	return weekday[date.getDay()]
+}
+getDayOfWeek(new Date())
+getDayOfWeek("2015/6/12")
+
 
 //获取月份的天数
 function monthHowDay (datestring) {
