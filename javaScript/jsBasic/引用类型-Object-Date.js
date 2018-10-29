@@ -58,7 +58,7 @@ getDayOfWeek(new Date())
 getDayOfWeek("2015/6/12")
 
 
-//获取月份的天数
+//获取月份的天数   因为月份天数是有规律的 可以直接用数组 还要考虑闰年 索性计算
 function monthHowDay (datestring) {
 	var date = new Date(datestring)
 	var month = date.getMonth()
