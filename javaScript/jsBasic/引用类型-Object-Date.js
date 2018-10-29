@@ -44,18 +44,75 @@ d.getSeconds() // 56
 //返回毫秒(0~999)
 d.getMilliseconds() // 666
 
-//时差，本地时间与 GMT 时间之间的时间差，以分钟为单位
+//时差，本地时间与 GMT 时间之间的时间差，以分钟为单位  就是伦敦时间嘛  我们是早8个小时
 new Date().getTimezoneOffset()/60 //-480/60=-8
 
+//时间比较 
+ new Date("2015/6/12")>new Date("2018/3/12") //false
+//时间加减
+var dectime = new Date("2018/3/12")-new Date("2015/6/12") //86745600000
+var onehours = 3600000 //1000*60*60
+var oneday = 86400000 //1000*60*60*24
+dectime/oneday //1004 相隔天数
+
+
+//两个时间的间隔
+function twoTimeInterval (obj){
+	var time01 = new Date(obj.time01),time02 = new Date(obj.time02),unit = obj.unit,interval=0;
+	//格式判断
+	time01==undefined || time02==undefined ? console.error("时间格式有误！"):console.log();
+	 
+	//一天内的时间，加上年月日才能计算
+	if ( isNaN(time01.getFullYear()) || isNaN(time02.getFullYear())){
+		time01= new Date("2015/6/12 "+obj.time01)
+		time02= new Date("2015/6/12 "+obj.time02)
+	}
+	//不能相同的时间
+	time01-time02 ?  console.log(): console.warn("两个时间不可以相等！");
+	//开始计算
+	time01>time02 ? interval=time01-time02:interval=time02-time01;
+	switch(unit){
+		case 's':
+			return interval=interval/1000+"秒";
+		case 'm':
+			return interval= interval/(60000)+"分钟";
+		case 'h':
+			return interval= interval/(3600000)+"小时";
+		case 'D':
+			return interval= interval/(86400000)+"日";
+		case 'M':
+			return interval= interval/(86400000*30)+"月"; //还不够准！！！！
+		case 'Y':
+			return interval= interval/(86400000*365)+"年";
+		default:
+			return console.warn("参数有误！s/m/h/D/M/Y") 
+	}
+}		
+
+twoTimeInterval({
+	time01:new Date("2018/3/12"),
+	time02:new Date("2018/3/12"),
+	unit:"D"
+}); // VM2743:12 两个时间不可以相等！ 0
+twoTimeInterval({
+	time01:new Date("2018/3"),
+	time02:new Date("2018/5"),
+	unit:"D"
+}); //"61日"
+twoTimeInterval({
+	time01:"12:22:32",
+	time02:"19:22:2",
+	unit:"s"
+});//"25170秒"
 
 //获取日期是星期几
 function getDayOfWeek (date){
-	date=new Date(date)
+	typeof date =="string" ? date=new Date(date) : date;
 	var weekday=["Sunday周日","Monday周一","Tuesday周二","Wednesday周三","Thursday周四","Friday周五","Saturday周六"]
 	return weekday[date.getDay()]
 }
 getDayOfWeek(new Date())
-getDayOfWeek("2015/6/12")
+getDayOfWeek("2015/6/12") //"Friday周五"
 
 
 //获取月份的天数   因为月份天数是有规律的 可以直接用数组 还要考虑闰年 索性计算
