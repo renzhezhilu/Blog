@@ -160,7 +160,7 @@ comparedStrOk(h4,h5)
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-//搜索字符出现的次数
+//遍历长字符串   搜索字符出现的次数
 function stringWhereAppears (obj){
   var err = "格式错误str:xxx,word:xxx",
       str = obj.str || console.error(err), 
