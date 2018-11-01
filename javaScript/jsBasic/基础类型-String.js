@@ -2,6 +2,9 @@
 "string".length
 //返回指定索引位置的字符
 "abc".charAt(1) //"b"
+"abcdef"[0] //a
+var cc = "abcdef"
+cc[cc.length-1] //f
 //返回指定索引位置字符的Unicode编码
 "abc诶比西".charCodeAt(1) //98
 //Unicode编码转成字符
