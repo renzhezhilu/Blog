@@ -49,3 +49,12 @@ Number(123) instanceof Object //false
 3 instanceof Number // false
 '3' instanceof String // false
 true instanceof Boolean // false
+
+
+// 很简洁的判断数据类型
+function type(elem) {
+  if (elem == null) {
+    return elem + '';
+  }
+  return toString.call(elem).replace(/[\[\]]/g, '').split(' ')[1].toLowerCase();
+}
