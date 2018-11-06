@@ -55,6 +55,10 @@ var onehours = 3600000 //1000*60*60
 var oneday = 86400000 //1000*60*60*24
 dectime/oneday //1004 相隔天数
 
+//本地化时间
+new Date().toLocaleDateString() //"2018/11/7"
+new Date().toLocaleTimeString() //"上午2:17:45"
+new Date().toLocaleString() 	//"2018/11/7 上午2:17:12"
 
 //两个时间的间隔
 function twoTimeInterval (obj){
@@ -161,9 +165,54 @@ function howManyDayInYear (datestring,par){
 	else if (par==="endofyear") { return endofyear }
 	else if (par==="endofmonth") { return endofmonth }
 	else { return daynum }
-	
 }
 
+////////////////根据模版格式输出时间 
+//简单实现搜索：//本地化时间
+function dateToFormat (obj) {
+	var date = new Date(obj.date) || new Date("2015/6/12 14:30:11") ,
+	    tem = obj.tem || "YYYY/MM/DD AM hh:mm:ss WW",
+	    noAM = obj.noAM;
+	var YYYY = toTem(tem,date.getFullYear(),'YYYY'),
+	    MM = toTem(YYYY,addZero(date.getMonth()+1),'MM'),
+	    DD = toTem(MM,addZero(date.getDate()),'DD'),
+	    hh = !noAM && date.getHours()>12 ? toTem(DD,addZero(date.getHours()-12),'hh') : toTem(DD,addZero(date.getHours()),'hh'),
+	    mm = toTem(hh,addZero(date.getMinutes()),'mm'),
+	    ss = toTem(mm,addZero(date.getSeconds()),'ss'),
+	    AMword = !noAM ? toTem(ss,(toAMPM()),'AM') : toTem(ss,'','AM'),
+	    WW = '周';
+	date.getDay()==0 ? WW += "日" : WW += date.getDay();
+	var newformat = toTem(AMword,WW,'WW'); //结果
+	AMword
+	return newformat;
 
-
+	function addZero (n){
+		return n <10 ? '0'+n : n;
+	}
+	function toTem (t,s1,s2,) {
+		return t.replace(new RegExp(s2),s1)
+	}
+	function toAMPM () {
+		var h = date.getHours();
+		if ( h>=0 && h<=5) { return "凌晨"}
+		else if (h>=6 && h<=10) { return "上午"}
+		else if (h>=11 && h<=12) { return "中午"}
+		else if (h>=13 && h<=18) { return "下午"}
+		else if (h>=19 && h<=24) { return "晚上"}
+	}
+}
+//run:
+dateToFormat({
+	date:new Date("2018/11/1 11:59"),
+	tem:"YYYY年-MM月-DD日 AM hh:mm:ss WW"
+}) //"2018年-11月-01日 中午 11:59:00 周4"
+dateToFormat({
+	date:new Date("2015/6/12 14:00:00"),
+	tem:"YYYY.MM.DD(WW) AM hh:mm:ss  崩盘了"
+}) //"2015.06.12(周5) 下午 02:00:00  崩盘了"
+dateToFormat({
+	date:649324800000,
+	tem:"YYYY/MM/DD hh:mm:ss 投胎成功！模式：困难",
+	noAM:true
+})//"1990/07/30 17:00:00 投胎成功！模式：困难"
 
