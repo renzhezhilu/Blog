@@ -1,4 +1,11 @@
 /////////////////////////////////////////////////////////////////////文件
+//*******************打开*******************//
+//fs.open(路径,模式,权限,(err,fd)=>{...})
+//fd是文件描述符
+fs.open('123.json', 'r', '0666', (err, fd) => {
+    if(err) throw err;
+    console.log(fd); //19
+});
 
 //*******************读取*******************//
 ////fs.readFile('路径','编码','模式',回调(error,data){...})
@@ -31,17 +38,29 @@ fs.exists('./123.json', function (exists) {
 var file = './http';
 console.log( fs.existsSync(file) ? file+"存在" : file+"不存在" );
 
+
 //*******************监听*******************//
-
-
-
-
-
-
-
+////fs.watch（绝对路径，回调(event, filename){...}）
+//系统原生监听
+//文件or目录
+var kk = fs.watch(__dirname, (event, filename)=>{
+    console.log(event,filename);
+}) 
+setTimeout(() => {
+    kk.close();
+    console.log('关闭watch')
+}, 15000);
+/*
+rename p.png
+change 123.json
+rename 123的副本.json
+change .DS_Store
+rename p.png
+rename p的副本.png
+关闭watch
+*/
 
 /////fs.watchFile('文件','参数(对象)',回调(curr, prev){...})
-
 //变化后curr，变化前prev
 //用fs.watch(...)性能更好
 fs.watchFile('./123.json', {interval: 2000 }, (curr, prev) => {
@@ -51,7 +70,6 @@ fs.watchFile('./123.json', {interval: 2000 }, (curr, prev) => {
 setTimeout(() => {
 fs.unwatchFile(__dirname+'/123.json');
 }, 5000);
-
 /*
 curr:
 {
@@ -114,6 +132,17 @@ fs.watchFile('./123.json', {interval: 1000 }, watchcall);
  }, 50000);
 
 //*******************重命名*******************//
+//fs.rename(原路径,新路径,回调(err){...})
+////重命名
+fs.rename('123.json','1111.json', (err)=> {
+    if(err) throw err;
+    console.log('重命名成功');
+})
+//*****************移动&剪切*****************//
+fs.rename('123.json','ss/111.json',(err)=>{
+    if(err) throw err;
+    console.log('移动文件并改名成功');
+})
 
 
 //*******************修改*******************//
@@ -132,7 +161,11 @@ fs.writeFileSync("666.txt","666666",'utf8');
 //Error: ENOENT: no such file or directory 
 
 //*******************追加*******************//
-
+//fs.appendFile(路径,内容,回调(err)=>{...})
+fs.appendFile('123.json','[1,2,3]',(err)=>{
+    if(err) console.log(err);
+    console.log('追加成功');
+})
 
 //*******************删除*******************//
 
@@ -188,7 +221,15 @@ fs.mkdirSync('./b',0777);
 
 
 //*******************删除*******************//
-
+//*******************删除空的目录*******************//
+fs.rmdir("tt",(err)=>{
+    if(err) throw err;
+    console.log('删除成功');
+})
+//同步
+fs.rmdirSync("tt");
+//error
+//Error: ENOTEMPTY: directory not empty 目录不为空
 
 //*******************覆盖*******************//
 
