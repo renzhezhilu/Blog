@@ -21,7 +21,12 @@ fun2() //fun2函数表达式
 //自执行函数
 function auto (){ auto()} //注意⚠️死循环
 
-
+//快捷调用
+function fast(n){
+	console.log(n)
+	return fast;
+}
+fast(1)(2)(3) //1 2 3
 
 //闭包
 //阅读：https://segmentfault.com/a/1190000007569312#articleHeader5
