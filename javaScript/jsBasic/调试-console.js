@@ -3,6 +3,13 @@ console.log("普通信息")
 console.warn("警告")
 console.error("错误")
 
+//连写
+var arr = [1,2,3,"rap",{a:"aaa",b:"bbb"}]
+console.log(
+	arr[0],arr[arr.length-1],"不需要加号拼接",
+	arr[1]
+)
+
 //一组提示
 console.group("组提示开始")
 console.warn("内容01")
