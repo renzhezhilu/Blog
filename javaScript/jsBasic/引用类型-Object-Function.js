@@ -63,6 +63,13 @@ fff() //要先执行一次 {f1: ƒ}
 fff.f1 // undefined
 fff().f1() //3
 
+//参数不同执行
+function todo () {
+	if(arguments.length===2)  console.log("2个参数就执行");
+	if(arguments.length===3)  console.log("3个参数就执行");
+}
+
+
 //函数封装
 http://www.cnblogs.com/kuailingmin/p/3838322.html
 
