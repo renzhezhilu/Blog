@@ -24,3 +24,16 @@ for(var i=0; i<1e6; i++){
 }
 console.timeEnd("是我")
 
+//快捷
+$_ //上次执行的结果
+$0,$1,$2,$3,$4 //最近审查的元素div
+
+//重写样式
+console.log("%c"+"文档劳斯莱斯来的",'font-size:50px;font-weight:blod;color:#31aae5;')
+//
+console.log("%c"+[
+	"11111           11111  			   ",                                                                                                                    
+    "11111           11111                 ",
+    "11111           11111                 ",
+   "Release 0.1.0 Powered by ",
+    ].join("\n"),'font-size:10px;font-weight:blod;color:#31aae5;')
