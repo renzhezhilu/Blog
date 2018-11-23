@@ -1,3 +1,6 @@
+### 维基百科-悬浮词条
+https://zh.wikipedia.org/api/rest_v1/page/summary/%E4%BA%91%E5%8D%97%E5%8D%AB%E8%A7%86
+
 ### 豆瓣
 https://api.douban.com/v2/movie/search?tag=%E6%98%AF
 https://api.douban.com/v2/movie/search?q=%E6%98%AF
