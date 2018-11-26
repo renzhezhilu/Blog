@@ -3,17 +3,18 @@ npm i --save request-promise
 npm i --save cheerio
 
 var rp = require('request-promise');
+var request = require('request');
 var cheerio = require('cheerio');
 var fs = require('fs');
 
-//请求页面
+////// 请求页面
 rp('http://www.baidu.com')
   .then((body) => {
     console.log(body);
   })
   .catch ((err)=>{throw err});
 
-//请求并下载
+////// 请求并下载
 rp('http://www.baidu.com')
   .pipe(fs.createWriteStream('b.html'));
 
@@ -23,7 +24,7 @@ rp('https://api.douban.com/v2/book/1220562')
 rp('http://wx3.sinaimg.cn/mw600/538add77ly1fxklue68knj20qn0q9di4.jpg')
   .pipe(fs.createWriteStream('s.jpg'))
 
-//请求页面并操作dom生成json
+////// 请求页面并操作dom生成json
 BDSearch("node")
 function BDSearch (word) {
   rp(`http://www.baidu.com/s?wd=${word}`)
@@ -44,6 +45,22 @@ function BDSearch (word) {
   })
   .catch ((err)=>{throw err});
 }
+
+////// 请求API
+var options = {
+    url: 'https://api.github.com/repos/mikeal/request',
+    headers: {
+        'User-Agent': 'request'
+    }
+};
+function callback(error, response, body) {
+    if (!error && response.statusCode == 200) {
+        var info = JSON.parse(body);
+        console.log(info.stargazers_count + " Stars");
+        console.log(info.forks_count + " Forks");
+    }
+}
+request(options, callback);
 
 
 //填写表单
