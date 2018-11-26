@@ -71,6 +71,47 @@ req.headers
 // }
 
 
+////// 请求对象的事件
+//POST请求 
+//可用ApiDebug插件测试
+http.createServer( (req, res) => {
+  let content = "";
+  //每收到一段数据就触发一次
+  req.on('data', function (chunk) {
+    content += chunk;
+  });
+  //所有数据接收完成后触发
+  req.on('end', function () {
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    res.write("数据: " + content);
+    res.end();
+  });
+}).listen(8080);
+
+//简单的上传文件
+var destinationFile, fileSize, uploadedBytes, jindu;
+http.createServer( (request, response) => {
+  response.writeHead(200);
+  //将响应的数据转成写入流
+  destinationFile = fs.createWriteStream("s.json");
+  request.pipe(destinationFile);
+  //进度
+  fileSize = request.headers['content-length']; //响应数据的大小
+  uploadedBytes = 0;
+  request.on('data', function (d) {
+    uploadedBytes += d.length;
+    jindu = (uploadedBytes / fileSize) * 100;
+    response.write("Uploading " + parseInt(jindu, 0) + " %\n");
+  });
+  //完成
+  request.on('end', function () {
+    response.end("File Upload Complete");
+  });
+}).listen(3030, function () {
+  console.log("server started");
+});
+
+
 
 
 
