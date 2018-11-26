@@ -1,4 +1,3 @@
-macdeMacBook-Air:fs mac$ node fs
 IncomingMessage {
   _readableState:
    ReadableState {
