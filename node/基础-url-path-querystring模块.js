@@ -88,7 +88,34 @@ console.log(
   path.delimiter  //   :   window是';', Unix中是':'
 );
 
+//////////////////// querystring模块
+var querystring = require('querystring');
 
+//字符串化
+console.log(
+  querystring.stringify({
+    page:3,
+    user:['LiLei','WangMeiMei'],
+    age:12
+  },'$$',"::") // 默认'&' '='
+  //page::12$$user::LiLei$$user::WangMeiMei$$age::12
+  //page=3&user=LiLei&user=WangMeiMei&age=12
+);
 
+//解析
+console.log(
+  querystring.parse('page::12$$user::LiLei$$user::WangMeiMei$$age::12','$$',"::") // 默认'&' '='
+  //Object {page: "12", user: Array(2), age: "12"}
+);
 
+//转义
+console.log(
+  querystring.escape('123abcAB---C*&……%¥#@---中午---チェス') 
+  //123abcAB---C*%26%E2%80%A6%E2%80%A6%25%C2%A5%23%40---%E4%B8%AD%E5%8D%88---%E3%83%81%E3%82%A7%E3%82%B9
+);
 
+//反转义
+console.log(
+  querystring.unescape('123abcAB---C*%26%E2%80%A6%E2%80%A6%25%C2%A5%23%40---%E4%B8%AD%E5%8D%88---%E3%83%81%E3%82%A7%E3%82%B9') 
+  //123abcAB---C*&……%¥#@---中午---チェス
+);
