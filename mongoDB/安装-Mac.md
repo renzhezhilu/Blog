@@ -18,7 +18,7 @@ or 重启终端生效
 ###### 建目录
 `sudo mkdir -p /data/db`
 ###### 给权限
-`$sudo chown `id -u` /data/db`
+$sudo chown `id -u` /data/db
 
 #### 04.启动
 ###### 输入
