@@ -1,5 +1,5 @@
 #### 01.下载
-###### 1-1. `https://www.mongodb.com/download-center/community`
+###### 1-1. https://www.mongodb.com/download-center/community
 ###### 1-2. 解压到心水的目录下   `/Users/mac/mongodb`
 
 #### 02.设置终端变量
