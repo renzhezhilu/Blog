@@ -12,13 +12,17 @@
 `source .bash_profile`
 or 重启终端生效
 
-#### 03.新建data/db
+#### 03.新建data/db（默认数据库）、data\log（默认日志）
 ###### 进入
-`cd /Users/mac/mongodb/bin`
+`cd /Users/mac/mongodb/bin` 
 ###### 建目录
 `sudo mkdir -p /data/db`
+`sudo mkdir -p /data/log`
 ###### 给权限
+```
 $sudo chown \`id -u\` /data/db
+$sudo chown \`id -u\` /data/log
+```
 
 #### 04.启动
 ###### 输入
