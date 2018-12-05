@@ -1,17 +1,93 @@
 
 ##### 新建
-
+```
+show dbs
+```
 ##### 增加
-
+有insert方法和save方法，区别是当默认的“_id”值已存在时，调用insert方法插入会报错；而save方法不会,会更新相同的_id所在行数据的信息
+####### db.集合.insert(数据)
+```
+db.jihename.insert({name:"张三",ago:27})
+db.getCollection('jihename').insert({name:"张三",ago:27})
+```
+或
+```
+db.jihename.save({name:"张三",ago:27})
+db.getCollection('jihename').insert({name:"张三",ago:27})
+```
+####### 批量增加
+```
+for(var i=0;i<5;i++)db.jihename.save({'name':'2222222'+i,'age':i+8});
+```
 ##### 删除
-
+删除数据库
+```
+use dbname
+db.dropDatabase()
+```
 ##### 修改
-
+```
+show dbs
+```
 ##### 查询
+查看所有数据库
+```
+show dbs
+```
+查询集合
+```
+db.jihename.find()
+db.jihename.find({name:'阿花'})
+```
+只查询第一条
+```
+db.jihename.findOne({name:'阿黄'})
+```
+限制查询数量
+```
+db.jihename.find({name:'阿黄'}).limit(10)
+```
+跳过指定数量查询
+```
+db.jihename.find({name:'阿黄'}).limit(3).skip(10)
+```
+条件查询-大于等于
+```
+大于：$gt
+小于：$lt
+大于等于：$gte
+小于等于：$lte
+非等于：$ne
+
+db.jihename.findOne({name:'阿黄',age: {'$gt:19'} })
+db.jihename.find({name:'妹子',age:  { '$gt':18 ,'$lt':28 }  }).limit(3).skip(10)
+//跳过结果的前10条，取3条age大于18小于28的妹子
+```
+统计查询
+```
+db.jihename.find({age: {'$gt:19'} }).count()  //15
+//age大于19的数据有几条 
+```
+查询结果排序
+```
+db.jihename.find({name:'妹子',age:  { '$gt':18 ,'$lt':28 }  }).sort({age:1})
+//1：从小到大 -1：反之
+```
+查询结果取舍字段
+```
+db.jihename.find({name:'妹子',age:  { '$gt':18 ,'$lt':28 }  },{ago:1})
+//1:只选择  0:不选择
+
+```
+
 
 ##### 排序
-
+```
+show dbs
+```
 ##### 替换
-
+```
+show dbs
+```
 
 
