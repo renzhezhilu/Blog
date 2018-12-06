@@ -1,13 +1,33 @@
 ### 基本概念
-Collections 集合
-Functions   函数
-Users       用户
-document    记录
-### 新建
+Collections 集合   
+Functions   函数   
+Users       用户   
+document    记录    
+### #数据库
+#### 查看数据库
+```
+show dbs
+```
+#### 查看集合
+```
+use test
+show collections
+db.cats.find()
+```
+#### 查看集合内容
+```
+db.cats.find()
+```
+#### 删除数据库
+```
+use dbname
+db.dropDatabase()
+```
+### #新建
 ```
 增加的同时如果没有集合就会新建
 ```
-### 增加（ insert()、save() ）
+### #增加 insert()、save() 
 有insert方法和save方法，区别是当默认的“_id”值已存在时，调用insert方法插入会报错；而save方法不会,会更新相同的_id所在行数据的信息
 ##### db.集合.insert(数据)
 ```
@@ -19,25 +39,16 @@ db.getCollection('jihename').insert({name:"张三",ago:27})
 db.jihename.save({name:"张三",ago:27})
 db.getCollection('jihename').insert({name:"张三",ago:27})
 ```
-##### 批量增加(for)
+##### #批量增加(for)
 ```
 for(var i=0;i<5;i++)db.jihename.save({'name':'2222222'+i,'age':i+8});
 ```
-### 删除（ remove() ）
+### #删除 remove()
 符合条件的都删除
 ```
 db.jihename.remove(age: {'$gt:19'} })
 ```
-删除数据库
-```
-use dbname
-db.dropDatabase()
-```
-### 修改
-```
-show dbs
-```
-### 查询（ find()、findOne()、limit()、skip()、count()、sort() ）
+### #查询 find()、findOne()、limit()、skip()、count()、sort() 
 查看所有数据库
 ```
 show dbs
@@ -87,13 +98,7 @@ db.jihename.find({name:'妹子',age:  { '$gt':18 ,'$lt':28 }  },{ago:1})
 //1:只选择  0:不选择
 
 ```
-
-
-### 排序
-```
-show dbs
-```
-### 替换/更新（ update()、updateMany() ）
+### #替换/更新 update()、updateMany() 
 更新一条
 ```
 db.jihename.update(
