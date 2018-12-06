@@ -12,7 +12,6 @@ show dbs
 ```
 use test
 show collections
-db.cats.find()
 ```
 #### 查看集合内容
 ```
