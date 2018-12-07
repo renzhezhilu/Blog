@@ -15,7 +15,11 @@
 
 <div class="codebox_div">
 <pre class="codebox" data-type="default" data-title="获取视窗宽度" data-wrap="true" >
-/////////
+
+--入职日期
+  update #HRAttrDayRpt set EntryTime=HREmployee.EntryTime
+  from HREmployee 
+  where (1=1) and HREmployee.EmpID=#HRAttrDayRpt.EmpNo
 </pre>
 </div>
 
