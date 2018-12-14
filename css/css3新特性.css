@@ -9,9 +9,9 @@ nav {
 
 
 /* 滚动条 */
-.SP_tableContent::-webkit-scrollbar-track{-webkit-box-shadow: inset 0 0 6px transparent;background-color: rgba(0,0,0,.1);}
-.SP_tableContent::-webkit-scrollbar{width: 5px; height: 5px; background-color: transparent;}
-.SP_tableContent::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,.2); border-radius: 100px; }
+.SP_tableContent::-webkit-scrollbar-track{ background-color: rgba(0,0,0,.1);} /*滚动条里面轨道*/
+.SP_tableContent::-webkit-scrollbar{width: 5px; height: 5px; background-color: transparent;} /*滚动条整体样式*/
+.SP_tableContent::-webkit-scrollbar-thumb{background-color: rgba(0,0,0,.8); border-radius: 100px; } /*滚动条里面小方块*/
 
 
 /* 禁止选择文本 */
