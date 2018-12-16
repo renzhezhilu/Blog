@@ -24,3 +24,27 @@ user-select :none;
 
 /* 元素高斯模糊 */
 filter: blur(5px);
+
+
+/* 元素宽度均分 less */
+.pan {
+ column-count: 6; column-gap: 0;
+}
+@media (min-width: 300px) { 
+    & { column-count: 2;} 
+}
+@media (min-width: 500px) { 
+    & { column-count: 4;} 
+}
+@media (min-width: 800px) { 
+    & { column-count: 5;} 
+}
+@media (min-width: 1200px) { 
+    & { column-count: 8;} 
+}
+@media (min-width: 1600px) { 
+    & { column-count: 10;} 
+}
+@media (min-width: 2000px) { 
+    & { column-count: 12;} 
+}
