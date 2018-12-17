@@ -1,6 +1,7 @@
-### 在线打开文件支持PDF、DOC/DOCX、PPT/PPTX、XLS/XLSX、TIF, TIFF、PAGES、AI、PSD、DXF、SVG、EPS/PS、OTF, TTF、XPS、ZIP/RAR
+### 在线打开文件
+###### 支持PDF、DOC/DOCX、PPT/PPTX、XLS/XLSX、TIF, TIFF、PAGES、AI、PSD、DXF、SVG、EPS/PS、OTF, TTF、XPS、ZIP/RAR
 https://docs.google.com/gview?embedded=true&url=文件url
-例如：
+###### 例如：
 https://docs.google.com/gview?embedded=true&url=www.ykwgy.com/UploadFiles/file/2016_4_25-4_29%E8%8F%9C%E8%B0%B1.xls
 https://docs.google.com/gview?embedded=true&url=www.xsyqcz.com/upload/file/14622366572760938.doc
 
