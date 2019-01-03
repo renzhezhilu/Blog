@@ -114,6 +114,11 @@ arrnum.sort(function(a,b){return b-a}) //倒序
 var arren =["bann","array","fuck","click","Auu","Mm","Ba"]
 arren.sort(function(a,b){return a.localeCompare(b)}) //正序 大写优先
 arren.sort(function(a,b){return b.localeCompare(a)}) //倒序
+//日期排序
+var pp = [ ['2018/4/2'],['2018/5/12'],['2018/3/1'] ]
+pp.sort(function(a, b){
+	return a < b ? 1 : -1;
+});
 
 //中文排序 按拼音 牛逼啊 声调也能排
 var arrcn =["必须","啊","大爷","鼻子","比较","吃货","逼"]
