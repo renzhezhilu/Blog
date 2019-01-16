@@ -35,3 +35,43 @@ beforeDestroy  -> destroyed
 <b :id='a'></b>
 //null、undefined 或 false则不渲染该属性  <b></b>
 <b :id='b'></b>
+
+/////单个表达式 a:'aaa'
+<h2>{{ a+1 }}</h2>
+{{ ok ? 'YES' : 'NO' }}
+{{ new Date() }}
+//在属性里要绑定才生效
+<h2 class='a+1'></h2>  //<h2 class='a+1'></h2>
+<h2 v-bind:class='a+1'></h2>  //<h2 class='aaa1'></h2>
+//O 只能访问js默认的全局变量 如：Math、 Date
+//O 只能访问实例中data定义的数据
+//X 不能访问用户自定义的全局变量
+
+
+//////指令
+//v-if  根据表达式的真假显示元素
+<b v-if="true"></b> // '<b></b>'
+<b v-if="false"></b> // ''
+//v-on  绑定事件
+<a v-on:click="doSomething">...</a>
+
+/////缩写
+v-bing:id='...'  ->  :id='...'
+v-on:click='...'  ->  @click='...'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
