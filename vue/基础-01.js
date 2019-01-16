@@ -75,8 +75,32 @@ var vm = new Vue({
   }
 })
 
-
-
+/////绑定class
+//对象语法
+<b class="title" :class="{on:a}"></b>
+<b class="title" :class="{on:b}"></b>
+<b class="title" :class="isOn"></b>
+...
+data:{
+  a:0,
+  b:1,
+  computed:{
+      isOn:function(){
+        return {
+          on:this.b
+               }
+      }
+  }
+}
+//数组语法
+<div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+...
+data: {
+  activeClass: 'active',
+  errorClass: 'text-danger'
+}
+//混合
+<div v-bind:class="[{ active: isActive }, errorClass]"></div>
 
 
 
