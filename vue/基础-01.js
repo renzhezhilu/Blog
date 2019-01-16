@@ -59,9 +59,21 @@ beforeDestroy  -> destroyed
 v-bing:id='...'  ->  :id='...'
 v-on:click='...'  ->  @click='...'
 
-
-
-
+/////计算属性
+//表达式过于复制时改成计算属性
+//X
+<div> {{ message.split('').reverse().join('') }} </div>
+//O
+<div> {{ reversedMessage }} </div>
+var vm = new Vue({
+  ...
+  data: { message: 'Hello'},
+  computed: {
+    reversedMessage: function () {
+      return this.message.split('').reverse().join('')
+    }
+  }
+})
 
 
 
