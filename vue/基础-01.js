@@ -13,6 +13,8 @@ vm.$data.b  // = vm.b
 vm.$watch('b', function (newValue, oldValue) {
   // 这个回调将在 `vm.b` 改变后调用
 })   
+vm.$set(vm.items, indexOfItem, newValue) //设置数组内容 vm.$set(vm.table,3,{'ds':'dssddd'})
+Vue.set(vm.userProfile, 'age', 27) //添加对象属性
 
 /////实例 的生命周期
 beforeCreate  ->  created  ->  beforeMount  ->  mounted  ->   beforeUpdate  -> updated  ->
@@ -52,8 +54,53 @@ beforeDestroy  -> destroyed
 //v-if  根据表达式的真假显示元素
 <b v-if="true"></b> // '<b></b>'
 <b v-if="false"></b> // ''
+
+<h1 v-if="ok==1">Yes</h1>
+<h1 v-else-if="ok==2">Yes</h1>
+<h1 v-else>No</h1>
+
+//分组
+<template v-if="ok">
+  <h1>Title</h1>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+</template>
+
+//v-show 会渲染  display:none 切换  不支持 <template>
+<h1 v-show="ok">Hello!</h1>  //<h1 style="display: none;">Hello!</h1>
+
 //v-on  绑定事件
 <a v-on:click="doSomething">...</a>
+
+//v-for 
+//值
+<li v-for="item in items"> {{ item.message }} </li>
+//值、索引（键名）
+<li v-for="(item, index) in items">
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+</li>
+//值、键名、索引
+<div v-for="(value, key, index) in object">
+  {{ index }}. {{ key }}: {{ value }}
+</div>
+//of
+<div v-for="item of items"></div>
+//固定次数
+<span v-for="n in 10">{{ n }} </span>
+//最好加key
+<div v-for="item in items" :key="item.id"></div>
+//和v-if
+<ul v-if="todos.length">
+  <li v-for="todo in todos">
+    {{ todo }}
+  </li>
+</ul>
+<p v-else>No todos left!</p>
+
+<li v-for="todo in todos" v-if="!todo.isComplete">
+  {{ todo }}
+</li>
+
 
 /////缩写
 v-bing:id='...'  ->  :id='...'
