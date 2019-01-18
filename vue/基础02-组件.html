@@ -1,1 +1,61 @@
+<!-- 步骤 01注册->02放入根实例 -->
 
+<!--------------------------------------------- 最简单的 全局注册组件-->
+<div id="app">
+    <zujian title="123"></zujian>
+    <zujian title="标题"></zujian>
+    <zujian></zujian>
+    <zujian></zujian>
+</div>
+<script>
+    Vue.component('zujian',{
+        props:['title'],   //通过props接收父层数据
+        data:function(){
+            return {
+                clicknum:0
+            }
+        },
+        //组件模版
+        template:
+            //每个组件只能有一个根元素
+            `<div> 
+                <h1>{{ title }}</h1>
+                <button @click='clicknum++'>{{ clicknum }}</button>
+            </div>`
+    })
+    //需要定义根实例来用组件
+    new Vue({
+        el:'#app'
+    })
+</script>
+
+<!--------------------------------------------- 实际复用组件是这样的-->
+<div id="app">
+    <wenzhang
+        v-for="x in apiPost" :key="apiPost.id" 
+        :title='x.title'
+        :time='x.time'
+    ></wenzhang>
+</div>
+<script>
+    Vue.component('wenzhang',{
+        props:['title','time'],
+        template:`
+            <div>
+                <h1>{{ title }}</h1>
+                <span>{{ time }}</span>
+            </div>`
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            apiPost:[
+                {title:'知道自己拥有坏基因后会发生什么',time:'2019.01.18 , 16:00'},
+                {title:'有力的证据表明：慢性疲劳综合征与过度“活跃”的免疫系统有关',time:'2019.01.18 , 14:30'},
+                {title:'新娘为什么爱穿白色婚纱(真正起因)',time:'2019.01.15 , 11:00'}
+            ]
+        }
+    })
+</script>
+
+<!--------------------------------------------- 实际复用组件是这样的-->
