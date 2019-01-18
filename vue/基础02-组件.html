@@ -17,7 +17,7 @@
         },
         //组件模版
         template:
-            //每个组件只能有一个根元素
+            //每个组件只能有一个根元素,所以需要一个父元素包裹
             `<div> 
                 <h1>{{ title }}</h1>
                 <button @click='clicknum++'>{{ clicknum }}</button>
@@ -33,17 +33,16 @@
 <div id="app">
     <wenzhang
         v-for="x in apiPost" :key="apiPost.id" 
-        :title='x.title'
-        :time='x.time'
+        :post='x'
     ></wenzhang>
 </div>
 <script>
     Vue.component('wenzhang',{
-        props:['title','time'],
+        props:['post'],
         template:`
             <div>
-                <h1>{{ title }}</h1>
-                <span>{{ time }}</span>
+                <h1>{{ post.title }}</h1>
+                <span>{{ post.time }}</span>
             </div>`
     })
     new Vue({
@@ -58,4 +57,81 @@
     })
 </script>
 
-<!--------------------------------------------- 实际复用组件是这样的-->
+<!--------------------------------------------- 组件向父层发射事件
+$emit  定义事件名
+$event 组件抛出的事件参数 
+-->
+<div id="app">
+    <wenzhang
+        :style='{fontSize:postFontSize+"em"}'
+        v-on:lg-text='lgorsmFontSize($event,1)'
+        v-on:sm-text='lgorsmFontSize($event,0)'
+        v-for="x in apiPost" :key="apiPost.id" 
+        :post='x'
+    ></wenzhang>
+</div>
+<script>
+    Vue.component('wenzhang',{
+        props:['post'],
+        template:`
+            <div>
+                <h1>{{ post.title }}</h1>
+                <button v-on:click='$emit("lg-text",0.3)'>+</button>
+                <button v-on:click='$emit("sm-text",0.3)'>-</button>
+                <span>{{ post.time }}</span>
+            </div>`
+    })
+    new Vue({
+        el:'#app',
+        data:{
+            postFontSize:1,
+            apiPost:[
+                {title:'知道自己拥有坏基因后会发生什么',time:'2019.01.18 , 16:00'},
+                {title:'有力的证据表明：慢性疲劳综合征与过度“活跃”的免疫系统有关',time:'2019.01.18 , 14:30'},
+                {title:'新娘为什么爱穿白色婚纱(真正起因)',time:'2019.01.15 , 11:00'}
+            ]
+        },
+        methods: {
+            lgorsmFontSize:function (e,num) {
+                if(num){
+                    this.postFontSize += e
+                }
+                else {
+                    this.postFontSize -= e
+                }
+                
+            },
+        }
+    })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
