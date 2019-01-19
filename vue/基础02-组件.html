@@ -105,6 +105,16 @@ $event 组件抛出的事件参数
     })
 </script>
 
+<!--------------------------------------------- 插槽<slot>-->
+<wenzhang>丢到插槽</wenzhang>
+<script>
+    Vue.component('wenzhang',{
+        template:`
+            <h1>
+                <slot></slot>    
+            </h1>`
+    })
+</script>
 
 
 
