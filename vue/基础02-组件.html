@@ -116,9 +116,36 @@ $event 组件抛出的事件参数
     })
 </script>
 
+<!--------------------------------------------- 组件之间(管你什么子父孙)全局发送接收数据/事件-->
+<!-- eventVue.js -->
+import Vue from 'vue'
+export default new Vue
 
+<!-- 组件A 发送方 -->
+<template>
+   <button @click="emitEvent"></button>
+</template>
+<script>
+    import eventVUE from './eventVue.js'
+    emitEvent: function (event) {
+        eventVUE.$emit("eventName",'值/数据')   
+    }
+</script>
 
-
+<!-- 组件B 接收方 -->
+<script>
+    import eventVUE from './eventVue.js'
+    export default {
+          created:function(){
+               this.onEvent();
+          },
+    }
+    onEvent: function (event) {
+        eventVUE.$on("eventName",(event)=>{  
+            console.log(event) //值/数据
+        }
+    }
+</script>
 
 
 
