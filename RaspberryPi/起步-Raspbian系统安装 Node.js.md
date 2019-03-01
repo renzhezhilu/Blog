@@ -2,7 +2,7 @@
 
 ```bash
 uname -m
-//ARMV7l
+# ARMV7l
 ```
 
 ## 2.下载对应的node二进制安装包
@@ -15,7 +15,7 @@ uname -m
 
 备选----wget https://npm.taobao.org/mirrors/node/latest/node-v10.15.2-linux-armv7l.tar.xz
 
-```
+```bash
 wget https://nodejs.org/dist/v10.15.2/node-v10.15.2-linux-armv7l.tar.xz
 ```
 
@@ -44,8 +44,8 @@ sudo ln -s /usr/local/node/bin/npm /usr/bin/npm
 ## 4.收尾
 
 ```bash
-node -v   // v10.15.2
-npm -v    // 5.6.0
+node -v   # v10.15.2
+npm -v    # 5.6.0
 ```
 
 使用cnpm 
