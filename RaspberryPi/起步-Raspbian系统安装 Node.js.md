@@ -1,6 +1,6 @@
 ## 1.查询ARM 平台
 
-```javascript
+```bash
 uname -m
 //ARMV7l
 ```
@@ -23,27 +23,27 @@ wget https://nodejs.org/dist/v10.15.2/node-v10.15.2-linux-armv7l.tar.xz
 
 解压
 
-```javascript
+```bash
 xz -d node-v10.15.2-linux-armv7l.tar.xz
 tar -xavf node-v10.15.2-linux-armv7l.tar
 ```
 
 移动至usr ,如果系统内原本存在 /usr/bin/node ，先将其删除 sudo rm -rf /usr/bin/node
 
-```javascript
+```bash
 sudo mv ./node-v10.15.2-linux-armv7l /usr/local/node
 ```
 
 创建软连接
 
-```javascript
+```bash
 sudo ln -s /usr/local/node/bin/node /usr/bin/node
 sudo ln -s /usr/local/node/bin/npm /usr/bin/npm
 ```
 
 ## 4.收尾
 
-```javascript
+```bash
 node -v   // v10.15.2
 npm -v    // 5.6.0
 ```
