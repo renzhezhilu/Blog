@@ -206,15 +206,45 @@ let arr16 = [1,2,3,4,5,6]
 //forEach
 let add =0
 arr16.forEach((x,index) => add += x) //21/
-
 ```
 
 ### 14.过滤/搜索/筛选
 
-### 05.xxxx
+### 15.取最大/最小值
+```javascript
+let n = [1,2,3,4,5]
+let max = Math.max.apply(Math, n) 
+let min = Math.min.apply(Math, n)
+```
 
-### 05.xxxx
+### 16.取随机值
+```javascript
+let ran = [1,2,3,4,5,[1,1,1],'kll']
+let n = ran[Math.floor(Math.random() * ran.length)]
+//or//ran[~~(Math.random() * ran.length)]
+//指定范围
+let max=4,min=1
+let n2 = ran[  Math.floor(Math.random() * (max - min + 1)) + min  ]
+```
 
-### 05.xxxx
+### 17.打乱数组
+```javascript
+var numbers = [5, 458 , 120 , -215 , 228 , 400 , 122205, -85411];
+numbers = numbers.sort(function(){ return Math.random() - 0.5});
+```
 
-### 05.xxxx
+### 18.生成数据
+```javascript
+//随机字母字符串
+function generateRandomAlphaNum(len) {
+    var rdmString = "";
+    for( ; rdmString.length < len; rdmString  += Math.random().toString(36).substr(2));
+    return  rdmString.substr(0, len);
+}
+
+//生成从0到指定值的数字数组
+var numbersArray = [] , max = 100;
+for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100]
+
+```
+
