@@ -208,7 +208,14 @@ let add =0
 arr16.forEach((x,index) => add += x) //21/
 ```
 
-### 14.过滤/搜索/筛选
+### 14.过滤/搜索/筛选/包含
+```javascript
+let arr14 = [1,3,4,2,1,'g','a']
+//是否包含
+!!~arr14.indexOf(1) //true
+!!~arr14.indexOf(88) //false
+
+```
 
 ### 15.取最大/最小值
 ```javascript
