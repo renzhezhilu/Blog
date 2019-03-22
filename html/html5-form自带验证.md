@@ -107,7 +107,7 @@ a{5,7} — 匹配字符 a五到七次,不能多或者少.
 
 ```html
 <select >
-    <option value="volvo">Volvo</option>
+    <option value="volvo" selected>Volvo</option>
     <option value="saab">Saab</option>
     <option value="fiat">Fiat</option>
     <option value="audi">Audi</option>
