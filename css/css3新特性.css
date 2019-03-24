@@ -1,5 +1,4 @@
-
-/* 钉住 */
+Chrome 将支持跳转到指定文字，而不需要锚点。做法是 URL 里面设置 #targetText=hello%20world ，然后就会跳转到网页的第一个hello world的地方。/* 钉住 */
 /* https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/ */
 nav {
     position: -webkit-sticky;
