@@ -24,6 +24,10 @@ Points: <input type="number" name="points" min="0" max="10" step="3"/>
 ```html
 <input type="number" name="points" min="0" max="10" step="3" required/>
 ```
+#### 两位小数
+```html
+<input type="number" step="0.01" />
+```
 
 #### 邮箱
 
