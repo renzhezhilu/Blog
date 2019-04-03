@@ -46,12 +46,12 @@ print   //打印
 compression     //压缩
 decompression   //解压
 
-select  //选中
-inverse //反选
+select      //选中
+inverse     //反选
 selectAll   //全选
 unselectAll //全不选
-clear   //清空
-reverse //颠倒、倒置
+clear       //清空
+reverse     //颠倒、倒置
 
 record  //记录
 lock    //锁定
@@ -129,27 +129,83 @@ min     //最小
 
 https: //baike.baidu.com/item/%E4%BB%8B%E8%AF%8D/1254
 ```javascript
-
+and //和
+or //或
+of //的
+in //在...之内
+out //在...之外
+on //在...之上
+under //在...之下
+[时间]
+ago //在...之前
+after //在...之后
+between //在...之间
+ //
+ //
+ //
+ //
 ```
 
 
 ## 视图
 ```javascript
- //显示
- //隐藏
- //闪烁
- //移动
- //旋转
+show //显示
+hide //隐藏
+flicker //闪烁
+mobile //移动
+rotate //旋转
 
- //弱化
- //强调
- //普通、一般
- //条
- //盒子
+bar //条
+box //盒子
+block //块
+region //区域
+important //主要
+minor //次要
 
- //菜单、导航
- //地图
- //切换栏
+content //内容
+list //列表
+card //卡片
+menu //菜单、导航「nav」
+map //地图
+tab、tag //标签
+
+title //标题
+summary //摘要
+author //作者
+button //按钮
+animation //动画
+icon //图标
+scrollBar //滚动条
+
+ //放大
+ //缩小
+ //更多
+ //缩略图
+ //全屏
+ //光标
+ //箭头
+
+ //商标
+ //宣传语
+ //反馈
+ //客服
+ //电话
+ //邮箱
+ //地址
+ //人物
+ //轮播图
+ //对话框
+ //输入框
+ //提示
+ //链接
+
+target //目标
+ //来源
+ //加载
+ //
+ //
+ //
+ //
  //
 ```
 
