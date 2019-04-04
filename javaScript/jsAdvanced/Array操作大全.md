@@ -81,7 +81,7 @@ arr10.slice(1,3) //[8, 9]
 arr10.slice(0,3) //[7, 8, 9]
 ```
 
-### 07.截取/裁剪
+### 07.截取/裁剪
 
 ```javascript
 let arr11 = [7,8,9,10,11,12,13,14,15]
@@ -200,13 +200,45 @@ array1.reverse() //["three", "two", "one"]
 ```
 
 ### 13.迭代/循环/遍历
-
+## for of ✅
+* forin 加强版
+* 访问值
+* 支持break, continue 和 return
+* 支持字符串
+```javascript
+for (const iterator of object) {
+  console.log(iterator);
+}
+//可访问下标,第一个值才是下标
+for(const [index,val] of [111,2,3,4].entries()){
+  console.log(index)
+}
+```
+## forEach 🈲️
+* 访问值和下标
+* 跳过空值
+* 不支持aysnc/await
 ```javascript
 let arr16 = [1,2,3,4,5,6]
 //forEach
 let add =0
 arr16.forEach((x,index) => add += x) //21/
 ```
+## for in 🈲️
+* 访问下标
+* 会把自定义属性也搞出来，要hack下
+* 可能随机顺序
+* 跳过空值
+```javascript
+for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+        const element = object[key];
+    }
+}
+```
+
+  
+
 
 ### 14.过滤/搜索/筛选/包含
 ```javascript
@@ -254,4 +286,6 @@ var numbersArray = [] , max = 100;
 for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100]
 
 ```
-
+### 19.循环
+```javascript
+```
