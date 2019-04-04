@@ -200,7 +200,7 @@ array1.reverse() //["three", "two", "one"]
 ```
 
 ### 13.迭代/循环/遍历
-## for of ✅
+## for of  ✅
 * forin 加强版
 * 访问值
 * 支持break, continue 和 return
@@ -219,6 +219,7 @@ for(const [index,val] of [111,2,3,4].entries()){
 * 跳过空值
 * 不支持aysnc/await
 ```javascript
+
 let arr16 = [1,2,3,4,5,6]
 //forEach
 let add =0
