@@ -19,6 +19,23 @@ var request = new XMLHttpRequest();
 request.open("POST", "http://foo.com/submitform.php");
 request.send(formData);
 ```
+```javascript
+ {
+    append: append(),
+    delete: delete(),
+    entries: entries(),
+    forEach: forEach(),
+    get: (),
+    getAll: getAll(),
+    has: has(),
+    keys: keys(),
+    set: (),
+    values: values(),
+    constructor: FormData(),
+    Symbol(Symbol.iterator): entries(),
+    Symbol(Symbol.toStringTag): "FormData",
+  }
+```
 ___
 # [new FileReader()](https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader)
 #### `FileReader` 对象允许Web应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，可以是来自用户在一个`<input>`元素上选择文件后返回的`FileList`对象。
@@ -36,6 +53,19 @@ ___
     false
     );
 ```
+```javascript
+{
+  error: null,
+  onabort: null,
+  onerror: null,
+  onload: null,
+  onloadend: null,
+  onloadstart: null,
+  onprogress: null,
+  readyState: 0,
+  result: null,
+}
+```
 
 
 ___
@@ -46,6 +76,16 @@ ___
 var file = new File(["foo"], "foo.txt", {
   type: "text/plain",
 });
+```
+```javascript
+{
+  lastModified: 1554545163250,
+  lastModifiedDate: Sat Apr 06 2019 18:06:03 GMT+0800 (中国,标准时间) {},
+  name: "foo.txt",
+  size: 3,
+  type: "text/plain",
+  webkitRelativePath: "",
+}
 ```
 
 
@@ -73,6 +113,23 @@ new Uint8Array(typedArray);
 new Uint8Array(object);
 new Uint8Array(buffer [, byteOffset [, length]]);
 ```
+```javascript
+{
+  buffer: {
+    [[Int8Array]]: Int8Array []
+    [[Int16Array]]: Int16Array []
+    [[Int32Array]]: Int32Array []
+    [[Uint8Array]]: Uint8Array []
+  }
+byteLength: 0
+__proto__: ArrayBuffer
+byteLength: 0
+byteOffset: 0
+length: 0
+Symbol(Symbol.toStringTag): undefined
+__proto__: TypedArray
+}
+```
 ## 类似对象
 * nt8Array()
 * Uint8Array()
@@ -93,6 +150,13 @@ ___
 var aFileParts = ['<a id="a"><b id="b">hey!</b></a>']; // 一个包含DOMString的数组
 var oMyBlob = new Blob(aFileParts, {type : 'text/html'}); // 得到 blob
 ```
+```javascript
+{
+  size: 32
+  type: "text/html"
+}
+```
+
 
 ___
 # [xx](xx)
