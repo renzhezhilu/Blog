@@ -200,9 +200,9 @@ array1.reverse() //["three", "two", "one"]
 ```
 
 ### 13.迭代/循环/遍历
-## for of  ✅
+# for of  ✅
 * forin 加强版
-* 访问值
+* 访问key,value,键值对
 * 支持break, continue 和 return
 * 支持字符串
 ```javascript
@@ -214,6 +214,26 @@ for(const [index,val] of [111,2,3,4].entries()){
   console.log(index)
 }
 ```
+#### ES6新增
+```javascript
+for (let index of ['a', 'b'].keys()) {
+  console.log(index);
+}
+// 0
+// 1
+for (let elem of ['a', 'b'].values()) {
+  console.log(elem);
+}
+// 'a'
+// 'b'
+for (let [index, elem] of ['a', 'b'].entries()) {
+  console.log(index, elem);
+}
+// 0 "a"
+// 1 "b"
+```
+
+
 ## forEach 🈲️
 * 访问值和下标
 * 跳过空值
