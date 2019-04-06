@@ -1,3 +1,17 @@
+#### 移动端-调用相机
+```html
+<input type="file"  accept="image/*" capture="camera" >
+<!-- multiple="multiple" -->
+```
+#### 移动端-调用录像
+```html
+<input type="file" accept="video/*" capture="camcorder" > 
+```
+#### 移动端-调用录音麦克风
+```html
+<input type="file" accept="audio/*" capture="microphone" >
+
+```
 #### 需要通过submit按钮发送才能起作用
 ```html
 <form action="/example/html5/demo_form.asp" method="get">

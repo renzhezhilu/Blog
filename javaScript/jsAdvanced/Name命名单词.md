@@ -129,191 +129,189 @@ min     //最小
 
 https: //baike.baidu.com/item/%E4%BB%8B%E8%AF%8D/1254
 ```javascript
-and //和
-or //或
-of //的
-in //在...之内
-out //在...之外
-on //在...之上
+and   //和
+or    //或
+of    //的
+in    //在...之内
+out   //在...之外
+on    //在...之上
 under //在...之下
 [时间]
-ago //在...之前
+ago   //在...之前
 after //在...之后
 between //在...之间
- //
- //
- //
- //
 ```
 
 
 ## 视图
 ```javascript
-show //显示
-hide //隐藏
+show    //显示
+hide    //隐藏
 flicker //闪烁
-mobile //移动
-rotate //旋转
+mobile  //移动
+rotate  //旋转
 
-bar //条
-box //盒子
-block //块
-region //区域
+bar     //条
+box     //盒子
+block   //块
+region  //区域
 important //主要
-minor //次要
+minor   //次要
 
 content //内容
-list //列表
-card //卡片
-menu //菜单、导航「nav」
-map //地图
-tab、tag //标签
+list    //列表
+card    //卡片
+menu    //菜单、导航「nav」
+map     //地图
+tab、tag//标签
 
-title //标题
+title   //标题
 summary //摘要
-author //作者
-button //按钮
+author  //作者
+button  //按钮
 animation //动画
-icon //图标
+icon    //图标
 scrollBar //滚动条
 
- //放大
- //缩小
- //更多
- //缩略图
- //全屏
- //光标
- //箭头
+zoom    //放大
+minify  //缩小
+more    //更多
+smallPicture //缩略图
+fullScreen //全屏
+cursor  //光标
+arrow   //箭头
 
- //商标
- //宣传语
- //反馈
- //客服
- //电话
- //邮箱
- //地址
- //人物
- //轮播图
- //对话框
- //输入框
- //提示
- //链接
+logo    //商标
+slogan  //宣传语
+feedback//反馈
+customerService //客服
+phone   //电话
+e-mail  //邮箱
+address //地址
+people、person //人物
+banner  //轮播图
+pop-ups //弹窗
+dialog  //对话框
+input   //输入框
+prompt  //提示
+link    //链接
+message //消息
 
-target //目标
- //来源
- //加载
- //
- //
- //
- //
- //
+target  //目标
+source  //来源
+load    //加载
+
 ```
 
 ## 方向
 ```javascript
- //上
- //下
- //左
- //右
- //侧面
- //正面
- //顶部
- //底部
- //中间
- //横向
- //竖向
- //
- //
+on      //上
+under   //下
+left    //左
+right   //右
+side    //侧面
+positive//正面
+top     //顶部
+bottom  //底部
+center  //中间
+horizontal //横向
+vertical   //竖向
+oblique    //斜
 ```
 
 ## 形容词
 ```javascript
- //最好的
+best //最好的
+fastest  //最快的
+slowest  //最慢的
+biggest  //最大的
+smallest //最小的
+recent   //最近的
+furthest //最远的
+Minimal  //最少的
+most     //最多的
 ```
 
 ## 时态
 ```javascript
- //最新
- //最旧
- //短期
- //长期
- //当下
+latest  //最新
+oldest  //最旧
+short   //短期
+long    //长期
+now     //当下
 
- //开始
- //结束
- //正在
- //初期
- //后期
+start   //开始
+end     //结束
+being   //正在
+initial //初期
+late    //后期
 
- //历史记录
- //归档
- //
- //
+history //历史
+archive //归档
 ```
 
 ## 关系
 ```javascript
- //后辈
- //子
- //自己、自身
- //兄弟
- //父
- //祖先
+offspring   //后辈
+child       //子
+self        //自己、自身
+brother     //兄弟
+siblings    //同辈
+father      //父
+ancestor    //祖先
 
- //之前、上一个
- //之后、下一个
- //
+prev //之前、上一个
+next //之后、下一个
  //
 ```
 
 ## ⌚事件
 ```javascript
- //单击
- //双击
- //左键
- //右键
- //滚轮
+click   //单击
+dbclick //双击 double click
+leftButton  //左键
+rightButton //右键
+wheel   //滚轮
 
- //鼠标
- //键盘
- //按钮
- //聚焦
- //失焦
+mouse   //鼠标
+keyboard//键盘
+button  //按钮
+focus   //聚焦
+blur    //失焦、模糊
 
- //改变
- //轻触
- //滑动
- //拖动
- //长按
- //
+change  //改变
+touch   //轻触
+tap     //敲击
+slide   //滑动
+drag    //拖动
+press   //长按
 ```
 
 ## 状态
 ```javascript
-current //当前
-before //之前
-after //之后
-between //之间
- //
+current     //当前
+before      //之前
+after       //之后
+between     //之间
 
-valid //有效
-invalid //无效
-disable //禁止、禁用
- //只读
- //可编辑
- //必填
+valid       //有效
+invalid     //无效
+disabled    //禁止、禁用
+readonly    //只读
+contentEditable //可编辑
+required    //必填
 
-latest //最新的
-uncertain //不确定
+latest      //最新的
+uncertain   //不确定
 
-login //登录
-logout //注销、退出、登出
-registered //注册
-retrieve //找回
-online //在线
-offline //离线
+login       //登录
+logout      //注销、退出、登出
+registered  //注册
+retrieve    //找回
+online      //在线
+offline     //离线
 ```
-## 组件
+## 组件（from element）
 ```javascript
 Layout       //布局
 Container    //布局容器
@@ -324,7 +322,7 @@ Icon         //图标
 Button       //按钮
 Form
 Radio        //单选框
-Checkbox     //多选框
+Checkbox     //多选框 
 Input        //输入框
 InputNumber  //计数器
 Select       //选择器
@@ -369,75 +367,44 @@ Timeline     //时间线
 
 ```
 
-
-
 ## 日常
 ```javascript
- //音频
- //视频
- //音乐
- //电影
- //应用
+audio //音频
+video //视频
+music //音乐
+film //电影
+application //应用
 
- //网页
- //设备
- //屏幕
- //分辨率
- //占比
+Web page    //网页
+device      //设备
+screen      //屏幕
+resolution  //分辨率
+percentage  //百分比
+ratio       //比率
 
- //颜色
- //终端
- //编辑器
- //标题
- //摘要
+colour      //颜色
+terminal    //终端
+editor      //编辑器
+title       //标题
+summary     //摘要
 
- //作者
- //分享
- //发布
- //开发
- //编译
+author  //作者
+share   //分享
+release //发布
+develop //开发
+compile //编译
+project //项目
 
- //开源
- //贡献
- //电脑
- //移动端
- //电脑端
+open source //开源
+contribution//贡献
+computer    //电脑
+mobile      //移动端
+PC          //电脑端
 
- //开心、愉悦
- //糟糕的
- //流行的
- //过气的
- //
-
- //
- //
- //
- //
- //
-
- //
- //
- //
- //
- //
-
- //
- //
- //
- //
- //
-
- //
- //
- //
- //
- //
-
- //
- //
- //
- //
- //
+happy   //开心
+bad     //糟糕的
+popular //流行的
+retro   //复古的
 
 ```
 
@@ -454,20 +421,6 @@ Timeline     //时间线
 ```
 
 
-## xxxx
-```javascript
-```
-
-## xxxx
-```javascript
-```
-## xxxx
-```javascript
-```
-
-## xxxx
-```javascript
-```
 ## xxxx
 ```javascript
 ```
