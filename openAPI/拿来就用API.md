@@ -1,3 +1,12 @@
+### 谷歌翻译
+##### 文本翻译
+https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=zh-CN&dt=t&dt=bd&dj=1&source=icon&tk=184307.184307&q=map
+##### 语音
+> https://translate.google.cn/translate_tts?q=Makem oney&tl=en&tk=641614.1006762&client=webapp
+
+> tk待了解
+
+
 ### 在线打开文件⚠️
 ###### 支持PDF、DOC/DOCX、PPT/PPTX、XLS/XLSX、TIF, TIFF、PAGES、AI、PSD、DXF、SVG、EPS/PS、OTF, TTF、XPS、ZIP/RAR
 https://docs.google.com/gview?embedded=true&url=文件url

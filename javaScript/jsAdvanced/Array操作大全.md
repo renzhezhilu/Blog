@@ -199,8 +199,8 @@ let array1 = ['one', 'two', 'three']
 array1.reverse() //["three", "two", "one"]
 ```
 
-### 13.迭代/循环/遍历
-# for of  ✅
+### 13.1.迭代/循环/遍历
+# for of ✅
 * forin 加强版
 * 访问key,value,键值对
 * 支持break, continue 和 return
@@ -209,7 +209,7 @@ array1.reverse() //["three", "two", "one"]
 for (const iterator of object) {
   console.log(iterator);
 }
-//可访问下标,第一个值才是下标
+//可访问下标，第一个值才是下标
 for(const [index,val] of [111,2,3,4].entries()){
   console.log(index)
 }
@@ -233,13 +233,11 @@ for (let [index, elem] of ['a', 'b'].entries()) {
 // 1 "b"
 ```
 
-
 ## forEach 🈲️
 * 访问值和下标
 * 跳过空值
 * 不支持aysnc/await
 ```javascript
-
 let arr16 = [1,2,3,4,5,6]
 //forEach
 let add =0
@@ -258,8 +256,128 @@ for (const key in object) {
 }
 ```
 
-  
+### 13.2.语言化的迭代/循环/遍历
+## map()
+* 每个元素都是回调函数的结果
+* 不会跳过任何值，包括空值
+### 语法
+```javascript
+let new_array = arr.map(function callback(currentValue,index,array) {
+ // Return element for new_array 
+}[, thisArg])
+//currentValue  (必选) 当前元素
+//index         当前元素的索引
+//array         被调用的数组  
+//thisArg       函数时使用的this 值
+```
+### 实例
+#### `求平方根`
+```javascript
+let numbers = [1, 4, 9];
+let roots = numbers.map(Math.sqrt);
+// roots的值为[1, 2, 3], numbers的值仍为[1, 4, 9]
+```
+#### `链式调用`
+```javascript
+[1, 4, 9, 16].map(x => x * 2).map(x => x * 3)
+// [6, 24, 54, 96]
+```
+#### `格式化数组`
+```javascript
+let kvArray = [{key: 1, value: 10}, 
+               {key: 2, value: 20}, 
+               {key: 3, value: 30}];
+let reformattedArray = kvArray.map( obj => { 
+   let rObj = {};
+   rObj[obj.key] = obj.value;
+   return rObj;
+});
+// reformattedArray 数组为： [{1: 10}, {2: 20}, {3: 30}], 
 
+// kvArray 数组未被修改: 
+// [{key: 1, value: 10}, 
+//  {key: 2, value: 20}, 
+//  {key: 3, value: 30}]
+```
+#### `类数组的处理`
+```javascript
+let map = Array.prototype.map
+let a = map.call("Hello World", x => { 
+  return x.charCodeAt(0); 
+})
+// a的值为[72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+```
+```javascript
+let elems = document.querySelectorAll('select option:checked');
+let values = Array.prototype.map.call(elems, obj=> {
+  return obj.value;
+});
+```
+#### `特别的技巧`
+> .map[方法],这里的方法必须是只有一个参数
+```javascript
+[1,'33','123','199'].map(Number)
+//[1, 33, 123, 199]
+[1,'33','123','199'].map(Boolean)
+//[true, true, true, true]
+```
+#### ❓尝试理解['1', '2', '3'].map( Array.of )的结果
+
+___
+## filter()
+* 符合条件才会返回，反之则返回空数组
+* 就是过滤数组
+
+#### 实例
+```javascript
+[12, 5, 8, 130, 44].filter(x=>x>10)
+//[12, 130, 44]
+
+let w = ['apple', 'banana', 'grapes', 'mango', 'orange']
+w.filter(x=>{
+	return x.includes('ap')
+})
+//["apple", "grapes"]
+```
+
+___
+## every()
+* 是否全部符合条件，只要有一个不符合就返回`false`，反之返回`true`
+* 空值元素返回`true`,因为会跳过
+* 空数组也是返回`true`
+#### 实例
+```javascript
+[,,,,13,32,1232,94].every(x=>x>1)
+//true
+[0,13,32,1232,94].every(x=>x>1)
+//false
+[2,2,,,13,32,1232,94].every(x=>x>1)
+//true
+
+```
+
+___
+## some()
+* 只要有一个元素符合条件，就返回 `true` ，房子返回 `false`
+* 空值元素返回`false`,因为会跳过
+* 空数组也是返回`false`
+#### 实例
+```javascript
+[,,,,,2, 5, 8, 1, 4].some(x=>x>='8');
+//true
+['apple', 'banana', 'mango', 'guava'].some(x=>x==='banana')
+//true
+```
+
+___
+## xxxx
+* xxx
+#### 实例
+```javascript
+xxx
+```
+
+___
 
 ### 14.过滤/搜索/筛选/包含
 ```javascript
