@@ -1,17 +1,12 @@
-#### 移动端-调用相机
-```html
-<input type="file"  accept="image/*" capture="camera" >
-<!-- multiple="multiple" -->
-```
-#### 移动端-调用录像
-```html
-<input type="file" accept="video/*" capture="camcorder" > 
-```
-#### 移动端-调用录音麦克风
-```html
-<input type="file" accept="audio/*" capture="microphone" >
 
-```
+
+
+
+
+
+
+
+
 #### 需要通过submit按钮发送才能起作用
 ```html
 <form action="/example/html5/demo_form.asp" method="get">
@@ -195,6 +190,22 @@ formmethod 属性  submit/image
 <input type="text" max="12" min="2" step="2"> 最大值/最小值/增减间隔
 <input type="text" pattern=""> 正则表达式
 <input type="text" value="默认值"> 默认值
+```
+
+#### 一次性禁用所有的表单元素
+```html
+<form>
+    <fieldset disabled>
+        <legend>完成您的购物订单</legend>
+        <...> 
+    </fieldset>
+</form>
+```
+```css
+fieldset[disabled] {
+   -ms-pointer-events: none;
+   pointer-events: none;
+}
 ```
 
 #### 自动完成 
