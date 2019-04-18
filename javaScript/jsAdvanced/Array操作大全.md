@@ -385,6 +385,10 @@ let arr14 = [1,3,4,2,1,'g','a']
 //是否包含
 !!~arr14.indexOf(1) //true
 !!~arr14.indexOf(88) //false
+//语义清晰点
+arr14.includes('gss') //false
+[1, 2, NaN].includes(NaN) // true
+
 
 ```
 
