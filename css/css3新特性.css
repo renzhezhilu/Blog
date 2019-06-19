@@ -48,7 +48,7 @@ filter: blur(5px);
     & { column-count: 12;} 
 }
 
-/* apple风格背景模糊 （爽爆） */
+/* apple风格背景模糊  saturate(180%)/饱和度 blur(3px)/模糊度;（爽爆） */
 .localnav-background {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(3px);
