@@ -37,9 +37,11 @@ obj1.a = 1111;
 console.log(JSON.stringify(obj3)); // { a: 0, b: { c: 0}}
 ```
 
-### 01.xxxxxx
+### 04.删除
 ```javascript
-xxxxx
+let l = {a:1,b:2}
+detele l.a
+//{b: 2}
 ```
 
 ### 01.xxxxxx
