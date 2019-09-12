@@ -429,6 +429,51 @@ var numbersArray = [] , max = 100;
 for( var i=1; numbersArray.push(i++) < max;);  // numbers = [1,2,3 ... 100]
 
 ```
-### 19.循环
+
+### 19.去重、重复数据
+```javascript
+//简单去重
+let k = [1, 1, 1, 1, 2, 3, 4, 4, 5, 3]
+k = Array.from(new Set(k));
+k = [...new Set(k)]
+(5) [1, 2, 3, 4, 5]
+
+```
+```javascript
+//对象去重 arr:数组，val：数组内的对象某个键名
+ let oneArr = [
+    {
+        name : "2323", id : 'dk2'
+    }, {
+        name : "1234", id : 'dk1'
+    }, {
+        name : "553", id : 'dk3'
+    }, {
+        name : "553", id : 'dk4'
+    },{
+        name : "1234", id : 'dk5'
+    }
+  ]
+  function unique (arr,val){ 
+    let hash = {};
+    let newArr = [];
+      newArr = arr.reduce(function(item, next) {
+          hash[next[val]] ? '' : hash[next[val]] = true && item.push(next)
+          return item
+      }, [])
+    return newArr
+  }
+  let oneArr02 = unique(oneArr,'name')
+  console.log(oneArr02)
+  /*
+  0: {name: "2323", id: "dk2"}
+  1: {name: "1234", id: "dk1"}
+  2: {name: "553", id: "dk3"}
+  */
+```
+
+
+
+### 20.循环
 ```javascript
 ```
