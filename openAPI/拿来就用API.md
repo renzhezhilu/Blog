@@ -1,8 +1,169 @@
 
+### 句子分词
+http://api.pullword.com/
 
 ### 谷歌翻译
 
 ##### 文本翻译
+
+https://translate.google.cn/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=zh-CN&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qc&dt=rw&dt=rm&dt=ss&dt=t&ie=UTF-8&oe=UTF-8&source=sel&tk=826758.669696&q=Field
+```json
+[
+    [
+        ["领域", "Field", null, null, 2],
+        [null, null, "Lǐngyù", "fēld"]
+    ],
+    [
+        ["名词", ["领域", "场", "田", "野外", "田间", "方面", "田野", "野", "田地", "地", "球场", "科", "平原", "畈"],
+            [
+                ["领域", ["field", "area", "domain", "realm", "sphere", "territory"], null, 0.60653067],
+                ["场", ["field", "scene", "place", "stage", "courtyard", "open space"], null, 0.1374665],
+                ["田", ["field", "farm"], null, 0.030197384],
+                ["野外", ["field", "open country", "plain"], null, 0.01319226],
+                ["田间", ["field", "farm"], null, 0.0053301547],
+                ["方面", ["aspect", "respect", "side", "field"], null, 0.0044188537],
+                ["田野", ["field", "open land"], null, 0.0022219392],
+                ["野", ["field", "plain", "open space", "limit"], null, 0.0021535773],
+                ["田地", ["field", "farmland", "plot", "condition"], null, 0.0016004026],
+                ["地", ["ground", "land", "earth", "place", "field"], null, 0.0015034392],
+                ["球场", ["court", "field"], null, 7.21358E-4],
+                ["科", ["family", "branch", "division", "subject", "field"], null, 7.183312E-6],
+                ["平原", ["flat", "plane", "flatland", "field"], null, 6.4390792E-6],
+                ["畈", ["farm", "field"], null, 5.896422E-7]
+            ], "field", 1
+        ]
+    ], "en", null, null, [
+        ["Field", null, [
+                ["领域", 1000, true, false],
+                ["场", 1000, true, false]
+            ],
+            [
+                [0, 5]
+            ], "Field", 0, 0
+        ]
+    ], null, null, [
+        ["en"], null, [1.0],
+        ["en"]
+    ], null, null, [
+        ["形容词", [
+            [
+                ["practical", "hands-on", "applied", "experiential", "empirical"], "m_en_us1246904.025"
+            ],
+            [
+                ["mobile", "portable", "transportable", "movable", "maneuverable", "light"], "m_en_us1246904.027"
+            ]
+        ], "field"],
+        ["名词", [
+            [
+                ["meadow", "pasture", "paddock", "grassland", "pastureland", "lea", "sward", "glebe"], "m_en_us1246904.001"
+            ],
+            [
+                ["playing field", "ground", "sports field", "pitch"], "m_en_us1246904.002"
+            ],
+            [
+                ["area", "sphere", "discipline", "province", "department", "domain", "sector", "branch", "subject", "bailiwick"], "m_en_us1246904.010"
+            ],
+            [
+                ["scope", "range", "sweep", "reach", "extent"], "m_en_us1246904.013"
+            ],
+            [
+                ["competitors", "entrants", "competition", "applicants", "candidates", "possibles"], "m_en_us1246904.015"
+            ],
+            [
+                ["plain", "champaign"], ""
+            ],
+            [
+                ["theatre of operations", "theater of operations", "theater"], ""
+            ],
+            [
+                ["flying field", "landing field", "airfield"], ""
+            ],
+            [
+                ["orbit", "sphere", "domain", "arena", "area"], ""
+            ],
+            [
+                ["discipline", "bailiwick", "subject", "study", "subject area", "field of study"], ""
+            ],
+            [
+                ["line of business"], ""
+            ],
+            [
+                ["playing field", "athletic field"], ""
+            ],
+            [
+                ["field of force", "force field"], ""
+            ],
+            [
+                ["field of battle", "battlefield", "field of honor", "battleground"], ""
+            ],
+            [
+                ["field of view"], ""
+            ]
+        ], "field"],
+        ["动词", [
+            [
+                ["catch", "stop", "retrieve", "return", "throw back"], "m_en_us1246904.020"
+            ],
+            [
+                ["deploy", "position", "range", "dispose"], "m_en_us1246904.023"
+            ],
+            [
+                ["deal with", "handle", "cope with", "answer", "reply to", "respond to"], "m_en_us1246904.024"
+            ]
+        ], "field"]
+    ],
+    [
+        ["形容词", [
+            ["carried out or working in the natural environment, rather than in a laboratory or office.", "m_en_us1246904.025", "field observations"]
+        ], "field"],
+        ["名词", [
+            ["an area of open land, especially one planted with crops or pasture, typically bounded by hedges or fences.", "m_en_us1246904.001", "a wheat field"],
+            ["a particular branch of study or sphere of activity or interest.", "m_en_us1246904.010", "we talked to professionals in various fields"],
+            ["all the participants in a contest or sport.", "m_en_us1246904.015", "he destroyed the rest of the field with a devastating injection of speed"],
+            ["the region in which a particular condition prevails, especially one in which a force or influence is effective regardless of the presence or absence of a material medium.", "m_en_us1246904.016", "This approach describes how electrons are influenced by the fields produced by others in the Fermi sea."]
+        ], "field"],
+        ["动词", [
+            ["play as a fielder.", "m_en_us1246904.019", "First, he took his eyes off the ball while fielding at short leg, and failed to notice that Sarwan had lobbed an attempted pull over his right shoulder."],
+            ["send out (a team or individual) to play in a game.", "m_en_us1246904.021", "a high school that traditionally fielded mediocre teams"],
+            ["deal with (a difficult question, telephone call, etc.).", "m_en_us1246904.024", "she has fielded five calls from salespeople"]
+        ], "field"]
+    ],
+    [
+        [
+            ["The \u003cb\u003eField\u003c/b\u003e Mouse is a small rodent, found in long rolling plains or alternately old houses and any place in between.", null, null, null, 3, "m_en_us1246904.028"],
+            ["You gain professional credibility through creative and productive work in a special \u003cb\u003efield\u003c/b\u003e of activity.", null, null, null, 3, "m_en_us1246904.010"],
+            ["the \u003cb\u003efield\u003c/b\u003e looks very strong this year", null, null, null, 3, "neid_6889"],
+            ["The Arab states that invaded the nascent State of Israel \u003cb\u003efielded\u003c/b\u003e armies that were trained and supplied by the French and British Empires.", null, null, null, 3, "m_en_us1246904.023"],
+            ["energy \u003cb\u003efield\u003c/b\u003e", null, null, null, 3, "neid_6894"],
+            ["The Soviet Union then \u003cb\u003efielded\u003c/b\u003e a huge army that had bested the Wehrmacht and was fully capable of gobbling up large chunks of Western Europe.", null, null, null, 3, "m_en_us1246904.023"],
+            ["With most of their first team on tour in Belgium, Yarnbury still managed to \u003cb\u003efield\u003c/b\u003e a strong line-up.", null, null, null, 3, "m_en_us1246904.021"],
+            ["Rolling in wealth, the Church built great edifices and \u003cb\u003efielded\u003c/b\u003e its own armies and sank deeper and deeper into immorality, materialism, and decadence.", null, null, null, 3, "m_en_us1246904.023"],
+            ["A magnifying glass was added to read the scale, a telescopic sight was added with cross-wires to divide the \u003cb\u003efield\u003c/b\u003e of view.", null, null, null, 3, "m_en_us1246904.013"],
+            ["These studies can either be carried out in laboratory cultures or preferably in a \u003cb\u003efield\u003c/b\u003e environment.", null, null, null, 3, "m_en_us1246904.025"],
+            ["However, it was forced to carry out the \u003cb\u003efield\u003c/b\u003e checks following the allegations.", null, null, null, 3, "m_en_us1246904.025"],
+            ["The \u003cb\u003efield\u003c/b\u003e artillery could develop GPS munitions that could work in a similar fashion.", null, null, null, 3, "m_en_us1246904.027"],
+            ["he was lucky to stay on the \u003cb\u003efield\u003c/b\u003e", null, null, null, 3, "neid_6888"],
+            ["The rest of the \u003cb\u003efield\u003c/b\u003e fell away and are still waiting for the return of Kevin Mitch to give these guys some competition at the top.", null, null, null, 3, "m_en_us1246904.015"],
+            ["It is a matter of word \u003cb\u003efields\u003c/b\u003e and changes of meaning, but also about the creation of new words.", null, null, null, 3, "m_en_us1246904.012"],
+            ["They even developed independent governments, raised their own taxes, \u003cb\u003efielded\u003c/b\u003e their own armies.", null, null, null, 3, "m_en_us1246904.023"],
+            ["The game, the fastest and most skilful \u003cb\u003efield\u003c/b\u003e game on the planet, requires such devotion.", null, null, null, 3, "m_en_us1246904.029"],
+            ["The Romans quickly \u003cb\u003efielded\u003c/b\u003e another army, for the heart of Roman strength was in central and southern Italy.", null, null, null, 3, "m_en_us1246904.023"],
+            ["Fielding continues to remaining \u003cb\u003efield\u003c/b\u003e artillery units in the Army National Guard.", null, null, null, 3, "m_en_us1246904.027"],
+            ["The long cells exceeded the \u003cb\u003efield\u003c/b\u003e of view at high magnification and were instead measured at 100x.", null, null, null, 3, "m_en_us1246904.013"],
+            ["Zimba said he would not \u003cb\u003efield\u003c/b\u003e a team at the Rhino Sevens because the tournament was only meant for clubs.", null, null, null, 3, "m_en_us1246904.021"],
+            ["This development will permit explicit information on uncertainty to be carried forward from \u003cb\u003efield\u003c/b\u003e data to the final product.", null, null, null, 3, "m_en_us1246904.025"],
+            ["I have to honestly say that I didn't have much of an interest in the acting \u003cb\u003efield\u003c/b\u003e .", null, null, null, 3, "m_en_us1246904.010"],
+            ["The threats from the beach were horrifying enough to have made Napoleon turn from the \u003cb\u003efield\u003c/b\u003e of battle.", null, null, null, 3, "m_en_us1246904.006"],
+            ["Following the speech he \u003cb\u003efielded\u003c/b\u003e student questions posed from a microphone placed on the floor in front of the podium.", null, null, null, 3, "m_en_us1246904.024"],
+            ["Here three main pockmark and mud diapir \u003cb\u003efields\u003c/b\u003e were observed.", null, null, null, 3, "m_en_us1246904.004"],
+            ["The great expanses of the open \u003cb\u003efields\u003c/b\u003e were replaced by hedges, fences, and, in upland areas, dry stone walling.", null, null, null, 3, "m_en_us1246904.001"],
+            ["This was an unusual year for the Oscars: No single film dominated the \u003cb\u003efield\u003c/b\u003e and swept the board.", null, null, null, 3, "m_en_us1246904.015"],
+            ["Because the fish will be waiting in ambush behind the top of the sand dune watching for baitfish or whatever to be washed into their \u003cb\u003efield\u003c/b\u003e of view.", null, null, null, 3, "m_en_us1246904.013"],
+            ["In this case, over time, the debris \u003cb\u003efield\u003c/b\u003e covered about two to three square mile area.", null, null, null, 3, "m_en_us1246904.004"]
+        ]
+    ]
+]
+```
 
 https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&hl=zh-CN&dt=t&dt=bd&dj=1&source=icon&tk=184307.184307&q=map
 
@@ -96,6 +257,8 @@ https://translate.google.cn/translate_tts?q=%E7%87%95%E5%A1%98%E9%85%B8%E7%89%9B
 
 
 > tk待了解
+
+> client=webapp不可用
 
 ### 在线打开文件⚠️
 
