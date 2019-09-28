@@ -23,21 +23,33 @@ await page.goto('https://baidu.com');
 //关闭标签
 page.close()
 
+await page.setDefaultNavigationTimeout(0) //页面超时设置
+await page.waitForNavigation({ timeout: 3000 });
+
+await page.screenshot({path: 'jd.png'}) //第一屏截图
+await page.screenshot({
+  path: 'jd.png',
+  fullPage: true,//全屏截图
+})
+
 //等待
 await page.waitFor(1000);   //等待1000ms
 await page.waitFor('body'); //等待body加载完成
+await page.waitFor('ul.product > li:nth-child(1)')
 
-/////////输入
-//点击
-page.click('#su')
-//双击
+page.reload() //刷新
+
+page.click('#su') //单击
 //键盘输入
 await page.type('#kw', 'puppeteer', {delay: 100});
 //滚轮
+
 //右键
 
 
 /////////注入
+await page.evaluate(fs.readFileSync('../public/jquery.js', 'utf8'))
+
 //原生js
 
 //jquery
@@ -46,6 +58,18 @@ await page.type('#kw', 'puppeteer', {delay: 100});
 //PDF  
 await page.pdf({path: 'page.pdf',format:'A4'}); //智能在无界面模式
 //截图
+
+//cookie
+const cookie = {
+  name: 'login_email',
+  value: 'set_by_cookie@domain.com',
+  domain: '.paypal.com',
+  url: 'https://www.paypal.com/',
+  path: '/',
+  httpOnly: true,
+  secure: true
+}
+await page.setCookie(cookie)
 
 
 /////////模拟手机设备
@@ -61,3 +85,31 @@ puppeteer.launch()
     // other actions...
     await browser.close();
 });
+
+
+//异常处理
+(async () => {
+  const browser = await puppeteer.launch({
+    executablePath: 'chromium/Chromium.app/Contents/MacOS/Chromium',
+    headless: true
+  });
+  const page = await browser.newPage();
+  await page.goto('http://jartto.wang');
+  await page.screenshot({path: 'temp/blog.png'});
+  await browser.close();
+})().catch(error => console.log('error: ', error.message));
+
+//代理
+const browser = await puppeteer.launch({
+        args: [
+            '--disable-setuid-sandbox',
+            '--no-sandbox',
+            '--proxy-server=10.24.51.125:8411',
+            '--ignore-certificate-errors',
+            '--window-size=375,812',
+            '--remote-debugging-port=9222'
+        ],
+        ignoreHTTPSErrors: true,
+        headless: false,
+        executablePath: "/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+    });
