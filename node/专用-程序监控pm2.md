@@ -1,5 +1,5 @@
 //http://www.cnblogs.com/zhoujie/p/nodejs4.html
-
+//http://pm2.keymetrics.io/docs/usage/pm2-api/
 用法
 ```base
 $ npm install pm2 -g                 # 命令行安装 pm2 

@@ -1,5 +1,6 @@
 
 //https://www.cnblogs.com/wyaocn/p/5811014.html
+//http://c.biancheng.net/view/5632.html
 ### 01.去除两边的空格/换行
 ```javascript
 "  hello world w t f    ".trim()  

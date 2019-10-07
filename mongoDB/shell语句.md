@@ -294,4 +294,21 @@ db.users.aggregate([{
 })
 ```
 
+### 模糊搜索
+
+``` javascript
+let re = new RegExp('iod', "i");
+let re02 = new RegExp('33296', "i");
+db.test.find({
+        $or: [
+            {
+                st: re
+            },
+             {
+                id: re02
+            }
+        ]
+    })
+ 
+```
 
