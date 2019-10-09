@@ -569,25 +569,51 @@ let kkk = fenci0.map(w => {
 ```
 
 ### 21. 扁平化/降维/平面化
-```javascript
+
+``` javascript
 [1, 2, [3, [4, 5]]].flat()
 // [1, 2, 3, [4, 5]]
 [1, 2, [3, [4, 5]]].flat(2)
 // [1, 2, 3, 4, 5]
-[1,[2,[3,[4,[5,[6,[7]]]]]]].flat(Infinity)
+[1, [2, [3, [4, [5, [6, [7]]]]]]].flat(Infinity)
 // [1, 2, 3, 4, 5, 6, 7]
 
 //注意这里数字变字符串里 
-[11, [22, 33], [44, 55], 66].join().split(',') 
+[11, [22, 33], [44, 55], 66].join().split(',')
 // ["11", "22", "33", "44", "55", "66"]
 ```
 
+### 22. 找出相同和不同的部分
 
-### 20. 循环
-
-```javascript
+``` javascript
+function findExactlyString(arr) {
+    let leg = 0
+    let arr00 = arr[0]
+    for (let i = 0; i < arr00.length; i++) {
+        if (arr.every(x => x[i] == arr00[i])) {
+            leg++
+        } else {
+            break
+        }
+    }
+    let diffArr = arr.map(x => x.substr(leg, x.length))
+    return {
+        leg: leg,
+        str: arr00.substr(0, leg),
+        diffArr
+    }
+}
+//示例
+let ppp = ["https://cdn3.volusion.com/h5yxa.x5v9u/v/vspfiles/photos/CN470883-2.jpg", "https://cdn3.volusion.com/h5yxa.x5v9u/v/vspfiles/photos/CN470883-3.jpg"]
+findExactlyString(ppp)
+/*
+diffArr: 
+    0: "2.jpg"
+    1: "3.jpg"
+leg: 65
+str: "https://cdn3.volusion.com/h5yxa.x5v9u/v/vspfiles/photos/CN470883-"
+*/
 ```
-
 
 ### 20. 循环
 

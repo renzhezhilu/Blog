@@ -255,6 +255,7 @@ db.users.aggregate([{
 ], {
     allowDiskUse: true
 })
+//150万数据耗时 46秒
 ```
 
 ### 去重
@@ -290,8 +291,10 @@ db.users.aggregate([{
             $in: it.dups
         }
     });
-
 })
+//150万数据去除40万重复数据耗时 1626秒 半个多小时
+//缺点看不到进度和结果
+//返回Script executed successfully, but there is no result to show.脚本执行成功，但是没有结果显示
 ```
 
 ### 模糊搜索
@@ -300,15 +303,88 @@ db.users.aggregate([{
 let re = new RegExp('iod', "i");
 let re02 = new RegExp('33296', "i");
 db.test.find({
-        $or: [
-            {
-                st: re
-            },
-             {
-                id: re02
-            }
-        ]
-    })
- 
+    $or: [{
+            st: re
+        },
+        {
+            id: re02
+        }
+    ]
+})
+```
+
+### 优化搜索效率/建立text index全文检索
+
+#### 效果非常好！！！👌10s变1s不是梦
+
+``` javascript
+//1.新建text index 120万耗时150秒
+//字段01: "text"
+db.blogs.createIndex({
+    title: "text",
+    name: "text"
+})
+//2.搜索
+db.blogs.find({
+    $text: {
+        $search: "index"
+    }
+})
+
+// 3.执行简单的全文检索
+db.blogs.find({
+    $text: {
+        $search: "index"
+    }
+})
+
+// 4.查询包含index或者operators的记录
+db.blogs.find({
+    $text: {
+        $search: "index operators"
+    }
+})
+
+// 5.查询包含mongodb但是不包含search的记录
+db.blogs.find({
+    $text: {
+        $search: "mongodb -search"
+    }
+})
+
+// 6.查询包含text search词组的记录
+db.blogs.find({
+    $text: {
+        $search: "\"text search\""
+    }
+})
+
+//7.使用权重排序搜索结果
+//默认情况下全文检索返回的结果是无序的；
+//每次全文检索MongoDB会针对文档的匹配程度为每个document计算一个相对的分数；
+//MongoDB提供了$meta textScore来支持全文检索的分数；
+
+db.blogs.find({
+    $text: {
+        $search: "mongodb index"
+    }
+}, {
+    score: {
+        $meta: "textScore"
+    }
+}).sort({
+    score: {
+        $meta: "textScore"
+    }
+})
+
+//如不先建立索引使用$text会报错
+{
+    "message": "text index required for $text query",
+    "ok": 0,
+    "code": 27,
+    "codeName": "IndexNotFound",
+    "name": "MongoError"
+}
 ```
 
