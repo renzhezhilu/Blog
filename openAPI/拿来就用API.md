@@ -1,4 +1,13 @@
 
+
+
+
+### 当前时间
+http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
+
+http://quan.suning.com/getSysTime.do
+
+
 ### 句子分词
 http://api.pullword.com/
 

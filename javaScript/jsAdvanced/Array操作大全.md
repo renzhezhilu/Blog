@@ -587,6 +587,11 @@ let kkk = fenci0.map(w => {
 
 ``` javascript
 function findExactlyString(arr) {
+    if (arr.length <= 1) return {
+        leg: 0,
+        str: '',
+        diffArr: arr
+    }
     let leg = 0
     let arr00 = arr[0]
     for (let i = 0; i < arr00.length; i++) {
