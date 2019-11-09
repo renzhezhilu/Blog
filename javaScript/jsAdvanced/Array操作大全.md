@@ -459,6 +459,16 @@ let arr14 = [1, 3, 4, 2, 1, 'g', 'a']
 arr14.includes('gss') //false
 [1, 2, NaN].includes(NaN) // true
 ```
+```javascript
+//返回值
+[1, 5, 10, 15].find((value, index, arr)=> value > 9) //10
+[1, 5,NaN].find((value, index, arr)=> Object.is(NaN, value)) //NaN
+//返回索引
+[1, 5, 10, 15].findIndex((value, index, arr)=> value > 9) 
+//2
+[1, 5,NaN].findIndex((value, index, arr)=> Object.is(NaN, value)) //2
+
+```
 
 ### 15. 取最大/最小值
 
@@ -620,7 +630,131 @@ str: "https://cdn3.volusion.com/h5yxa.x5v9u/v/vspfiles/photos/CN470883-"
 */
 ```
 
-### 20. 循环
+### 23. reduce 累积计算
+reduce为数组中的每一个元素依次执行callback函数，不包括数组中被删除或从未被赋值的元素，接受四个参数：
+
+> accumulator 累计器 
+
+> currentValue 当前值 
+
+> currentIndex 当前索引 
+
+> array 数组
+
+##### 数据累加，accumulator初始值是数据的第一个值（0），currentValue初始值为数据的第二个值（1），currentIndex（1）
+
+```javascript
+[0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array){
+  return accumulator + currentValue;
+}) 
+//10
+```
+
+##### 最好还是要提供初始值，accumulator初始值（10），currentValue（0），currentIndex（0）
+
+```javascript
+[0, 1, 2, 3, 4].reduce((accumulator, currentValue, currentIndex, array) => { return accumulator + currentValue; }, 10 )
+//20
+[0,1,2,3].reduce( ( acc, cur ) => acc + cur,0 )
+//6
+```
+##### 扁平化数组
+
+```javascript
+[[0, 1], [2, 3], [4, 5]].reduce(( acc, cur ) => acc.concat(cur),[])
+//[0, 1, 2, 3, 4, 5]
+```
+
+##### 计算数组中每个元素出现的次数
+
+```javascript
+let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+let countedNames = names.reduce(function (allNames, name) { 
+  if (name in allNames) {
+    allNames[name]++;
+  }
+  else {
+    allNames[name] = 1;
+  }
+  return allNames;
+}, {})
+//{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
+```
+
+
+
+
+### 24. 填充/初始化/批量替换
+fill方法使用给定值，填充一个数组
+>value 填充的值
+
+>startIndex 起始位置）
+
+>endIndex 结束位置
+
+```javascript
+['a', 'b', 'c'].fill(7)
+// [7, 7, 7]
+new Array(3).fill(7)
+// [7, 7, 7]
+['a', 'b', 'c'].fill(7, 1, 2)
+// ['a', 7, 'c']
+```
+##### 注意，如果填充的类型为对象，那么被赋值的是同一个内存地址的对象，而不是深拷贝对象
+
+```javascript
+let arr = new Array(3).fill({name: "Mike"});
+arr[0].name = "Ben";
+arr
+// [{name: "Ben"}, {name: "Ben"}, {name: "Ben"}]
+let arr = new Array(3).fill([]);
+arr[0].push(5);
+arr
+// [[5], [5], [5]]
+```
+
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
+
+```javascript
+```
+
+### 20. xxxx
 
 ```javascript
 ```

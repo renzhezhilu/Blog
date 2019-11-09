@@ -1,6 +1,7 @@
 <!-- https://www.mmxiaowu.com/article/584821bcd4352863efb5545e -->
 <!-- https://www.cnblogs.com/wu-chao/p/8418541.html -->
-
+<!-- https://www.cnblogs.com/xiaohuochai/p/7204875.html -->
+<!-- https://www.soinside.com/question/7AAJ6Br8WXcqPHhH8NSAEA -->
 ### 基本概念
 
 Collections 集合   
