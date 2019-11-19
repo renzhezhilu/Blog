@@ -4,6 +4,13 @@
 
 ###### 目录：
 
+### 00. 判断数据类型是否是数组
+
+``` javascript
+Array.isArray([])
+// true
+```
+
 ### 01. 新建
 
 ``` javascript
@@ -116,12 +123,19 @@ let a = [1, 2, 3],
     (a + ',' + b).split(',') //["1", "2", "3", "5", "5", "5"]
 ```
 
+``` javascript
+//es6
+[...num1, ...num2, ...num3]
+```
+
 ### 09. 拷贝/复制
 
 ``` javascript
 let arr11 = [7, 6, 5]
 let arr12 = arr11.slice(0) //[7,6,5]
 let arr13 = arr11.concat() //[7,6,5]
+//es6
+let arr14 = [...arr11] //[7,6,5]
 ```
 
 ### 10. 排序⚠️
@@ -201,12 +215,22 @@ arr18.sort((a, b) => {
 ``` javascript
 //数组转字符串   只能用在基本类型的1维数组😒😒😒
 let arr14 = [1, 2, 3]
-arr14.join(',') //[]"1", "2", "3" 下同
+arr14.join(',') //"1", "2", "3" 下同
 arr14 + ''
 arr14.toString()
 String(arr14)
 //字符串转数组
 'i am renzhe zhilu'.split(' ') //["i", "am", "renzhe", "zhilu"]
+Object.entries('foo')
+// [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
+```
+
+``` javascript
+//es6-字符串转数组-正确识别四个字节的 Unicode 字符
+'x\uD83D\uDE80y' // "x🚀y"
+'x\uD83D\uDE80y'.length // 4
+    'x\uD83D\uDE80y'.split('') //["x", "�", "�", "y"]
+[...'x\uD83D\uDE80y'] // ["x", "🚀", "y"]
 ```
 
 ### 12. 反转/颠倒⚠️
@@ -448,7 +472,7 @@ xxx
 
 ___
 
-### 14. 过滤/搜索/筛选/包含
+### 14. 过滤/搜索/筛选/包含/索引
 
 ``` javascript
 let arr14 = [1, 3, 4, 2, 1, 'g', 'a']
@@ -459,15 +483,27 @@ let arr14 = [1, 3, 4, 2, 1, 'g', 'a']
 arr14.includes('gss') //false
 [1, 2, NaN].includes(NaN) // true
 ```
-```javascript
-//返回值
-[1, 5, 10, 15].find((value, index, arr)=> value > 9) //10
-[1, 5,NaN].find((value, index, arr)=> Object.is(NaN, value)) //NaN
-//返回索引
-[1, 5, 10, 15].findIndex((value, index, arr)=> value > 9) 
-//2
-[1, 5,NaN].findIndex((value, index, arr)=> Object.is(NaN, value)) //2
 
+##### 返回值
+
+``` javascript
+[1, 5, 10, 15].find((value, index, arr) => value > 9)
+//10
+[1, 5, NaN].find((value, index, arr) => Object.is(NaN, value))
+//NaN
+```
+
+##### 返回索引
+
+``` javascript
+[1, 5, 10, 15].findIndex((value, index, arr) => value > 9)
+//2
+[1, 5, NaN].findIndex((value, index, arr) => Object.is(NaN, value))
+//2
+arr14.indexOf(3)
+//1
+arr14.lastIndexOf(1)
+//4
 ```
 
 ### 15. 取最大/最小值
@@ -476,6 +512,9 @@ arr14.includes('gss') //false
 let n = [1, 2, 3, 4, 5]
 let max = Math.max.apply(Math, n)
 let min = Math.min.apply(Math, n)
+//es6
+Math.max(...n)
+Math.min(...n)
 ```
 
 ### 16. 取随机值
@@ -501,18 +540,60 @@ numbers = numbers.sort(function() {
 
 ### 18. 生成数据
 
+##### 随机字母字符串
+
 ``` javascript
-//随机字母字符串
-function generateRandomAlphaNum(len) {
-    var rdmString = "";
-    for (; rdmString.length < len; rdmString += Math.random().toString(36).substr(2));
-    return rdmString.substr(0, len);
+function setRandomStr(len, type) {
+    let str = ""
+    let radix = 36
+    type === 'num' ? radix = 10 : null
+    while (str.length < len) {
+        str += Math.random().toString(radix).substr(2)
+        type === 'str' ? str = str.replace(/[0-9]/ig, "") : null
+    }
+    return str.substr(0, len);
+}
+setRandomStr(13)
+//"z8pv55d9vg0du"
+setRandomStr(11, 'num')
+//"39064092292"
+setRandomStr(9, 'str')
+//"bxlmujmap"
+```
+
+##### 范围/生成从0到指定值的数字数组
+
+``` javascript
+function range(start, end, skip = 1, sort = 1) {
+    let arr = [...arguments]
+    let jg = null
+    if (arr.length === 1) {
+        jg = [...Array(Math.abs(start)).keys()].map(k => start < 0 ? -k : k)
+    }
+    else  {
+        if (end - start < 0) {
+            [start, end] = [end+1, start+1]
+            sort = -1
+        } 
+        jg = [...Array(end - start).keys()].map(k => k + start)
+        jg = jg.filter(f=>f%skip===0)
+    }
+    sort === -1 ? jg.reverse() : null
+    return jg
 }
 
-//生成从0到指定值的数字数组
-var numbersArray = [],
-    max = 100;
-for (var i = 1; numbersArray.push(i++) < max;); // numbers = [1,2,3 ... 100]
+range(6)
+//[0, 1, 2, 3, 4, 5]
+range(-6)
+//[-0, -1, -2, -3, -4, -5]
+range(9,3)
+//[9, 8, 7, 6, 5, 4]
+range(-3,2)
+//[-3, -2, -1, 0, 1]
+range(0,101,30)
+//[0, 30, 60, 90]
+range(0,101,20,-1)
+//[100, 80, 60, 40, 20, 0]
 ```
 
 ### 19. 去重、重复数据
@@ -630,7 +711,8 @@ str: "https://cdn3.volusion.com/h5yxa.x5v9u/v/vspfiles/photos/CN470883-"
 */
 ```
 
-### 23. reduce 累积计算
+### 23.reduce 累积计算
+
 reduce为数组中的每一个元素依次执行callback函数，不包括数组中被删除或从未被赋值的元素，接受四个参数：
 
 > accumulator 累计器 
@@ -643,56 +725,61 @@ reduce为数组中的每一个元素依次执行callback函数，不包括数组
 
 ##### 数据累加，accumulator初始值是数据的第一个值（0），currentValue初始值为数据的第二个值（1），currentIndex（1）
 
-```javascript
-[0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array){
-  return accumulator + currentValue;
-}) 
+``` javascript
+[0, 1, 2, 3, 4].reduce(function(accumulator, currentValue, currentIndex, array) {
+    return accumulator + currentValue;
+})
 //10
 ```
 
 ##### 最好还是要提供初始值，accumulator初始值（10），currentValue（0），currentIndex（0）
 
-```javascript
-[0, 1, 2, 3, 4].reduce((accumulator, currentValue, currentIndex, array) => { return accumulator + currentValue; }, 10 )
+``` javascript
+[0, 1, 2, 3, 4].reduce((accumulator, currentValue, currentIndex, array) => {
+    return accumulator + currentValue;
+}, 10)
 //20
-[0,1,2,3].reduce( ( acc, cur ) => acc + cur,0 )
+[0, 1, 2, 3].reduce((acc, cur) => acc + cur, 0)
 //6
 ```
+
 ##### 扁平化数组
 
-```javascript
-[[0, 1], [2, 3], [4, 5]].reduce(( acc, cur ) => acc.concat(cur),[])
+``` javascript
+[
+    [0, 1],
+    [2, 3],
+    [4, 5]
+].reduce((acc, cur) => acc.concat(cur), [])
 //[0, 1, 2, 3, 4, 5]
 ```
 
 ##### 计算数组中每个元素出现的次数
 
-```javascript
+``` javascript
 let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
-let countedNames = names.reduce(function (allNames, name) { 
-  if (name in allNames) {
-    allNames[name]++;
-  }
-  else {
-    allNames[name] = 1;
-  }
-  return allNames;
+let countedNames = names.reduce(function(allNames, name) {
+    if (name in allNames) {
+        allNames[name]++;
+    } else {
+        allNames[name] = 1;
+    }
+    return allNames;
 }, {})
 //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}
 ```
 
-
-
-
 ### 24. 填充/初始化/批量替换
+
 fill方法使用给定值，填充一个数组
->value 填充的值
 
->startIndex 起始位置）
+> value 填充的值
 
->endIndex 结束位置
+> startIndex 起始位置）
 
-```javascript
+> endIndex 结束位置
+
+``` javascript
 ['a', 'b', 'c'].fill(7)
 // [7, 7, 7]
 new Array(3).fill(7)
@@ -700,10 +787,13 @@ new Array(3).fill(7)
 ['a', 'b', 'c'].fill(7, 1, 2)
 // ['a', 7, 'c']
 ```
+
 ##### 注意，如果填充的类型为对象，那么被赋值的是同一个内存地址的对象，而不是深拷贝对象
 
-```javascript
-let arr = new Array(3).fill({name: "Mike"});
+``` javascript
+let arr = new Array(3).fill({
+    name: "Mike"
+});
 arr[0].name = "Ben";
 arr
 // [{name: "Ben"}, {name: "Ben"}, {name: "Ben"}]
@@ -713,49 +803,102 @@ arr
 // [[5], [5], [5]]
 ```
 
+### 25. 切割/分割/按数量分组
 
-### 20. xxxx
-
-```javascript
+``` javascript
+function chunk(arr, len = 1) {
+    let newArr = []
+    while (arr.length > 0) {
+        newArr.push(arr.splice(0, len))
+    }
+    return newArr
+}
+chunk([1, 2, 3, 4], 3)
+// [Array(3), Array(1)]
 ```
 
-### 20. xxxx
+### 26. 交集/相同点
 
-```javascript
+``` javascript
+function intersection() {
+    let arr = [...arguments]
+    return arr.reduce((a, b) => a.filter(c => b.includes(c)))
+}
+intersection([1, 2, 3, 4, 'jd', ], [, 3, 'jd'])
+//[3, "jd"]
+intersection([1, 2, 3, 4, 'jd', ], [, 3, 'jd', 1], [0, 3, 1], [7, 2, 3])
+//[3]
 ```
 
-### 20. xxxx
+### 27. 差集/差别/差异/不同点
 
-```javascript
+``` javascript
+function difference() {
+    let arr = [...arguments]
+    return arr.reduce((a, b) => a.filter(c => !b.includes(c)))
+}
+difference([2, 3, 4, 5], [0, 1, 3, 4])
+//[2, 5]
+difference([2, 3, 4, 5], [0, 1, 3, 4], [3, 4, 5, 101], [102, 103, 101])
+//[2]
 ```
 
-### 20. xxxx
+### 27-02. 对称差集
 
-```javascript
+``` javascript
+function sysmmetricDifference() {
+    let arr = [...arguments]
+    let inter = arr.reduce((a, b) => a.filter(c => b.includes(c)))
+    return [...new Set(arr.flat())].filter(f => !inter.includes(f))
+}
+sysmmetricDifference([2, 3, 4, 5], [0, 1, 3, 4])
+//[2, 5, 0, 1]
+sysmmetricDifference([2, 3, 4, 5], [0, 1, 3, 4], [3, 4, 5, 101], [102, 103, 101])
+//[2, 3, 4, 5, 0, 1, 101, 102, 103]
 ```
 
-### 20. xxxx
+### 28. 并集/合并/联合
 
-```javascript
+``` javascript
+function union() {
+    let arr = [...arguments].flat()
+    return [...new Set(arr)]
+}
+union([, 1, 2, 3], [2, 3, 100], [1, 2, "aa"])
+//[1, 2, 3, 100, "aa"]
 ```
 
+### 20.xxxx
+
+`
+``
+javascript
+
+``` 
+
+### 20.xxxx
+
+``` javascript
+``
+`
+
 ### 20. xxxx
 
-```javascript
+`
+``
+javascript
 ```
 
-### 20. xxxx
+### 20.xxxx
 
-```javascript
-```
-
-### 20. xxxx
-
-```javascript
-```
+``` javascript
+``
+`
 
 ### 20. xxxx
 
-```javascript
+`
+``
+javascript
 ```
 

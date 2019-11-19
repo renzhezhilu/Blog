@@ -2,6 +2,7 @@
 <!-- https://www.cnblogs.com/wu-chao/p/8418541.html -->
 <!-- https://www.cnblogs.com/xiaohuochai/p/7204875.html -->
 <!-- https://www.soinside.com/question/7AAJ6Br8WXcqPHhH8NSAEA -->
+
 ### 基本概念
 
 Collections 集合   
@@ -314,9 +315,56 @@ db.test.find({
 })
 ```
 
+### 转换字段类型
+
+字段‘oo’从string转化成int
+
+``` javascript
+db.wuliaotu.find({
+        "oo": {
+            $type: 'string'
+        }
+    }).forEach(function(x) {
+            x.oo = NumberInt(x.oo)
+            db.wuliaotu.save(x)
+    }
+//string转为double类型
+db.law.find().forEach( function (x) {
+  x.state = parseInt(x.state)
+  db.law.save(x)
+})
+
+//string转为int类型
+db.law.find().forEach( function (x) {
+  x.ise= NumberInt (x.ise)
+  db.law.save(x)
+})
+
+//string转化为date类型
+db.law.find().forEach( function (x) {
+ x.eift = new ISODate(x.eift)
+  db.law.save(x)
+})
+
+//示例：
+db.wuliaotu.find({}).forEach(function(x) {
+	x.xx =  NumberInt(x.xx);
+	x.oo =  NumberInt(x.oo);
+	x.time = new Date(x.time)
+	x.talk.num = NumberInt( x.talk.num.replace(/[^0-9]/ig,"") )
+    x.talk.hot = x.talk.hot.map(m=>{
+        m.oo =  NumberInt(m.oo);
+        m.xx =  NumberInt(m.xx);
+        return m
+    })
+   
+    db.wuliaotu.save(x)
+})
+```
+
 ### 优化搜索效率/建立text index全文检索
 
-#### 效果非常好！！！👌10s变1s不是梦
+#### 效果非常好！！！👌10s变1s不是梦，就是不能模糊搜索！
 
 ``` javascript
 //1.新建text index 120万耗时150秒

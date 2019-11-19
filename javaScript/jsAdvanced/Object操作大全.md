@@ -2,6 +2,9 @@
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 
+<!-- Object.entries('foo')  -->
+
+
 ### 01. 是否包含/存在
 
 ``` javascript
@@ -124,10 +127,20 @@ Object.is(-0, -0)          // true
 Object.is(NaN, 0/0)        // true
 ```
 
-### 01.xxxxxx
+### 06.遍历/迭代/循环
 
 ``` javascript
-xxxxx
+Object.entries({a:1,b:2}).map(([key,value],index)=>{
+	console.log(key,value,index)
+})
+//a 1 0
+//b 2 1
+
+Object.keys({a:11,b:22})
+//["a", "b"]
+
+Object.values({a:11,b:22})
+//[11, 22]
 ```
 
 ### 01.xxxxxx
