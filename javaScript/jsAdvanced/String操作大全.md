@@ -22,6 +22,44 @@ let rests = /[^a-zA-Z0-9\u4e00-\u9fa5]/g
 
 //"名侦探柯南1222动画JSJSN里有没有什么值得被称为经典J的集数"
 ```
+### 04. ***之间
+```javascript
+htmlStr.match(/(var s='=?)([^]*)(';var ii=?)/g)
+
+var str = "aaabbbcccdddeeefff";
+str = str.match(/aaa(\S*)fff/)[1];
+alert(str);//结果bbbcccdddeee
+1、js截取两个字符串之间的内容：
+ 
+var str = "aaabbbcccdddeeefff";
+str = str.match(/aaa(\S*)fff/)[1];
+alert(str);//结果bbbcccdddeee
+ 
+ 
+2、js截取某个字符串前面的内容：
+ 
+ 
+var str = "aaabbbcccdddeeefff";
+tr = str.match(/(\S*)fff/)[1];
+alert(str);//结果aaabbbcccddd
+ 
+ 
+3、js截取某个字符串后面的内容：
+ 
+var str = "aaabbbcccdddeeefff";
+str = str.match(/aaa(\S*)/)[1];
+alert(str);//结果bbbcccdddeeefff
+ 
+ 
+PS：这里再为大家提供2款非常方便的正则表达式工具供大家参考使用：
+ 
+JavaScript正则表达式在线测试工具：
+http://tools.jb51.net/regex/javascript
+ 
+正则表达式在线生成工具：
+http://tools.jb51.net/regex/create_reg
+
+```
 
 ### 04.生成随机id
 ```javascript

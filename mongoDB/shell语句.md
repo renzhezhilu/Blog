@@ -362,6 +362,79 @@ db.wuliaotu.find({}).forEach(function(x) {
 })
 ```
 
+### 把集合当作数组操作
+```javascript
+let index = 0
+db.idiom_yuan.find().forEach(function(x) {
+        index++
+        // if(index>10) return
+    let is = db.idiom.findOne({
+        word:x.word
+    })
+    if(index%1000===0){
+        console.log(index)
+    }
+    if(!is){
+        x.new = 1111111
+        db.idiom_0002.save(x)
+    }
+    else return
+})
+```
+
+### 剔除/排除/删除/过滤不符合规则的数据
+```javascript
+let num = 0
+let view =0
+ db.wuliaotu.find({}).forEach(function(x) {
+        view++
+        let k = db.meizitu.findOne({id:x.id})
+        if(k) {
+            num++
+            db.wuliaotu.remove(x)
+             console.log('剔除------》',x.id,num)
+        }else{
+            view%1000 === 0 ? console.log(view) : null
+            
+        }
+})
+```
+
+### 联表查询
+```javascript
+db.wuliaotu.aggregate([
+    {
+        $lookup: { 
+            from: "meizitu", // 关联到order表
+            localField: "oo", // user 表关联的字段
+            foreignField: "oo", // order 表关联的字段
+            as: "meizitu"
+        }
+    },
+    {
+        $match: { oo: 412 }
+    },
+    { // 保留的字段
+        $project: {
+            id: 1,
+            con: 1,
+            meizitu:1
+        }
+    }
+])
+```
+
+### 同文档字段互相比较查询
+```javascript
+db.wuliaotu.find({
+    $where:"this.oo < this.xx+50 || this.oo < this.xx-50"
+})
+   .sort({oo:-1})
+   .limit(100)
+```
+
+
+
 ### 优化搜索效率/建立text index全文检索
 
 #### 效果非常好！！！👌10s变1s不是梦，就是不能模糊搜索！
