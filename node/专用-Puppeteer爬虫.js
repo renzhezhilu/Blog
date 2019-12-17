@@ -31,6 +31,11 @@ await page.screenshot({
   path: 'jd.png',
   fullPage: true,//全屏截图
 })
+//元素截图/局部截图
+let form = await page.$('#form');
+await form.screenshot({
+    path:'form.png'
+});
 
 //等待
 await page.waitFor(1000);   //等待1000ms
@@ -71,6 +76,8 @@ const cookie = {
 }
 await page.setCookie(cookie)
 
+
+//
 
 /////////模拟手机设备
 const puppeteer = require('puppeteer');
