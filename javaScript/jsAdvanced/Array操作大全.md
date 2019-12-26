@@ -47,6 +47,37 @@ arr7.push(4) //[0, 1, 2, 3, 4]
 arr7.concat('intFoot', 'end') //[1, 2, 3, "intFoot"]
 ```
 
+通过名称插入
+
+``` javascript
+let insertByName_easy = (arr, item, fun) => arr.splice(arr.findIndex(fun), 0, item)
+let shu = ['一', '二', '三']
+insertByName_easy(shu, '插入十', n => n === '二')
+console.log(shu)
+//["一", "插入十", "二", "三"]
+
+function insertByName(arr, item, fun, isAfter = false) {
+    let index = arr.findIndex(fun)
+    if (index === -1) return false
+    if (isAfter) index++
+    arr.splice(index, 0, item)
+    return item
+}
+
+let yan = ["大眼怪怪怪", '小眼怪', {
+    a: 123
+}, "无眼怪"]
+//在之后插入
+insertByName(yan, '新增的中眼怪', n => n === '小眼怪', true)
+console.log(yan)
+//["大眼怪怪怪", "小眼怪", "新增的中眼怪", {…}, "无眼怪"]
+insertByName(yan, '巨眼怪', n => n.a === 123)
+console.log(yan)
+//["大眼怪怪怪", "小眼怪", "新增的中眼怪", "巨眼怪", {…}, "无眼怪"]
+insertByName(yan, '巨眼怪', n => n.a === 1231111)
+//false
+```
+
 ### 04. 删除⚠️
 
 ``` javascript
@@ -56,6 +87,32 @@ arr8.shift() //[4,5]
 arr8.splice(1, 1) //[3,5]
 //尾部删除
 arr8.pop() //[3,4]
+```
+
+通过名称删除
+
+``` javascript
+let deleteByName_easy = (arr, fun) => arr.splice(arr.findIndex(fun), 1)
+
+function deleteByName(arr, fun) {
+    let index = arr.findIndex(fun)
+    if (index === -1) return false
+    let item = [arr[index]]
+    arr.splice(index, 1)
+    return item
+}
+
+let yan = ["大眼怪怪怪", "中眼怪", '小眼怪', "无眼怪", 1, 3, {
+    a: 123,
+    b: 999
+}]
+deleteByName(yan, n => n === '中眼怪')
+console.log(yan)
+//["大眼怪怪怪","中眼怪",'小眼怪',"无眼怪",1,3,{"a":123,"b":999}]
+deleteByName(yan, n => n.a === 123)
+console.log(yan)
+//["大眼怪怪怪", "小眼怪", "无眼怪", 1, 3]
+//
 ```
 
 ### 05. 修改/替换⚠️
@@ -71,6 +128,24 @@ arr9.splice(1, 1, '任意') //[6, "任意", 8]
 //尾部修改
 arr9[arr9.length - 1] = 0 //[6, 7, 0]
 arr9.splice(arr9.length - 1, 1, '最后') //[6, 7, "最后"]
+```
+
+通过名称替换
+
+``` javascript
+let replaceByName_easy = (arr, item, fun) => arr.splice(arr.findIndex(fun), 1, item)
+
+function replaceByName(arr, item, fun) {
+    let index = arr.findIndex(fun)
+    if (index === -1) return false
+    arr.splice(index, 1, item)
+    return item
+}
+
+let yan = ["大眼怪怪怪", "中眼怪", '小眼怪', "无眼怪"]
+replaceByName(yan, '超级大眼怪', n => n === '中眼怪')
+console.log(yan)
+//["大眼怪怪怪","中眼怪",'小眼怪',"无眼怪",1,3,{"a":123,"b":999}]
 ```
 
 ### 06. 查询
@@ -129,13 +204,26 @@ let a = [1, 2, 3],
 ```
 
 ### 09. 拷贝/复制
-
+浅拷贝
 ``` javascript
 let arr11 = [7, 6, 5]
 let arr12 = arr11.slice(0) //[7,6,5]
 let arr13 = arr11.concat() //[7,6,5]
 //es6
 let arr14 = [...arr11] //[7,6,5]
+```
+深拷贝
+``` javascript
+let deepCopy = arr => JSON.parse(JSON.stringify(arr))
+
+let shen = [1,2,{isOk:false,time:1},3]
+let p = deepCopy(shen)
+shen[2].time = '1111'
+console.log('p:',JSON.stringify(p),'\nshen:',JSON.stringify(shen))
+/*
+p: [1,2,{"isOk":false,"time":1},3] 
+shen: [1,2,{"isOk":false,"time":"1111"},3]
+*/
 ```
 
 ### 10. 排序⚠️
@@ -569,14 +657,13 @@ function range(start, end, skip = 1, sort = 1) {
     let jg = null
     if (arr.length === 1) {
         jg = [...Array(Math.abs(start)).keys()].map(k => start < 0 ? -k : k)
-    }
-    else  {
+    } else {
         if (end - start < 0) {
-            [start, end] = [end+1, start+1]
+            [start, end] = [end + 1, start + 1]
             sort = -1
-        } 
+        }
         jg = [...Array(end - start).keys()].map(k => k + start)
-        jg = jg.filter(f=>f%skip===0)
+        jg = jg.filter(f => f % skip === 0)
     }
     sort === -1 ? jg.reverse() : null
     return jg
@@ -586,13 +673,13 @@ range(6)
 //[0, 1, 2, 3, 4, 5]
 range(-6)
 //[-0, -1, -2, -3, -4, -5]
-range(9,3)
+range(9, 3)
 //[9, 8, 7, 6, 5, 4]
-range(-3,2)
+range(-3, 2)
 //[-3, -2, -1, 0, 1]
-range(0,101,30)
+range(0, 101, 30)
 //[0, 30, 60, 90]
-range(0,101,20,-1)
+range(0, 101, 20, -1)
 //[100, 80, 60, 40, 20, 0]
 ```
 
@@ -643,20 +730,13 @@ console.log(oneArr02)
 */
 ```
 
-### 20. 元素重复次数
+### 20. 元素重复次数/出现的次数/计数/统计
 
 ``` javascript
 let fenci0 = ['wo', 'wo', 101, 101, 3, 'wo', 4, 42, 1, 3, 102, 302]
-let kkk = fenci0.map(w => {
-    let count = 0
-    fenci0.map(l => {
-        w == l && count += 1
-    })
-    return {
-        name: w,
-        value: count
-    }
-})
+let arrayCount =(arr,item)=>arr.filter(f=>f===item).length
+arrayCount(fenci0,'wo')
+//3
 ```
 
 ### 21. 扁平化/降维/平面化
