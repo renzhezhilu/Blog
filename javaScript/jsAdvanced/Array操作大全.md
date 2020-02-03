@@ -85,6 +85,12 @@ let arr8 = [3, 4, 5]
 arr8.shift() //[4,5]
 //任意位置删除
 arr8.splice(1, 1) //[3,5]
+[1, 2, 3, 4, 5, 6].splice(2, 3) //[3, 4, 5]被删除
+/*                   |  |
+          开始索引2(包含) |
+                        |
+                      结束索引2+3(不包含)   
+*/
 //尾部删除
 arr8.pop() //[3,4]
 ```
@@ -185,41 +191,72 @@ arr11.length = 2 //[7,8]⚠️
 ### 08. 合并
 
 ``` javascript
+[1, 2].concat('bbc')
+//[1, 2, "bbc"]
+//es6
+[...[1, 2, 3], ...['abc'], 999]
+//[1, 2, 3, "abc", 999]
+```
+
+普通合并
+
+``` javascript
+function merge() {
+    return [...arguments].reduce((item, next) => item.concat(next), [])
+}
 let num1 = [1, 2, 3],
     num2 = [4, 5, 6],
     num3 = [7, 8, 9];
-let nums = num1.concat(num2, num3) //[1, 2, 3, 4, 5, 6, 7, 8, 9]
-[1, 2, [9, 8, 7]].concat(0, 0, {
-    a: 'iImA'
-}) //[1, 2, Array(3), 0, 0, {…}]
-//暴力合并，仅适合1维字符串类型数组😒😒😒
-let a = [1, 2, 3],
-    b = [5, 5, 5]
-    (a + ',' + b).split(',') //["1", "2", "3", "5", "5", "5"]
+
+merge(num1, num2, num3, 'newWord', 110, {
+    ab: 99
+})
+//[1, 2, 3, 4, 5, 6, 7, 8, 9, "newWord", 110, {…}]
 ```
 
+花式合并/交叉
+
 ``` javascript
-//es6
-[...num1, ...num2, ...num3]
-```
+//交叉合并
+function zip() {
+    let arg = [...arguments]
+    if (arg.some(e => e.length !== arg[0].length)) return console.error('数组间长度必须一致！')
+    return arg[0].reduce((item, next, index) => {
+        item.push(arg.map(x => x[index] || null))
+        return item
+    }, [])
+}
+zip([1, 23], [4, 4], [5, 6])
+//[[1, 4, 5],[23, 4, 6]]
+
+``
+` 
 
 ### 09. 拷贝/复制
+
 浅拷贝
-``` javascript
+`
+``
+javascript
 let arr11 = [7, 6, 5]
 let arr12 = arr11.slice(0) //[7,6,5]
 let arr13 = arr11.concat() //[7,6,5]
 //es6
 let arr14 = [...arr11] //[7,6,5]
 ```
+
 深拷贝
+
 ``` javascript
 let deepCopy = arr => JSON.parse(JSON.stringify(arr))
 
-let shen = [1,2,{isOk:false,time:1},3]
+let shen = [1, 2, {
+    isOk: false,
+    time: 1
+}, 3]
 let p = deepCopy(shen)
 shen[2].time = '1111'
-console.log('p:',JSON.stringify(p),'\nshen:',JSON.stringify(shen))
+console.log('p:', JSON.stringify(p), '\nshen:', JSON.stringify(shen))
 /*
 p: [1,2,{"isOk":false,"time":1},3] 
 shen: [1,2,{"isOk":false,"time":"1111"},3]
@@ -300,25 +337,45 @@ arr18.sort((a, b) => {
 
 ### 11. 类型转换
 
+数组转字符串
+
 ``` javascript
-//数组转字符串   只能用在基本类型的1维数组😒😒😒
+// 只能用在基本类型的1维数组😒😒😒
 let arr14 = [1, 2, 3]
 arr14.join(',') //"1", "2", "3" 下同
 arr14 + ''
 arr14.toString()
 String(arr14)
+//深度转换成字符串
+JSON.stringify([1, 2, 3, {
+    a: 123
+}])
+//"[1,2,3,{"a":123}]"
 //字符串转数组
 'i am renzhe zhilu'.split(' ') //["i", "am", "renzhe", "zhilu"]
 Object.entries('foo')
 // [ ['0', 'f'], ['1', 'o'], ['2', 'o'] ]
-```
 
-``` javascript
 //es6-字符串转数组-正确识别四个字节的 Unicode 字符
 'x\uD83D\uDE80y' // "x🚀y"
 'x\uD83D\uDE80y'.length // 4
     'x\uD83D\uDE80y'.split('') //["x", "�", "�", "y"]
 [...'x\uD83D\uDE80y'] // ["x", "🚀", "y"]
+```
+
+特定的数组转对象
+
+``` javascript
+let arr = [
+    ['width', 100],
+    ['height', 200],
+    ['x', 123]
+]
+arr.map(x => {
+    return {
+        x[0]: x[1]
+    }
+})
 ```
 
 ### 12. 反转/颠倒⚠️
@@ -594,6 +651,19 @@ arr14.lastIndexOf(1)
 //4
 ```
 
+批量返回索引
+
+``` javascript
+function findIndexMore(arr, fun) {
+    return arr.reduce((item, next, index) => {
+        if (fun(next)) item.push(index)
+        return item
+    }, [])
+}
+findIndexMore([99, 100, 101, 102, 103, 110], (f) => f >= 102)
+//[3, 4, 5]
+```
+
 ### 15. 取最大/最小值
 
 ``` javascript
@@ -617,13 +687,32 @@ let max = 4,
 let n2 = ran[Math.floor(Math.random() * (max - min + 1)) + min]
 ```
 
+``` javascript
+let randomOut = (arr) => arr[~~(Math.random() * arr.length)]
+console.log(randomOut(ran))
+console.log(randomOut(ran))
+console.log(randomOut(ran))
+/*
+"kll"
+3
+5
+*/
+```
+
 ### 17. 打乱数组
 
 ``` javascript
-var numbers = [5, 458, 120, -215, 228, 400, 122205, -85411];
-numbers = numbers.sort(function() {
-    return Math.random() - 0.5
-});
+let shuffle = (arr) => arr.concat().sort(() => Math.random() - 0.5)
+
+let numbers = [5, 458, 120, -215, 228, 400, 122205, -85411]
+console.log(shuffle(numbers))
+console.log(shuffle(numbers))
+console.log(shuffle(numbers))
+/*
+[5, 458, 400, 122205, 120, -85411, -215, 228]
+[228, 5, 400, 458, 122205, 120, -85411, -215]
+[5, -85411, 458, 122205, 120, 228, 400, -215]
+*/
 ```
 
 ### 18. 生成数据
@@ -631,7 +720,7 @@ numbers = numbers.sort(function() {
 ##### 随机字母字符串
 
 ``` javascript
-function setRandomStr(len, type) {
+function randomStr(len, type) {
     let str = ""
     let radix = 36
     type === 'num' ? radix = 10 : null
@@ -641,17 +730,29 @@ function setRandomStr(len, type) {
     }
     return str.substr(0, len);
 }
-setRandomStr(13)
+randomStr(13)
 //"z8pv55d9vg0du"
-setRandomStr(11, 'num')
+randomStr(11, 'num')
 //"39064092292"
-setRandomStr(9, 'str')
+randomStr(9, 'str')
 //"bxlmujmap"
 ```
 
 ##### 范围/生成从0到指定值的数字数组
 
+简单实现
+
 ``` javascript
+let rangeEasy = (len) => new Array(len).fill(1).map((x, i) => i)
+rangeEasy(4)
+//[0, 1, 2, 3]
+``
+` 
+完整功能
+`
+``
+javascript
+
 function range(start, end, skip = 1, sort = 1) {
     let arr = [...arguments]
     let jg = null
@@ -659,6 +760,7 @@ function range(start, end, skip = 1, sort = 1) {
         jg = [...Array(Math.abs(start)).keys()].map(k => start < 0 ? -k : k)
     } else {
         if (end - start < 0) {
+            //移魂大法
             [start, end] = [end + 1, start + 1]
             sort = -1
         }
@@ -685,16 +787,28 @@ range(0, 101, 20, -1)
 
 ### 19. 去重、重复数据
 
+简单去重
+
 ``` javascript
-//简单去重
 let k = [1, 1, 1, 1, 2, 3, 4, 4, 5, 3]
 k = Array.from(new Set(k));
 k = [...new Set(k)]
-    (5)[1, 2, 3, 4, 5]
+//[1, 2, 3, 4, 5]
+
+function unique(arr) {
+    return arr.reduce((item, next, index) => {
+        if (!item.includes(next)) item.push(next)
+        return item
+    }, [])
+}
+
+unique(k)
+//[1, 2, 3, 4, 5]
 ```
 
+对象去重 arr: 数组，val：数组内的对象某个键名
+
 ``` javascript
-//对象去重 arr:数组，val：数组内的对象某个键名
 let oneArr = [{
     name: "2323",
     id: 'dk2'
@@ -712,7 +826,7 @@ let oneArr = [{
     id: 'dk5'
 }]
 
-function unique(arr, val) {
+function uniqueObject(arr, val) {
     let hash = {};
     let newArr = [];
     newArr = arr.reduce(function(item, next) {
@@ -721,7 +835,7 @@ function unique(arr, val) {
     }, [])
     return newArr
 }
-let oneArr02 = unique(oneArr, 'name')
+let oneArr02 = uniqueObject(oneArr, 'name')
 console.log(oneArr02)
 /*
 0: {name: "2323", id: "dk2"}
@@ -734,12 +848,14 @@ console.log(oneArr02)
 
 ``` javascript
 let fenci0 = ['wo', 'wo', 101, 101, 3, 'wo', 4, 42, 1, 3, 102, 302]
-let arrayCount =(arr,item)=>arr.filter(f=>f===item).length
-arrayCount(fenci0,'wo')
+let arrayCount = (arr, item) => arr.filter(f => f === item).length
+arrayCount(fenci0, 'wo')
 //3
 ```
 
 ### 21. 扁平化/降维/平面化
+
+> 参考[# 28. 并集/合并/联合](#28-并集/合并/联合)
 
 ``` javascript
 [1, 2, [3, [4, 5]]].flat()
@@ -900,10 +1016,12 @@ chunk([1, 2, 3, 4], 3)
 ### 26. 交集/相同点
 
 ``` javascript
-function intersection() {
+function intersection_old() {
     let arr = [...arguments]
     return arr.reduce((a, b) => a.filter(c => b.includes(c)))
 }
+let intersection = (...args) => args.reduce((a, b) => a.filter(c => b.includes(c)))
+
 intersection([1, 2, 3, 4, 'jd', ], [, 3, 'jd'])
 //[3, "jd"]
 intersection([1, 2, 3, 4, 'jd', ], [, 3, 'jd', 1], [0, 3, 1], [7, 2, 3])
