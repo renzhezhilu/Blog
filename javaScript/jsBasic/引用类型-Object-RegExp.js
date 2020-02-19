@@ -68,7 +68,7 @@ str.search(/m/gi) // -1
 (new RegExp('1\+1')).test('1+1') //false
 (new RegExp('1\\+1')).test('1+1') //true
 
-////字符类
+////字符类 
 //只要匹配其中一个a或b或c就可以
 /[操干逼屎]/.test("麻痹今天差点踩到狗屎了") //true
 /[操干逼屎]/.test("今天操作可以啊") //true
