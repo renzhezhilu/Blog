@@ -1,5 +1,11 @@
 ## 研究day.js就好，https://github.com/iamkun/dayjs/blob/dev/docs/zh-cn/API-reference.md
 
+### 
+```javascript
++new Date
+//1582341598564
+```
+
 #### 输出 带‘0’的日期格式
 ```javascript
 new Date().toJSON().substr(0,10)+ ' ' + new Date().toTimeString().substr(0,8)
