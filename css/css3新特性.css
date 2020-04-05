@@ -120,3 +120,8 @@ filter: blur(5px);
     -webkit-line-clamp:3;
     -webkit-box-orient:vertical;
 }
+
+
+/* prefers-color-scheme CSS media feature 用于检测用户的系统主题是浅色或深色。 */
+见：https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme
+
