@@ -1,127 +1,153 @@
 Chrome 将支持跳转到指定文字，而不需要锚点。做法是 URL 里面设置 #targetText=hello%20world ，然后就会跳转到网页的第一个hello world的地方。
 
+/* 渐变色 */
+div {
+  background: linear-gradient(-90deg, $color_blue_05, #fff);
+}
+
+/* 自定义滑块 */
+input[type="range"] {
+  -webkit-appearance: none;
+  border-radius: 2px;
+  width: 100%;
+  min-width: 200px;
+  height: 3px;
+  outline: none;
+  transition: 0.1s;
+  border-radius: 100px;
+  background: linear-gradient(-90deg, $color_blue_05, #fff);
+  background-color: $color_blue_05;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: $color_blue_02;
+  border-radius: 50%;
+  transition: 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-webkit-slider-thumb:active {
+  width: 16px;
+  height: 16px;
+}
+
 /* 钉住 */
 /* https://www.zhangxinxu.com/wordpress/2018/12/css-position-sticky/ */
 nav {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
-
 
 /* 滚动条 */
 .SP_tableContent::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*滚动条里面轨道*/
 .SP_tableContent::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-    background-color: transparent;
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
 }
 
 /*滚动条整体样式*/
 .SP_tableContent::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .8);
-    border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 100px;
 }
 
 /*滚动条里面小方块*/
 
-
 /* 禁止选择文本 */
-user-select :none;
+user-select: none;
 
 /* 选中文本时 */
 ::selection {
-    background: #d3d3d3;
-    color: #555;
+  background: #d3d3d3;
+  color: #555;
 }
 
 /* 元素高斯模糊 */
 filter: blur(5px);
 
-
 /* 元素宽度均分 less */
 .pan {
-    column-count: 6;
-    column-gap: 0;
+  column-count: 6;
+  column-gap: 0;
 }
 
 @media (min-width: 300px) {
-    & {
-        column-count: 2;
-    }
+  & {
+    column-count: 2;
+  }
 }
 
 @media (min-width: 500px) {
-    & {
-        column-count: 4;
-    }
+  & {
+    column-count: 4;
+  }
 }
 
 @media (min-width: 800px) {
-    & {
-        column-count: 5;
-    }
+  & {
+    column-count: 5;
+  }
 }
 
 @media (min-width: 1200px) {
-    & {
-        column-count: 8;
-    }
+  & {
+    column-count: 8;
+  }
 }
 
 @media (min-width: 1600px) {
-    & {
-        column-count: 10;
-    }
+  & {
+    column-count: 10;
+  }
 }
 
 @media (min-width: 2000px) {
-    & {
-        column-count: 12;
-    }
+  & {
+    column-count: 12;
+  }
 }
 
 /* apple风格背景模糊  saturate(180%)/饱和度 blur(3px)/模糊度;（爽爆） */
 .localnav-background {
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(3px);
-    background-color: rgba(255, 255, 255, .7);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(3px);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 /* 常规已可用 */
 .localnav.localnav-scrim .localnav-background {
-    backdrop-filter: saturate(180%) blur(10px);
-    background-color: rgba(194, 65, 65, 0.7);
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(194, 65, 65, 0.7);
 }
-
 
 /* 多行文本超出省略号 */
 .ellipsis01 {
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-line-clamp:1;
-    -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .ellipsis02 {
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-line-clamp:2;
-    -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .ellipsis03 {
-    overflow:hidden;
-    text-overflow:ellipsis;
-    display:-webkit-box;
-    -webkit-line-clamp:3;
-    -webkit-box-orient:vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
-
 /* prefers-color-scheme CSS media feature 用于检测用户的系统主题是浅色或深色。 */
-见：https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme
-
+见：https: ; //developer.mozilla.org/zh-CN/docs/Web/CSS/@media/prefers-color-scheme
