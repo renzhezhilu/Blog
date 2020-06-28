@@ -1,7 +1,9 @@
 
 
 
-
+### 客户端信息
+https://www.cloudflare.com/cdn-cgi/trace
+介绍：https://blog.dataflowkit.com/determine-location-of-users/
 ### 当前时间
 http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp
 
