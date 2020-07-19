@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Page Title</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+                <script src="./js/header_footer.js"></script>
+                <script src="./js/ss.js"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+            </head>
+<style>
+    .pagemain {
+        padding: 20px;
+
+    }
+
+    .pagemain .page {
+        display: flex;
+    }
+
+    .pagemain .whatthis {
+        padding: 20px 0;
+    }
+
+    .pagemain .contentbox {
+        width: 100%;
+
+    }
+
+    .pagemain .navbox {
+        width: 260px;
+        padding-left: 20px;
+        flex-shrink: 0;
+    }
+
+    .pagemain .navbox .box {
+        margin-bottom: 20px;
+    }
+
+    .pagemain .navbox a {
+        display: block;
+        line-height: 40px;
+        color: black;
+        padding-left: 16px;
+        border-radius: 1000px;
+    }
+
+    .pagemain .navbox a.on {
+        background-color: rgba(92, 255, 198, 0.2);
+    }
+
+    .pagemain .back i {
+        border-radius: 50%;
+        font-size: 13px;
+        padding: 3px;
+        background-color: #31bf9f;
+        color: #fff;
+    }
+    .pagemain .contentbox p {
+        font-size: 18px;
+        line-height: 38px;
+        margin: 4px 16px;
+    }
+    .pagemain .contentbox h4 {
+        margin: 20px 0;
+    }
+    .pagemain .contentbox img {
+        max-width: 100%;
+        margin: 16px 0;
+
+    }
+    .pagemain h1{
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .pagemain .page {
+            flex-direction: column;
+        }
+
+        .pagemain .navbox {
+            width: 100%;
+            padding-left: 15px;
+        }
+
+        .pagemain .card .block {
+            width: 100%;
+        }
+
+        .pagemain .navbox a {
+            border-radius: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+        }
+        .pagemain h1{
+        font-size: 30px;
+        line-height: 38px;
+    }
+    }
+</style>
+
+<body>
+    <div class="main_box pagemain">
+        <!-- <div class="back">
+            <i class="iconfont iconleft1"></i>
+        </div> -->
+        <div class="whatthis">
+            <h1>About US</h1>
+            <p class="op07">SHENZHEN DJ MEDICAL EQUIPMENT CO., LTD. as a Reserve enterprises of the ministry of industry and information technology of CHINA, Isolation eye cover and face shield have
+                    obtained the CE, FDA and CFDA, and obtained the certificate of SGS, a global authori- tative testing institution, with the detection standard of medical level. The company has more than 4 years of experience in the production of medical devices, and 8 kinds of products have obtained the CFDA class II certification.</p>
+        </div>
+        <div class="page">
+            <!--  -->
+            <div class="contentbox">
+
+                <img src="./images/min/about01.jpeg" alt="">
+                <h4>Features</h4>
+
+                <p>
+                        SHENZHEN DJ MEDICAL EQUIPMENT CO., LTD. as a Reserve enterprises of the ministry of industry and information technology of CHINA, Isolation eye cover and face shield have
+                        obtained the CE, FDA and CFDA, and obtained the certificate of SGS, a global authori- tative testing institution, with the detection standard of medical level. The company has more than 4 years of experience in the production of medical devices, and 8 kinds of products have obtained the CFDA class II certification.</p>
+                
+                <img src="./images/min/about02.jpeg" alt="">
+
+                <h5>DJM:The factory covers an area of more than 60,000 square meters It has 5000 square meters and 1000 class dustlessness workshop</h5>
+
+                <h4>Corner of production line</h4>
+                <img src="./images/min/about03.jpeg" alt="">
+
+                <h4>Factory shipment</h4>
+
+                <img src="./images/min/about04.jpeg" alt="">
+
+                <img src="./images/min/about05.jpeg" alt="">
+                <img src="./images/min/about06.jpeg" alt="">
+
+
+
+
+            </div>
+            <!--  -->
+            <div class="navbox">
+                <div class="box">
+                    <h5 class="op05">Detector</h5>
+                    <ul>
+                        <li>
+                            <a href="">Cat AI skin detector</a>
+                        </li>
+                        <li>
+                            <a class="on" href="">Water and oil PH detector</a>
+                        </li>
+                        <li>
+                            <a href="">Metis detector</a>
+                        </li>
+                        <li>
+                            <a href="">More me Smart Mirror</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h5 class="op05">Medical supplies</h5>
+                    <ul>
+                        <li>
+                            <a href="">Protective mask</a>
+                        </li>
+                        <li>
+                            <a href="">Protective goggles</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

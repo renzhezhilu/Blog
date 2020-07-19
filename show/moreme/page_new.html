@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Page Title</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+                <script src="./js/header_footer.js"></script>
+                <script src="./js/ss.js"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+            </head>
+<style>
+    .pagemain {
+        padding: 20px;
+
+    }
+
+    .pagemain .page {
+        display: flex;
+    }
+
+    .pagemain .whatthis {
+        padding: 20px 0;
+    }
+
+    .pagemain .contentbox {
+        width: 100%;
+
+    }
+
+    .pagemain .navbox {
+        width: 260px;
+        padding-left: 20px;
+        flex-shrink: 0;
+    }
+
+    .pagemain .navbox .box {
+        margin-bottom: 20px;
+    }
+
+    .pagemain .navbox a {
+        display: block;
+        line-height: 40px;
+        color: black;
+        padding-left: 16px;
+        border-radius: 1000px;
+    }
+
+    .pagemain .navbox a.on {
+        background-color: rgba(92, 255, 198, 0.2);
+    }
+
+
+
+    @media only screen and (max-width: 770px) {
+        .pagemain .page {
+            flex-direction: column-reverse;
+        }
+
+        .pagemain .navbox {
+            width: 100%;
+            padding-left: 15px;
+        }
+
+    }
+</style>
+
+<body>
+    <div class="main_box pagemain">
+        <div class="whatthis">
+            <h2>Company News</h2>
+            <p class="op07">More me latest news</p>
+        </div>
+        <div class="page">
+            <!--  -->
+            <div class="contentbox">    
+
+                <style>
+                    .newcard{
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                    .newcard .newbox{
+                        width: 30%;
+                        max-width: 500px;
+                        min-height: 300px;
+                       
+                    }    
+                    .newcard .pic{
+                        margin-bottom: 12px;
+                    }    
+                    .newcard .pic img {
+                        width: 100%;
+                    }    
+                    .newcard .newbox{
+                        color:#171717;
+                        margin:0 16px 16px 0;
+                    }    
+                    .newcard .t{opacity: .6;}    
+                    .newcard .tit{
+                        font-size: 18px;
+                        font-weight: 900;
+                    }
+                    .newcard p{ opacity: .6; line-height: 20px;}
+                    .newcard h6{ color:#31bf9f;}
+                    .newcard {}
+                    .newcard {}
+                    @media only screen and (max-width: 770px) {
+                        .newcard{
+                            justify-content: center;
+                        }
+                        .newcard .newbox{
+                        width: 100%;
+                       
+                    }  
+                        }
+                </style>
+                <div class="newcard">
+                    <a href="./page_article.html" class="newbox">
+                        <div class="pic">
+                            <img src="./images/min/new01.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="t">2020.07.19</div>
+                            <div class="tit">DJM at COSMOPROF Global Bologna</div>
+                            <p>Djm rehabilitation beauty instruments are well known in the world, Germany 4.0 industrial technology created
+                                </p>
+                            <h6>Read More ></h6>
+                        </div>
+                    </a> <a href="./page_article.html" class="newbox">
+                        <div class="pic">
+                                <img src="./images/min/new02.jpg" alt="">
+
+                        </div>
+                        <div class="txt">
+                            <div class="t">2020.07.19</div>
+                            <div class="tit">DJM at COSMOPROF Global Bologna</div>
+                            <p>Djm rehabilitation beauty instruments are well known in the world, Germany 4.0 industrial technology created
+                                </p>
+                            <h6>Read More ></h6>
+                        </div>
+                    </a>
+                    <a href="./page_article.html" class="newbox">
+                            <div class="pic">
+                                    <img src="./images/min/new03.jpg" alt="">
+
+                            </div>
+                            <div class="txt">
+                                <div class="t">2020.07.19</div>
+                                <div class="tit">DJM at COSMOPROF Global Bologna</div>
+                                <p>Djm rehabilitation beauty instruments are well known in the world, Germany 4.0 industrial technology created
+                                    </p>
+                                <h6>Read More ></h6>
+                            </div>
+                        </a>
+                        <a href="./page_article.html" class="newbox">
+                                <div class="pic">
+                                        <img src="./images/min/new04.jpg" alt="">
+
+                                </div>
+                                <div class="txt">
+                                    <div class="t">2020.07.19</div>
+                                    <div class="tit">DJM at COSMOPROF Global Bologna</div>
+                                    <p>Djm rehabilitation beauty instruments are well known in the world, Germany 4.0 industrial technology created
+                                        </p>
+                                    <h6>Read More ></h6>
+                                </div>
+                            </a>
+                            <a href="./page_article.html" class="newbox">
+                                    <div class="pic">
+                                            <img src="./images/min/new05.jpg" alt="">
+    
+                                    </div>
+                                    <div class="txt">
+                                        <div class="t">2020.07.19</div>
+                                        <div class="tit">DJM at COSMOPROF Global Bologna</div>
+                                        <p>Djm rehabilitation beauty instruments are well known in the world, Germany 4.0 industrial technology created
+                                            </p>
+                                        <h6>Read More ></h6>
+                                    </div>
+                                </a>
+                </div>
+
+            </div>
+
+
+
+        <!--  -->
+        <div class="navbox">
+            <div class="box">
+                <h5 class="op05">New</h5>
+                <ul>
+                    <li>
+                        <a href="">Company news</a>
+                    </li>
+                    <li>
+                        <a class="on" href=""> Expo news</a>
+                    </li>
+                </ul>
+            </div>
+         
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

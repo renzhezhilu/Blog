@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Page Title</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+                <script src="./js/header_footer.js"></script>
+                <script src="./js/ss.js"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+            </head>
+<style>
+    .pagemain {
+        padding: 20px;
+
+    }
+
+    .pagemain .page {
+        display: flex;
+    }
+
+    .pagemain .whatthis {
+        padding: 20px 0;
+    }
+
+    .pagemain .contentbox {
+        width: 100%;
+
+    }
+
+    .pagemain .navbox {
+        width: 260px;
+        padding-left: 20px;
+        flex-shrink: 0;
+    }
+
+    .pagemain .navbox .box {
+        margin-bottom: 20px;
+    }
+
+    .pagemain .navbox a {
+        display: block;
+        line-height: 40px;
+        color: black;
+        padding-left: 16px;
+        border-radius: 1000px;
+    }
+
+    .pagemain .navbox a.on {
+        background-color: rgba(92, 255, 198, 0.2);
+    }
+
+    .pagemain .back i {
+        border-radius: 50%;
+        font-size: 13px;
+        padding: 3px;
+        background-color: #31bf9f;
+        color: #fff;
+    }
+
+    .pagemain .contentbox p {
+        font-size: 18px;
+        line-height: 38px;
+        margin: 4px 16px;
+    }
+
+    .pagemain .contentbox h4 {
+        margin: 20px 0;
+    }
+
+    .pagemain .contentbox img {
+        max-width: 100%;
+        margin: 16px 0;
+
+    }
+
+    .pagemain h1 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .pagemain .page {
+            flex-direction: column;
+        }
+
+        .pagemain .navbox {
+            width: 100%;
+            padding-left: 15px;
+        }
+
+        .pagemain .card .block {
+            width: 100%;
+        }
+
+        .pagemain .navbox a {
+            border-radius: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+        }
+
+        .pagemain h1 {
+            font-size: 30px;
+            line-height: 38px;
+        }
+    }
+
+    .QandA ul{
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+        padding: 10px 0;
+    }
+
+    .QandA b {
+        color: #31bf9f;
+    }
+
+    .QandA li {
+        display: none;
+
+    }
+    .QandA li.on {
+        height: auto;
+
+    }
+
+
+    .QandA h4 {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 5%;
+        cursor: pointer;
+    }
+</style>
+
+
+<script>
+    $(document).ready(function() {
+        $(".QandA ul h4").click(function() {
+            let li = $(this).next().css('display')
+            if(li=='none'){
+                $(this).next().show(333)
+                $(this).find('.open').removeClass('iconzuhuhoutaiguanlitubiao_-')
+                $(this).find('.open').addClass('iconclose')
+            }else{
+                $(this).next().hide(333)
+                $(this).find('.open').addClass('iconzuhuhoutaiguanlitubiao_-')
+                $(this).find('.open').removeClass('iconclose')
+
+            }
+            
+        });
+    });
+</script>
+
+<body>
+    <div class="main_box pagemain">
+        <!-- <div class="back">
+            <i class="iconfont iconleft1"></i>
+        </div> -->
+        <div class="whatthis">
+            <h1>Q&A</h1>
+            <p class="op07">Answer your questions the fastest</p>
+        </div>
+        <div class="page">
+            <!--  -->
+            <div class="contentbox">
+
+                <div class="QandA">
+                    <ul>
+                        <h4>
+                            <span><b>Q：</b>How to view the detaileHow to view the detaileHow to view the detailed parameters of the skin tester？</span>
+                            <i class="iconfont open iconzuhuhoutaiguanlitubiao_-"></i>
+                        </h4>
+                        <li>
+                            <p> On March 10, DJM from Germany came to Guangzhou,a beautiful flower city in China, and was invited to attend the 48th CANTON BEAUTY EXPO.
+                                DJM, a European company specially invited by the fair, is on display with 3800 exhibitors from 26 countries and regions.
+
+                            </p>
+                            <img src="./images/ui03.png" alt="">
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <h4>
+                            <span><b>Q：</b>How to view the detailed parameters of the skin tester？</span>
+                            <i class="iconfont open iconzuhuhoutaiguanlitubiao_-"></i>
+                        </h4>
+                        <li>
+                            <p> On March 10, DJM from Germany came to Guangzhou,a beautiful flower city in China, and was invited to attend the 48th CANTON BEAUTY EXPO.
+                                DJM, a European company specially invited by the fair, is on display with 3800 exhibitors from 26 countries and regions.
+
+                            </p>
+                        </li>
+                    </ul>
+                    <ul>
+                            <h4>
+                                <span><b>Q：</b>HQ：Can the tester set the language？</span>
+                                <i class="iconfont open iconzuhuhoutaiguanlitubiao_-"></i>
+                            </h4>
+                            <li>
+                                <p> On March 10, DJM from Germany came to Guangzhou,a beautiful flower city in China, and was invited to attend the 48th CANTON BEAUTY EXPO.
+                                    DJM, a European company specially invited by the fair, is on display with 3800 exhibitors from 26 countries and regions.
+    
+                                </p>
+                            </li>
+                        </ul>
+                        <ul>
+                                <h4>
+                                    <span><b>Q：</b>What is the price of the product？</span>
+                                    <i class="iconfont open iconzuhuhoutaiguanlitubiao_-"></i>
+                                </h4>
+                                <li>
+                                    <p> On March 10, DJM from Germany came to Guangzhou,a beautiful flower city in China, and was invited to attend the 48th CANTON BEAUTY EXPO.
+                                        DJM, a European company specially invited by the fair, is on display with 3800 exhibitors from 26 countries and regions.
+        
+                                    </p>
+                                </li>
+                            </ul>
+                            <ul>
+                                    <h4>
+                                        <span><b>Q：</b>What is the price of the product？</span>
+                                        <i class="iconfont open iconzuhuhoutaiguanlitubiao_-"></i>
+                                    </h4>
+                                    <li>
+                                        <p> On March 10, DJM from Germany came to Guangzhou,a beautiful flower city in China, and was invited to attend the 48th CANTON BEAUTY EXPO.
+                                            DJM, a European company specially invited by the fair, is on display with 3800 exhibitors from 26 countries and regions.
+            
+                                        </p>
+                                    </li>
+                                </ul>
+                                <ul>
+                                        <h4>
+                                            <span><b>Q：</b>How to view the detailed parameters of the skin tester？</span>
+                                            <i class="iconfont open iconzuhuhoutaiguanlitubiao_-"></i>
+                                        </h4>
+                                        <li>
+                                            <p> On March 10, DJM from Germany came to Guangzhou,a beautiful flower city in China, and was invited to attend the 48th CANTON BEAUTY EXPO.
+                                                DJM, a European company specially invited by the fair, is on display with 3800 exhibitors from 26 countries and regions.
+                
+                                            </p>
+                                        </li>
+                                    </ul>
+                </div>
+
+
+            </div>
+            <!--  -->
+            <div class="navbox">
+                <div class="box">
+                    <h5 class="op05">Detector</h5>
+                    <ul>
+                        <li>
+                            <a href="">Cat AI skin detector</a>
+                        </li>
+                        <li>
+                            <a class="on" href="">Water and oil PH detector</a>
+                        </li>
+                        <li>
+                            <a href="">Metis detector</a>
+                        </li>
+                        <li>
+                            <a href="">More me Smart Mirror</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h5 class="op05">Medical supplies</h5>
+                    <ul>
+                        <li>
+                            <a href="">Protective mask</a>
+                        </li>
+                        <li>
+                            <a href="">Protective goggles</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

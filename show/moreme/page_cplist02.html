@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Page Title</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+                <script src="./js/header_footer.js"></script>
+                <script src="./js/ss.js"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+            </head>
+<style>
+    .pagemain {
+        padding: 20px;
+
+    }
+
+    .pagemain .page {
+        display: flex;
+    }
+
+    .pagemain .whatthis {
+        padding: 20px 0;
+    }
+
+    .pagemain .contentbox {
+        width: 100%;
+
+    }
+
+    .pagemain .navbox {
+        width: 260px;
+        padding-left: 20px;
+        flex-shrink: 0;
+    }
+
+    .pagemain .navbox .box {
+        margin-bottom: 20px;
+    }
+
+    .pagemain .navbox a {
+        display: block;
+        line-height: 40px;
+        color: black;
+        padding-left: 16px;
+        border-radius: 1000px;
+    }
+
+    .pagemain .navbox a.on {
+        background-color: rgba(92, 255, 198, 0.2);
+    }
+
+    .pagemain .card .block {
+        width: 48%;
+        background-color: #fafafa;
+        max-width: 680px;
+        padding-top: 50px;
+        height: 560px;
+        min-width:auto;
+    }
+    .pagemain .card .block:hover {
+        background-color: #d5d5d5;
+    }
+    .pagemain .card .block .text {
+        color:#171717;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .pagemain .page {
+            flex-direction: column-reverse;
+        }
+        .pagemain .navbox {
+            width: 100%;
+            padding-left: 15px;
+        }
+        .pagemain .card .block{
+            width: 100%;
+        }
+
+        .pagemain .navbox a {
+            border-radius: 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .2);
+        }
+    }
+</style>
+
+<body>
+    <div class="main_box pagemain">
+        <div class="whatthis">
+            <h2>Product</h2>
+            <p class="op07">At present, there are 4 major areas of IoT instrument design: skin management, technology health, postpartum repair, technology fitness; in addition to this, based on AI skin detection technology, skin tester and intelligent beauty mirror are launched</p>
+        </div>
+        <div class="page">
+            <!--  -->
+            <div class="contentbox">
+
+<div class="card">
+            <div class="box">
+
+                <a href="./page_cp.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+                        <h5 class="op06 f300">Personal face protection.</h5>
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./page_cp.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp02.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+                        <h5 class="op06 f300">Personal face protection.</h5>
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./page_cp.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+                        <h5 class="op06 f300">Personal face protection.</h5>
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./page_cp.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp02.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+                        <h5 class="op06 f300">Personal face protection.</h5>
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+
+
+
+
+            </div>
+            <!--  -->
+            <div class="navbox">
+                <div class="box">
+                    <h5 class="op05">Detector</h5>
+                    <ul>
+                        <li>
+                            <a href="">Cat AI skin detector</a>
+                        </li>
+                        <li>
+                            <a  href="">Water and oil PH detector</a>
+                        </li>
+                        <li>
+                            <a href="">Metis detector</a>
+                        </li>
+                        <li>
+                            <a href="">More me Smart Mirror</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box">
+                    <h5 class="op05">Medical supplies</h5>
+                    <ul>
+                        <li>
+                            <a class="on" href="">Protective mask</a>
+                        </li>
+                        <li>
+                            <a href="">Protective goggles</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

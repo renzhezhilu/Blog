@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Page Title</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+                <script src="./js/header_footer.js"></script>
+                <script src="./js/ss.js"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+            </head>
+<style>
+    .conbox01 {
+        position: relative;
+        width: 100%;
+        background-color: #f2f2f2;
+        padding-bottom: 36px;
+    }
+
+    .conbox01 .bg01 {
+        height: 600px;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .conbox01 .pic01 {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .conbox01 .pic01 img {
+        position: relative;
+        left: 3%;
+        width: 36%;
+        min-width: 700px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .conbox01 .title01 {
+        position: relative;
+        z-index: 3;
+        margin: 0 auto;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .title01 {
+            zoom: .66
+        }
+
+        .conbox01 .pic01 img {
+            zoom: .6;
+            /* width: 300px; */
+            min-width: 100%;
+            overflow: hidden;
+            left: 9.3%;
+        }
+
+        .conbox01 .bg01 {
+            height: 300px;
+        }
+    }
+
+
+    /*  */
+    .conbox02 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 30px 0 30px;
+    }
+
+    .conbox02 .pic01 img {
+        position: relative;
+        width: 600px;
+        display: block;
+    }
+
+    .conbox02 .title01 {
+        position: relative;
+        z-index: 3;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .conbox03 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 30px 50px 30px;
+        flex-direction: row-reverse;
+    }
+
+    .conbox03 .pic01 img {
+        position: relative;
+        width: 600px;
+        display: block;
+    }
+
+    .conbox03 .title01 {
+        position: relative;
+        z-index: 3;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .conbox04 {
+        background-color: red;
+        background: url('./images/home_bg01.jpg') center 0 no-repeat;
+        background-size: auto 100%;
+        height: 570px;
+        padding-top: 170px;
+    }
+
+    .conbox04 .pic01 {
+        margin-right: 100px;
+    }
+
+    .conbox04 .pic01 img {
+        position: relative;
+        width: 400px;
+        display: block;
+    }
+
+    .conbox04 .title01 {
+        position: relative;
+        z-index: 3;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .conbox02 {
+            flex-direction: column-reverse;
+
+        }
+
+        .conbox02 .pic01 img {
+            zoom: .6;
+            /* width: 300px; */
+            max-width: 100%;
+            overflow: hidden;
+            left: 9.3%;
+        }
+
+        .conbox02 .bg01 {
+            height: 300px;
+        }
+
+
+        .conbox04 {
+            padding-top: 20%;
+        }
+
+        .conbox04 .pic01 img {
+            zoom: .8;
+            /* width: 300px; */
+            max-width: 100%;
+            overflow: hidden;
+            left: 9.3%;
+        }
+
+        .conbox04 .title01 {
+            text-align: center;
+        }
+
+        .conbox04 .pic01 {
+            margin-right: 40px;
+        }
+
+
+
+    }
+
+
+    .animation-delay-1 {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+    }
+
+    .animation-delay-2 {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+
+    .animation-delay-3 {
+        -webkit-animation-delay: 1.5s;
+        animation-delay: 1.5s;
+    }
+
+    .animation-delay-4 {
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+    }
+
+    .animation-delay-5 {
+        -webkit-animation-delay: 2.5s;
+        animation-delay: 2.5s;
+    }
+
+    .animated {
+        opacity: 0;
+        transition: 2s;
+
+    }
+</style>
+
+<body>
+
+
+    <div class="conbox conbox01">
+        <div class="title title01 center  white">
+            <h3 class="f600 divtest animated animation-delay-1" data-animation="fadeInUp">More Me</h3>
+            <h1 class="f800 divtest animated animation-delay-2" data-animation="fadeInUp">AI skin tester</h1>
+            <h5 class="f200 op05 divtest animated animation-delay-3" style="opacity:0.1;" data-animation="fadeInUp">Information Collection 、Photo analysis
+                Automatic analysi、Cloud backup、Nursing advice</h5>
+            <h5 class="tar m-t-b-10 f400 divtest animated animation-delay-4" data-animation="fadeInUp">
+                <a href="" class="strong m-r-20">
+                    <i class="iconfont iconplay "></i> Video</a>
+                <a href="" class="strong m-l-20">More</a>
+            </h5>
+        </div>
+        <div class="pic01 divtest animated animation-delay-5" data-animation="fadeInUp">
+            <img class="" src="./images/home01.png" alt="">
+
+        </div>
+        <div class="bg01 bg-black"></div>
+    </div>
+
+
+    <div class="conbox conbox02 main_box">
+        <div class="pic01 divtest animated" data-animation="fadeInUp">
+            <img class="" src="./images/home02.png" alt="">
+        </div>
+        <div class="title ">
+            <h3 class="f600 ">Metis</h3>
+            <h1 class="f800 ">AI skin tester</h1>
+            <h5 class="f200 op05 ">Information Collection 、Photo analysis
+                Automatic analysi、Cloud backup、Nursing advice</h5>
+            <h5 class="tar m-t-b-10 f400 ">
+                <a href="" class=" m-r-20 but">
+                    More <i class="iconfont iconright1"></i>
+                </a>
+                <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
+            </h5>
+        </div>
+
+    </div>
+
+    <div class="conbox conbox02 conbox03 main_box">
+        <div class="pic01 divtest animated" data-animation="fadeInUp">
+            <img class="" src="./images/home03.png" alt="">
+        </div>
+        <div class="title title01 ">
+            <h3 class="f600 ">Water and oil</h3>
+            <h1 class="f800 ">PH detector</h1>
+            <h5 class="f200 op05 ">1: skin moisture content, 2: skin lipid production,
+                3: skin acid protective layer</h5>
+            <h5 class="tar m-t-b-10 f400 >
+                <a href="" class=" m-r-20 but">
+                More <i class="iconfont iconright1"></i>
+                </a>
+                <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
+            </h5>
+        </div>
+
+    </div>
+
+
+
+    <div class="conbox conbox02 conbox04">
+        <div class="pic01 divtest animated" data-animation="fadeInUp">
+            <img class="" src="./images/home04.png" alt="">
+        </div>
+        <div class="title title01  white">
+            <h3 class="f600 ">Metis</h3>
+            <h1 class="f800 ">AI skin tester</h1>
+            <h5 class="f200 op05 ">Information Collection 、Photo analysis
+                Automatic analysi、Cloud backup、Nursing advice</h5>
+            <h5 class="tar m-t-b-10 f400 ">
+                <a href="" class=" m-r-20 but">
+                    More <i class="iconfont iconright1"></i>
+                </a>
+                <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
+            </h5>
+        </div>
+    </div>
+
+    <style>
+
+    </style>
+    <div class="card card01">
+        <div class="box main_box ">
+            <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                <div class="pic">
+                    <img src="./images/cp01.png" alt="">
+                </div>
+                <div class="text white">
+                    <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+                    <h5 class="op06 f300">Personal face protection.Personal face protection.Personal face protection.</h5>
+                    <span class="but m-t-10">
+                        More
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                <div class="pic">
+                    <img src="./images/cp02.png" alt="">
+                </div>
+                <div class="text white">
+                    <h4>FACE </h4>
+                    <h5 class="op06 f300">Personal face protection.</h5>
+                    <span class="but m-t-10">
+                        More
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                <div class="pic">
+                    <img src="./images/cp01.png" alt="">
+                </div>
+                <div class="text white">
+                    <h4>FACE SHIELDSHIELD</h4>
+                    <h5 class="op06 f300">Personal face protection.</h5>
+                    <span class="but m-t-10">
+                        More
+                    </span>
+                </div>
+            </a>
+
+
+            <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                <div class="pic">
+                    <img src="./images/cp01.png" alt="">
+                </div>
+                <div class="text white">
+                    <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+                    <h5 class="op06 f300">Personal face protection.Personal face protection.Personal face protection.</h5>
+                    <span class="but m-t-10">
+                        More
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                <div class="pic">
+                    <img src="./images/cp02.png" alt="">
+                </div>
+                <div class="text white">
+                    <h4>FACE </h4>
+                    <h5 class="op06 f300">Personal face protection.</h5>
+                    <span class="but m-t-10">
+                        More
+                    </span>
+                </div>
+            </a>
+
+            <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                <div class="pic">
+                    <img src="./images/cp01.png" alt="">
+                </div>
+                <div class="text white">
+                    <h4>FACE SHIELDSHIELD</h4>
+                    <h5 class="op06 f300">Personal face protection.</h5>
+                    <span class="but m-t-10">
+                        More
+                    </span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="aboutbox">
+        <div class="box main_box">
+            <h3 class="divtest animated" data-animation="fadeInUp">Understand the services
+                we provide</h3>
+            <div class="pbox white f200 divtest animated" data-animation="fadeInUp">
+                <img src="./images/logo.png" alt="" />
+                <p> Deji Medical Device Co., Ltd. is a reserve enterprise of the Ministry of Industry and Information Technology. </p>
+
+                <p> The isolation eye mask and face mask have been fully certified by CE, FDA, and CFDA. They are tested and certified by SGS, the world's authoritative testing agency. The testing standards are all Medica medical grade, and they have also obtained the first class of medical treatment in the European Union. Device registration. </p>
+                <p> The company has more than 4 years of medical device manufacturing experience, and 8 products have obtained CFDA Class II medical device certification.</p>
+            </div>
+        </div>
+    </div>
+
+<!--
+    <footer>
+        <div class="box">
+            <div class="nav">
+                <div class="navbox">
+                    <ul>
+                        <h5>
+                            Product category
+                        </h5>
+                        <li>
+                            <a href="">AI skin tester</a>
+                        </li>
+                        <li>
+                            <a href="">PH detector</a>
+                        </li>
+                        <li>
+                            <a href="">AI smart mirror</a>
+                        </li>
+                        <li>
+                            <a href="">AI skin tester</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation goggles</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation mask 0.4</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation mask 0.2</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation goggles</a>
+                        </li>
+                        <li>
+                            <a href="">Children's isolation mask</a>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <h5>
+                            Service
+                        </h5>
+                        <li>
+                            <a href="">Operate the video</a>
+                        </li>
+                        <li>
+                            <a href="">Data privacy policy</a>
+                        </li>
+                        <li>
+                            <a href="">General terms and </a>
+                        </li>
+                        <li>
+                            <a href="">Conditions</a>
+                        </li>
+                        <li>
+                            <a href="">PH detector</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h5>
+                            News
+                        </h5>
+                        <li>
+                            <a href="">Company</a>
+                        </li>
+                        <li>
+                            <a href="">Expo</a>
+                        </li>
+                    </ul>
+
+
+                    <ul>
+                        <h5>
+                            About
+                        </h5>
+                        <li>
+                            <a href="">Development path</a>
+                        </li>
+                        <li>
+                            <a href="">Our team</a>
+                        </li>
+                        <li>
+                            <a href="">Certifications</a>
+                        </li>
+                        <li>
+                            <a href="">R&D story</a>
+                        </li>
+
+                    </ul>
+
+                    <ul>
+                        <h5>
+                            Social platforms
+                        </h5>
+                        <li>
+                            <a href="">facebook</a>
+                        </li>
+                        <li>
+                            <a href="">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="">Youtube</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="other">
+                    <div class="but m-b-10">Recruitment of dealers</div>
+                    <div class="info">
+                        <div class="type">
+                            <p>Contact:</p>
+                            <p>Phone:</p>
+                            <p>Email:</p>
+                            <p>Address:</p>
+                        </div>
+                        <div class="con">
+                            <p>Alice</p>
+                            <p>0086-13418598358</p>
+                            <p>alice@djmiot.com</p>
+                            <p style="line-height: 22px;">501, Beijing Technology Innovation Building, Yuexing 4 road, Nanshan District, Shenzhen, Guangdong province, China.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bot">
+                <p>
+                    Copyright © 2020 djmiotInc. All rights reserved
+                </p>
+                <div class="lua">
+                    Language： English
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <header class="white">
+
+        <div id="header" class="box">
+
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./images/logo.png" width="150" alt="" />
+                </a>
+                <div class="open_mune_but">
+                    <i class="iconfont iconzuhuhoutaiguanlitubiao_- open"></i>
+                    <i class="iconfont iconclose close"></i>
+                </div>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="./page_cplist.html" class="white on tester">Tester</a>
+                </li>
+                <li>
+                    <a href="./page_cplist02.html" class="white on shield">Face shield</a>
+                </li>
+
+                <li>
+                    <a href="./page_about.html" class="white">About us</a>
+                </li>
+                <li>
+                    <a href="./page_qa.html" class="white">Supplier</a>
+                </li>
+                <li>
+                    <a href="./page_new.html" class="white">New</a>
+                </li>
+                <li>
+                    <a href="./page_article.html" class="white">Business Solutions</a>
+                </li>
+            </ul>
+            <ul class="contact">
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconEmail"></i>
+                    </a>
+                </li>
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconins"></i>
+                    </a>
+                </li>
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconTwitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconfacebook"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <style>
+            .card.sub_mune .block {
+                background-color: rgba(255, 255, 255, 0)
+            }
+
+            .card.sub_mune .sub_mune_box {
+                padding-bottom: 100px;
+            }
+
+            .card.sub_mune.min_card .block {
+                height: 360px;
+            }
+        </style>
+        <div class="card  min_card sub_mune sub_mune01">
+            <div class="sub_mune_box">
+
+                <a href="./cp01.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>AI skin tester</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./cp03.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home02.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>AI skin tester</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./cp02.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home03.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>PH detector</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./cp04.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home04.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FAI skin tester</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+
+        <div class="card min_card sub_mune sub_mune02">
+            <div class="sub_mune_box ">
+                <a href="./page_cp.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>Face mask</h4>
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="./page_cp.html" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp02.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>EYES COVERP</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+-->
+   
+    </head>
+
+</html>

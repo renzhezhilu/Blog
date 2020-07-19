@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html>
+
+        <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <title>Page Title</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+                <script src="./js/header_footer.js"></script>
+                <script src="./js/ss.js"></script>
+                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+            </head>
+<style>
+    .conbox01 {
+        position: relative;
+        width: 100%;
+        background-color: #f2f2f2;
+        padding-bottom: 36px;
+        background: url('./images/cp04_bg01.jpg') center -200px no-repeat #feac66;
+    }
+
+    .conbox01 .bg01 {
+        height: 600px;
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .conbox01 .pic01 {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .conbox01 .pic01 img {
+        position: relative;
+        left: 0;
+        width: 25%;
+        min-width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .conbox01 .title01 {
+        position: relative;
+        z-index: 3;
+        margin: 0 auto;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .conbox01 .txt {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+    }
+
+    .conbox01 .txt h4 {
+        width: 40%;
+        margin: 30px 5%;
+        padding-top: 20px;
+        border-top: 2px solid rgba(255, 255, 255, 0.3);
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 26px;
+
+    }
+
+    .conbox01 .txt h4 b {
+        font-size: 50px;
+        display: block;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .title01 {
+            zoom: .46
+        }
+
+        .conbox01 .pic01 img {
+            zoom: .6;
+            width: 60%;
+            min-width: 400px;
+            overflow: hidden;
+            /* left: 9.3%; */
+        }
+
+        .conbox01 .bg01 {
+            height: 300px;
+        }
+
+        .conbox01 .txt h4 {
+            width: 80%;
+            margin: 10px 10%;
+            padding-top: 20px;
+
+        }
+    }
+
+
+
+    /*  */
+    .conbox02 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 30px 0 30px;
+    }
+
+    .conbox02 .pic01 img {
+        position: relative;
+        width: 600px;
+        display: block;
+    }
+
+    .conbox02 .title01 {
+        position: relative;
+        z-index: 3;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .conbox03 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 30px 50px 30px;
+        flex-direction: row-reverse;
+    }
+
+    .conbox03 .pic01 img {
+        position: relative;
+        width: 600px;
+        display: block;
+    }
+
+    .conbox03 .title01 {
+        position: relative;
+        z-index: 3;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .conbox04 {
+        background-color: red;
+        background: url('./images/home_bg01.jpg') center 0 no-repeat;
+        background-size: auto 100%;
+        height: 570px;
+        padding-top: 170px;
+    }
+
+    .conbox04 .pic01 {
+        margin-right: 100px;
+    }
+
+    .conbox04 .pic01 img {
+        position: relative;
+        width: 400px;
+        display: block;
+    }
+
+    .conbox04 .title01 {
+        position: relative;
+        z-index: 3;
+        padding: 50px 0 20px 0;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    @media only screen and (max-width: 770px) {
+        .conbox02 {
+            flex-direction: column-reverse;
+
+        }
+
+        .conbox02 .pic01 img {
+            zoom: .6;
+            /* width: 300px; */
+            max-width: 100%;
+            overflow: hidden;
+            left: 9.3%;
+        }
+
+        .conbox02 .bg01 {
+            height: 300px;
+        }
+
+
+        .conbox04 {
+            padding-top: 20%;
+        }
+
+        .conbox04 .pic01 img {
+            zoom: .8;
+            /* width: 300px; */
+            max-width: 100%;
+            overflow: hidden;
+            left: 9.3%;
+        }
+
+        .conbox04 .title01 {
+            text-align: center;
+        }
+
+        .conbox04 .pic01 {
+            margin-right: 40px;
+        }
+
+
+
+    }
+
+
+    .animation-delay-1 {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+    }
+
+    .animation-delay-2 {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+
+    .animation-delay-3 {
+        -webkit-animation-delay: 1.5s;
+        animation-delay: 1.5s;
+    }
+
+    .animation-delay-4 {
+        -webkit-animation-delay: 2s;
+        animation-delay: 2s;
+    }
+
+    .animation-delay-5 {
+        -webkit-animation-delay: 2.5s;
+        animation-delay: 2.5s;
+    }
+
+    .animated {
+        opacity: 0;
+        transition: 2s;
+
+    }
+
+    .topbar {
+        background-color: rgba(233, 140, 216, 0.5)
+    }
+</style>
+
+<body>
+    <style>
+
+    </style>
+    <div class="topbar">
+        <div class="box main_box">
+            <div class="t">
+                <h5>More me AI Smart Mirror</h5>
+            </div>
+            <div class="nav">
+                <li>
+                    <a href="" class="black">Video</a>
+                </li>
+                <li>
+                    <a href="" class="black">parameter</a>
+                </li>
+                <li>
+                    <a href="" class="but">Bug</a>
+                </li>
+            </div>
+        </div>
+    </div>
+
+    <div class="conbox conbox01 ">
+        <div class="title title01 center white">
+            <h4 class="f600 divtest animated animation-delay-1" data-animation="fadeInUp">The most intelligent AI skin consultant</h4>
+            <h1 class="f800 divtest animated animation-delay-2" data-animation="fadeInUp">More me AI Smart Mirror</h1>
+            <!-- <h5 class="f200 op05 divtest animated animation-delay-3" style="opacity:0.1;" data-animation="fadeInUp">Information Collection 、Photo analysis
+                    Automatic analysi、Cloud backup、Nursing advice</h5>
+                <h5 class="tar m-t-b-10 f400 divtest animated animation-delay-4" data-animation="fadeInUp">
+                    <a href="" class="strong m-r-20">
+                        <i class="iconfont iconplay "></i> Video</a>
+                    <a href="" class="strong m-l-20">More</a>
+                </h5> -->
+        </div>
+        <div class="pic01 divtest animated animation-delay-3" data-animation="fadeInUp">
+            <img class="" src="./images/home04.png" alt="">
+
+        </div>
+        <!-- <div class="bg01 bg-white"></div> -->
+
+        <!-- <div class="title title01 center white">
+                <h4 class="f600" data-animation="fadeInUp">Water and oil PH skin tester,
+                    through the system to detect the skin</h4>
+    
+            </div> -->
+        <div class="txt main_box white">
+            <h4>
+                Unlimited cloud storage, even if the device is lost or damaged
+
+            </h4>
+            <h4>
+                Big data skin problem analysis of more than 3 million customer cases
+            </h4>
+            <h4>
+                Mass product information display, sales can be very simple
+
+            </h4>
+            <h4>
+                Accurately analyze 6 kinds of facial problems to make skin detection easier
+            </h4>
+            <h4>
+                Faithfully record the results of each test, the skin changes trend at a glance
+            </h4>
+
+        </div>
+
+
+    </div>
+    <style>
+        .videobox {
+            background: url('./images/cp_bg01.jpg') center 0 no-repeat;
+            background-size: auto 100%;
+        }
+
+        .videobox {}
+
+        .videobox h4 {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .videobox video {
+            height: auto;
+            max-height: 600px;
+            width: 100%;
+            margin-bottom: 40px;
+            outline: none;
+            backdrop-filter: saturate(180%) blur(13px);
+            background-color: rgba(0, 0, 0, 0.9);
+            /* background-color: aqua; */
+        }
+    </style>
+    <div class="videobox">
+        <div class="box main_box divtest animated" data-animation="fadeInUp">
+            <h4 class="white">Video Introduction</h4>
+            <video width="320" height="240" controls>
+                <source src="/video/01.mp4" type="video/mp4">
+                <!-- <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4"> -->
+                您的浏览器不支持Video标签。
+            </video>
+
+        </div>
+    </div>
+
+
+
+
+
+    <style>
+        .conbox05 {
+            text-align: center;
+        }
+
+        .conbox05 {}
+
+        .conbox05 h2 {
+            padding: 80px 0 30px 0;
+        }
+
+        .conbox05 .minpic {}
+
+        .conbox05 .minpic h4 {
+            padding: 40px 0;
+        }
+
+        .conbox05 .minpic ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+
+        .conbox05 .minpic ul li {}
+
+        .conbox05 .minpic ul li p {
+            line-height: 40px;
+            opacity: .7;
+        }
+
+        .conbox05 .minpic02 ul {
+            justify-content: center;
+        }
+
+        .conbox05 .minpic03 ul li {
+            width: 20%;
+
+        }
+
+
+        @media only screen and (max-width: 770px) {
+            .conbox05 .minpic ul li img {
+                width: 70%;
+            }
+
+            .conbox05 .minpic ul li {
+                width: 50%;
+            }
+
+            .conbox05 .minpic02 ul li {
+                width: 100%;
+            }
+
+            .conbox05 .minpic02 ul li img {
+                width: 90%;
+            }
+
+            .conbox05 .minpic03 ul li {
+                width: 50%;
+
+            }
+
+        }
+    </style>
+
+    <div class="conbox conbox05 main_box">
+        <!-- <div class="pic01 divtest animated" data-animation="fadeInUp">
+                <img class="" src="./images/home04.png" alt="">
+            </div> -->
+        <div class="title title01  ">
+            <!-- <h3 class="f600 ">Metis</h3> -->
+            <h2 class="f800">Product Technologies</h2>
+            <!-- <h5 class="f200 op05 ">Information Collection 、Photo analysis Automatic analysi、Cloud backup、Nursing advice</h5> -->
+            <!-- <h5 class="tar m-t-b-10 f400 "> 
+                    <a href="" class=" m-r-20 but">
+                        More <i class="iconfont iconright1"></i>
+                    </a>
+                    <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
+                </h5> -->
+        </div>
+        <!--  <div class="minpic minpic01">
+            <h4 class="divtest">Spectral lighting</h4>
+           <ul class="divtest animated" data-animation="fadeInUp">
+                <li>
+                    <img src="./images/min/minpic04_0.jpg" alt="">
+                    <p>Brown quasi light
+                    </p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic04_1.jpg" alt="">
+                    <p>Cross polarized light
+                    </p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic04_2.jpg" alt="">
+                    <p>Parallel polarized light
+                    </p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic04_3.jpg" alt="">
+                    <p>UV light
+                    </p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic04_4.jpg" alt="">
+                    <p>Wu Shiguang</p>
+                </li>
+            </ul>
+        </div>
+ -->
+
+        <div class="minpic minpic02">
+            <h4 class="divtest ">Software page</h4>
+            <ul class="divtest animated" data-animation="fadeInUp">
+                <li>
+                    <img src="./images/ui03.png" alt="">
+                    <!-- <p>Brown quasi light</p> -->
+                </li>
+
+            </ul>
+        </div>
+
+
+        <!-- <div class="minpic minpic03">
+            <h4 class="divtest">Spectral lighting</h4>
+            <ul class="divtest animated" data-animation="fadeInUp">
+                <li>
+                    <img src="./images/min/minpic02_0.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_1.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_2.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_3.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_4.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_5.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_6.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_7.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_8.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+                <li>
+                    <img src="./images/min/minpic02_9.jpg" alt="">
+                    <p>Brown quasi light</p>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+
+
+
+
+    <style>
+        .conbox_99 {
+            background-color: #27262c;
+            padding-top: 40px;
+        }
+
+        .tabbox {}
+
+        .conbox_99 .title {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .conbox02 {
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .conbox_99 .pic01 img {
+            /* position: absolute; */
+        }
+
+        .conbox_99 .tabbox {
+            padding-top: 20px;
+        }
+
+        .conbox_99 .tabbox ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .conbox_99 .tabbox ul li {
+            font-size: 14px;
+            /* width: 22%; */
+            margin-right: 16px;
+            opacity: .4;
+            line-height: 58px;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+
+        }
+
+        .conbox_99 .tabbox ul li.on {
+            opacity: 1;
+            border-bottom: 4px solid #31bf9f;
+
+        }
+
+        .conbox_99 .tabbox ul li b {
+            font-size: 36px;
+        }
+
+        .conbox_99 .tabbox div {
+            padding-top: 20px;
+        }
+
+        .conbox_99 .tabbox img {
+            padding-top: 13px;
+        }
+
+        @media only screen and (max-width: 770px) {
+            .conbox_99 .tabbox ul li {}
+
+            .conbox_99 .tabbox ul li b {
+                font-size: 22px;
+            }
+        }
+
+
+
+        .slideTxtBox .bd ul {
+            padding: 15px;
+            zoom: 1;
+        }
+
+        .slideTxtBox .bd li {
+            height: 24px;
+            line-height: 24px;
+        }
+
+        .slideTxtBox .bd li .date {
+            float: right;
+            color: #999;
+        }
+    </style>
+    <div class="conbox_99">
+        <div class="conbox conbox02 main_box">
+
+            <div class="pic01 divtest animated" data-animation="fadeInUp">
+                <img class="" src="./images/cp04_02.jpg" alt="">
+            </div>
+
+            <div class="title white">
+                <!-- <h3 class="f600 ">Metis</h3> -->
+                <h1 class="f800 ">AI detects 6 major skin data</h1>
+                <h5 class="f200 op05 m-t-b-20">Six major skin problems through AI image recognition
+                    Machine learning (300W+ clinical data) makes the detection more and more accurate
+                    At present, from 360 skin solutions, we accurately recommend the corresponding solutions for users</h5>
+
+                <div class="tabbox slideTxtBox">
+                    <div class="hd">
+                        <ul>
+                            <li class="on">
+                                <b>1</b>-Skin color
+                            </li>
+                            <li>
+                                <b>2</b>-Stains
+                            </li>
+                            <li>
+                                <b>3</b>-Pores
+                            </li>
+                            <li>
+                                <b>4</b>-wrinkle
+                            </li>
+                            <li>
+                                <b>5</b>-sensitive
+                            </li>
+                            <li>
+                                <b>6</b>-PBottom pigment
+                            </li>
+
+
+                        </ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <p>Skin detection
+                                Show the original photo, determine the skin color, and judge the sunburn resistance</p>
+                            <img width="200" src="./images/min/minpic07_01.png" alt="">
+                        </ul>
+                       
+                        <ul>
+                            <p> Spot detection
+                                    Intelligently label the distribution position of color spots on the face, and judge the severity of the proportion of color spots in the detection area</p>
+                            <img width="200" src="./images/min/minpic07_02.png" alt="">
+                        </ul>
+                        <ul>
+                            <p>Pore detection
+                                    Intelligently mark the location of large pores on the face, and judge the number and severity of large pores</p>
+                            <img width="200" src="./images/min/minpic07_03.png" alt="">
+                        </ul>
+                        <ul>
+                            <p>Wrinkle detection
+                                    Smart mark the location of wrinkles on the face to determine the number and severity of wrinkles</p>
+                            <img width="200" src="./images/min/minpic07_04.png" alt="">
+                        </ul>
+                        <ul>
+                            <p>Sensitive detection
+                                    Healthy skin is pink and white. Due to inflammation, acne, squeezing, and other reasons, the bottom of the skin will show local dot-like red symptoms. By observing the sensitivity map, it can be judged whether there is inflammation in the skin, and those areas are dehydrated and dry.</p>
+                            <img width="200" src="./images/min/minpic07_05.png" alt="">
+                        </ul>
+                        <ul>
+                            <p>Underlayer pigment detection
+                                    You can see the accumulation of skin pigments from the epidermis to the dermis, which is helpful for us to read the types of spots and potential pigments</p>
+                            <img width="200" src="./images/min/minpic07_06.png" alt="">
+                        </ul>
+
+
+                    </div>
+                </div>
+                <!-- <h5 class="tar m-t-b-10 f400 ">
+                            <a href="" class=" m-r-20 but">
+                                More <i class="iconfont iconright1"></i>
+                            </a>
+                            <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
+                        </h5> -->
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <script>
+        jQuery(".slideTxtBox").slide({
+
+        });
+    </script>
+
+    <style>
+        .conbox03 {
+            flex-direction: column;
+        }
+
+        .conbox03 .pic01 img {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .conbox03 .title02 {
+            width: 100%;
+        }
+
+        .conbox03 .title02 .t {
+            padding: 60px 0 30px 0;
+        }
+
+        .conbox03 .title02 ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .conbox03 .title02 ul li {
+            width: 33%;
+            padding-bottom: 15px;
+        }
+
+
+        @media only screen and (max-width: 770px) {
+            .conbox03 .title02 {
+                zoom: .7;
+            }
+
+            .conbox03 .title02 ul li {
+                width: 100%;
+                padding-bottom: 15px;
+            }
+
+            .conbox03 .title02 .t {
+                padding: 30px 0 10px 0;
+            }
+
+            .conbox03 .title03 ul li {
+                width: 50%;
+                padding-bottom: 15px;
+            }
+
+            .conbox03 .title02 {
+                zoom: .9;
+            }
+
+        }
+    </style>
+    <div class="conbox  conbox03 main_box">
+
+        <div class="title title01 center">
+            <!-- <h3 class="f600 ">Water and oil</h3> -->
+            <h1 class="f800 ">Parameters </h1>
+            <h5 class="f200 op05 ">For more detailed parameters, please follow the
+                instructions on the package</h5>
+            <!-- <h5 class="tar m-t-b-10 f400 >
+                <a href="" class=" m-r-20 but">
+                More <i class="iconfont iconright1"></i>
+                </a>
+                <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
+            </h5> -->
+        </div>
+        <div class="pic01 divtest animated" data-animation="fadeInUp">
+            <img class="" src="./images/cp04_03.png" alt="">
+        </div>
+        <div class="title02">
+            <h3 class="f200 t ">Operating condition</h3>
+            <ul>
+                <li>
+                    <p class="op05">Display size</p>
+                    <h3>21.5"</h3>
+                </li>
+                <li>
+                    <p class="op05">brightness (original screen brightness) </p>
+                    <h3>750 cd/m2</h3>
+                </li>
+                <li>
+                    <p class="op05">Display type</p>
+                    <h3>IPS
+                    </h3>
+                </li>
+
+                <li>
+                        <p class="op05">Contrast</p>
+                        <h3>3000:1 
+                        </h3>
+                    </li>
+                    <li>
+                            <p class="op05">zoom</p>
+                            <h3>9:16
+                            </h3>
+                        </li>
+                        <li>
+                                <p class="op05">Viewing angle </p>
+                                <h3>178°(H)x170°(V)
+                                </h3>
+                            </li>
+
+                            <li>
+                                    <p class="op05">Resolution</p>
+                                    <h3>1080x1920
+                                    </h3>
+                                </li>
+                                <li>
+                                        <p class="op05">camera</p>
+                                        <h3>12300000
+                                        </h3>
+                                    </li>
+
+
+            </ul>
+
+        </div>
+        <div class="title02">
+            <h3 class="f200 t">working environment</h3>
+            <ul>
+                <li>
+                    <p class="op05">humidity</p>
+                    <h3>20-90%RH</h3>
+                </li>
+                <li>
+                    <p class="op05">Temperature</p>
+                    <h3>-0~45"C</h3>
+                </li>
+                <li>
+                    <p class="op05">Body thickness </p>
+                    <h3>44mm</h3>
+                </li>
+
+                <li>
+                        <p class="op05">Storage humidity </p>
+                        <h3>5-90%RH</h3>
+                    </li>
+                    <li>
+                            <p class="op05">Storage Temperature </p>
+                            <h3>-20~60°C</h3>
+                        </li>
+                        <li>
+                                <p class="op05">Host appearance </p>
+                                <h3>400x600mm</h3>
+                            </li>
+
+
+                            <li>
+                                    <p class="op05">Interface  </p>
+                                    <h3>OTG/USB</h3>
+                                </li>
+                                <li>
+                                        <p class="op05">Panel glass </p>
+                                        <h3>Diamond grade nano-coated mirror </h3>
+                                    </li>
+                                    
+
+            </ul>
+
+        </div>
+        <div class="title02">
+            <h3 class="f200 t">Technical parameters</h3>
+            <ul>
+                <li>
+                    <p class="op05">Power frequency</p>
+                    <h3>50~ 60Hz</h3>
+                </li>
+                <li>
+                    <p class="op05">Power input</p>
+                    <h3>100~ 240V</h3>
+                </li>
+                <li>
+                        <p class="op05">Power consumption</p>
+                        <h3>≤90W</h3>
+                    </li>
+            </ul>
+
+        </div>
+        <div class="title02 title03">
+            <h3 class="f200 t">Instrument accessory system</h3>
+            <ul>
+                <li>
+                    <p class="op05">host</p>
+                    <h3><img src="./images/min/minpic08_01.png" alt=""></h3>
+                </li>
+             
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="aboutbox">
+        <div class="box main_box">
+            <h3 class="divtest animated" data-animation="fadeInUp">Understand the services
+                we provide</h3>
+            <div class="pbox white f200 divtest animated" data-animation="fadeInUp">
+                <img src="./images/logo.png" alt="" />
+                <p> Deji Medical Device Co., Ltd. is a reserve enterprise of the Ministry of Industry and Information Technology. </p>
+
+                <p> The isolation eye mask and face mask have been fully certified by CE, FDA, and CFDA. They are tested and certified by SGS, the world's authoritative testing agency. The testing standards are all Medica medical grade, and they have also obtained the first class of medical treatment in the European Union. Device registration. </p>
+                <p> The company has more than 4 years of medical device manufacturing experience, and 8 products have obtained CFDA Class II medical device certification.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="box">
+            <div class="nav">
+                <div class="navbox">
+                    <ul>
+                        <h5>
+                            Product category
+                        </h5>
+                        <li>
+                            <a href="">AI skin tester</a>
+                        </li>
+                        <li>
+                            <a href="">PH detector</a>
+                        </li>
+                        <li>
+                            <a href="">AI smart mirror</a>
+                        </li>
+                        <li>
+                            <a href="">AI skin tester</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation goggles</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation mask 0.4</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation mask 0.2</a>
+                        </li>
+                        <li>
+                            <a href="">Isolation goggles</a>
+                        </li>
+                        <li>
+                            <a href="">Children's isolation mask</a>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <h5>
+                            Service
+                        </h5>
+                        <li>
+                            <a href="">Operate the video</a>
+                        </li>
+                        <li>
+                            <a href="">Data privacy policy</a>
+                        </li>
+                        <li>
+                            <a href="">General terms and </a>
+                        </li>
+                        <li>
+                            <a href="">Conditions</a>
+                        </li>
+                        <li>
+                            <a href="">PH detector</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <h5>
+                            News
+                        </h5>
+                        <li>
+                            <a href="">Company</a>
+                        </li>
+                        <li>
+                            <a href="">Expo</a>
+                        </li>
+                    </ul>
+
+
+                    <ul>
+                        <h5>
+                            About
+                        </h5>
+                        <li>
+                            <a href="">Development path</a>
+                        </li>
+                        <li>
+                            <a href="">Our team</a>
+                        </li>
+                        <li>
+                            <a href="">Certifications</a>
+                        </li>
+                        <li>
+                            <a href="">R&D story</a>
+                        </li>
+
+                    </ul>
+
+                    <ul>
+                        <h5>
+                            Social platforms
+                        </h5>
+                        <li>
+                            <a href="">facebook</a>
+                        </li>
+                        <li>
+                            <a href="">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="">Youtube</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="other">
+                    <div class="but m-b-10">Recruitment of dealers</div>
+                    <div class="info">
+                        <div class="type">
+                            <p>Contact:</p>
+                            <p>Phone:</p>
+                            <p>Email:</p>
+                            <p>Address:</p>
+                        </div>
+                        <div class="con">
+                            <p>Alice</p>
+                            <p>0086-13418598358</p>
+                            <p>alice@djmiot.com</p>
+                            <p style="line-height: 22px;">501, Beijing Technology Innovation Building, Yuexing 4 road, Nanshan District, Shenzhen, Guangdong province, China.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bot">
+                <p>
+                    Copyright © 2020 djmiotInc. All rights reserved
+                </p>
+                <div class="lua">
+                    Language： English
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <header class="white ">
+
+        <div id="header" class="box">
+
+            <div class="logo">
+                <a href="">
+                    <img src="./images/logo.png" width="150" alt="" />
+                </a>
+                <div class="open_mune_but">
+                    <i class="iconfont iconzuhuhoutaiguanlitubiao_- open"></i>
+                    <i class="iconfont iconclose close"></i>
+                </div>
+            </div>
+            <ul class="nav">
+                <li>
+                    <a href="" class="white on tester">Tester</a>
+                </li>
+                <li>
+                    <a href="" class="white on shield">Face shield</a>
+                </li>
+
+                <li>
+                    <a href="" class="white">About us</a>
+                </li>
+                <li>
+                    <a href="" class="white">Supplier</a>
+                </li>
+                <li>
+                    <a href="" class="white">Business Solutions</a>
+                </li>
+            </ul>
+            <ul class="contact">
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconEmail"></i>
+                    </a>
+                </li>
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconins"></i>
+                    </a>
+                </li>
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconTwitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a title="Email" href="" class="white">
+                        <i class="iconfont iconfacebook"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <style>
+            .card.sub_mune .block {
+                background-color: rgba(255, 255, 255, 0)
+            }
+
+            .card.sub_mune .sub_mune_box {
+                padding-bottom: 100px;
+            }
+
+            .card.sub_mune.min_card .block {
+                height: 360px;
+            }
+        </style>
+        <div class="card  min_card sub_mune sub_mune01">
+            <div class="sub_mune_box">
+
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home02.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home03.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/home04.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+
+
+            </div>
+        </div>
+
+        <div class="card min_card sub_mune sub_mune02">
+            <div class="sub_mune_box ">
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+                <a href="#" class="block divtest animated" data-animation="fadeInUp">
+                    <div class="pic">
+                        <img src="./images/cp01.png" alt="">
+                    </div>
+                    <div class="text white">
+                        <h4>FACE SHIELDSHIELD SHIELDSHIELD</h4>
+
+                        <span class="but m-t-10">
+                            More
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <style type="text/css">
+
+
+
+    </style>
+    </head>
+
+</html>
