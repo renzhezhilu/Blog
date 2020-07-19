@@ -1260,7 +1260,7 @@ header .sub_mune li {
 
 /***页脚 ***/
 .aboutbox {
-    background: url('/images/home_bg02.jpg') center 0 no-repeat;
+    background: url('./images/home_bg02.jpg') center 0 no-repeat;
     background-size: auto 130%;
     height: 900px;
     margin-top: 50px;
