@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <title>Page Title</title>
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-                <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
-                <script src="./js/header_footer.js"></script>
-                <script src="./js/ss.js"></script>
-                <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
-            </head>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.9.1/jquery.min.js"></script>
+    <script src="./js/header_footer.js"></script>
+    <script src="./js/ss.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+</head>
 <style>
     .conbox01 {
         position: relative;
@@ -328,115 +329,119 @@
 
 
     <style>
-            .conbox_99 {
-                background-color: #f4f4f4;
-                padding-top: 40px;
-            }
-    
-            .tabbox {}
-    
-            .conbox_99 .title {
-                width: 100%;
-                max-width: 500px;
-            }
-    
-            .conbox02 {
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-direction: column;
-            }
-    .conbox_99 .title {
-        position: relative;
-        z-index: 2;
-    }
-            .conbox_99 .pic01 img {
-                /* position: absolute; */
-                width: 100%;
-                max-width: 2000px;
-                position: relative;
-                margin-top:-200px;
-                z-index: 1;
-            }
-    
-            .conbox_99 .tabbox {
-                padding-top: 20px;
-            }
-    
-            .conbox_99 .tabbox ul {
-                display: flex;
-                flex-wrap: wrap;
-            }
-    
+        .conbox_99 {
+            background-color: #f4f4f4;
+            padding-top: 40px;
+        }
+
+        .tabbox {}
+
+        .conbox_99 .title {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .conbox02 {
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .conbox_99 .title {
+            position: relative;
+            z-index: 2;
+        }
+
+        .conbox_99 .pic01 img {
+            /* position: absolute; */
+            width: 100%;
+            max-width: 2000px;
+            position: relative;
+            margin-top: -200px;
+            z-index: 1;
+        }
+
+        .conbox_99 .tabbox {
+            padding-top: 20px;
+        }
+
+        .conbox_99 .tabbox ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .conbox_99 .tabbox ul li {
+            font-size: 16px;
+            width: 33%;
+            opacity: .4;
+            line-height: 58px;
+            border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+
+        }
+
+        .conbox_99 .tabbox ul li.on {
+            opacity: 1;
+            border-bottom: 4px solid #31bf9f;
+
+        }
+
+        .conbox_99 .tabbox ul li b {
+            font-size: 36px;
+        }
+
+        .conbox_99 .tabbox div {
+            padding-top: 20px;
+        }
+
+        .conbox_99 .tabbox img {
+            padding-top: 13px;
+        }
+
+        @media only screen and (max-width: 770px) {
             .conbox_99 .tabbox ul li {
-                font-size: 16px;
                 width: 33%;
-                opacity: .4;
-                line-height: 58px;
-                border-bottom: 4px solid rgba(255, 255, 255, 0.1);
-    
+                zoom: .6;
             }
-    
-            .conbox_99 .tabbox ul li.on {
-                opacity: 1;
-                border-bottom: 4px solid #31bf9f;
-    
+
+            .conbox_99 .pic01 {
+                width: 100%;
+                overflow: hidden;
             }
-    
-            .conbox_99 .tabbox ul li b {
-                font-size: 36px;
+
+            .conbox_99 .pic01 img {
+                margin-top: 0;
+                z-index: 1;
+                width: 600px;
             }
-    
-            .conbox_99 .tabbox div {
-                padding-top: 20px;
-            }
-    
-            .conbox_99 .tabbox img {
-                padding-top: 13px;
-            }
-    
-            @media only screen and (max-width: 770px) {
-                .conbox_99 .tabbox ul li {
-                    width: 33%;
-                    zoom: .6;
-                }
-                .conbox_99 .pic01  {
-                    width: 100%;
-                    overflow: hidden;
-                }
-                .conbox_99 .pic01 img {
-                    margin-top:0;
-                    z-index: 1;
-                    width: 600px;
-                }
-            }
-    
-    
-            .slideTxtBox .bd ul {
-                padding: 15px;
-                zoom: 1;
-            }
-    
-            .slideTxtBox .bd li {
-                height: 24px;
-                line-height: 24px;
-            }
-    
-            .slideTxtBox .bd li .date {
-                float: right;
-                color: #999;
-            }
-        </style>
-        <div class="conbox_99">
-            <div class="conbox conbox02 main_box">
-    
-                <div class="title ">
-                    <!-- <h3 class="f600 ">Metis</h3> -->
-                    <h2 class="f800 ">Function Description</h2>
-                    <h5 class="f200 op05 m-t-b-20">Seven major skin problems detected by AI image recognition
-                            Through machine learning (300W + clinical data) to make the detection more and more accurate
-                            At present, from 360 skin solutions, we accurately recommend the corresponding solutions for users</h5>
-    
-                    <!-- <div class="tabbox slideTxtBox">
+        }
+
+
+        .slideTxtBox .bd ul {
+            padding: 15px;
+            zoom: 1;
+        }
+
+        .slideTxtBox .bd li {
+            height: 24px;
+            line-height: 24px;
+        }
+
+        .slideTxtBox .bd li .date {
+            float: right;
+            color: #999;
+        }
+    </style>
+    <div class="conbox_99">
+        <div class="conbox conbox02 main_box">
+
+            <div class="title ">
+                <!-- <h3 class="f600 ">Metis</h3> -->
+                <h2 class="f800 ">Function Description</h2>
+                <h5 class="f200 op05 m-t-b-20">Seven major skin problems detected by AI image recognition
+                    Through machine learning (300W + clinical data) to make the detection more and more accurate
+                    At present, from 360 skin solutions, we accurately recommend the corresponding solutions for users</h5>
+
+                <!-- <div class="tabbox slideTxtBox">
                         <div class="hd">
                             <ul>
                                 <li class="on">
@@ -510,20 +515,20 @@
     
                         </div>
                     </div> -->
-                    <!-- <h5 class="tar m-t-b-10 f400 ">
+                <!-- <h5 class="tar m-t-b-10 f400 ">
                                 <a href="" class=" m-r-20 but">
                                     More <i class="iconfont iconright1"></i>
                                 </a>
                                 <a href="" class="strong "> <i class="iconfont iconplay "></i> Video</a>
                             </h5> -->
-                </div>
-    
-                <div class="pic01 divtest animated" data-animation="fadeInUp">
-                    <img class="" src="./images/cp02_02.png" alt="">
-                </div>
-    
             </div>
+
+            <div class="pic01 divtest animated" data-animation="fadeInUp">
+                <img class="" src="./images/cp02_02.png" alt="">
+            </div>
+
         </div>
+    </div>
 
 
 
@@ -565,7 +570,7 @@
         <div class="box main_box divtest animated" data-animation="fadeInUp">
             <h4 class="white">Video Introduction</h4>
             <video width="320" height="240" controls>
-                <source src="/video/01.mp4" type="video/mp4">
+                <source src="https://cdn.jsdelivr.net/gh/renzhezhilu/Blog/show/moreme/video/02.mp4" type="video/mp4">
                 <!-- <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4"> -->
                 您的浏览器不支持Video标签。
             </video>
@@ -747,7 +752,7 @@
 
 
 
-   
+
 
     <script>
         jQuery(".slideTxtBox").slide({
