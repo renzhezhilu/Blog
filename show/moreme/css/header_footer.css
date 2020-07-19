@@ -28,7 +28,7 @@ html{
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    /* transition: .3s; */
+    /* transition: height .3s; */
     /* text-shadow: rgba(0, 0, 0, 0.08) 0px 1px 2px; */
 }
 

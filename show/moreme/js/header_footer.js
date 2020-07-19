@@ -1,6 +1,6 @@
 $(document).ready(function() {
-
-    let header = ` <footer>
+    
+    let headersss = ` <footer>
     <div class="box">
         <div class="nav">
             <div class="navbox">
@@ -295,7 +295,9 @@ $(document).ready(function() {
     </div>
 </header>
 `
-        $('body').append(header)
+var txt3=document.createElement("div");  // 使用 DOM 创建元素
+	txt3.innerHTML=headersss;
+    $('body').append(txt3)
 
 
     setTimeout(() => {
@@ -352,7 +354,7 @@ $(document).ready(function() {
         }
         isScroll.init('.divtest');
     
-    }, 500);
-
+    
+    }, 700);
 
 });
