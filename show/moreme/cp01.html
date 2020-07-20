@@ -10,6 +10,8 @@
     <script src="./js/header_footer.js"></script>
     <script src="./js/ss.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="./css/header_footer.css" />
+    <link rel="apple-touch-icon" href="./images/flogo_max.png"> 
+    <link rel="shortcut icon" href="./images/flogo.png">
 </head>
 <style>
     .conbox01 {
@@ -208,36 +210,6 @@
     }
 
 
-    .animation-delay-1 {
-        -webkit-animation-delay: 0.5s;
-        animation-delay: 0.5s;
-    }
-
-    .animation-delay-2 {
-        -webkit-animation-delay: 1s;
-        animation-delay: 1s;
-    }
-
-    .animation-delay-3 {
-        -webkit-animation-delay: 1.5s;
-        animation-delay: 1.5s;
-    }
-
-    .animation-delay-4 {
-        -webkit-animation-delay: 2s;
-        animation-delay: 2s;
-    }
-
-    .animation-delay-5 {
-        -webkit-animation-delay: 2.5s;
-        animation-delay: 2.5s;
-    }
-
-    .animated {
-        opacity: 0;
-        transition: 2s;
-
-    }
 </style>
 
 <body>
@@ -251,10 +223,13 @@
             </div>
             <div class="nav">
                 <li>
-                    <a href="" class="black">Video</a>
+                    <a href="#Video" class="black">Video</a>
                 </li>
                 <li>
-                    <a href="" class="black">parameter</a>
+                    <a href="#Features" class="black">Features</a>
+                </li>
+                <li>
+                    <a href="#Parameter" class="black">Parameter</a>
                 </li>
                 <li>
                     <a href="" class="but">Bug</a>
@@ -321,14 +296,14 @@
             margin-bottom: 40px;
             outline: none;
             backdrop-filter: saturate(180%) blur(13px);
-            background-color: rgba(0, 0, 0, 0.9);
+            /* background-color: rgba(0, 0, 0, 0.9); */
             /* background-color: aqua; */
         }
     </style>
-    <div class="videobox">
+    <div class="videobox" id="Video">
         <div class="box main_box divtest animated" data-animation="fadeInUp">
             <h4 class="white">Video Introduction</h4>
-            <video width="320" height="240" controls>
+            <video width="320" height="240" poster="./video/play.gif" controls>
                 <source src="https://cdn.jsdelivr.net/gh/renzhezhilu/Blog/show/moreme/video/02.mp4" type="video/mp4">
                 <!-- <source src="https://www.runoob.com/try/demo_source/movie.mp4" type="video/mp4"> -->
                 您的浏览器不支持Video标签。
@@ -407,7 +382,7 @@
         }
     </style>
 
-    <div class="conbox conbox05 main_box">
+    <div class="conbox conbox05 main_box" id="Features">
         <!-- <div class="pic01 divtest animated" data-animation="fadeInUp">
                 <img class="" src="./images/home04.png" alt="">
             </div> -->
@@ -461,7 +436,7 @@
         </div>
 
 
-        <div class="minpic minpic03">
+        <div class="minpic minpic03" >
             <h4 class="divtest">Spectral lighting</h4>
             <ul class="divtest animated" data-animation="fadeInUp">
                 <li>
@@ -567,12 +542,14 @@
 
         .conbox_99 .tabbox img {
             padding-top: 13px;
+            width: auto;
+            max-width: 300px;
         }
 
         @media only screen and (max-width: 770px) {
             .conbox_99 .tabbox ul li {
                 width: 33%;
-                zoom: .6;
+                zoom: .9;
             }
         }
 
@@ -637,43 +614,43 @@
                             <p>AI technology is used to identify all pathologies in facial skin, and through daylight map, polarization map,
                                 The texture map and trend map are embodied concretely; at the same time, the skin aging condition after 3~5 years is simulated.
                                 This dimension focuses on the analysis of skin diseases, skin tone, skin quality, aging and other issues</p>
-                            <img width="200" src="./images/min/minpic05_01.png" alt="">
+                            <span><img width="200" src="./images/min/minpic05_01.png" alt=""></span>
                         </ul>
                         <ul>
                             <p>Recognize the sensitive area and area of the face through AI technology, and use the polarization map and red map to perform
                                 Image manifestation; this dimension focuses on the analysis of sensitivity, inflammation, red blood streaks, acne and other issues.</p>
-                            <img width="200" src="./images/min/minpic05_02.png" alt="">
+                                <span><img width="200" src="./images/min/minpic05_02.png" alt=""></span>
                         </ul>
 
                         <ul>
                             <p>Recognize facial wrinkles and their number and length through AI technology, and use texture maps and wrinkles to be young/
                                 The aging simulation map is concretely reflected; at the same time, it simulates the rejuvenation of wrinkles and different degrees of aging
                                 Under the circumstances; this dimension focuses on the analysis of skin texture, moisture and other issues</p>
-                            <img width="200" src="./images/min/minpic05_03.png" alt="">
+                                <span><img width="200" src="./images/min/minpic05_03.png" alt=""></span>
                         </ul>
 
                         <ul>
                             <p>Recognize the large pores and the number of facial pores through AI technology, and use the polarization map, Wu's diagram, and black
                                 The white picture is concretely reflected; this dimension focuses on analyzing pores and other issues.</p>
-                            <img width="200" src="./images/min/minpic05_04.png" alt="">
+                                <span><img width="200" src="./images/min/minpic05_04.png" alt=""></span>
                         </ul>
 
                         <ul>
                             <p>Recognize the distribution and area of facial stains through AI technology, and use polarization, brown, and black
                                 The white map and the color spot trend map are concretely reflected; at the same time, the future growth trend of the color spot is simulated;
                                 This dimension focuses on the analysis of spots, pigments, sun spots and other issues.</p>
-                            <img width="200" src="./images/min/minpic05_05.png" alt="">
+                                <span><img width="200" src="./images/min/minpic05_05.png" alt=""></span>
                         </ul>
 
                         <ul>
                             <p>Recognize the distribution and number of facial acne through AI technology, and use daylight map and Wu's map
                                 Concrete embodiment; this dimension focuses on analyzing acne problems.</p>
-                            <img width="200" src="./images/min/minpic05_06.png" alt="">
+                                <span><img width="200" src="./images/min/minpic05_06.png" alt=""></span>
                         </ul>
                         <ul>
                             <p>Through Wu's reaction to facial conditions, the impurity situation is reflected, and Wu's chart, brown chart,
                                 It is reflected in black and white images; this dimension analyzes grease, skin care product residues, fluorescent agents, heavy metals, etc.</p>
-                            <img width="200" src="./images/min/minpic05_07.png" alt="">
+                                <span><img width="200" src="./images/min/minpic05_07.png" alt=""></span>
                         </ul>
 
                     </div>
@@ -753,7 +730,7 @@
 
         }
     </style>
-    <div class="conbox  conbox03 main_box">
+    <div class="conbox  conbox03 main_box" id="Parameter">
 
         <div class="title title01 center">
             <!-- <h3 class="f600 ">Water and oil</h3> -->
@@ -872,28 +849,7 @@
     </div>
 
 
-    <div class="aboutbox">
-        <div class="box main_box">
-            <h3 class="divtest animated" data-animation="fadeInUp">Understand the services
-                we provide</h3>
-            <div class="pbox white f200 divtest animated" data-animation="fadeInUp">
-                <img src="./images/logo.png" alt="" />
-                <p> Deji Medical Device Co., Ltd. is a reserve enterprise of the Ministry of Industry and Information Technology. </p>
-
-                <p> The isolation eye mask and face mask have been fully certified by CE, FDA, and CFDA. They are tested and certified by SGS, the world's authoritative testing agency. The testing standards are all Medica medical grade, and they have also obtained the first class of medical treatment in the European Union. Device registration. </p>
-                <p> The company has more than 4 years of medical device manufacturing experience, and 8 products have obtained CFDA Class II medical device certification.</p>
-            </div>
-        </div>
-    </div>
-
-
-
-
-    <style type="text/css">
-
-
-
-    </style>
+   
     </body>
 
 </html>

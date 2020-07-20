@@ -28,7 +28,7 @@ html{
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    /* transition: height .3s; */
+    transition:  height .3s;
     /* text-shadow: rgba(0, 0, 0, 0.08) 0px 1px 2px; */
 }
 
@@ -1026,6 +1026,10 @@ header {
     left: 0;
     top: 0;
     width: 100%;
+    /* top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden; */
 }
 
 header .box {
@@ -1065,7 +1069,7 @@ header .box .nav {
     display: flex;
     justify-content: center;
     /* padding: 0 12%; */
-    font-weight: 100;
+    font-weight: 300;
 }
 
 header .box .nav a {
@@ -1226,7 +1230,7 @@ header .sub_mune li {
 
     header .box.phone_open .nav {
         flex-direction: column;
-        font-size: 30px;
+        font-size: 22px;
         line-height: 10vh;
         padding: 0 0 0 6%;
     }
@@ -1260,7 +1264,7 @@ header .sub_mune li {
 
 /***页脚 ***/
 .aboutbox {
-    background: url('./images/home_bg02.jpg') center 0 no-repeat;
+    background: url('../images/home_bg02.jpg') center 0 no-repeat;
     background-size: auto 130%;
     height: 900px;
     margin-top: 50px;
@@ -1324,14 +1328,14 @@ footer {
     backdrop-filter: saturate(180%) blur(13px);
     background-color: rgba(255, 255, 255, .84);
     position: relative;
-    z-index: 110;
+    z-index: 8;
     min-height: 460px;
 }
 
 footer .box {
     padding: 50px 0;
     font-size: 15px;
-    height: 46px;
+    /* height: 46px; */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -1411,7 +1415,7 @@ footer .box .bot {
 
 @media only screen and (max-width: 770px) {
     footer .box {
-        padding: 0 5%;
+        padding: 30px 5%;
 
     }
 
@@ -1548,6 +1552,18 @@ footer .box .bot {
 }
 
 
+/* video {
+    background-image: url('../video/play.png');
+    background-color: transparent;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+  }
+ */
 
 
 .animation-delay-1 {
@@ -1577,8 +1593,7 @@ footer .box .bot {
 
 .animated {
     opacity: 0;
-    transition: 2s;
-
+    /* transition: 2s; */
 }
 
 

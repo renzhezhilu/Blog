@@ -1,6 +1,22 @@
 $(document).ready(function() {
     
-    let headersss = ` <footer>
+    let headersss = ` 
+    
+    <div class="aboutbox">
+    <div class="box main_box">
+        <h3 class="divtest animated" data-animation="fadeInUp">Understand the services
+            we provide</h3>
+        <div class="pbox white f200 divtest animated" data-animation="fadeInUp">
+            <img src="./images/logo.png" alt="" />
+            <p> Deji Medical Device Co., Ltd. is a reserve enterprise of the Ministry of Industry and Information Technology. </p>
+
+            <p> The isolation eye mask and face mask have been fully certified by CE, FDA, and CFDA. They are tested and certified by SGS, the world's authoritative testing agency. The testing standards are all Medica medical grade, and they have also obtained the first class of medical treatment in the European Union. Device registration. </p>
+            <p> The company has more than 4 years of medical device manufacturing experience, and 8 products have obtained CFDA Class II medical device certification.</p>
+        </div>
+    </div>
+</div>
+
+    <footer>
     <div class="box">
         <div class="nav">
             <div class="navbox">
@@ -309,28 +325,31 @@ var txt3=document.createElement("div");  // 使用 DOM 创建元素
                 header.addClass("phone_open")
             }
         });
-    
-        $(".tester").hover(function() {
-            $(".sub_mune01").css('height', $('.sub_mune01 .sub_mune_box').css('height'));
-        }, function() {
-            $(".sub_mune01").css('height', '0');
-        });
-        $(".sub_mune01").hover(function() {
-            $(".sub_mune01").css('height', $('.sub_mune01 .sub_mune_box').css('height'));
-    
-        }, function() {
-            $(".sub_mune01").css('height', '0');
-        });
-        $(".shield").hover(function() {
-            $(".sub_mune02").css('height', $('.sub_mune02 .sub_mune_box').css('height'));
-        }, function() {
-            $(".sub_mune02").css('height', '0');
-        });
-        $(".sub_mune02").hover(function() {
-            $(".sub_mune02").css('height', $('.sub_mune02 .sub_mune_box').css('height'));
-        }, function() {
-            $(".sub_mune02").css('height', '0');
-        });
+        
+        if($('html').width()>770){
+            $(".tester").hover(function() {
+                $(".sub_mune01").css('height', $('.sub_mune01 .sub_mune_box').css('height'));
+            }, function() {
+                $(".sub_mune01").css('height', '0');
+            });
+            $(".sub_mune01").hover(function() {
+                $(".sub_mune01").css('height', $('.sub_mune01 .sub_mune_box').css('height'));
+        
+            }, function() {
+                $(".sub_mune01").css('height', '0');
+            });
+            $(".shield").hover(function() {
+                $(".sub_mune02").css('height', $('.sub_mune02 .sub_mune_box').css('height'));
+            }, function() {
+                $(".sub_mune02").css('height', '0');
+            });
+            $(".sub_mune02").hover(function() {
+                $(".sub_mune02").css('height', $('.sub_mune02 .sub_mune_box').css('height'));
+            }, function() {
+                $(".sub_mune02").css('height', '0');
+            });
+        }
+        
     
         var isScroll = {
             init: function(_el) {

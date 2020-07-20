@@ -52,13 +52,24 @@
     .pagemain .navbox a.on {
         background-color: rgba(92, 255, 198, 0.2);
     }
-
-    .pagemain .back i {
+    .pagemain .back {
+        display: flex;
+        align-items: center;
+    }
+    .pagemain .back span {
         border-radius: 50%;
-        font-size: 13px;
-        padding: 3px;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        line-height: 20px;
+        text-align: center;
         background-color: #31bf9f;
         color: #fff;
+        margin-right: 6px;
+    }
+    .pagemain .back span i{
+        font-size: 12px;
+
     }
     .pagemain .contentbox p {
         font-size: 18px;
@@ -106,7 +117,9 @@
 <body>
     <div class="main_box pagemain">
         <div class="back">
-            <i class="iconfont iconleft1"></i> Come Back
+            <span>
+                <i class="iconfont iconleft1"></i>
+            </span> Come Back
         </div>
         <div class="whatthis">
             <h1>Isolation Eyes Cover</h1>
