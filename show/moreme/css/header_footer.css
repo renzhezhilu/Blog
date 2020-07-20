@@ -182,7 +182,7 @@ a:hover {
 }
 
 /* 字体颜色 */
-.strong {
+.strong,a:hover {
     color: #31bf9f
 }
 
@@ -1552,18 +1552,6 @@ footer .box .bot {
 }
 
 
-/* video {
-    background-image: url('../video/play.png');
-    background-color: transparent;
-    object-fit: cover;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-  }
- */
 
 
 .animation-delay-1 {
