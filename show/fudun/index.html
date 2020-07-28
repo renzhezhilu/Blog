@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>福盾 网页设计稿
+    </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            transition: .3s;
+        }
+
+        body {
+            font-size: 12px;
+            color: #2f353d;
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        ul {}
+
+        ul li {
+            width: 40%;
+            max-width: 290px;
+            height: 350px;
+
+            text-align: center;
+            font-size: 18px;
+            font-weight: 900;
+            float: left;
+            padding: 2%;
+            margin: 2%;
+            box-sizing: border-box;
+        }
+
+        ul a {
+            color: #2f353d;
+
+        }
+
+        ul .pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            margin: 4px;
+
+        }
+
+        ul img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        ul li:hover {
+            box-shadow: 0 32px 60px #ddd;
+            border-radius: 8px;
+        }
+
+        ul li:hover img {
+            width: 180%;
+            height: auto;
+            max-width: 200%;
+            max-height: 200%;
+        }
+
+        ul .text {}
+    </style>
+</head>
+
+<body>
+    <h1>More me 网页设计稿</h1>
+    <ul>
+        <!-- <li>
+            <a href="">
+                <div class="pic">
+                    <img src="./01首页_电脑端.jpg" target="_blank">
+                </div>
+                <div class="text">01首页_电脑端</div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="pic">
+                    <img src="./02首页_电脑端-产品悬浮菜单.jpg" target="_blank">
+                </div>
+                <div class="text">02首页_电脑端-产品悬浮菜单</div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="pic">
+                    <img src="./03首页_电脑端-视频弹窗.jpg" target="_blank">
+                </div>
+                <div class="text">03首页_电脑端-视频弹窗</div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="pic">
+                    <img src="./04首页_移动端.jpg" target="_blank">
+                </div>
+                <div class="text">04首页_移动端</div>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="pic">
+                    <img src="./05首页_打开主菜单.jpg" target="_blank">
+                </div>
+                <div class="text">05首页_移动端-打开主菜单</div>
+            </a>
+        </li> -->
+    </ul>
+</body>
+<script>
+    let files = [{
+            src: '福盾home-1.jpg',
+            name: '福盾home-1'
+        },
+        {
+            src: '福盾home-2.jpg',
+            name: '福盾home-2'
+        },
+        
+    ]
+    let li = ''
+    files.map(file => {
+        // target="_blank
+        li +=
+            `
+        <li>
+            <a href="./page.html?&src=${file.src}" ">
+                <div class="pic">
+                    <img src="${file.src}" ">
+                </div>
+                <div class="text">${file.name}</div>
+            </a>
+        </li>
+
+        `
+    })
+    let ul = document.querySelectorAll('ul')[0]
+    ul.innerHTML = li
+</script>
+
+</html>
