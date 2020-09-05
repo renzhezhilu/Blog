@@ -2,7 +2,7 @@
 
 getLyst()
 function getLyst() {
-    htmlout()
+    
 
     function htmlout() {
         let h = `
@@ -238,17 +238,21 @@ function getLyst() {
         console.log(url);
 
         let all = await fetch(`${url}`).then(d => d.json())
-        console.log(all.data.in_stock.product_image_gallery.images);
+        console.log(all);
+        
+        let imgArr = all.data.in_stock || all.data.out_of_stock
+        console.log(imgArr.product_image_gallery.images);
 
-        all.data.in_stock.product_image_gallery.images.map(async (m, index) => {
-            fetch(`${m.full_size_url}`).then(d => d.blob()).then(d => {
-                setTimeout(() => {
-                    funDownload(d, `${index}_${m.alt_text}.jpeg`)
-                }, 300 * index);
-            })
+        imgArr.product_image_gallery.images.map(async (m, index) => {
+
+            console.log(m);
+           window.open(m.full_size_url)
+          
         })
     }
 
+
+    htmlout()
     start(window.location.href )
     //https://www.lyst.com/designer/acne/?page=3
     async function start(url) {
@@ -325,7 +329,7 @@ function getLyst() {
         } = startUrl.data.pagination
         // if(current_page==total_pages) return
         document.querySelector('#current_page').innerHTML = current_page
-        document.querySelector('#current_page_num').innerHTML = (startUrl.data.show_more_button.visible_product_count - 0) * current_page
+        document.querySelector('#current_page_num').innerHTML =  document.querySelector('#current_page_num').innerHTML-0+ startUrl.data.show_more_button.visible_product_count
         document.querySelector('#total_pages').innerHTML = total_pages
         document.querySelector('#total_pages_num').innerHTML = startUrl.data.show_more_button.total_product_count
         console.log(current_page);
@@ -361,4 +365,5 @@ function getLyst() {
         start2(`https://www.lyst.com/api/rothko/modules/product_feed/?url=${next_button_href}`)
 
     }
+
 }
