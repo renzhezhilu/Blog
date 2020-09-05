@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- 
+        https://images.asos-media.com/products/honey-punch-long-sleeve-tea-dress-with-ruffle-trim-in-star-print/8846785-1-blackstars?$S$&wid=40&fit=constrain
+     -->
+    <input type="text" placeholder="asos图片地址" style="zoom:2;width: 200px;"></input>
+    <button onclick="go()" style="zoom:2; background-color: blue;color:#fff">获取</button>
+
+     <div class="pic_box" style="zoom:2;"></div>
+
+    <script>
+        function go() {
+            let input = document.querySelectorAll('input')[0].value
+            let pic_box = document.querySelectorAll('.pic_box')[0]
+            let dowload_end = []
+
+            if(!input.includes(`$S$&wid=40`)) {
+                return alert('地址错误！')
+            }
+
+            pic_box.insertAdjacentHTML('beforeend', `开始下载...<br/>`)
+
+            let url = input
+            let _url = url.split('?')[0]
+            let name = url.split('/')[4]
+            let p1 = _url + `?$XXL$&wid=870`
+            let p2 = pic(_url, 2)
+            let p3 = pic(_url, 3)
+            let p4 = pic(_url, 4)
+            let all_pic = [p1, p2, p3, p4]
+
+            function pic(_url, num) {
+                let p = _url.split('-')
+                p.pop()
+                p[p.length - 1] = num
+                p = p.join('-') + `?$XXL$&wid=870`
+                return p
+            }
+
+            //下载文件
+            // funDownload(JSON.stringify(xxxx),'xxx.json')
+            function funDownload(content, filename) {
+                let eleLink = document.createElement('a');
+                eleLink.download = filename;
+                eleLink.style.display = 'none';
+                // 字符内容转变成blob地址
+                let blob = new Blob([content]);
+                eleLink.href = URL.createObjectURL(blob);
+                // 触发点击
+                document.body.appendChild(eleLink);
+                eleLink.click();
+                // 然后移除
+                document.body.removeChild(eleLink);
+            }
+
+            all_pic.map((pic_url, ind) => {
+                setTimeout(() => {
+                    fetch(pic_url)
+                    .then(x => {
+                        return x.blob()
+                    }).then(d => {
+                        dowload_end.push(d)
+                        
+                        console.log(d)
+                        if(d.size)
+                        funDownload(d, (ind+1) + '-' + name + '.jpg')
+                        pic_box.insertAdjacentHTML('beforeend', `第 ${dowload_end.length} 张下载完成<br/>`)
+                        if(dowload_end.length===4){
+                            pic_box.insertAdjacentHTML('beforeend', `完成✅`)
+                        }
+                    }).catch(e => {
+                        console.log('错误')
+                    })
+                }, 1000*ind);
+            })
+        }
+    </script>
+
+</body>
+
+</html>

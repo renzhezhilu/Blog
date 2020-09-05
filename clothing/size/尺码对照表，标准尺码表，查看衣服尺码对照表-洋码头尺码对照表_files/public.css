@@ -1,0 +1,70 @@
+/*---- global css begin----*/
+html, body, div, span,applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, select, i{margin:0;padding:0;}
+abbr, article, aside, bb, datagrid, datalist, details, dialog, eventsource, figure, footer, header, mark, menu, meter, nav, output, progress, section, time {margin:0;padding:0;}
+body {font:12px/1.5 "微软雅黑","\5B8B\4F53", sans-serif;color:#666;word-wrap:break-word;word-break:break-all; background:#fff}
+table {border-collapse:collapse;border-spacing:0;}
+table caption {display:none;}
+ol, ul {list-style:none outside}
+h1, h2, h3, h4, h5, h6 {font-size:100%;}
+fieldset, img {border:0 none;}
+img{vertical-align: middle;}
+q:before, q:after {   content: '';   }  
+a {color:#666;text-decoration:none;outline:none;}
+a:hover {text-decoration:underline; color:#f00}
+button {padding:0;}
+button, label {cursor:pointer;vertical-align:middle;}
+select,input,textarea{font:12px Tahoma, Arial, simsun;line-height:1.2em;}
+.clearfix:after {content:".";height:0;visibility:hidden;display:block;clear:both;font-size:0;line-height:0}
+.clearfix {display:inline-block}
+.clearfix {display:block}
+.clear {height:0;overflow:hidden;clear:both;display:block;}
+.fix{word-break:keep-all;overflow:hidden;text-overflow:ellipsis;}
+i,em,cite,b{ font-style:normal}
+#container{ width:100%; text-align:center}
+.container{ width:100%; text-align:center}
+#page_box{ width:900px; margin: auto; padding:20px 0;}
+.page_mod{ width:1000px; margin: auto;}
+.cursor{ cursor: pointer}
+.marT_10{ margin-top:10px;}.marL_10{ margin-left:10px;}
+.blur{ color:#3369FF}
+.black{ color:#000000}
+.price{ color:#F04D00; font-size:12px;}.price i{ font-size:22px;}
+.none{ display:none}
+.block{ display:block}
+.b_0{ border:0}
+.node{font-size:0;letter-spacing:-4px;}
+.node .r,.node .l,.node t{display:inline-block;vertical-align:middle;font-size:12px;letter-spacing:normal;}
+.node .t{vertical-align:top}
+/*面包屑*/
+.navigation .nav{ float:left; height:24px; line-height:24px;}
+.navigation .nav a{ color:#3369FF}
+.navigation .nav li{ float:left;}
+.navigation .nav .current i{ display:none}
+.navigation .nav i{ padding:0 5px;}
+.blue{color:#3368FF}
+
+/*page_top*/
+.page_split{ height:24px; background:url(../img/top_bg.png) repeat-x top; width:100%;}
+
+/*login*/
+#bottom_bk {width:900px;height:6px;background:url(../img/login_gary_bk.png) repeat-x;margin:0 auto}
+.bottom_bk {width:100%;height:6px;background:url(../img/login_gary_bk.png) repeat-x;margin:0 auto}
+#bottom_list {width:900px;margin:0 auto;font-size:0px;text-align:center;}
+#bottom_list .bottom_list_item {float:left;width:180px;height:120px; font-size:12px;}
+#bottom_list .bottom_list_item li {margin-top:10px;}
+#bottom_list .bottom_list_item  span {font-weight:bold;font-size:14px;}
+
+#address_new{ zoom:1}
+.gav_logo {float: left;}
+.page_logo { padding: 20px 0;}
+#copywrite {text-align: center; margin:10px auto 0}
+.top_iframe{width:100%; border:0px; overflow:hidden; height:124px;}
+.bottom_iframe{width:100%; border:0px; overflow:hidden; height:176px;_height:190px;}
+#helpmain{width:1000px;margin:0 auto}
+
+
+
+/*table*/
+table,td,th{border:1px solid #ddd;}
+td,th{padding:10px;}
+th{white-space: nowrap;}

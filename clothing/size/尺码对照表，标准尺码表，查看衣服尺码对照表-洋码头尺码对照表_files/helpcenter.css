@@ -1,0 +1,385 @@
+/* CSS Document */
+.help_top {
+    padding-bottom: 5px;
+    height: 30px;
+}
+
+.help_mod {
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #E2E2E2;
+    padding: 0 15px;
+    margin: 15px auto 30px;
+}
+
+.help_mod .hd {
+    position: relative;
+}
+
+.help_mod .hd h3 {
+    background: #FFFFFF;
+    position: absolute;
+    float: left;
+    font-size: 16px;
+    padding: 0 10px;
+    top: -15px;
+    color: #F04C00;
+}
+
+.help_mod .bd {
+    padding: 30px 0 30px;
+    line-height: 26px;
+}
+
+.help_mod .bd .item {
+    font-size: 0;
+    text-indent: -999em;
+    height: 0;
+}
+
+.nav_fast li {
+    width: 200px;
+    margin: 0 0 15px;
+    float: left;
+    padding: 0 30px;
+    line-height: 22px;
+}
+
+.nav_fast li dt {
+    font-size: 14px;
+    color: #EB5E00;
+}
+
+.nav_fast li dd {
+    display: inline-block;
+    height: 20px;
+}
+
+.nav_fast li dd {
+    *display: inline;
+}
+
+.nav_fast li dd i {
+    padding: 0 5px;
+}
+
+.nav_fast li .last i {
+    display: none;
+}
+
+.p_left_main .p_title_bk {
+    cursor: pointer;
+    background-image: url("../img/p_top_gary.gif");
+    border-bottom: 1px solid #E6E6E6;
+    border-top: 1px solid #E6E6E6;
+    height: 28px;
+    line-height: 28px;
+    text-align: left;
+    width: 150px;
+}
+
+.p_left_main ul {
+    display: none;
+}
+
+.p_left_main ul.current {
+    display: block;
+}
+
+.p_left_main li {
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+
+.p_left_main li a.unav_item {
+    display: inline-block;
+    width: 115px;
+    padding-left: 35px;
+}
+
+.p_left_main li.current {
+    background: #efefef;
+}
+
+.p_left_main ul.current a.curr {
+    background: #F04E00;
+    color: #fff;
+}
+
+.wl_left .p_top_yellow {
+    height: 30px;
+    padding-top: 0;
+    line-height: 30px;
+    background-image: url(../img/my_top_yellow.png);
+    background-repeat: no-repeat;
+    text-align: left;
+}
+
+.wl_left .p_top_yellow span font {
+    font-size: 14px;
+    color: #F04E00;
+    font-weight: bold;
+}
+
+.help_QA .help_mod {
+    background: #f3f3f3;
+}
+
+.help_QA .help_ask {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0;
+    color: #000000;
+    cursor: pointer;
+}
+
+.help_QA .help_answer {
+    font-size: 14px;
+    margin: 10px 0;
+    display: none;
+    line-height: 26px;
+}
+
+.help_QA dt {
+    font: bold 14px/1 'Microsoft yahei';
+    color: #333;
+}
+
+.help_QA dd {
+    margin: 10px;
+}
+
+.help_QA dd li {
+    line-height: 2;
+}
+
+.help_area .help_con {
+    padding-bottom: 10px;
+}
+
+.help_area .help_con h3 {
+    font-size: 14px;
+    border-bottom: 1px solid #e8e8e8;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0 0 10px;
+    line-height: 26px;
+}
+
+.help_area .help_con h4 {
+    font-size: 13px;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 5px 0;
+    margin: 0 0 10px;
+}
+
+.help_area .help_con p {
+    margin-bottom: 10px;
+}
+
+.proto_title {
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.addNoticeInfo {
+    line-height: 24px;
+    padding: 10px 0;
+}
+
+.newTable {
+    border: 1px solid #D9D9D9;
+}
+
+.newTable caption {
+    text-align: left;
+    color: #333;
+    padding: 20px 0 6px 0;
+}
+
+.newTable caption.top {
+    text-align: left;
+    color: #333;
+    padding: 0 0 6px 0;
+}
+
+.newTable {
+    border-collapse: collapse;
+}
+
+.newTable th {
+    padding: 9px 0;
+    text-align: center;
+    font-weight: normal;
+    border: 1px solid #F0F0F0;
+    background: #FAFAFA;
+}
+
+.newTable td {
+    padding: 7px 0;
+    font-size: 11px;
+    font-family: Verdana;
+    border: 1px solid #F0F0F0;
+    text-align: center;
+}
+
+.newTable .al_left {
+    text-align: left;
+}
+
+.newTable .cellP {
+    background: #FAFAFA;
+}
+
+.newTable .cellY {
+    background: #FFFAE9;
+}
+
+.newTable .f12 {
+    font-size: 12px;
+}
+
+.sizeTable {
+    border: 1px solid #D9D9D9;
+}
+
+.sizeTable caption {
+    color: #333333;
+    padding: 20px 0 6px;
+    text-align: left;
+}
+
+.sizeTable caption.top {
+    color: #333333;
+    padding: 0 0 6px;
+    text-align: left;
+}
+
+.sizeTable .f_ver {
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+.sizeTable th {
+    border-bottom: 1px solid #F0F0F0;
+    border-right: 1px solid #F0F0F0;
+    font-weight: normal;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.sizeTable .al_left {
+    text-align: left;
+}
+
+.sizeTable .nobr {
+    border-right: medium none;
+}
+
+.sizeTable .nobb {
+    border-bottom: medium none;
+}
+
+.sizeTable .cellP {
+    background: none repeat scroll 0 0 #FAFAFA;
+}
+
+.sizeTable .cellY {
+    background: none repeat scroll 0 0 #FFFAE9;
+}
+
+.sizeTable td {
+    border-bottom: 1px solid #F0F0F0;
+    border-right: 1px solid #F0F0F0;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.categoryInfo {
+    padding: 10px 0 20px;
+}
+
+.categoryInfo li {
+    background: url(http://img.ymatou.com/portal/images/ico_dotB.gif) no-repeat scroll 0 7px transparent;
+    padding: 0 0 0 10px;
+}
+
+/***page layout***/
+.p_left_main {
+    border: 1px solid #E6E6E6;
+}
+
+.wl_left {
+    float: left;
+    padding-bottom: 20px;
+    width: 152px;
+}
+
+.wl_right {
+    float: right;
+    width: 840px;
+    text-align: left;
+}
+
+.p_title_bk .ico {
+    padding-left: 20px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.wl_left .p_top_yellow span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+/*2012.11.19.11:22*/
+.help_mod .f14 .r {
+    font-size: 14px;
+}
+
+.f14 {
+    font: normal 14px/2 "\5b8b\4f53";
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.help_mod .f14 .r {
+    width: 770px;
+    margin-left: 10px;
+}
+
+.area_mod {
+    border: 1px solid #E2E2E2;
+    background-color: #EFEFEF;
+    padding: 0 10px;
+    margin: 30px 0;
+}
+
+.area_mod h3 {
+    color: #000;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 0 5px;
+}
+
+.area_mod .f14 {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.imgbox {
+    margin-top: 20px;
+}
+
+/*vip*/
+.vippad {
+    padding: 0 15px;
+}

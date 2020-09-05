@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>自动刷新页面</title>
+</head>
+
+<body>
+
+    <textarea style=" width: 200px; height: 50px; zoom:2 ">http://baidu.com</textarea>
+    <br>
+    总数：<input type="number" value="1000" style="zoom:2"></input>次
+    <br>
+    间隔：<input type="number" value="3000" style="zoom:2"></input>毫秒
+    <br>
+    显示：<input type="checkbox" style="zoom:2">
+    <br>
+    <button onclick="go()" style="zoom:2">开始</button>
+    <br>
+    <span style="color:red; font-size:30px;">0次</span>
+	<br>
+	<iframe style="display:none" name="if_box" id="if_box" src="http://baidu.com" width="400" height="1300"></iframe>
+	<br>
+    <script type="text/javascript">
+        let go_count = 0
+
+        function go(params) {
+            let b = document.querySelectorAll('button')
+            let t = document.querySelectorAll('textarea')[0].value
+            let i = document.querySelectorAll('input')[0].value
+            let time = document.querySelectorAll('input')[1].value
+            document.querySelectorAll('input')[2].checked ? document.querySelectorAll('iframe')[0].style.display = 'block' : document.querySelectorAll('iframe')[0].style.display = 'none'
+            let s = setInterval(() => {
+                document.getElementById('if_box').src = t
+                go_count++
+                document.querySelectorAll('span')[0].innerText = `已刷新${go_count}次`
+
+                if (go_count > i - 0) {
+                    clearInterval(s)
+                    document.querySelectorAll('span')[0].innerText = '已完成！！' + go_count + '次'
+                    go_count = 0
+                }
+            }, time)
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+</head>
+
+<body>
+
+    
+
+    <script>
+        htmlout()
+        function htmlout(){
+            let h = `
+            <div class="kdkasdlamain">
+        <div class="meg">
+            <div class="leftTxt">
+            <h1>
+                第
+                <span id="current_page"></span>
+                页 - 共
+                <span id="total_pages"></span>页
+                <span id="current_page_num"></span>/
+                <span id="total_pages_num"></span>
+            </h1>
+            <br>
+            <br>
+            <input type="number" placeholder="跳转到第几页?">
+            <br>
+
+            <br>
+            <button>跳转</button>
+        </div>
+        </div>
+        <div class="content">
+            <div class="go">
+                <input type="text" placeholder="输入网址">
+                <button onclick="start()">
+                    解析
+                </button>
+            </div>
+            <ul id="htmlLi">
+                <!-- <li>
+                    <div class="pic">
+                        <img is="lazy-image" image-src="https://cdna.lystit.com/200/250/tr/photos/24sevres/d33ca771/acne-navy-Deborah-Wool-Sweater.jpeg" src="https://cdna.lystit.com/200/250/tr/photos/24sevres/d33ca771/acne-navy-Deborah-Wool-Sweater.jpeg">
+                    </div>
+                    <p>
+
+                        Deborah Wool Sweater - Blue
+                    </p>
+                    <div class="butbox">
+                        <div class="but">
+                            下载图片(3张)
+                        </div>
+                        <a class="but sav">
+                            查看大图
+                        </a>
+                    </div>
+
+                </li> -->
+            </ul>
+        </div>
+        <div class="footer">
+
+        </div>
+    </div>
+
+    <style>
+            html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑";
+            font-size: 14px;
+            color: #111;
+            width: 100%;
+            height: 100%
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        span,
+        p,
+        ul,
+        li,
+        table,
+        tr,
+        td,
+        input,
+        a,
+        dl,
+        dt,
+        dd {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+            border: none
+        }
+
+
+        .kdkasdlamain {
+            position: fixed;
+            z-index: 1000000;
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: flex;
+        }
+
+        .kdkasdlamain .meg {  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+          height: 100%;
+            flex-shrink: 0;
+            width: 200px;
+            padding: 10px;
+            border-right: 1px solid #eee;
+        }
+        
+        .kdkasdlamain .meg input {
+            width: 100%;
+            height: 30px;
+            font-size: 18px;
+            text-indent: 22px;
+        }
+
+        .kdkasdlamain  button {
+            width: 100px;
+            height: 40px;
+            background-color: coral;
+            border: none;
+            color: #fff;
+        }
+
+        .content {}
+
+        .kdkasdlamain .content ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .kdkasdlamain .content ul li {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        .kdkasdlamain .content ul li:hover {
+            background-color: aliceblue;
+        }
+
+        .kdkasdlamain .content ul li .pic {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+        .kdkasdlamain  .content li p {
+            font-size: 14px;
+            line-height: 18px;
+            padding: 6px 0;
+        }
+
+        .kdkasdlamain .content li img {
+            max-width: 100%;
+            max-height: 100%;
+
+        }
+
+        .content {}
+
+        .content {}
+
+        .footer {}
+
+
+
+        /*  */
+        .kdkasdlamain .but {
+            width: 90px;
+            line-height: 32px;
+            font-size: 13px;
+            text-align: center;
+            display: inline-block;
+            background-color: darkblue;
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        .kdkasdlamain .but.sav {
+            background-color: #999;
+        }
+
+        .kdkasdlamain .go {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .kdkasdlamain .go input {
+            width: 400px;
+            height: 38px;
+            text-indent: 20px
+        }
+        </style>
+    `
+    document.querySelector('body').innerHTML=h
+
+        }
+        //下载文件
+        function funDownload(content, filename = '未命名') {
+            let eleLink = document.createElement('a')
+            eleLink.download = filename
+            eleLink.style.display = 'none'
+            // 字符内容转变成blob地址
+            let blob = new Blob([content])
+            eleLink.href = URL.createObjectURL(content)
+            // 触发点击
+            document.body.appendChild(eleLink)
+            eleLink.click()
+            // 然后移除
+            document.body.removeChild(eleLink)
+            // location.reload() 
+        }
+        async function getAllPic(url) {
+            console.log(url);
+            
+            let all = await fetch(`http://127.0.0.1:8888/?${url}`).then(d => d.json())
+            console.log(all.data.in_stock.product_image_gallery.images);
+            
+            all.data.in_stock.product_image_gallery.images.map(async (m,index) => {
+                fetch(`http://127.0.0.1:8888/pic/?${m.full_size_url}`).then(d=>d.blob()).then(d=>{
+                    setTimeout(() => {
+                        funDownload(d,`${index}_${m.alt_text}.jpeg`)
+                    }, 300*index);
+                })
+            })
+        }
+
+        async function start(url='https://www.lyst.com/designer/acne/?page=3') {
+            let isUrl = url.includes('www.lyst.com')
+            if (isUrl) {
+                let mid = url.match(/designer\/.*?\//ig)
+                let startUrl = `http://127.0.0.1:8888/?https://www.lyst.com/api/rothko/modules/product_feed/?url=/${mid}`
+                console.log(startUrl);
+                startUrl = await fetch(startUrl).then(d => d.json())
+                console.log(startUrl);
+
+                let {
+                    current_page,
+                    total_pages,
+                    next_button_href
+                } = startUrl.data.pagination
+                document.querySelector('#current_page').innerHTML = current_page
+                document.querySelector('#current_page_num').innerHTML = startUrl.data.show_more_button.visible_product_count
+                document.querySelector('#total_pages').innerHTML = total_pages
+                document.querySelector('#total_pages_num').innerHTML = startUrl.data.show_more_button.total_product_count
+                console.log(current_page);
+                // 产品的所有图片
+                // https://www.lyst.com/api/rothko/modules/product/product_overlay/?slug=acne-black-bertine-boots&link_id=655468050
+
+
+                let htmlLi = ''
+                startUrl.data.feed_items.map(m => {
+                    let t = m.product_card
+                    let imgMin = t.image_url
+                    let imgLg = imgMin.match(/(?<=com).*?(?=photo)/ig)
+                    imgLg = imgMin.replace(imgLg[0], '/')
+                    htmlLi = htmlLi + `
+
+                <li>
+                    <div class="pic">
+                        <img is="lazy-image" image-src="${imgMin}" src="${imgMin}">
+                    </div>
+                    <p>${t.short_description}</p>
+                    <div class="butbox">
+                        <div class="but" onclick="getAllPic('https://www.lyst.com/api/rothko/modules/product/product_overlay/?slug=${t.slug}&link_id=${t.link_id}')" allimage="">
+                            下载图片
+                        </div>
+                        <a href="${imgLg}" target="_blank" class="but sav">
+                            查看大图
+                        </a>
+                    </div>
+                </li>
+                `
+                })
+                document.querySelector('#htmlLi').insertAdjacentHTML('beforeend',htmlLi)
+                start2(`http://127.0.0.1:8888/?https://www.lyst.com/api/rothko/modules/product_feed/?url=${next_button_href}`) 
+
+            } else {
+                alert('网址错误')
+            }
+        }
+
+
+
+        async function start2(url) {
+                let startUrl = url
+                console.log(startUrl);
+                startUrl = await fetch(startUrl).then(d => d.json())
+                console.log(startUrl);
+
+                let {
+                    current_page,
+                    total_pages,
+                    next_button_href
+                } = startUrl.data.pagination
+                // if(current_page==total_pages) return
+                document.querySelector('#current_page').innerHTML = current_page
+                document.querySelector('#current_page_num').innerHTML = (startUrl.data.show_more_button.visible_product_count-0) *current_page
+                document.querySelector('#total_pages').innerHTML = total_pages
+                document.querySelector('#total_pages_num').innerHTML = startUrl.data.show_more_button.total_product_count
+                console.log(current_page);
+                // 产品的所有图片
+                // https://www.lyst.com/api/rothko/modules/product/product_overlay/?slug=acne-black-bertine-boots&link_id=655468050
+
+
+                let htmlLi = ''
+                startUrl.data.feed_items.map(m => {
+                    let t = m.product_card
+                    let imgMin = t.image_url
+                    let imgLg = imgMin.match(/(?<=com).*?(?=photo)/ig)
+                    imgLg = imgMin.replace(imgLg[0], '/')
+                    htmlLi = htmlLi + `
+
+                <li>
+                    <div class="pic">
+                        <img is="lazy-image" image-src="${imgMin}" src="${imgMin}">
+                    </div>
+                    <p>${t.short_description}</p>
+                    <div class="butbox">
+                        <div class="but" onclick="getAllPic('https://www.lyst.com/api/rothko/modules/product/product_overlay/?slug=${t.slug}&link_id=${t.link_id}')" allimage="">
+                            下载图片
+                        </div>
+                        <a href="${imgLg}" target="_blank" class="but sav">
+                            查看大图
+                        </a>
+                    </div>
+                </li>
+                `
+                })
+                document.querySelector('#htmlLi').insertAdjacentHTML('beforeend',htmlLi)
+                start2(`http://127.0.0.1:8888/?https://www.lyst.com/api/rothko/modules/product_feed/?url=${next_button_href}`) 
+
+        }
+    
+    
+    </script>
+</body>
+
+</html>
