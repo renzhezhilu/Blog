@@ -1,6 +1,37 @@
 
 
 getLyst()
+  //下载文件
+  function funDownload(content, filename = '未命名') {
+    let eleLink = document.createElement('a')
+    eleLink.download = filename
+    eleLink.style.display = 'none'
+    // 字符内容转变成blob地址
+    let blob = new Blob([content])
+    eleLink.href = URL.createObjectURL(content)
+    // 触发点击
+    document.body.appendChild(eleLink)
+    eleLink.click()
+    // 然后移除
+    document.body.removeChild(eleLink)
+    // location.reload() 
+}
+async function getAllPic(url) {
+    console.log(url);
+
+    let all = await fetch(`${url}`).then(d => d.json())
+    console.log(all);
+    
+    let imgArr = all.data.in_stock || all.data.out_of_stock
+    console.log(imgArr.product_image_gallery.images);
+    imgArr.product_image_gallery.images.map(async (m, index) => {
+      setTimeout(() => {
+        window.open(m.full_size_url) 
+      }, 200*index);
+      
+    })
+}
+
 function getLyst() {
     
 
@@ -219,38 +250,7 @@ function getLyst() {
         document.querySelector('body').innerHTML = h
 
     }
-    //下载文件
-    function funDownload(content, filename = '未命名') {
-        let eleLink = document.createElement('a')
-        eleLink.download = filename
-        eleLink.style.display = 'none'
-        // 字符内容转变成blob地址
-        let blob = new Blob([content])
-        eleLink.href = URL.createObjectURL(content)
-        // 触发点击
-        document.body.appendChild(eleLink)
-        eleLink.click()
-        // 然后移除
-        document.body.removeChild(eleLink)
-        // location.reload() 
-    }
-    async function getAllPic(url) {
-        console.log(url);
-
-        let all = await fetch(`${url}`).then(d => d.json())
-        console.log(all);
-        
-        let imgArr = all.data.in_stock || all.data.out_of_stock
-        console.log(imgArr.product_image_gallery.images);
-
-        imgArr.product_image_gallery.images.map(async (m, index) => {
-
-            console.log(m);
-           window.open(m.full_size_url)
-          
-        })
-    }
-
+  
 
     htmlout()
     start(window.location.href )
